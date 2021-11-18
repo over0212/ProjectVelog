@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Recursive&display=swap');
 /* font-family: 'Recursive', sans-serif;  header logo에만 적용할 폰트*/
 
+<<<<<<< HEAD
 *{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+=======
+*{
+    margin: 0 auto; padding: 0; 
+    font-family: 'Noto Sans KR', 'Recursive', sans-serif;
+    font-size: 12px;
+}
+>>>>>>> fce27d79ea1ff1b6a1372ada8b6ee0f612178596
 
 body{
     margin: 0; padding: 0;
@@ -13,3 +21,8 @@ a{text-decoration: none; color: #000;}
 ul li{list-style: none;}
 
 img{border: 0;}
+
+button{
+    border: none;
+    background: none;
+}
