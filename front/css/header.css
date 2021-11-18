@@ -1,0 +1,76 @@
+header{
+    font-size: 2rem;
+    color: #343a40;
+}
+
+.hd_wrap{
+    width: 1376px;
+    height: 64px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hd_logo{
+    margin-left: 0px;
+    width: 80px;
+    height: 100%;
+}
+
+.hd_logo a{
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.hd_logo_txt{
+    font-size: 1.8em;
+    font-weight: 500;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: 3px;
+}
+
+
+.hd_btns{
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.search_btn:hover{
+    background-color: rgba(229, 228, 228, 0.465);
+}
+
+.search_icon{
+    font-size: 16px;
+}
+
+.login_btn{
+    width: 80px;
+    height: 32px;
+    padding: 1px 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;    
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: #343a40;
+}
+
+
+

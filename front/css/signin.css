@@ -1,10 +1,21 @@
+
 .login_container{
-    width: 100%; height: 100%;
+    width: 100%; height: 745px;
+}
+.login_warp{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(233, 233, 232, 0.5);
 }
 /* 로그인창 */
 .login_box{
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     width: 606px; height: 480px;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
 }
 /* 로그인창 왼쪽 이미지 */
 .login_img{
@@ -13,7 +24,7 @@
     justify-content: center;
     align-items: center;
     padding: 24px;
-    height: 432px; width: 168px;
+    width: 168px; height: 432px;
     background-color: rgb(241, 243, 245);
 }
 .login_img img{
@@ -27,6 +38,9 @@
 }
 /* 로그인창 오른쪽input */
 .login_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: white;
     padding: 24px;
     width: 342px; height: 432px;
@@ -40,6 +54,7 @@
     color: rgb(134, 142, 150);
     cursor: pointer;}
 
+/* 로그인 부분 */
 .login_signin{
     width: 100%; height: 100%;
 }
@@ -52,11 +67,29 @@
     color: rgb(134, 142, 150);
     margin: 16px 0;
 }
+.login_form{
+    display: flex;
+}
 .email_ip{
     width: 246px; height: 48px;
     box-sizing: border-box;
+    border: 1px solid rgb(222, 226, 230);
     padding: 16px;
+    font-size: 16px;
 }
+.login_button{
+    font-size: 16px;
+    border: none;
+    color: white;
+    background-color: rgb(18, 184, 134);
+    width: 96px; height: 48px;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.login_form :hover{
+    background-color: rgb(72, 208, 167);
+}
+/* API 네이버 구글 미정 */
 .login_API {
     height: 96px;
     margin-top: 40px;
@@ -64,6 +97,7 @@
 .APIs{
     margin-top: 24px;
     display: flex;
+    justify-content: space-around;
 }
 .API{
     display: flex;
@@ -71,6 +105,21 @@
     height: 48px; font-size: 47px;
     cursor: pointer;
 }
+
+/* 회원가입 부분 */
+.login_question{
+    margin-right: 4px;
+}
 .login_signup {
-    background-color: darkgreen;
+    align-self: flex-end;
+}
+.signup_link{
+    font-weight: 700;
+    cursor: pointer;
+}
+.signup_link a{
+    color: rgb(18, 184, 134);
+}
+.signup_link a:hover{
+    text-decoration: underline;
 }
