@@ -27,9 +27,9 @@
 }
 /* 로그인창 오른쪽input */
 .login_block{
+    background-color: white;
     padding: 24px;
     width: 342px; height: 432px;
-    background-color: thistle;
 }
 .login_close i{
     display: flex;
@@ -37,16 +37,17 @@
     width: 100%; height: 24px;
     margin-bottom: 36px;
     font-size: 20px;
-    color: rgb(134, 142, 150);}
+    color: rgb(134, 142, 150);
+    cursor: pointer;}
 
-.login_input{
-    width: 100%; height: 372px;
+.login_signin{
+    width: 100%; height: 100%;
 }
-.login_input h2{
+.login_signin h2{
     font-size: 22px;
     color: #343a40;
 }
-.login_input h4{
+.login_signin h4{
     height: 24px;
     color: rgb(134, 142, 150);
     margin: 16px 0;
@@ -56,7 +57,20 @@
     box-sizing: border-box;
     padding: 16px;
 }
-.login_input {}
-.login_input {}
-.login_input {}
-.login_input {}
+.login_API {
+    height: 96px;
+    margin-top: 40px;
+}
+.APIs{
+    margin-top: 24px;
+    display: flex;
+}
+.API{
+    display: flex;
+    align-items: center;
+    height: 48px; font-size: 47px;
+    cursor: pointer;
+}
+.login_signup {
+    background-color: darkgreen;
+}
