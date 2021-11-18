@@ -1,0 +1,105 @@
+.container{
+    width: 100%; height: 100%;
+}
+.signup_warp{
+    letter-spacing: 2px;
+    margin: 100px 380px 0;
+}
+.signup_warp h1 {
+    font-size: 65px;
+}
+.welcome_msg{
+    font-size: 24px;
+}
+.input_information{
+    width: 100%; height: 100%;
+    margin-top: 48px;
+}
+
+/* 인풋 이름 입력 */
+.input_block{
+    width: 100%; height: 113px;
+}
+.signup_msg{
+    font-weight: 700;
+    font-size: 20px; margin-bottom: 16px;
+}
+.input_name_box{
+    border: none;
+    border-bottom: 1px solid #444;
+    width: 268px; height: 47px;
+}
+.signup_name{
+    border: none;
+    padding: 1px 2px;
+    width: 265px; height: 36px;
+    font-size: 25px;
+}
+.signup_name::placeholder {
+    color: rgb(197, 197, 197);
+}
+
+/* 인풋 이메일 입력 */
+.input_email_box{
+    border: none;
+    border-bottom: 1px solid #444;
+    width: 350px; height: 47px;
+}
+.signup_email{
+    border: none;
+    padding: 1px 2px;
+    width: 350px; height: 36px;
+    font-size: 25px;
+}
+.signup_email::placeholder {
+    color: rgb(197, 197, 197);
+}
+
+/* 인풋 아이디 입력 */
+.input_id_box{
+    border: none;
+    border-bottom: 1px solid #444;
+    width: 230px; height: 47px;
+}
+.signup_id{
+    border: none;
+    padding: 1px 2px;
+    width: 270px; height: 36px;
+    font-size: 25px;
+}
+.signup_id::placeholder {
+    color: rgb(197, 197, 197);
+}
+
+/* 인풋  소개 입력 */
+.input_introduction_box{
+    border: none;
+    border-bottom: 1px solid #444;
+    width: 400px; height: 47px;
+}
+.signup_introduction{
+    border: none;
+    padding: 1px 2px;
+    width: 400px; height: 36px;
+    font-size: 25px;
+}
+.signup_introduction::placeholder {
+    color: rgb(197, 197, 197);
+}
+/* 취소 다음 버튼 */
+.signup_button button{
+    font-size: 24px;
+    width: 112px; height: 48px;
+    border-radius: 24px;
+}
+
+.sign_cancel button{
+    color: #444;
+    background-color: rgb(233, 236, 239);
+}
+
+.sign_next button{
+    color: white;
+    background-color: rgb(18, 184, 134);
+}
+
