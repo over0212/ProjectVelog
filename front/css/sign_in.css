@@ -1,8 +1,7 @@
-
-.login_container{
+.si_container{
     width: 100%; height: 745px;
 }
-.login_warp{
+.si_warp{
     height: 100%;
     display: flex;
     justify-content: center;
@@ -10,15 +9,16 @@
     background-color: rgba(233, 233, 232, 0.5);
 }
 /* 로그인창 */
-.login_box{
+.si_box{
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
     width: 606px; height: 480px;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
 }
-/* 로그인창 왼쪽 이미지 */
-.login_img{
+
+/* 왼쪽 area */
+.si_img{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,17 +27,18 @@
     width: 168px; height: 432px;
     background-color: rgb(241, 243, 245);
 }
-.login_img img{
+.si_img img{
     margin: 0 auto;
     width: 170px; height: 170px;
 }
-.login_img span{
+.si_img span{
     color: rgb(73, 80, 87);
     font-weight: 700;
     font-size: 28px;
 }
-/* 로그인창 오른쪽input */
-.login_block{
+
+/* 오른쪽 area */
+.si_block{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,32 +46,36 @@
     padding: 24px;
     width: 342px; height: 432px;
 }
-.login_close i{
+/* 종료버튼 */
+.si_close i{
     display: flex;
     justify-content: flex-end;
     width: 100%; height: 24px;
     margin-bottom: 36px;
     font-size: 20px;
     color: rgb(134, 142, 150);
-    cursor: pointer;}
+    cursor: pointer;
+}
 
 /* 로그인 부분 */
-.login_signin{
+.si_input{
     width: 100%; height: 100%;
 }
-.login_signin h2{
+.si_input h2{
     font-size: 22px;
     color: #343a40;
 }
-.login_signin h4{
+.si_input h4{
     font-size: 16px;
     height: 24px;
     color: rgb(134, 142, 150);
     margin: 16px 0;
 }
-.login_form{
+.si_form{
     display: flex;
 }
+
+/* 로그인 input */
 .email_ip{
     width: 246px; height: 48px;
     box-sizing: border-box;
@@ -86,7 +91,8 @@
 .email_ip::placeholder{
     color: rgb(197, 197, 197);
 }
-.login_button{
+/* 로그인 버튼 */
+.si_button{
     font-size: 16px;
     border: none;
     color: white;
@@ -96,45 +102,48 @@
     cursor: pointer;
     font-weight: 700;
 }
-.login_button:hover{
+.si_button:hover{
     background-color: rgb(72, 208, 167);
 }
-/* API 네이버 구글 미정 */
-.login_API {
+
+/* 소셜 로그인 */
+.social_login {
     height: 96px;
     margin-top: 40px;
 }
-.APIs{
+.social_btns{
     margin-top: 24px;
     display: flex;
     justify-content: space-around;
 }
-.API{
+/* api의 로그인 button */
+.btn{
     display: flex;
     align-items: center;
     height: 48px;
     cursor: pointer;
 }
-.API i{
+/* api 로그인의 이미지 */
+.btn i{
     font-size: 47px;
 }
 
 /* 회원가입 부분 */
-.login_question{
+.si_su_info {
+    align-self: flex-end;
+}
+.su_question{
     font-size: 16px;
     margin-right: 4px;
 }
-.login_signup {
-    align-self: flex-end;
-}
-.signup_link{
+.su_link{
     font-weight: 700;
     cursor: pointer;
 }
-.signup_link a{
+.su_link a{
     font-size: 16px;
     color: rgb(18, 184, 134);
 }
-.signup_link a:hover{
+.su_link a:hover{
     text-decoration: underline;
 }
