@@ -77,6 +77,11 @@
     border: 1px solid rgb(222, 226, 230);
     padding: 16px;
     font-size: 16px;
+    border-radius: 2px;
+}
+.email_ip:focus{
+    border: 2px solid black;
+    border-radius: 2px;
 }
 .email_ip::placeholder{
     color: rgb(197, 197, 197);
@@ -87,11 +92,11 @@
     color: white;
     background-color: rgb(18, 184, 134);
     width: 96px; height: 48px;
-    border-radius: 1px;
+    border-radius: 2px;
     cursor: pointer;
     font-weight: 700;
 }
-.login_form :hover{
+.login_button:hover{
     background-color: rgb(72, 208, 167);
 }
 /* API 네이버 구글 미정 */
