@@ -15,15 +15,20 @@
     width: 100%; height: 100%;
     margin-top: 48px;
 }
-
-/* 인풋 이름 입력 */
+/* 공동 작업 */
 .input_block{
     width: 100%; height: 113px;
 }
+
 .signup_msg{
     font-weight: 700;
     font-size: 20px; margin-bottom: 16px;
 }
+
+.input_focus:focus{
+    color: rgb(32, 201, 151);
+}
+/* input 이름 입력 */
 .input_name_box{
     border: none;
     border-bottom: 1px solid #444;
@@ -39,8 +44,9 @@
     color: rgb(197, 197, 197);
 }
 
-/* 인풋 이메일 입력 */
+/* input 이메일 입력 */
 .input_email_box{
+    display: flex;
     border: none;
     border-bottom: 1px solid #444;
     width: 350px; height: 47px;
@@ -48,14 +54,18 @@
 .signup_email{
     border: none;
     padding: 1px 2px;
-    width: 350px; height: 36px;
+    width: 325px; height: 36px;
     font-size: 25px;
 }
 .signup_email::placeholder {
     color: rgb(197, 197, 197);
 }
+.input_email_box i {
+    color: rgb(165, 165, 165);
+    font-size: 20px;
+}
 
-/* 인풋 아이디 입력 */
+/* input 아이디 입력 */
 .input_id_box{
     border: none;
     border-bottom: 1px solid #444;
@@ -71,7 +81,7 @@
     color: rgb(197, 197, 197);
 }
 
-/* 인풋  소개 입력 */
+/* input  소개 입력 */
 .input_introduction_box{
     border: none;
     border-bottom: 1px solid #444;
@@ -87,19 +97,34 @@
     color: rgb(197, 197, 197);
 }
 /* 취소 다음 버튼 */
+.signup_button{
+    margin-top: 100px;
+    display: flex;
+}
 .signup_button button{
     font-size: 24px;
     width: 112px; height: 48px;
     border-radius: 24px;
+    cursor: pointer;
 }
 
 .sign_cancel button{
     color: #444;
+    font-weight: 700;
     background-color: rgb(233, 236, 239);
+}
+.sign_cancel button:hover{
+    background-color: rgb(241, 244, 247)
 }
 
 .sign_next button{
     color: white;
+    font-weight: 700;
+    margin-left: 16px;
     background-color: rgb(18, 184, 134);
+}
+.sign_next button:hover{
+    background-color: rgb(109, 216, 182);
+
 }
 
