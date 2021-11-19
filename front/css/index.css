@@ -3,24 +3,28 @@ body{
     /* background-color: lightpink; */
 }
 
-.hd_wrap{
-    margin-top: 40px;
-    height: 48px;
-}
-
-.index_hd_wrap{
+.hd_index_wrap{
+    margin: 0 auto;
+    margin-top: 24px;
+    width: 1376px;
+    height: 64px;
     display: flex;
     justify-content: space-between;
+    height: 48px;
+    align-items: center;
+}
+
+.index_hd{
+    width: 320px; height: 100%;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .nav_wrap{
-    width: 320px;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    /* position: relative; */
 }
 
 .nav_wrap a{
@@ -31,9 +35,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.nav_recent{
     position: relative;
 }
 
@@ -51,6 +52,7 @@ body{
     position: absolute;
     bottom: 0px;
     left: -100%;
+    /* left: 0%;  최신으로 넘어갈 때*/
     background-color: #000;
 }
 
@@ -72,29 +74,13 @@ body{
     font-size: 13px;
 }
 
-.plus_btn{
-    width: 24px; height: 24px;
-    text-align: center;
-    line-height: 24px;
-}
-
-.plus_btn i{
-    font-size: 15px;
-    color: #000;
-}
-
-.boxes_wrap{
-    display: flex;
-    position: relative;
-}
-
 .times_select_box{
     width: 192px;
-    position: absolute;
-    left: 177px;
+    position: relative;
+    top: 5%; left: 41%;
+    align-self: center;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
-
 }
 
 .times_select_box li{
@@ -103,10 +89,73 @@ body{
     border-bottom: 2px solid rgb(248, 249, 250);
 }
 
+.times_select_box a{
+    font-size: 14px;
+}
+
 .times_select_box li:last-child{
     border-bottom: none;
 }
 
 .times_select_box li:hover{
     background-color: rgb(248, 249, 250);
+}
+
+.plus_btn{
+    width: 24px; height: 24px;
+    line-height: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.plus_btn a{
+    width: 100%;
+    line-height: 25px;
+    text-align: center;
+}
+
+.plus_btn i{
+    font-size: 15px;
+    color: #a1a8ae;
+}
+
+.plus_nav_box{
+    position: relative;
+    top: 50%; right: 700%;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+}
+
+.plus_nav_box li{
+    padding: 12px 16px;
+    width: 160px;
+    height: 19px;
+    text-align: left;
+    border-bottom: 2px solid rgb(248, 249, 250);
+    font-size: 14px;
+}
+
+.plus_nav_box li:last-child{
+    padding: 16px;
+    height: 30px;
+}
+
+.plus_nav_box a{
+    font-size: 14px;
+}
+
+.plus_nav_box li:hover{
+    background-color: rgb(248, 249, 250);
+}
+
+.plus_nav_contact{
+    font-size: 11px;
+    border-bottom: none;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.plus_nav_contact strong{
+    font-size: 13px;
 }

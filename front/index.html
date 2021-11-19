@@ -11,40 +11,51 @@
 </head>
 <body>
     <header>
-            <div class="hd_wrap index_hd_wrap">
+        <div class="fixed_header">
+            <div class="hd_wrap">
+                <div class="hd_logo"><a href="#"><span class="hd_logo_txt">velog</span></a></div>
+                <div class="hd_btns">
+                    <button class="search_btn"><i class="fas fa-search search_icon"></i></button>
+                    <button class="login_btn" type="button">로그인</button>
+            </div>
+        </div>
+        <div class="hd_index_wrap">
+            <div class="index_hd">
                 <div class="nav_wrap">
                     <a href="#" class="nav_trending"><i class="fas fa-chart-line"></i> 트렌딩</a>
                     <a href="#" class="nav_recent">
                         <i class="far fa-clock"></i> 최신
                         <div class="nav_underline"></div>
                     </a>                
-                    <div class="times_wrap">
-                        이번 주
-                        <i class="fas fa-caret-down"></i>
-                    </div>
                 </div>
-                <div class="plus_btn"><a href=""><i class="fas fa-ellipsis-v"></i></a></div>
+                <div class="times_wrap">
+                    이번 주
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="times_select_box" style="display: none;">
+                    <ul>
+                        <li class="today"><a href="#">오늘</a></li>
+                        <li class="this_week" ><a href="#">이번주</a></li>
+                        <li class="this_month"><a href="#">이번 달</a></li>
+                        <li class="this_year"><a href="#">올해</a></li>
+                    </ul>
+                </div>
             </div>
-        <div class="boxes_wrap">
-            <div class="times_select_box">
-                <ul>
-                    <li class="today">오늘</li>
-                    <li class="this_week" >이번 주</li>
-                    <li class="this_month">이번 달</li>
-                    <li class="this_year">올해</li>
-                </ul>
-            </div>
-            <div class="plus_nav_box">
-                <ul>
-                    <li>공지사항</li>
-                    <li>태그 목록</li>
-                    <li>서비스 정책</li>
-                    <li>Slack</li>
-                    <li>
-                        <span>문의</span><br>
-                        <span>contact@velog.io</span>
-                    </li>
-                </ul>
+            <div class="plus_btn">
+                <a href=""><i class="fas fa-ellipsis-v"></i></a>
+                <div class="plus_nav_box" style="display: none;">
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">태그 목록</a></li>
+                        <li><a href="#">서비스 정책</a></li>
+                        <li><a href="#">Slack</a></li>
+                        <li class="plus_nav_contact">
+                                <strong>문의</strong><br>
+                                coqja@gmail.com
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </header>
