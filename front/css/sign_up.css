@@ -1,107 +1,105 @@
 .container{
     width: 100%; height: 100%;
 }
-.signup_warp{
+.su_warp{
     letter-spacing: 2px;
     margin: 100px 380px 0;
 }
-.signup_warp h1 {
+/* welcome */
+.su_warp h1{
     font-size: 65px;
 }
-.welcome_msg{
+/* 텍스트 */
+.su_txt{
     font-size: 24px;
 }
-.input_information{
+.ip_group{
     width: 100%; height: 100%;
     margin-top: 48px;
 }
-/* 공동 작업 */
-.input_block{
+/* 회원가입 정보입력 */
+.ip_block{
     width: 100%; height: 113px;
 }
-
-.signup_info{
+.su_info{
     font-weight: 700;
     font-size: 20px; margin-bottom: 16px;
 }
 
-.input_focus:focus{
-    color: rgb(32, 201, 151);
-}
 /* input 이름 입력 */
-.input_name_box{
+.ip_name_box{
     border: none;
     border-bottom: 1px solid #444;
     width: 268px; height: 47px;
 }
-.signup_name{
+.su_name{
     border: none;
     padding: 1px 2px;
     width: 265px; height: 36px;
     font-size: 25px;
 }
-.signup_name::placeholder {
+.su_name::placeholder {
     color: rgb(197, 197, 197);
 }
 
 /* input 이메일 입력 */
-.input_email_box{
+.ip_email_box{
     display: flex;
     border: none;
     border-bottom: 1px solid #444;
     width: 350px; height: 47px;
 }
-.signup_email{
+.su_email{
     border: none;
     padding: 1px 2px;
     width: 325px; height: 36px;
     font-size: 25px;
 }
-.signup_email::placeholder {
+.su_email::placeholder {
     color: rgb(197, 197, 197);
 }
-.input_email_box i {
+.ip_email_box i {
     color: rgb(165, 165, 165);
     font-size: 20px;
 }
 
 /* input 아이디 입력 */
-.input_id_box{
+.ip_id_box{
     border: none;
     border-bottom: 1px solid #444;
     width: 230px; height: 47px;
 }
-.signup_id{
+.su_id{
     border: none;
     padding: 1px 2px;
     width: 270px; height: 36px;
     font-size: 25px;
 }
-.signup_id::placeholder {
+.su_id::placeholder {
     color: rgb(197, 197, 197);
 }
 
 /* input  소개 입력 */
-.input_introduction_box{
+.ip_comment_box{
     border: none;
     border-bottom: 1px solid #444;
     width: 400px; height: 47px;
 }
-.signup_introduction{
+.su_comment{
     border: none;
     padding: 1px 2px;
     width: 400px; height: 36px;
     font-size: 25px;
 }
-.signup_introduction::placeholder {
+.su_comment::placeholder {
     color: rgb(197, 197, 197);
 }
 /* 취소 다음 버튼 */
-.signup_button{
+.su_button{
     margin-top: 100px;
     display: flex;
 }
-.signup_button button{
+.su_button button{
     font-size: 24px;
     width: 112px; height: 48px;
     border-radius: 24px;
