@@ -1,14 +1,16 @@
 .container{
-    width: 100%; height: 100%;
+    height: 100%;
 }
 .su_warp{
+    width: 768px;
     letter-spacing: 2px;
-    margin: 100px 380px 0;
+    margin: 8em auto;
 }
 /* welcome */
 .su_warp h1{
     font-size: 65px;
 }
+
 /* 텍스트 */
 .su_txt{
     font-size: 24px;
@@ -17,6 +19,7 @@
     width: 100%; height: 100%;
     margin-top: 48px;
 }
+
 /* 회원가입 정보입력 */
 .ip_block{
     width: 100%; height: 113px;
@@ -29,7 +32,7 @@
 /* input 이름 입력 */
 .ip_name_box{
     border: none;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #8a8a8a;
     width: 268px; height: 47px;
 }
 .su_name{
@@ -46,7 +49,7 @@
 .ip_email_box{
     display: flex;
     border: none;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #8a8a8a;
     width: 350px; height: 47px;
 }
 .su_email{
@@ -55,6 +58,7 @@
     width: 325px; height: 36px;
     font-size: 25px;
 }
+
 .su_email::placeholder {
     color: rgb(197, 197, 197);
 }
@@ -66,7 +70,7 @@
 /* input 아이디 입력 */
 .ip_id_box{
     border: none;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #8a8a8a;
     width: 230px; height: 47px;
 }
 .su_id{
@@ -94,9 +98,26 @@
 .su_comment::placeholder {
     color: rgb(197, 197, 197);
 }
+
+/* 회원가입 submit */
+.su_group{
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+/* 에러 메세지 */
+.msg{
+    margin-bottom: 1.5em;
+}
+.errormsg{
+    font-size: 18px;
+    color: #ff6b6b;
+    font-weight: 600;
+}
 /* 취소 다음 버튼 */
 .su_button{
-    margin-top: 100px;
     display: flex;
 }
 .su_button button{
@@ -105,24 +126,22 @@
     border-radius: 24px;
     cursor: pointer;
 }
-
 .sign_cancel button{
     color: #444;
     font-weight: 700;
-    background-color: rgb(233, 236, 239);
+    background-color: #e9ecef;
 }
 .sign_cancel button:hover{
-    background-color: rgb(241, 244, 247)
+    background-color: rgb(241, 243, 245);
 }
-
 .sign_next button{
     color: white;
     font-weight: 700;
     margin-left: 16px;
-    background-color: rgb(18, 184, 134);
+    background-color: #12b886;
 }
 .sign_next button:hover{
-    background-color: rgb(109, 216, 182);
+    background-color: rgb(32, 201, 151);
 
 }
 
