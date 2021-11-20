@@ -1,5 +1,7 @@
 .si_container{
-    width: 100%; height: 745px;
+    width: 100%; height: 827px;
+    position: fixed;
+    top: 0px; left: 0px;
 }
 .si_warp{
     height: 100%;
