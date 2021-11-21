@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>velog (벨로그) - velog</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/notice.css">
+</head>
+<body>
+    <div class="notice_container">
+        <header>
+            <div class="fixed_header">
+                <div class="hd_wrap">
+                    <div class="hd_logo">
+                        <a href="#">
+                            <span class="hd_logo_txt">velog.log</span>
+                        </a>
+                    </div>
+                    <div class="hd_btns">
+                        <button class="search_btn"><i class="fas fa-search search_icon"></i></button>
+                        <button class="login_btn" type="button">로그인</button>
+                </div>
+            </div>
+        </header>
+        <div class="notice_body">
+                            <!-- 벨로그 로고 및 소개글 -->
+            <div class="velog_introduction_box"><!--변수명 수정 필요 -->
+                <div class="velog_introduction"><!--변수명 수정 필요 -->
+                    <img src="img/green favicon.png" class="velog_logo" alt="">
+                    <div class="velog_info_box">
+                        <div class="velog_name">
+                            <a href="">벨로그</a>
+                        </div>
+                        <div class="velog_info">
+                            벨로그 공식 계정입니다. 
+                            공지사항 및 벨로그 프로젝트 관련 포스트를 올립니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="notice_info_line"></div>
+            </div>
+                <!-- 글,시리즈,소개 선택 메뉴 (선택시 불들어오는 js구현 필요)-->
+            <div class="notice_menu">
+                <a href="">글</a>
+                <a href="">시리즈</a>
+                <a href="">소개</a>
+            </div>
+            <div class="notice_main">
+                <!-- 공지사항 검색기능 (input focus시 불들어오는 js구현 필요) -->
+                <div class="notice_search_box">
+                    <div class="notice_search">
+                        <i class="fas fa-search search_icon"></i>
+                        <input type="text" class="notice_ip" placeholder="검색어를 입력하세요">
+                    </div>
+                </div>
+                <div class="notice">
+                    <!-- 공지 이미지 태그 (이미지 미첨부시에 js구현필요)-->
+                    <img src="img/Group 2.png" alt="">
+                    <!-- 공지 제목 태그 -->
+                    <h2>독자들에게 후원을 받아보세요: ThankYouFor___</h2>
+                    <!-- 공지 내용 태그 -->
+                    <p>
+                        해외의 Buy Me a Coffee와 유사한 서비스 ThankYouFor___를 소개드립니다. 
+                        이 서비스는 카카오페이로 결제가 가능하며, 
+                        서비스 수수료가 0% 입니다. (참고: 이 서비스는 벨로그와 관계가 없습니다.)
+                    </p>
+                    <!-- 공지 키워드 태그 (키워드 미등록시에 js구현필요)-->
+                    <div class="notice_keyword">
+                        <a href="">도레미</a>
+                        <a href="">파솔라시</a>
+                        <a href="">도레이파솔</a>
+                        <a href="">라시도레미파</a>
+                        <a href="">솔라시도레미파</a>
+                        <a href="">솔라시도레미파솔</a>
+                        <a href="">라시도레미파솔라시</a>
+                        <a href="">도레미파솔라시도레미</a>
+                    </div>
+                    <!-- 공지 날짜 및 댓글수 태그 -->
+                    <div class="notice_subinfo">
+                        <span>1996년 00월 00일</span>
+                        <div>·</div>
+                        <span>99999개의 댓글</span>
+                    </div>
+                </div>
+                <!-- -------------------------test 반복줄------------------------------------------- --> 
+                <div class="notice notice_line"> <!--두번째 공지부터 상단에 라인을 주기위해 notice_line class준거입니다-->
+                    <!-- <img src="img/Group 2.png" alt=""> -->
+                    <h2>부트캠프 회고 포스트 관련 안내</h2>
+                    <p>
+                        부트캠프 회고 관련 포스트가 벨로그의 트렌딩에 너무 자주 올라와서 많은 
+                        사용자 여러분들께서 불만을 표하셨는데요 이에 대한 벨로그의 입장 / 
+                        방침을 안내드립니다.
+                    </p>
+                    <div class="notice_keyword">
+                        <a href="">도레미</a>
+                        <a href="">파솔라시</a>
+                        <a href="">도레이파솔</a>
+                        <a href="">라시도레미파</a>
+                        <a href="">솔라시도레미파</a>
+                        <a href="">솔라시도레미파솔</a>
+                        <a href="">라시도레미파솔라시</a>
+                        <a href="">도레미파솔라시도레미</a>
+                    </div>
+                    <div class="notice_subinfo">
+                        <span>1989년 00월 00일</span>
+                        <div>·</div>
+                        <span>99999개의 댓글</span>
+                    </div>
+                </div>
+                <!-- ----------------------------test 반복줄---------------------------------------- -->
+                <div class="notice notice_line">
+                    <img src="img/Frame 1.png" alt="">
+                    <h2>조회수 통계 기능 도입 안내</h2>
+                    <p>
+                        많은 분들이 기다리셨던, 조회수 통계 기능이 업데이트 드디어 되었습니다.
+                        조회수 통계는 글쓴이 본인만 확인 할 수 있으며, 게시물의 상단에 수정 및 
+                        삭제가 보여지는 부분의 좌측에 통계라는 링크가 새로 생겼습니다.기다려주셔서 
+                        모두 모두 고마워요!다음 기능은...뭘까요~?
+                    </p>
+                    <div class="notice_keyword">
+                        <a href="">도레미</a>
+                        <a href="">파솔라시</a>
+                        <a href="">도레이파솔</a>
+                        <a href="">라시도레미파</a>
+                        <a href="">솔라시도레미파</a>
+                        <a href="">솔라시도레미파솔</a>
+                        <a href="">라시도레미파솔라시</a>
+                        <a href="">도레미파솔라시도레미</a>
+                    </div>
+                    <div class="notice_subinfo">
+                        <span>1997년 00월 00일</span>
+                        <div>·</div>
+                        <span>99999개의 댓글</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="js/notcie.js">
+    <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
+</body>
+</html>
