@@ -49,7 +49,7 @@
 @keyframes close_si {
     0%{
         opacity: 1;
-        transform: translateY(0px) scale(0.75);
+        transform: translateY(400px) scale(1);
     }
     75%{
         opacity: 1;
