@@ -6,7 +6,7 @@
 }
 
 .si_warp{
-    z-index: inherit;
+    z-index: 9;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .active{
-    animation: 0.4s ease-in-out 0s 1 open_si ;
+    animation: open_si 0.4s ease-in-out;
 }
 
 @keyframes open_si{
@@ -43,21 +43,21 @@
 }
 
 .inactive{
-    animation: 0.4s ease-in-out 0s 1 close_si ;
+    animation: close_si 0.4s ease-in-out ;
 }
 
 @keyframes close_si {
     0%{
         opacity: 1;
-        transform: translateY(400px) scale(1);
+        transform: translateY(0px) scale(1);
     }
-    75%{
+    25%{
         opacity: 1;
-        transform: translateY(-16px) scale(1);
+        transform: translateY(100px) scale(0.75);
     }
     100%{
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(400px) scale(0);
     }
 }
 
