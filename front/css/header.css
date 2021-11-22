@@ -35,10 +35,6 @@ header{
     line-height: 20px;
     letter-spacing: 1px;
 }
-.search_btn > i{
-    color: black;
-}
-
 .hd_btns{
     margin-right: 0px;
     display: flex;
@@ -56,9 +52,6 @@ header{
     border-radius: 50%;
     cursor: pointer;
 }
-.search_btn > fas fa-search search_icon{
-    color: #000;
-}
 
 .search_btn:hover{
     background-color: rgba(229, 228, 228, 0.465);
@@ -66,6 +59,7 @@ header{
 
 .search_icon{
     font-size: 16px;
+    color: #000;
 }
 
 .header_btn{
@@ -81,7 +75,6 @@ header{
     border: 1px solid rgb(52, 58, 64);
     border-radius: 16px;
     background-color: #343a40;
-    transition: all 0.125s ease-in 0s;
     cursor: pointer;    
 }
 
@@ -93,6 +86,7 @@ header{
     margin-right: 1em;
     color: rgb(52, 58, 64);
     background-color: #fff;
+    transition: all 0.125s ease-in 0s;
 }
 
 .go_posting_btn:hover{
@@ -139,5 +133,23 @@ header{
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
 }
 
+@media  screen and (max-width:1320px) {
+    header{
+        height: 100%;
+        font-size: 2em;
+        color: #343a40;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    .hd_wrap{
+        width: 1320px;
+        height: 64px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
 

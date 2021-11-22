@@ -37,6 +37,7 @@ function email_check(email_check) {
 
 // 종료버튼
 si_close.onclick = () => {
-    si_container.className = "si_container close_si"
+    si_container.className = "si_container inactive"
     si_container.style.display = "none";
+    // si_container.className = "si_container";
 }
