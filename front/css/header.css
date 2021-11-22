@@ -82,7 +82,7 @@ header{
     border-radius: 16px;
     background-color: #343a40;
     transition: all 0.125s ease-in 0s;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .login_btn:hover{
