@@ -30,3 +30,7 @@ introduction.onclick = () => {
     introduction.style.borderBottom = '2px solid rgb(32, 201, 151)';
 }
 
+notice_ip.focus = () => {
+    
+}
+
