@@ -1,22 +1,64 @@
 .si_container{
-    width: 100%; height: 827px;
+    width: 100%; height: 100%;
+    z-index: 8;
     position: fixed;
     top: 0px; left: 0px;
 }
+
 .si_warp{
+    z-index: inherit;
     height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: rgba(233, 233, 232, 0.5);
+    background-color: rgba(233, 233, 232, 0.8);
 }
+
 /* 로그인창 */
 .si_box{
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
-    width: 606px; height: 480px;
+    width: 606px; height: auto;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+}
+
+.active{
+    animation: 0.4s ease-in-out 0s 1 open_si ;
+}
+
+@keyframes open_si{
+    0%{
+        opacity: 0;
+        transform: translateY(400px) scale(0.75);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(-16px) scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.inactive{
+    animation: 0.4s ease-in-out 0s 1 close_si ;
+}
+
+@keyframes close_si {
+    0%{
+        opacity: 1;
+        transform: translateY(400px) scale(1);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(-16px) scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
 }
 
 /* 왼쪽 area */
@@ -49,13 +91,16 @@
     width: 342px; height: 432px;
 }
 /* 종료버튼 */
-.si_close i{
-    display: flex;
-    justify-content: flex-end;
+.si_close{
     width: 100%; height: 24px;
     margin-bottom: 36px;
-    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
     color: rgb(134, 142, 150);
+}
+
+.si_close i{
+    font-size: 1.5em;
     cursor: pointer;
 }
 
@@ -149,3 +194,4 @@
 .su_link a:hover{
     text-decoration: underline;
 }
+
