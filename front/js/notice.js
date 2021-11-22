@@ -1,6 +1,7 @@
 const writing = document.querySelector('.menu_writing');
 const series = document.querySelector('.menu_series');
 const introduction = document.querySelector('.menu_introduction');
+const notice_ip = document.querySelector('.notice_ip');
 
 writing.onclick = () => {
     writing.style.color = 'rgb(32, 201, 151)';
@@ -28,3 +29,8 @@ introduction.onclick = () => {
     introduction.style.color = 'rgb(32, 201, 151)';    
     introduction.style.borderBottom = '2px solid rgb(32, 201, 151)';
 }
+
+notice_ip.focus = () => {
+    
+}
+

@@ -19,14 +19,14 @@
     text-align: center;
     font-size: 18px;
     padding: 0.6em 2em;
-    color: rgb(32, 201, 151);
 }
 .terms{
+    color: rgb(32, 201, 151);
     border-bottom: 2px solid rgb(32, 201, 151);
 }
 .privacy{
-    border-bottom: none;
     color: #acb1b9;
+    border-bottom: none;
 }
 
 /* terms */
