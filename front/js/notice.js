@@ -43,3 +43,24 @@ notice_ip.onblur = () => {
     
 }
 
+const tag_li = document.querySelectorAll('li');
+
+tag_li.onclick = () => {
+    
+}
+
+
+const a = document.querySelectorAll('.a');
+const items =document.querySelector('.items');
+const notice_control =document.querySelectorAll()
+  items.addEventListener('click', (e) => {
+     
+  for(el of a){
+    while(el.classList.contains('color')){
+        el.classList.remove('color');
+    }
+   }
+   if(e.target.tagName == 'A'){
+        e.target.classList.add('color');
+    }
+ });
