@@ -15,7 +15,7 @@
 }
 .ch_menu a{
     display: block;
-    width: 140px;
+    width: 160px;
     text-align: center;
     font-size: 18px;
     padding: 0.6em 2em;
@@ -26,6 +26,7 @@
 }
 .privacy{
     border-bottom: none;
+    color: #acb1b9;
 }
 
 /* terms */

@@ -6,6 +6,7 @@
     width: 768px; height: 100%;
     margin: 0 auto;
 }
+
 /* 헤더 logo link */
 .hd_logo_img{
     width: 0.1px; height: 0.1px;
@@ -19,12 +20,14 @@
 .velog_introduction{
     display: flex;
 }
+
 /* 로고 */
 .velog_logo{
     width: 128px; height: 128px;
     border-radius: 50%;
     cursor: pointer;
 }
+
 /* 소개글 */
 .velog_info_box{
     display: flex;
@@ -61,17 +64,16 @@
         width: 128px;
         font-size: 1.8em;
         font-weight: 700;
-        color: #495057;
+        color: #000000;
     }
     .menu_writing{
+        color: rgb(32, 201, 151);
         border-bottom: 2px solid rgb(32, 201, 151);
     }
-    .menu_series{
-        
+    /* .menu_series{
     }
     .menu_introduction{
-        
-    }
+    } */
 /* 공지사항 메인 */
 .notice_main{
     width: 100%; height: 100%;
