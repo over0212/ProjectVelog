@@ -29,8 +29,17 @@ introduction.onclick = () => {
     introduction.style.color = 'rgb(32, 201, 151)';    
     introduction.style.borderBottom = '2px solid rgb(32, 201, 151)';
 }
+const notice_search = document.querySelector('.notice_search');
+const search_icon = document.querySelectorAll('.search_icon');
 
-notice_ip.focus = () => {
+notice_ip.onfocus = () => {
+    notice_search.style.border = '1px solid #000'
+    search_icon[1].style.color = '#000'
+    
+}
+notice_ip.onblur = () => {
+    notice_search.style.border = '1px solid rgb(173, 181, 189)';
+    search_icon[1].style.color = 'rgb(173, 181, 189)'
     
 }
 
