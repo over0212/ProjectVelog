@@ -7,7 +7,6 @@ const abc = document.querySelector('.abc');
 search.onfocus = () =>{
     main_in.style.border = '1px solid #000';
     fa_search[1].style.color = 'black';
-    search.focus();
 }
 
 search.onblur = () => {

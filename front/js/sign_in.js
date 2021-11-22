@@ -10,33 +10,39 @@ si_button.onkeypress = () => {
     }
 }
 
-
 si_button.onclick = () => {
-    if (email_ip.value.length != 0) {
-        email_check();
-    } else {
-        alert('이메일을 입력해주세요!');
-        email_ip.focus();
-    }
-}
-
-//이메일 정규식 체크
-function email_check(email_check) {
-    var email_txt = document.getElementsByClassName('email_ip').value;
-    var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-
-    if (regEmail.test(email_txt)) {
-        alert('이메일입니다.');
-        return true;
-    } else{
-        // alert('잘못됨');
-        // return false;
-    }
-
+     onsubmit();
 }
 
 // 종료버튼
 si_close.onclick = () => {
     si_container.className = "si_container close_si"
     si_container.style.display = "none";
+}
+
+function onsubmit(){
+    if(email_ip.value.length == 0){
+        alert('이메일을 입력하세요');
+        email_ip.focus();
+       
+    } else {
+        let flag = email_check(email_ip.value);
+        if(flag == true){
+            const si_form = document.querySelector('.si_form');
+            si_form.submit();
+        } else{
+            alert('잘못된 이메일 형식입니다.');
+            email_ip.onfocus();
+        }
+    }
+}
+
+//이메일 정규식 체크
+function email_check(email_ip) {
+    var check_email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    if(check_email.test(email_ip)) {
+        return true;
+    } else{
+        return false;
+    }
 }
