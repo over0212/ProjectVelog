@@ -3,6 +3,8 @@ const trend = document.querySelector('.nav_trend');
 const recent = document.querySelector('.nav_recent');
 const underbar = document.querySelector('.nav_underline');
 
-// trend.onclick() = () => {
-//     underbar.style.
-// }
+recent.onclick() = () => {
+    recent.style.color = "rgb(52, 58, 64)";
+    trend.style.color = "#a1a8ae"
+    underbar.style.transform = "translateX(0%) ease-in 0.4s";
+}
