@@ -1,5 +1,7 @@
 const email_ip = document.querySelector('.email_ip');
 const si_button = document.querySelector('.si_button');
+const si_close = document.querySelector('.si_close i');
+const si_container = document.querySelector('.si_container');
 
 si_button.onkeypress = () => {
     if (window.event.keyCode == 13) {
@@ -14,6 +16,7 @@ si_button.onclick = () => {
         email_check();
     } else {
         alert('이메일을 입력해주세요!');
+        email_ip.focus();
     }
 }
 
@@ -30,4 +33,10 @@ function email_check(email_check) {
         // return false;
     }
 
+}
+
+// 종료버튼
+si_close.onclick = () => {
+    si_container.className = "si_container close_si"
+    si_container.style.display = "none";
 }
