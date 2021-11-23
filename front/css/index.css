@@ -40,7 +40,16 @@ body{
     align-items: center;
     position: relative;
     font-size: 18px;
-    /* font-weight: 600;  클릭되면 600 */
+}
+
+.nav_trend{
+    color: rgb(52, 58, 64);
+    font-weight: bold;
+}
+
+.nav_recent{
+    color: #a1a8ae;
+    font-weight: 500;
 }
 
 .nav_trending img{
@@ -53,17 +62,37 @@ body{
     font-size: 20px;
 }
 
-.nav_recent{
-    color: #a1a8ae;
-    /* font-weight: 400; */
-}
-
 .nav_underline{
     width: 100%; height: 2px;
     position: absolute;
-    bottom: 0px;
-    transition: translateX(-100%) ease-in 0.4s;
+    bottom: 0px; left: -100%;
     background-color: #000;
+}
+
+.move_left{
+    animation: move_left ease-in 4s;
+}
+
+@keyframes move_left {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.move_right{
+    animation: move_right ease-in 4s;
+}
+
+@keyframes move_right {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
 }
 
 .times_wrap{
@@ -99,13 +128,15 @@ body{
 }
 
 .times_select_box{
+    display: none;
     position: relative;
     top: 5%; left: 41%;
+    z-index: 4;
 }
 
 .nav_box li{
     padding: 12px 16px;
-    height: 19px;
+    width: 100%; height: 19px;
     border-bottom: 2px solid rgb(248, 249, 250);
 }
 
@@ -121,7 +152,7 @@ body{
     background-color: rgb(248, 249, 250);
 }
 
-.plus_btn{
+.plus_btn_wrap{
     width: 24px; height: 24px;
     line-height: 24px;
     display: flex;
@@ -129,22 +160,24 @@ body{
     position: relative;
 }
 
-.plus_btn a{
+.plus_btn{
     width: 100%;
     line-height: 25px;
     text-align: center;
 }
 
-.plus_btn i{
+.plus_btn_wrap i{
     font-size: 15px;
     color: #a1a8ae;
 }
 
 .plus_nav_box{
     position: relative;
-    top: 50%; right: 700%;
+    top: 15%; right: 700%;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+    display: none;
+    z-index: 6;
 }
 
 .plus_nav_box li{
