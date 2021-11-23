@@ -42,3 +42,24 @@ notice_ip.onblur = () => {
     search_icon[1].style.color = 'rgb(173, 181, 189)';
 }
 
+const tag_li = document.querySelectorAll('li');
+
+tag_li.onclick = () => {
+    
+}
+
+
+const a = document.querySelectorAll('.a');
+const items =document.querySelector('.items');
+const notice_control =document.querySelectorAll()
+  items.addEventListener('click', (e) => {
+     
+  for(el of a){
+    while(el.classList.contains('color')){
+        el.classList.remove('color');
+    }
+   }
+   if(e.target.tagName == 'A'){
+        e.target.classList.add('color');
+    }
+ });

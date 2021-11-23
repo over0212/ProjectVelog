@@ -48,7 +48,7 @@ const button = document.querySelectorAll('button');
 const sign_next = document.querySelector('.sign_next');
 
 sign_next.onclick = () => {
-    
+    // append child
     if(su_name.value.length == 0) {
         errormsg[0].style.display = 'block';
         errormsg[1].style.display = 'none';
@@ -59,16 +59,16 @@ sign_next.onclick = () => {
         errormsg[1].style.display = 'block';
         errormsg[2].style.display = 'none';
         errormsg[3].style.display = 'none';
+    }else if(su_id.value.length != 0 && id_check(su_id.value) == false){
+        errormsg[0].style.display = 'none';
+        errormsg[1].style.display = 'none';
+        errormsg[2].style.display = 'block';
+        errormsg[3].style.display = 'none';
     }else if(su_comment.value.length == 0){
         errormsg[0].style.display = 'none';
         errormsg[1].style.display = 'none';
         errormsg[2].style.display = 'none';
         errormsg[3].style.display = 'block';
-    }else if(id_check(su_id.value) == false){
-        errormsg[0].style.display = 'none';
-        errormsg[1].style.display = 'none';
-        errormsg[2].style.display = 'block';
-        errormsg[3].style.display = 'none';
     } else if(id_check(su_id.value) == true){
         errormsg[0].style.display = 'none';
         errormsg[1].style.display = 'none';
@@ -85,3 +85,27 @@ function id_check(su_id) {
         return false;
     }
 }
+
+function clearMsgNode(msg){
+	while(msg.hasChildNodes()){
+		msg.removeChild(msg.firstChild);
+	}
+	msg.style.display = 'none';
+}
+/* 아이디 리펙토링 참고 코딩
+function messageService(msg, errormsg, msgFlag){
+	const errorMsg = document.querySelectorAll('.errorMsg');
+	const successMsg = document.querySelector('.successMsg');
+	
+	clearMsgNode(errorMsg[indexNumber]);
+	clearMsgNode(successMsg);
+	
+	let msgTextNode = document.createTextNode(msgText);
+	
+	if(msgFlag == 0){
+		errorMsg[indexNumber].appendChild(msgTextNode);
+		errorMsg[indexNumber].style.display = 'block';
+	}else {
+		successMsg.appendChild(msgTextNode);
+		successMsg.style.display = 'block';
+	}*/
