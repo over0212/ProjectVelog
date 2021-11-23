@@ -14,6 +14,6 @@ spring:
       
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rc341mq9bm8s59xz?serverTimezone=Asia/Seoul
-    username: ty4gx9k71np10knq
-    password: dqssztw8h4db77ud
+    url: jdbc:mariadb://localhost:3306/springbootsecurity?serverTimezone=Asia/Seoul
+    username: root
+    password: toor
