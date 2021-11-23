@@ -32,7 +32,7 @@ function onsubmit(){
             si_form.submit();
         } else{
             alert('잘못된 이메일 형식입니다.');
-            email_ip.onfocus();
+            email_ip.focus();
         }
     }
 }
