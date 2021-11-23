@@ -115,6 +115,7 @@
     font-size: 18px;
     color: #ff6b6b;
     font-weight: 600;
+    display: none;
 }
 /* 취소 다음 버튼 */
 .su_button{

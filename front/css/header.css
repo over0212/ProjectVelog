@@ -75,7 +75,8 @@ header{
     border: 1px solid rgb(52, 58, 64);
     border-radius: 16px;
     background-color: #343a40;
-    cursor: pointer;    
+    transition: all 0.125s ease-in 0s;
+    cursor: pointer;
 }
 
 .login_btn:hover{
