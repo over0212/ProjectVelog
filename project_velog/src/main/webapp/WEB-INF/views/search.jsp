@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/sign_in.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <!-- header -->

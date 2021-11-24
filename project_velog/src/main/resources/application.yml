@@ -31,5 +31,5 @@ spring:
     username: ty4gx9k71np10knq
     password: dqssztw8h4db77ud
 
-#mybatis:
-#  mapper-locations:#  - /mappers/*xml
+mybatis:
+  mapper-locations:  - /mappers/*xml

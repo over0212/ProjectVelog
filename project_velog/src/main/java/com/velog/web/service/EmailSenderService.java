@@ -1,4 +1,4 @@
-package com.velog.service;
+package com.velog.web.service;
 
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class MailService {
+public class EmailSenderService {
 	
 	private final JavaMailSender javaMailSender;
 	

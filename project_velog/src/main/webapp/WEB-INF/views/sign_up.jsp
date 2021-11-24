@@ -9,6 +9,7 @@
     <title>회원가입 -velog</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/sign_up.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
