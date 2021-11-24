@@ -42,16 +42,43 @@ notice_ip.onblur = () => {
     search_icon[1].style.color = 'rgb(173, 181, 189)';
 }
 
+//  var items = document.getElementsByClassName('items');
+//  var atags = items[0].getElementsByTagName('a');
+
+// //  atags.onclick = () => {
+// //      atags.changeColor(atags);
+// //  }
+
+//  function changeColor(atags){
+//     for(let i = 0; i < atags.size(); i++){
+//         // atags[i].addEventListener('onclick', () => {
+//         //     atags[i].style.color = 'rgb(32, 201, 151)';
+            
+//         // });
+        
+//         // atags[i].addEventListener('onblur', () => {
+//         //     atags[i].style.color = '#000000';
+//         // });
+
+//         atags.value[i].onclick = () => {
+//             atags[i].style.color = 'rgb(32, 201, 151)';
+//         };
+//         // atags[i].onblur = () => {
+//         //     atags[i].style.color = '#000';
+//         // };
+        
+//     };
+//  }
+
 const tag_li = document.querySelectorAll('li');
 
 tag_li.onclick = () => {
     
 }
 
-
-const a = document.querySelectorAll('.a');
+const a = document.querySelectorAll('.items li a');
+console.log(a);
 const items =document.querySelector('.items');
-const notice_control =document.querySelectorAll()
   items.addEventListener('click', (e) => {
      
   for(el of a){
