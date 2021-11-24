@@ -7,14 +7,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/sign_in,css">
-    <link rel="stylesheet" href="css/trending_tag.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
+    <link rel="stylesheet" href="/css/trending_tag.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>태그 (인기순) -velog</title>
 </head>
 <body>
-    <jsp:include page="/include/main_header.jsp"></jsp:include>
+    <jsp:include page="include/main_header.jsp"></jsp:include>
     
     <div class="tl_container">
         <div class="tl_box">
@@ -49,6 +50,6 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/tag.js"></script>
+    <script src="/js/tag.js"></script>
 </body>
 </html>

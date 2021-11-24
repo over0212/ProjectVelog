@@ -7,21 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>privacy</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/sign_in.css">
-    <link rel="stylesheet" href="css/privacy.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
+    <link rel="stylesheet" href="/css/privacy.css">
 </head>
 <body>
-    <jsp:include page="/include/main_header.jsp"></jsp:include>    
+    <jsp:include page="include/main_header.jsp"></jsp:include>    
     <!-- 기본 틀 -->
     <main id="content">
 
         <!-- terms & privacy -->
         <section class="choose">
             <div class="ch_menu">
-                <a href="#" class="terms">이용약관</a>
-                <a href="#" class="privacy">개인정보취급방침</a>
+                <a href="terms" class="terms">이용약관</a>
+                <a href="privacy" class="privacy">개인정보취급방침</a>
             </div>
         </section>
         <!-- main txt -->
@@ -93,6 +93,6 @@
     </main>
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/policy.js"></script>
+    <script src="/js/policy.js"></script>
 </body>
 </html>

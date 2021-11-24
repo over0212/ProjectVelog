@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- header -->
-    <jsp:include page="/include/main_header.jsp"></jsp:include>
+    <jsp:include page="include/main_header.jsp"></jsp:include>
         
         <!-- 검색창 -->
     <main id="main">
@@ -27,6 +27,6 @@
     </main>
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/search.js"></script>
+    <script src="/js/search.js"></script>
 </body>
 </html>
