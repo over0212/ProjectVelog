@@ -70,23 +70,23 @@ notice_ip.onblur = () => {
 //     };
 //  }
 
-const tag_li = document.querySelectorAll('li');
-
 tag_li.onclick = () => {
     
 }
 
-const a = document.querySelectorAll('.items li a');
-console.log(a);
+const aTag = document.querySelectorAll('.items li a');
+
 const items =document.querySelector('.items');
   items.addEventListener('click', (e) => {
-     
-  for(el of a){
-    while(el.classList.contains('color')){
-        el.classList.remove('color');
+     console.log(e);
+  for(atags of a){
+    while(el.classList.contains('color--green')){
+        el.classList.remove('color--green');
     }
    }
    if(e.target.tagName == 'A'){
-        e.target.classList.add('color');
+        e.target.classList.add('color--green');
     }
  });
+
+ 

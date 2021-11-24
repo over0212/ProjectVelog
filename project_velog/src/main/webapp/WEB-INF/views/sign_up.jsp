@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 -velog</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/sign_up.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/sign_up.css">
 </head>
 
 <body>
@@ -64,6 +64,6 @@
     </div>
     
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-    <script src="js/sign_up.js"></script>
+    <script src="/js/sign_up.js"></script>
 </body>
 </html>
