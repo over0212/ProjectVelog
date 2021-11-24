@@ -4,14 +4,14 @@
     <div class="si_warp">
         <!-- 로그인 창 -->
         <div class="si_box">
-            <!-- 왼쪽 area -->
+       	    <!-- 왼쪽 area -->
             <div class="si_img">
                 <img src="img/login.svg" alt="login-img">
                 <span>환영합니다!</span>
             </div>
             <!-- 오른쪽 area -->
             <div class="si_block">
-                <!-- <div class="login_si_api"> -->
+                <div class="login_si_api">
                     <!-- 종료버튼 -->
                     <div class="si_close"><i class="fas fa-times"></i></div>
                     <!-- 로그인 부분 -->
@@ -35,13 +35,13 @@
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
+                </div>
                 <!-- 회원가입 요청 -->
                 <div class="si_su_info">
                     <span class="su_question">아직 회원이 아니신가요?</span>
                     <a href=""><span class="su_link">회원가입</span></a>
                 </div>
-            </div>
+        	</div>
         </div>
     </div>
 </div>
