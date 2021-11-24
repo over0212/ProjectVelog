@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/sign_in.css">
     <link rel="stylesheet" href="/css/terms.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <jsp:include page="include/main_header.jsp"></jsp:include>

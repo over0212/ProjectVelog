@@ -3,6 +3,14 @@ const si_button = document.querySelector('.si_button');
 const si_close = document.querySelector('.si_close i');
 const si_container = document.querySelector('.si_container');
 
+var userData = {
+	email = '',
+	username = '',
+	name = '',
+	password = '',
+	comment = ''
+}
+
 si_button.onkeypress = () => {
     if (window.event.keyCode == 13) {
         window.event.preventDefault();
@@ -11,7 +19,21 @@ si_button.onkeypress = () => {
 }
 
 si_button.onclick = () => {
-     onsubmit();
+	$.ajax({
+		type: "get",
+		url: "/confirm-email",
+		data: JSON.stringify(userData),
+		contentType: "application/json; UTF-8",
+		dataType: "text",
+		success: function(data){
+			userData = JSON.parse(data);
+			
+		    onsubmit();
+		},
+		error: function(){
+			alert('비동기 처리 오류!');
+		}
+	})
 }
 
 // 종료버튼
@@ -29,6 +51,7 @@ function onsubmit(){
         let flag = email_check(email_ip.value);
         if(flag == true){
             const si_form = document.querySelector('.si_form');
+            
             si_form.submit();
         } else{
             alert('잘못된 이메일 형식입니다.');

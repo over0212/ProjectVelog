@@ -3,8 +3,8 @@ package com.velog.mapper;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface UserDao {
+public interface ConfirmTokenRepository {
 	
-	
-	
+	public String getToken();
+
 }

@@ -1,245 +1,162 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-textarea{
-    border: none;
-}
 
 .write_wrap{
-    width:1933px; height: 930px;
     display: flex;
-    justify-content: left;
-}
-
-.write_left{
-    z-index: 1;
     width: 100%; height: 100%;
-    min-width: 0px;
-    flex: 1 1 0%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: rgb(0 0 0 / 2%) 0px 0px 8px;
-    background-color: #fff;
-    position: relative;
 }
-
+.write_left{
+    width: 100%; height: 100%;
+    /* padding-bottom: 64px; */
+}
 .write_ip{
-    padding: 2em 3em 2em 3em;
-    max-height: 489.5px;
+    box-sizing: border-box;
+    width: 100%; height: 15.8em;
+    padding: 32px 48px 0;
 }
-
 .write_title{
-    display: block;
-    padding: 0px;
-    width: 100%; height: auto;
-    line-height: 1.5;
-    font-size: 4em;
-    font-weight: bold;
-    color: rgb(33, 37, 41);
-    resize: none;
-    outline: none;
+    width: 100%; height: 66px;
+    font-size: 46px;
+    font-weight: 700;
     border: none;
-    box-sizing: inherit;
 }
-
 .write_title::placeholder{
-    color: #ccc;
+    color: #a2aab1;
 }
-
 .seper_line{
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 5em; height: 6px;
-    border-radius: 1px;
-    background-color: rgb(73, 80, 87);
+    width: 64px; height: 6px;
+    margin: 24px 0 16px;
+    background-color: #495057;
 }
-
 .write_tag{
     display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    position: relative;
-    font-size: 1.5em;
-    color: rgb(52, 58, 64);
 }
-
-.tags{
-    margin-right: 0.3em;
-    margin-bottom: 0.5em;
-    padding-left: 1em;
-    padding-right: 1rem;
-    display: inline-flex;
-    height: 2em;
-    text-align: center;
-    align-items: center;
-    border-radius: 1em;
-    font-size: 1em;
-    color: rgb(18, 184, 134);
-    background-color: rgb(241, 243, 245);
-    cursor: pointer;
-    box-sizing: inherit;
-}
-
 .ip_tags{
-    display: inline-flex;
-    min-width: 8em;
+    width: 9.92em; height: 1.6em;
+    padding: 1px 2px;
+    margin-bottom: 12px;
     border: none;
-    cursor: text;
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0.9em;
+    font-size: 20px;
 }
-
-.ip_tags::placeholder{
-    font-size: 1.2em;
-    color: rgb(169, 166, 166);
-    letter-spacing: 0.5px;
-}
-
-.tag_msg{
-    padding: 1rem;
-    position: absolute; top: 100%; left: 0px;
-    width: 20%; height: 120%;
-    line-height: 2;
-    font-size: 0.8em;
-    color: #fff;
-    background-color: #343A40;
-}  
-
+/* 데코바? */
 .deco_bar{
-    padding: 0em 3em;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 48px;
+    margin-bottom: 16px;
+    background-color: white;
 }
-
-.deco_btns > button{
-    padding: 0.2em;
-    width: 2.5em; height: 2.5em;
-    font-size: 1.5em;
-    font-family: 'Lora', serif;
-    color: rgb(134, 142, 150);
+.deco_bar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px; height: 48px;
+    font-size: 16px;
+    color: #868e96;
     cursor: pointer;
 }
-
-.deco_btns > button:hover{
-    color: rgb(33, 37, 41);
-    background-color: rgb(248, 249, 250);
+.deco_bar button:hover{
+    background-color: rgb(244, 249, 255);
 }
-
-.deco_btns span{
-    font-size: 0.7em;
-    display: inline-block;
-    margin-left: -4%;
+.deco_bar i{
+    font-size: 18px;
 }
-
-.deco_btns i{
-    font-size: 1em;
-}
-
 .seper{
-    width: 1px;
-    height: 1.2em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    background-color:rgb(206, 212, 218);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 8px;
 }
+.line{
+    width: 1px; height: 20px;
+    background-color: #cde4da;
 
+}
+/* 글적기 */
 .text_box{
-    padding: 0.5em 1em 0.5em 3em;
-    /* padding: 1em; */
-    height: 140%;
     box-sizing: border-box;
-    outline: none;
-    position: relative;
-    background-color: #fff;
-    background-color: rosybrown;
+    width: 100%; height: 35.5em;
+    padding: 4px 0 5px;
 }
-
 .textarea{
-    width: 100%; height: 100%;
+    box-sizing: border-box;
     border: none;
-    resize: none;
+    font-size: 18px;
+    padding: 0 48px;
+    width: 100%; height: 100%;
     outline: none;
-    font-size: 1.2em;
+    resize: none;
 }
-
 .textarea::placeholder{
-    font-size: 1.2em;  
     font-style: italic;
-    letter-spacing: 2px;
-    color: #ccc;
-    font-weight: 200;
+    color: #a4a9a7;
 }
-
+/* 푸터 */
 .write_footer{
-    padding-left: 1em;
-    padding-right: 1em;
-    width: 100%; height: 4em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%; height: 5.34em;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
-    background-color: rgba(255, 255, 255, 0.85);
 }
-
-.write_footer button{
-    height: 2.5em;
-    padding: 0.5em 1em;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    font-weight: bold;
-    font-size: 1.3em;
-}
-
 .exit_btn{
-    -webkit-box-pack: start;
-    align-items: center;
-    box-sizing: border-box;
-    justify-content: flex-start;
-}
-
-.exit_btn:hover{
-    background-color: #ccc;
-}
-
-.submit_btns{
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    align-items: center;
-    box-sizing: border-box;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 6.34em; height: 2.22em;
+    padding: 8px 16px;
+    font-size: 18px;
+    cursor: pointer;
 }
+.exit_btn:hover{
+    background-color: rgb(236, 236, 236);
 
-.submit_btns > button:hover{
-    opacity: 0.5;
 }
-
+.exit_btn i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+.submit_btns{
+    width: 19.67em; height: 3.33em;
+}
+.submit_btns button{
+    width: 112px; height: 40px;
+    font-size: 18px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
 .temp_submit{
-    color: rgb(73, 80, 87);
-    background-color: rgb(233, 236, 239);
+    color: #495057;
+    background-color: #e9ecef;
 }
-
+.temp_submit:hover{
+    background-color: #f2f4f7;
+    
+}
 .on_submit{
     color: #fff;
-    background-color: rgb(18, 184, 134);
+    background-color: #12b886;
+    margin-left: 9px;
 }
+.on_submit:hover{
+    background-color: #54c9a6;
 
-/* 오른쪽 미리보기 화면  */
+}
+/* 프리뷰 */
 .write_right{
-    width: 100%; height: 100%;
-    min-width: 0px;
-    flex: 1 1 0%;
-    /* background-color: rgb(251, 253, 252); */
-    background-color: lightpink;
+    padding-left: 2.5px;
+    width: 100%; height: 62em;
 }
-
 .preview{
-    width: 100%;height: 100%;
+    box-sizing: border-box;
+    padding: 48px;
+    width: 100%; height: 100%;
+    border: none;
+    background-color: rgb(249, 255, 249);
     resize: none;
     outline: none;
-    background-color: lightblue;
 }
 
