@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +11,23 @@
     <title>velog</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/sign_in.css">
 </head>
 <body>
-    <jsp:include page="/include/main_header.jsp"></jsp:include>
+    <jsp:include page="include/main_header.jsp"></jsp:include>
     <!-- index main -->
     <div class="index_wrap">
         <!-- index header -->
-        <jsp:include page="/include/index_header.jsp"></jsp:include>
+        <jsp:include page="include/index_header.jsp"></jsp:include>
     	<!-- content grid -->
         <form class="contents">
             <div class="contents_wrap">
-            	<c:forEach var="" items="">
+            	<%-- <c:forEach var="" items=""> --%>
 	                <div class="content_wrap">
 	                    <a href="#">
 	                        <div class="img_box">
-	                            <img src="img/test_content.png" alt="">
+	                            <img src="../img/test_content.png" alt="">
 	                        </div>
 	                    </a>
 	                    <div class="text_wrap">
@@ -51,14 +53,14 @@
 	                    </div>
 	                </div>
             	
-            	</c:forEach>
+            	<%-- </c:forEach> --%>
             </div>
         </form>
     </div>
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/header.js"></script>
-    <script src="js/sign_in.js"></script>
-    <script src="js/index.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/sign_in.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="si_container">
     <div class="si_warp">
         <!-- 로그인 창 -->
@@ -45,6 +44,3 @@
         </div>
     </div>
 </div>
-
-<script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-<script src="js/sign_in.js"></script>

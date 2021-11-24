@@ -7,3 +7,26 @@ login_btn.onclick = () => {
     si_container.className = "si_container active"
     si_container.style.transform = "translateY(0px)";
 }
+
+const tag_li = document.querySelectorAll('li');
+
+tag_li.onclick = () => {
+    
+}
+
+// const a = document.querySelectorAll('.items li a');
+// console.log(a);
+// const items =document.querySelector('.items');
+//   items.addEventListener('click', (e) => {
+     
+//   for(el of a){
+//     while(el.classList.contains('color')){
+//         el.classList.remove('color');
+//     }
+//    }
+//    if(e.target.tagName == 'A'){
+//         e.target.classList.add('color');
+//     }
+//  });
+
+ 
