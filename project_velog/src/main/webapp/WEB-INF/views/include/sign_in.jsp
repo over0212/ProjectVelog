@@ -5,7 +5,7 @@
         <div class="si_box">
        	    <!-- 왼쪽 area -->
             <div class="si_img">
-                <img src="img/login.svg" alt="login-img">
+                <img src="/img/login.svg" alt="login-img">
                 <span>환영합니다!</span>
             </div>
             <!-- 오른쪽 area -->
@@ -38,7 +38,7 @@
                 <!-- 회원가입 요청 -->
                 <div class="si_su_info">
                     <span class="su_question">아직 회원이 아니신가요?</span>
-                    <a href=""><span class="su_link">회원가입</span></a>
+                    <a href="#" class="su_link"><span >회원가입</span></a>
                 </div>
         	</div>
         </div>
