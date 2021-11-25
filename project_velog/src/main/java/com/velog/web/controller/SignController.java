@@ -14,16 +14,15 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class SignController {
 	
-	@GetMapping("/sign-in")
-	public String signIndex() {
+	@GetMapping("/confirm-email")
+	public String sendEmail() {
 		
-		return "index";
+		return "";
 	}
 	
-	@GetMapping("/confirm-email")
-	public String viewConfirmEmail(@Valid @RequestParam String token) {
-		
-		return "redirect:sign-in";
+	@GetMapping("/sign-up")
+	public String signUpIndex() {
+		return "sign_up";
 	}
 
 }
