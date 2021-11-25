@@ -1,18 +1,53 @@
+.writing_send_container button{
+    height: 3em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.writing_send_container button > i{
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 1em;
+}
+
+/* container */
 .writing_send_container{
+    width: 100%; height: 100%;
     display: flex;
     justify-content: center;
-    width: 100%; height: 100%;
     margin: 0 auto;
+    align-items: center;
+    position: fixed; left: 0px; top: 0px;
     background-color: #f8f9fa;
+    z-index: 15;
+    animation: 0.25s ease-in 0s 1 normal forwards running open_send;
 }
+
+@keyframes open_send {
+    0%{
+        transform: translateY(100%);}
+    100%{
+        transform: translateY(0%);}
+}
+
+/* box wrap */
 .main_body{
+    width: 768px; height: auto;
     display: flex;
-    width: 768px; height: 425px;
+    justify-content: center;
 }
-.upload_warp{
-    width: 29.3em;
+
+/* 왼쪽 - 포스트 미리보기 */
+.left_wrap{
+    width: 100%;
 }
-.main_body h3{
+.send_h3{
     font-size: 21px;
     margin-bottom: 8px;
     font-weight: 600;
@@ -30,30 +65,38 @@
 }
 .img i{
     color: #808080;
-    font-size: 100px;
+    font-size: 8em;
 }
 .upload_button{
-    box-sizing: border-box;
-    height: 32px;
-    margin-top: 16px;
-    color: #20c997;
-    padding: 4px 32px;
+    margin-top: 0.4em;
+    padding: 1em;
+    height: 2em;
     border-radius: 4px;
-    background-color: #fff;
-    font-size: 16px;
+    font-size: 1.2em;
     font-weight: 500;
+    color: #20c997;
+    box-sizing: border-box;
+    background-color: #fff;
+    cursor: pointer;
 }
 .input_box{
-    margin-top: 24px;
+    margin-top: 1.2em;
 }
-.input_box input{
-    box-sizing: border-box;
-    margin-top: 8px;
-    width: 100%; height: 9.85em;
+.post_title{
+    width: 100%; height: 2em;
+    font-size: 1.4em;
+}
+.input_box textarea{
     padding: 12px 16px;
+    margin-top: 0.2em;
+    width: 100%; height: 7em;
+    overflow: hidden;
     border: none;
+    resize: none;
+    outline: none;
     font-size: 16px;
     font-weight: 300;
+    box-sizing: border-box;
 }
 .text_length{
     width: 100%; height: 16px;
@@ -64,3 +107,94 @@
     justify-content: end;
     color: #868e96;
 }
+
+/* 중간 라인 */
+.seper_line{
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(233, 236, 239);
+}
+
+/* 오른쪽 */
+.right_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.settings_wrap{
+    width: 100%;
+    box-sizing: border-box;
+}
+.settings{
+    margin-top: 20px;
+}
+.settings:first-child{
+    margin-top: 0;
+}
+.settings button{
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px 0px;
+    background-color: #fff;
+}
+
+.public_btn_wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.public_btn_wrap > button{
+    width: 48%;
+    font-size: 1.3em;
+}
+.public_active{
+    color: #20c997;
+    border: 3px solid #20c997;
+}
+
+.user_url_box{
+    padding: 0.7em;
+    width: 100%; height: 3.5em;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px 0px;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.user_name{
+    color: rgb(171, 169, 169);
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+}
+.ip_url{
+    width: 100%;
+    border: none;
+    font-size: 1.3em;
+}
+
+.append_serise{
+    width: 100%;
+    color: #20c997;
+    font-size: 1.5em;
+}
+
+.submit_btns{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.submit_btns > button{
+    padding: 0 1em;
+    height: 2.5em;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    width: auto;
+}
+.cancle_btn{color: #fff; background-color: rgb(134, 142, 150);}
+.select_btn{color: #ccc; background-color: rgb(134, 142, 150);}
+.submit_btn{color: #fff; background-color: rgb(18, 184, 134);}
