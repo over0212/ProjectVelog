@@ -17,12 +17,12 @@
                     <div class="si_input">
                         <h2>로그인</h2>
                         <h4>이메일로 로그인</h4>
-                        <form action="" class="si_form">
+                        <div class="si_form">
                             <!-- 로그인 input -->
                             <input type="text" class="email_ip" name="email" placeholder="이메일을 입력하세요">
                             <!-- 로그인 버튼 -->
                             <button type ="button" class="si_button">로그인</button>
-                        </form>
+                        </div>
                         <!-- 소셜 로그인 -->
                         <div class="social_login">
                             <h4>소셜 계정으로 로그인</h4>

@@ -3,24 +3,15 @@ const si_button = document.querySelector('.si_button');
 const si_close = document.querySelector('.si_close i');
 const si_container = document.querySelector('.si_container');
 
-/*var userData = {
-	email = '',
-	username = '',
-	name = '',
-	password = '',
-	comment = ''
-}*/
-
 si_button.onkeypress = () => {
     if (window.event.keyCode == 13) {
         window.event.preventDefault();
-        onsubmit();
+        sendLink();
     }
 }
 
 si_button.onclick = () => {
-	
-	onsubmit();
+	sendLink();
 }
 
 // 종료버튼
@@ -29,24 +20,26 @@ si_close.onclick = () => {
     si_container.style.display = "none";
 }
 
-function onsubmit(){
+function sendLink(){
+	// 아무것도 입력이 안되었을 때
     if(email_ip.value.length == 0){
         alert('이메일을 입력하세요');
         email_ip.focus();
        
+       // 입력이 되었다면 링크를 이메일 정규식이 실행
     } else {
         let flag = email_check(email_ip.value);
+        // 정규식으로 인해 이메일 형식이 맞으면 비동기 실행
         if(flag == true){
            $.ajax({
 		type: "get",
-		url: "/confirm-email",
+		url: "/velog/confirm-email",
 		data: JSON.stringify(userData),
 		contentType: "application/json; UTF-8",
 		dataType: "text",
 		success: function(data){
 			userData = JSON.parse(data);
 			
-		    onsubmit();
 		},
 		error: function(){
 			alert('비동기 처리 오류!');
