@@ -18,8 +18,8 @@ public class UserService {
 	private final TokenService tokenService;
 	
 	public void confirmEmail(String token) {
-		ConfirmToken confirmToken = tokenService.getConfirmToken(token);
-		UserRepository userRepository = 
+//		ConfirmToken confirmToken = tokenService.getConfirmToken(token);
+//		UserRepository userRepository = 
 		
 	}
 
