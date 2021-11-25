@@ -17,7 +17,7 @@ public class SignController {
 	@GetMapping("/sign-in")
 	public String signIndex() {
 		
-		return "redirect:index";
+		return "index";
 	}
 	
 	@GetMapping("/confirm-email")
