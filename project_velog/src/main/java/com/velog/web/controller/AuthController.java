@@ -30,15 +30,6 @@ public class AuthController {
 	
 	private final ConfirmationTokenService confirmationTokenService;
 	
-	@GetMapping("auth/sign-in")
-	public String signin(@AuthenticationPrincipal PrincipalDetails principalDetails){
-		if(principalDetails != null) {
-			// 로그인 되었으면
-			return "redirect:/index";
-		}
-		return "login";
-	}
-	
 //	@ResponseBody
 //	@PostMapping("/auth/signup")
 //	public Object signup(@Valid SignUpDto signUpDto, BindingResult bindingResult) {
