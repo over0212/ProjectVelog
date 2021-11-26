@@ -12,8 +12,27 @@
 		where
 			email = #{email};
   	</select>
-  	
-  	
-  	
-
+  	<insert id="signup" parameterType="com.velog.web.model.dto.UserDto">
+  		insert into
+  			user_mst
+  		values(
+  			0,
+  			#{email},
+  			#{username},
+  			#{name},
+  			#{comment},
+  			#{password},
+  			#{provider},
+  			now(),
+  			now()
+  		)
+  	</insert>
+  	<select id="getUser" resultType="com.velog.web.model.dto.UserDto">
+  		select
+  			*
+  		from
+  			user_mst
+  		where
+  			username = #{username}
+  	</select>
   </mapper>

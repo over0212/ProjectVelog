@@ -28,9 +28,9 @@
                             <h4>소셜 계정으로 로그인</h4>
                             <div class="social_btns">
                                 <!-- api의 로그인 버튼 및 이미지 -->
-                                <div class="btn"><i class="fab fa-google"></i></div>
-                                <div class="btn"><i class="fab fa-google"></i></div>
-                                <div class="btn"><i class="fab fa-google"></i></div>
+                                <a href="/oauth2/authorization/github" class="btn github_btn"><img src="icon/github.png" alt=""></a>
+                                <a href="/oauth2/authorization/google" class="btn google_btn"><img src="icon/google.png" alt=""></a>
+                                <a href="/oauth2/authorization/naver" class="btn naver_btn"><img src="icon/naver.png" alt=""></a>
                             </div>
                         </div>
                     </div>

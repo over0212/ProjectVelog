@@ -1,5 +1,7 @@
 package com.velog.web.model.dto;
 
+import com.velog.domain.user.UserDto;
+
 import lombok.Builder;
 import lombok.Data;
 

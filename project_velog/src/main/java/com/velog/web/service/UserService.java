@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.velog.domain.ConfirmToken;
-import com.velog.mapper.UserRepository;
-import com.velog.web.model.dto.UserDto;
+import com.velog.domain.user.UserDto;
+import com.velog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.velog.web.model.dto;
+package com.velog.domain.user;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class UserDto {
-	
+	private int id;
 	private String email;
 	private String username;
 	private String name;

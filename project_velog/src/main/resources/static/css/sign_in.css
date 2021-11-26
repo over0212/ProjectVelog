@@ -161,19 +161,31 @@
 }
 .social_btns{
     margin-top: 24px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
 }
 /* api의 로그인 button */
 .btn{
+    width: 48px; height: 48px;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 48px;
     cursor: pointer;
+    border-radius: 100%;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
 }
+.github_btn{background-color: #000;}
+.naver_btn{background-color:#00c63a;}
+
 /* api 로그인의 이미지 */
-.btn i{
-    font-size: 47px;
+.btn img{
+    width: 60%; height: 60%;
+    border-radius: 100%;
+    background-color: #fff;
 }
 
 /* 회원가입 부분 */
@@ -188,7 +200,7 @@
     font-weight: 700;
     cursor: pointer;
 }
-.su_lin a{
+.su_link span{
     font-size: 16px;
     color: rgb(18, 184, 134);
 }
