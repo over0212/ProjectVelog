@@ -3,11 +3,9 @@ package com.velog.web.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.velog.domain.ConfirmToken;
 import com.velog.domain.user.Mypage;
 import com.velog.domain.user.UserRepository;
 import com.velog.web.model.dto.MypageDto;
-import com.velog.web.model.dto.UserDto;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.velog.domain.email.ConfirmationTokenRepository">
+	<insert id="createToken" parameterType="com.velog.domain.email.ConfirmationToken">
+		insert into
+			email_token_mst
+		values(
+			#{id},
+			#{expiration_date},
+			#{expired},
+			#{email},
+			now(),
+			now()
+		);
+	</insert>
+	
+	<update id="updateExpired">
+		update
+			email_token_mst
+		set
+			expired = 1
+		where
+			id = #{confirmationTokenId};
+	</update>
+	
+	<select id="getConfirmationToken" parameterType="com.velog.web.model.dto.email.EmailTokenDto" resultType="com.velog.domain.email.ConfirmationToken">
+		select
+			*
+		from
+			email_token_mst
+		where
+			id = #{confirmationTokenId}
+			and expiration_date &gt; #{now}
+			and expired = 0;
+	</select>
+
+	<select id="getUserByEmail" resultType="com.velog.domain.user.User">
+		select
+			*
+		from
+			user_mst
+		where
+			email = #{email};
+	</select>
+  </mapper>
