@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="hd_index_wrap">
     <div class="index_hd">
@@ -31,7 +30,7 @@
         <div class="plus_nav_box">
             <ul>
                 <li><a href="#">공지사항</a></li>
-                <li><a href="#">태그 목록</a></li>
+                <li><a href="trending-tag">태그 목록</a></li>
                 <li><a href="terms">서비스 정책</a></li>
                 <li><a href="#">Slack</a></li>
                 <li class="plus_nav_contact">

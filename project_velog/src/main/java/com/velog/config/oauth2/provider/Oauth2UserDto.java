@@ -2,7 +2,7 @@ package com.velog.config.oauth2.provider;
 
 import javax.validation.constraints.NotBlank;
 
-import com.velog.web.model.dto.UserDto;
+import com.velog.domain.user.User;
 
 import lombok.Builder;
 import lombok.Data;
@@ -21,8 +21,8 @@ public class Oauth2UserDto {
 	private String password;
 	private String provider;
 	
-	public UserDto toEntity() {
-		return UserDto.builder()
+	public User toEntity() {
+		return User.builder()
 				.email(email)
 				.username(username)
 				.name(name)

@@ -11,28 +11,29 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  mail:    host: smtp.gmail.com
+  mail:
+    host: smtp.gmail.com
     port: 587
     username: teamproject85123@gmail.com
     password: xlavmfhwprxm0
-    properties:      mail:
+    properties:
+      mail:
         smtp:
           starttls:
-          enable: true
-          required: true
-        auth: true
-        connectiontimeout: 5000
-        timeout: 5000
-        writetimeout: 5000
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
       
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rc341mq9bm8s59xz?serverTimezone=Asia/Seoul
-    username: ty4gx9k71np10knq
-    password: tuhyvjphw4siv92j
-<<<<<<< HEAD
+    url: jdbc:mariadb://localhost:3306/velog-aiden?serverTimezone=Asia/Seoul
+    username: root
+    password: toor
     
-      security:
+  security:
     user:
       name: test
       password: 1234

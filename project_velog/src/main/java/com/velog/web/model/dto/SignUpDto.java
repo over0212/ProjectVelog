@@ -12,13 +12,4 @@ public class SignUpDto {
 	private String username;
 	private String comment;
 	
-	public UserDto toEntity() {
-		return UserDto.builder()
-				.email(email)
-				.username(username)
-				.name(name)
-				.comment(comment)
-				.build();
-	}
-
 }

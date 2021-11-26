@@ -18,8 +18,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 
 			.anyRequest()
-			.permitAll();
-			
+			.permitAll()
+			.and()
+			.formLogin()
+			.loginPage("/")
+			.loginProcessingUrl("/velog/sign-in")
+			.defaultSuccessUrl("/");
 		
 	}
 

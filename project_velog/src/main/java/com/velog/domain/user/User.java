@@ -1,4 +1,4 @@
-package com.velog.web.model.dto;
+package com.velog.domain.user;
 
 import java.time.LocalDateTime;
 
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserDto {
+public class User {
 	
 	private String email;
 	private String username;
