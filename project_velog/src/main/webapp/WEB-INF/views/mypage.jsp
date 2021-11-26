@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="sce" uri="http://www.springframework.org/security/tags" %>
+<sce:authorize access="isAuthenticated()">
+	<sce:authentication property="principal" var="principal"/>
+</sce:authorize>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,9 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>설정 -velog</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/mypage.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="mp_container">
@@ -43,13 +49,13 @@
         <div class="mp_main">
             <div class="mp_profile">
                 <div class="mp_img">
-                    <div class="my_img"><img src="img/user_icon.png" alt=""></div>
+                    <div class="my_img"><img src="/img/user_icon.png" alt=""></div>
                     <button class="img_insert">이미지 업로드</button>
                     <button class="img_delete">이미지 제거</button>
                 </div>
                 <div class="top_info">
-                    <h2>이름</h2>
-                    <p>용내용내내용내용내용내용내용내용내용내용내용v</p>
+                    <h2 class= "name">${principal.name }</h2>
+                    <p>${principal.txt }</p>
                     <div class="info_modify_box">
                         <button class="info_modify">수정</button>
                     </div>
@@ -66,7 +72,7 @@
                         <div class="velog_title">
                             <h3>벨로그 제목</h3>
                             <div class="contents_box">
-                                <div class="contents">aㅇㅇㅇㅇㄴㄴㄴㄴaaa</div>
+                                <div class="contents">${principal.username }</div>
                             </div>
                             <div class="info_modify_box">
                                 <button class="info_modify">수정</button>
@@ -154,8 +160,7 @@
             </div>
         </div>
     </div>
-    
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/mypage.js"></script>
+    <script src="/js/mypage.js"></script>
 </body>
 </html>

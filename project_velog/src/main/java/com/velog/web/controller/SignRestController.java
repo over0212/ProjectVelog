@@ -8,9 +8,9 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class SignRestController {
 	
-	public Object signup() {
-		
-	}
+//	public Object signup() {
+//		
+//	}
 	
 	
 

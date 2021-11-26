@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.velog.domain.ConfirmToken;
-import com.velog.mapper.UserRepository;
+import com.velog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,11 +34,11 @@ public class TokenService {
 	}
 	
 	// 유효한 토큰을 가져오기
-	public String getConfirmToken(String confirmTokenId) {
-		 
-		return userRepository.userEmailCheck(confirmTokenId);
-		
-	}
+//	public String getConfirmToken(String confirmTokenId) {
+//		 
+//		return userRepository.userEmailCheck(confirmTokenId);
+//		
+//	}
 		
 
 }

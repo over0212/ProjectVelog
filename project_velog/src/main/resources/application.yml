@@ -25,17 +25,19 @@ spring:
         timeout: 5000
         writetimeout: 5000
       
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rc341mq9bm8s59xz?serverTimezone=Asia/Seoul
+#    username: ty4gx9k71np10knq
+#    password: u8nrjdq4586a8snk
+
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rc341mq9bm8s59xz?serverTimezone=Asia/Seoul
-    username: ty4gx9k71np10knq
-<<<<<<< HEAD
-    password: eg8ddneeashg6unls
-=======
-    password: tuhyvjphw4siv92j
-<<<<<<< HEAD
-    
-      security:
+    url: jdbc:mariadb://localhost:8001/velog?serverTimezone=Asia/Seoul
+    username: root
+    password: toor
+
+  security:
     user:
       name: test
       password: 1234
@@ -69,7 +71,6 @@ spring:
             token-uri: https://nid.naver.com/oauth2.0/token
             user-info-uri: https://openapi.naver.com/v1/nid/me
             user-name-attribute: response #회원정보를 json형태로 가지고 올때 response라는 key값으로 데이터를 전달해 준다
->>>>>>> 5bcbdfa201bb9d57de289ca69fb513e24a2a5207
 
 mybatis:
   mapper-locations:  - /mappers/*xml

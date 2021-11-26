@@ -1,4 +1,4 @@
-package com.velog.mapper;
+package com.velog.domain.user;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,5 +10,9 @@ public interface UserRepository {
 	public String userEmailCheck(UserDto userDto);
 	
 	public String findById(String id);
+	
+	public int updateFrontName(Mypage mypage);
+	
+	public int updateFrontContent(Mypage mypage);
 	
 }
