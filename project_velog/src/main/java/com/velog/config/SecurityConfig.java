@@ -27,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authenticated()
 			.anyRequest()
 			.permitAll()
+<<<<<<< HEAD
 		  .and()
 		  .formLogin()
 		  	.loginPage("/auth/sign")
@@ -42,6 +43,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
+=======
+			.and()
+			.formLogin()
+			.loginPage("/")
+			.loginProcessingUrl("/velog/sign-in")
+			.defaultSuccessUrl("/");
+		
+>>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
 	}
 
 }

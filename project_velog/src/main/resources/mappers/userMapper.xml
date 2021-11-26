@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
+
   <mapper namespace="com.velog.mapper.UserRepository">
   	<select id="userEmailCheck" parameterType="com.velog.web.model.dto.UserDto" resultType="Integer">
 		select
