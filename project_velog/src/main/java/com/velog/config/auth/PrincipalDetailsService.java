@@ -3,11 +3,9 @@ package com.velog.config.auth;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import com.velog.domain.user.UserDto;
+import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +21,7 @@ public class PrincipalDetailsService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UserDto user = userRepository.getUser(username);
+		User user = userRepository.getUser(username);
 		if(user == null) {
 			return null;
 		}else {

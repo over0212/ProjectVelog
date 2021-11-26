@@ -1,20 +1,13 @@
 package com.velog.web.service;
 
-<<<<<<< HEAD
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
 
-import com.velog.domain.user.UserDto;
-import com.velog.domain.user.UserRepository;
-import com.velog.web.model.dto.SignUpDto;
-=======
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.velog.domain.email.ConfirmationToken;
 import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
+import com.velog.web.model.dto.auth.SignUpDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,13 +15,13 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class AuthServiceImpl implements AuthService {
 	
-<<<<<<< HEAD
-	@Autowired
 	private final UserRepository userRepository;
+	
+	private final ConfirmationTokenService confirmationTokenService;
 
 	@Override
 	public int signUp(SignUpDto signUpDto) {
-		UserDto user = signUpDto.toEntity();
+		User user = signUpDto.toEntity();
 		int usernameCheckResult = userRepository.usernameCheck(user);
 		if(usernameCheckResult == 1) {
 			// 이미 존재하는 username
@@ -39,10 +32,7 @@ public class AuthServiceImpl implements AuthService {
 			int signUpResult = userRepository.signup(user);
 			return signUpResult;
 		}
-=======
-	private ConfirmationTokenService confirmationTokenService;
-	
-	private UserRepository userRepository;
+	}
 	
 	@Override
 	public int confirmEmail(String token) {
@@ -63,7 +53,6 @@ public class AuthServiceImpl implements AuthService {
 		}
 		confirmationTokenService.updateExpired(token);
 		return tokenFlag;
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
 	}
 
 }

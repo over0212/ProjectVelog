@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.config.oauth2.provider.Oauth2UserDto;
-import com.velog.domain.user.UserDto;
+import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -47,7 +47,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		String username = email.substring(0, email.lastIndexOf("@"));
 		// UserRepository 필요! (상단에 선언)
 		// user 객체 생성해서 username 담아주기
-		UserDto userEntity = userRepository.getUser(email);
+		User userEntity = userRepository.getUser(email);
 		if(userEntity == null) {
 			// 처음 로그인시 -> DB에 insert
 			Oauth2UserDto oauth2UserDto = Oauth2UserDto.builder()

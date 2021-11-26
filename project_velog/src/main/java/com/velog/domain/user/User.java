@@ -11,13 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-<<<<<<< HEAD:project_velog/src/main/java/com/velog/domain/user/UserDto.java
-public class UserDto {
-	private int id;
-=======
 public class User {
 	
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303:project_velog/src/main/java/com/velog/domain/user/User.java
+	private int id;
 	private String email;
 	private String username;
 	private String name;

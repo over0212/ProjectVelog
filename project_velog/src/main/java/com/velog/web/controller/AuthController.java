@@ -1,6 +1,5 @@
 package com.velog.web.controller;
 
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,30 +8,25 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.velog.web.model.dto.SignUpDto;
+import com.velog.web.model.dto.auth.SignUpDto;
 import com.velog.web.model.dto.auth.SignUpRespDto;
 import com.velog.web.service.AuthService;
-=======
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.velog.web.service.AuthService;
 import com.velog.web.service.ConfirmationTokenService;
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-<<<<<<< HEAD
 public class AuthController {
 	
 	private final AuthService authService;
+	
+	private final ConfirmationTokenService confirmationTokenService;
 	
 	@ResponseBody
 	@PostMapping("/auth/signup")
@@ -68,14 +62,6 @@ public class AuthController {
 		}
 	}
 	
-=======
-@RequestMapping("/velog")
-public class AuthController {
-	
-	private final ConfirmationTokenService confirmationTokenService;
-	
-	private final AuthService authService;
-	
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
 		confirmationTokenService.createEmailConfirmationToken(email);
@@ -90,5 +76,5 @@ public class AuthController {
 		
 	}
 
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
+
 }

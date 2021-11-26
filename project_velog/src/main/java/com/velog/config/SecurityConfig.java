@@ -27,15 +27,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authenticated()
 			.anyRequest()
 			.permitAll()
-<<<<<<< HEAD
 		  .and()
-		  .formLogin()
-		  	.loginPage("/auth/sign")
-		  	.loginProcessingUrl("/auth/signin") // post Controller 실행?
-		  	.defaultSuccessUrl("/index") // 로그인 성공시 이동할 URL
+			.formLogin()
+			.loginPage("/")
+			.loginProcessingUrl("/velog/sign-in")
+			.defaultSuccessUrl("/")
 		  .and()
 		  .oauth2Login()
-		  	.loginPage("/auth/signin")
+		  	.loginPage("/auth/sign-in")
 		  	.userInfoEndpoint()
 		  	.userService(principalOauth2UserService);
 	}
@@ -43,14 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-=======
-			.and()
-			.formLogin()
-			.loginPage("/")
-			.loginProcessingUrl("/velog/sign-in")
-			.defaultSuccessUrl("/");
+			
 		
->>>>>>> d9e983874a3304581c045165367c4fdc5bfda303
 	}
 
 }

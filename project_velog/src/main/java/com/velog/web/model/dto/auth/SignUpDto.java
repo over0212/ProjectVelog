@@ -3,7 +3,7 @@ package com.velog.web.model.dto.auth;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.velog.domain.user.UserDto;
+import com.velog.domain.user.User;
 
 import lombok.Data;
 
@@ -23,8 +23,8 @@ public class SignUpDto {
 	@NotBlank
 	private String provider;
 	
-	public UserDto toEntity() {
-		return UserDto.builder()
+	public User toEntity() {
+		return User.builder()
 					.id(id)
 					.email(email)
 					.username(username)

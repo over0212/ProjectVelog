@@ -33,7 +33,7 @@ spring:
 #    password: eg8ddneeashg6unl
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:8001/velog?serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://localhost:3306/velog?serverTimezone=Asia/Seoul
     username: root
     password: toor
     

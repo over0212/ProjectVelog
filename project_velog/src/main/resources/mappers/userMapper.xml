@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 
-  <mapper namespace="com.velog.mapper.UserRepository">
-  	<select id="userEmailCheck" parameterType="com.velog.web.model.dto.UserDto" resultType="Integer">
+  <mapper namespace="com.velog.domain.user.UserRepository">
+  	<select id="userEmailCheck" parameterType="com.velog.domain.user.User" resultType="Integer">
 		select
 			count(email)  		
 		from
@@ -13,7 +13,7 @@
 		where
 			email = #{email};
   	</select>
-  	<insert id="signup" parameterType="com.velog.web.model.dto.UserDto">
+  	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
   		values(
@@ -28,7 +28,7 @@
   			now()
   		)
   	</insert>
-  	<select id="getUser" resultType="com.velog.web.model.dto.UserDto">
+  	<select id="getUser" resultType="com.velog.domain.user.User">
   		select
   			*
   		from

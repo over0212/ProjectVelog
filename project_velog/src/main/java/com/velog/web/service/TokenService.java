@@ -4,7 +4,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import com.velog.domain.ConfirmToken;
+import com.velog.domain.email.ConfirmationToken;
 import com.velog.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class TokenService {
 		Assert.hasText(userId, "userId 는 필수 입니다.");
 		Assert.hasText(receiverEmail, "receiverEmail은 필수 입니다.");
 		
-		ConfirmToken emailConfirmToken = ConfirmToken.createEmailConfirmToken(userId);
+		ConfirmationToken emailConfirmToken = ConfirmationToken.createEmailConfirmationToken(userId);
 		
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(receiverEmail);
@@ -32,13 +32,5 @@ public class TokenService {
 		
 		return emailConfirmToken.getId();
 	}
-	
-	// 유효한 토큰을 가져오기
-//	public String getConfirmToken(String confirmTokenId) {
-//		 
-//		return userRepository.userEmailCheck(confirmTokenId);
-//		
-//	}
-		
 
 }
