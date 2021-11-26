@@ -8,6 +8,7 @@ import org.springframework.util.Assert;
 
 import com.velog.domain.email.ConfirmationToken;
 import com.velog.domain.email.ConfirmationTokenRepository;
+import com.velog.domain.user.User;
 import com.velog.web.model.dto.email.EmailTokenDto;
 
 import lombok.RequiredArgsConstructor;
@@ -28,7 +29,7 @@ public class ConfirmationTokenService {
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(receiverEmail);
 		mailMessage.setSubject("회원가입 이메일 인증");
-		mailMessage.setText("http://localhost:8000/velog/sign-up?token=" + emailConfirmationToken.getId());
+		mailMessage.setText("http://localhost:8000/confirm-email?token=" + emailConfirmationToken.getId());
 		emailSenderService.sendEmail(mailMessage);
 		return emailConfirmationToken.getId();
 	}
@@ -43,5 +44,9 @@ public class ConfirmationTokenService {
 	
 	public int updateExpired(String updateExpired) {
 		return confirmationTokenRepository.updateExpired(updateExpired);
+	}
+	
+	public User getUser(String email) {
+		return confirmationTokenRepository.getUserByEmail(email);
 	}
 }

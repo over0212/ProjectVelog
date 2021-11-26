@@ -31,20 +31,21 @@ function sendLink(){
         let flag = email_check(email_ip.value);
         // 정규식으로 인해 이메일 형식이 맞으면 비동기 실행
         if(flag == true){
-           $.ajax({
-		type: "get",
-		url: "/velog/confirm-email",
-		data: JSON.stringify(userData),
-		contentType: "application/json; UTF-8",
-		dataType: "text",
-		success: function(data){
-			userData = JSON.parse(data);
-			
-		},
-		error: function(){
-			alert('비동기 처리 오류!');
-		}
-	})
+	           $.ajax({
+				type: "get",
+				url: "/email/send",
+				data: {
+					"email" : email_ip.value
+				},
+				dataType: "text",
+				success: function(data){
+					alert(data);
+					
+				},
+				error: function(){
+					alert('비동기 처리 오류!');
+				}
+			})
         } else{
             alert('잘못된 이메일 형식입니다.');
             email_ip.focus();
