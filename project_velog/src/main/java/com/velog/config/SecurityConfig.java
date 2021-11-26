@@ -23,21 +23,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests()
-			.antMatchers("/index", "/user/**")
+			.antMatchers("/user/**")
 			.authenticated()
 			.anyRequest()
 			.permitAll()
 		  .and()
 			.formLogin()
-			.loginPage("/")
-			.loginProcessingUrl("/velog/sign-in")
+			.loginPage("login")
+			.loginProcessingUrl("/sign-in")
 			.defaultSuccessUrl("/")
 		  .and()
 		  .oauth2Login()
-		  	.loginPage("/auth/sign-in")
+		  	.loginPage("login")
+		  	.loginProcessingUrl("/auth/sign-in")
+		  	.defaultSuccessUrl("/")
 		  	.userInfoEndpoint()
 		  	.userService(principalOauth2UserService);
 	}
+	
 	
 	@Bean
 	PasswordEncoder passwordEncoder() {

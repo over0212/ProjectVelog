@@ -29,22 +29,30 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		
 		OAuth2User oAuth2User = super.loadUser(userRequest); // user 정보 담은 Oauth2User 객체 생성
 		Map<String, Object> attributes = oAuth2User.getAttributes(); // super.loadUser(userRequest)에서 출력한 정보를 map형태로 담음(key입력하면 정보 가져올 수 있다.)
+
+		String email = "";
+		String username = "";
 		
 		// 정보 가공시키기
 		String provider = userRequest.getClientRegistration().getRegistrationId(); // 접근 사이트 가져오기
-		
-		if(provider.equals("naver")) {
+		if(provider.equals("google")) {
+			email = (String)attributes.get("email");
+			System.out.println(email);
+			username = email.substring(0, email.lastIndexOf("@"));
+		}else if(provider.equals("naver")) {
 			attributes = (Map<String, Object>)attributes.get("response");
+			email = (String)attributes.get("email");
+			username = email.substring(0, email.lastIndexOf("@"));
 		}else if(provider.equals("github")) {
+			username = (String) attributes.get("Login");
 			if(attributes.get("email") == null) {
-				
+				email = username + "@github.com";
+			}else {
+				email = (String) attributes.get("email");
 			}
 		}
 		
 		// 처음 로그인하면 우리 회원으로 insert
-//		String username = provider + "_" + providerId;
-		String email = (String)attributes.get("email");
-		String username = email.substring(0, email.lastIndexOf("@"));
 		// UserRepository 필요! (상단에 선언)
 		// user 객체 생성해서 username 담아주기
 		User userEntity = userRepository.getUser(email);

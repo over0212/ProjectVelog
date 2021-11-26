@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/velog")
 public class PageController {
 	
 	private final AuthService authService;
