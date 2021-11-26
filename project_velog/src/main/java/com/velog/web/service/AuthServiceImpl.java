@@ -38,20 +38,27 @@ public class AuthServiceImpl implements AuthService {
 	public int confirmEmail(String token) {
 		ConfirmationToken confirmationToken = confirmationTokenService.getToken(token);
 		int tokenFlag = 0;
+		
+		// 토큰 만료 페이지 (리턴 0 을 해줌)
 		if(confirmationToken == null) {
-			// 토큰 만료 페이지 생성
-			
-		}
-		User user = userRepository.getUser(confirmationToken.getEmail());
-		if(user == null) {
-			//회원가입 안된 상태
-			
-			
+			// 
+			System.out.println(confirmationToken);
+			confirmationTokenService.updateExpired(token);
 		}else {
-			//이미 회원가입이 된 상태
+			User user = confirmationTokenService.getUser(confirmationToken.getEmail());
 			
+			if(user == null) {
+				tokenFlag = confirmationTokenService.updateExpired(token);
+				
+				//이미 회원가입이 된 상태 (리턴 2를 해준다)
+			}else {
+				confirmationTokenService.updateExpired(token);
+				tokenFlag = 2;
+			}
 		}
-		confirmationTokenService.updateExpired(token);
+		//회원가입 안된 상태 (리턴 1을 해준다)
+		
+		
 		return tokenFlag;
 	}
 

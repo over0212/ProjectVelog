@@ -12,19 +12,21 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  mail:    host: smtp.gmail.com
+  mail:
+    host: smtp.gmail.com
     port: 587
     username: teamproject85123@gmail.com
     password: xlavmfhwprxm0
-    properties:      mail:
+    properties:
+      mail:
         smtp:
           starttls:
-          enable: true
-          required: true
-        auth: true
-        connectiontimeout: 5000
-        timeout: 5000
-        writetimeout: 5000
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
       
 #  datasource:
 #    driver-class-name: org.mariadb.jdbc.Driver

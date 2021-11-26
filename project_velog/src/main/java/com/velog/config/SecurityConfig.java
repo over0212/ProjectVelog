@@ -23,18 +23,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests()
-			.antMatchers("/index", "/user/**")
+			.antMatchers("/mypage/**")
 			.authenticated()
 			.anyRequest()
 			.permitAll()
 		  .and()
 			.formLogin()
-			.loginPage("/")
+			.loginPage("/login")
 			.loginProcessingUrl("/velog/sign-in")
 			.defaultSuccessUrl("/")
 		  .and()
 		  .oauth2Login()
-		  	.loginPage("/auth/sign-in")
+		  	.loginPage("/login")
 		  	.userInfoEndpoint()
 		  	.userService(principalOauth2UserService);
 	}

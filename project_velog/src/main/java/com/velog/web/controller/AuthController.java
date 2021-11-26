@@ -62,18 +62,11 @@ public class AuthController {
 		}
 	}
 	
+	@ResponseBody
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
 		confirmationTokenService.createEmailConfirmationToken(email);
-		return "index";
-	}
-	
-	@GetMapping("/confirm-email")
-	public String viewConfirmEmail(@RequestParam String token) {
-		System.out.println(token);
-		authService.confirmEmail(token);
-		return "";
-		
+		return "인증 메일 전송 완료";
 	}
 
 

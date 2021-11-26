@@ -26,15 +26,23 @@
 			id = #{confirmationTokenId};
 	</update>
 	
-	<select id="getConFirmationToken" parameterType="com.velog.web.model.dto.email.EmailTokenDto" resultType="com.velog.domain.email.ConfirmationToken">
+	<select id="getConfirmationToken" parameterType="com.velog.web.model.dto.email.EmailTokenDto" resultType="com.velog.domain.email.ConfirmationToken">
 		select
 			*
 		from
 			email_token_mst
 		where
 			id = #{confirmationTokenId}
-			and expiration_date &lt; #{now}
+			and expiration_date &gt; #{now}
 			and expired = 0;
 	</select>
 
+	<select id="getUserByEmail" resultType="com.velog.domain.user.User">
+		select
+			*
+		from
+			user_mst
+		where
+			email = #{email};
+	</select>
   </mapper>
