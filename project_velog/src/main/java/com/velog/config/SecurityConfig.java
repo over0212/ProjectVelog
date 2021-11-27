@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests() // 사용자의 인증객체
-				.antMatchers("/user/**").authenticated() // 인증이 필요하다
+				.antMatchers("/mypage/**").authenticated() // 인증이 필요하다
 				.anyRequest() // antMatchers 외에 모든 요청
 				.permitAll() // 요청이 없어도 된다(모든권한 부여)
 				.and()
