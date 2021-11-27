@@ -2,7 +2,6 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
 
   <mapper namespace="com.velog.domain.user.UserRepository">
   	<select id="userEmailCheck" parameterType="com.velog.domain.user.User" resultType="Integer">
@@ -13,6 +12,26 @@
 		where
 			email = #{email};
   	</select>
+  	
+  	<update id="updateFrontName" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_mst
+		set
+		   user_name = #{user_name}
+		where
+			id = #{id};
+    </update>
+    
+    <update id="updateFrontContent" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_info
+		set
+		   content = #{content}
+		where
+			id = #{id};
+    </update>
+  	
+
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
@@ -26,8 +45,9 @@
   			#{provider},
   			now(),
   			now()
-  		)
+  		);
   	</insert>
+  	
   	<select id="getUser" resultType="com.velog.domain.user.User">
   		select
   			*

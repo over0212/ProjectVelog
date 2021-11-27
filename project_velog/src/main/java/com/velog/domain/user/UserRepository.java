@@ -7,10 +7,16 @@ public interface UserRepository {
 	
 	public String userEmailCheck(User user);
 	
-	public int usernameCheck(User user);
+	public String findById(String id);
+	
+	public int updateFrontName(Mypage mypage);
+	
+	public int updateFrontContent(Mypage mypage);
 	
 	public int signup(User user);
 	
 	public User getUser(String email);
+	
+	public int usernameCheck(User user);
 	
 }
