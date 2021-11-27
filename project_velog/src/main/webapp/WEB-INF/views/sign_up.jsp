@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -33,7 +39,7 @@
                 <div class="ip_block">
                     <div class="su_info">이메일</div>
                     <div class="ip_email_box">
-                        <input type="text" class="su_email" placeholder="이메일" readonly>
+                        <input type="text" class="su_email" placeholder="이메일" value="${principal.email }" readonly>
                         <div><i class="fas fa-lock"></i></div>
                     </div>
                 </div>
