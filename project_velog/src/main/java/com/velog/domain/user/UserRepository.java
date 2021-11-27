@@ -2,15 +2,17 @@ package com.velog.domain.user;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.velog.web.model.dto.UserDto;
+
 @Mapper
 public interface UserRepository {
 	
-	public String userEmailCheck(User user);
+	public String userEmailCheck(UserDto userDto);
 	
-	public int usernameCheck(User user);
+	public String findById(String id);
 	
-	public int signup(User user);
+	public int updateFrontName(Mypage mypage);
 	
-	public User getUser(String email);
+	public int updateFrontContent(Mypage mypage);
 	
 }
