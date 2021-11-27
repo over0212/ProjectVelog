@@ -11,7 +11,7 @@ si_button.onkeypress = () => {
 }
 
 si_button.onclick = () => {
-     onsubmit();
+    onsubmit();
 }
 
 // 종료버튼
@@ -24,7 +24,7 @@ function onsubmit(){
     if(email_ip.value.length == 0){
         alert('이메일을 입력하세요');
         email_ip.focus();
-       
+
     } else {
         let flag = email_check(email_ip.value);
         if(flag == true){

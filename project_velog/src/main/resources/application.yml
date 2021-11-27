@@ -28,15 +28,10 @@ spring:
           timeout: 5000
           writetimeout: 5000
       
-#  datasource:
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mariadb://dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rc341mq9bm8s59xz?serverTimezone=Asia/Seoul
-#    username: ty4gx9k71np10knq
-#    password: eg8ddneeashg6unl
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:8001/velog?serverTimezone=Asia/Seoul
-    username: root
+    url: jdbc:mariadb://121.175.150.249:3306/team3?serverTimezone=Asia/Seoul
+    username: team3
     password: toor
     
   security:

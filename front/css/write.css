@@ -37,6 +37,10 @@
     border: none;
     font-size: 20px;
 }
+.tag_msg{
+    
+}
+
 /* 데코바? */
 .deco_bar{
     display: flex;

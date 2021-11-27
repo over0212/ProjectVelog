@@ -2,10 +2,11 @@ package com.velog.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.velog.config.auth.PrincipalDetails;
+import com.velog.config.auth.PrincipalDetailsService;
 import com.velog.web.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class PageController {
 	
 	private final AuthService authService;
-	
+	private final PrincipalDetailsService principalDetailsService;
 	
 	@GetMapping("/confirm-email")
 	public String signUpForm(@RequestParam String token) {
@@ -23,6 +24,7 @@ public class PageController {
 		if(tokenFlag == 0) {
 			return "token_expired";
 		} else if (tokenFlag == 2) {
+			
 			return "redirect:/";
 		}else {
 			return "sign_up";

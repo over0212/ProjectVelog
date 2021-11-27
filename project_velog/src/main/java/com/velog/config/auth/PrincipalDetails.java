@@ -27,20 +27,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 		this.user = user;
 		this.attributes = attributes;
 	}
-	
-	// 권한으로 collection 사용하고 Role(ROLE_ADMIN, ROLE_USER)
-//	@Override
-//	public Collection<? extends GrantedAuthority> getAuthorities() {
-//		Collection<GrantedAuthority> collection = new ArrayList<GrantedAuthority>();
-//		collection.add(new GrantedAuthority() {
-//			
-//			@Override
-//			public String getAuthority() {
-//				return user.getRole();
-//			}
-//		});
-//		return collection;
-//	}
 
 	@Override
 	public String getPassword() {

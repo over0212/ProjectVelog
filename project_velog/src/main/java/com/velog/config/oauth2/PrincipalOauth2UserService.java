@@ -29,7 +29,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		
 		OAuth2User oAuth2User = super.loadUser(userRequest); // user 정보 담은 Oauth2User 객체 생성
 		Map<String, Object> attributes = oAuth2User.getAttributes(); // super.loadUser(userRequest)에서 출력한 정보를 map형태로 담음(key입력하면 정보 가져올 수 있다.)
-
+		
 		String email = "";
 		String username = "";
 		
@@ -44,7 +44,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 			email = (String)attributes.get("email");
 			username = email.substring(0, email.lastIndexOf("@"));
 		}else if(provider.equals("github")) {
-			username = (String) attributes.get("Login");
+			username = (String) attributes.get("login");
 			if(attributes.get("email") == null) {
 				email = username + "@github.com";
 			}else {
