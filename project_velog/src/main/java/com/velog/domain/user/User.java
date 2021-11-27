@@ -15,10 +15,10 @@ public class User {
 	
 	private int id;
 	private String email;
+	private String password;
 	private String username;
 	private String name;
 	private String comment;
-	private String password;
 	private String provider;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

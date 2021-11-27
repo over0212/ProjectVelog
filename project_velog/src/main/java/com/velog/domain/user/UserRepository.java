@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserRepository {
 	
+	public int updatePasswordByToken(User user);
+	
 	public String userEmailCheck(User user);
 	
 	public String findById(String id);

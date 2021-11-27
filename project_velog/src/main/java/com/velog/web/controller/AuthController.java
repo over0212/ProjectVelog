@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,6 +63,22 @@ public class AuthController {
 //			return signUpRespDto;
 //		}
 //	}
+	@GetMapping("/confirm-email")
+	public String signUpForm(Model model, @RequestParam String token) {
+		Map<String, String> confirmResult = authService.confirmEmail(token);
+		
+		if(confirmResult.get("tokenFlag").equals("0")) {
+			return "token_expired";
+		} else if (confirmResult.get("tokenFlag").equals("1")) {
+			model.addAttribute("email", confirmResult.get("email"));
+			model.addAttribute("token", token);
+			return "sign_up";
+		} else {
+			model.addAttribute("username", confirmResult.get("email"));
+			model.addAttribute("password", token);
+			return "sign_in_post";
+		}
+	}
 	
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {

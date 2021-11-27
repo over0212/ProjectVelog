@@ -1,8 +1,10 @@
 const su_info = document.querySelectorAll('.su_info');
 const ip_box = document.querySelectorAll('.ip_box');
 const su_name = document.querySelector('.su_name');
+const su_email = document.querySelector('.su_email');
 const su_id = document.querySelector('.su_id');
 const su_comment = document.querySelector('.su_comment');
+const confirm_token = document.querySelector('.confirm-token');
 
 /* 이름 ip */
 su_name.onfocus = () => {
@@ -47,6 +49,54 @@ const button = document.querySelectorAll('button');
 // 0번 취소 버튼 / 1번 다음 버튼
 const sign_next = document.querySelector('.sign_next');
 
+function signin(signinObj){
+	$.ajax({
+		type: "post",
+		url: "/sign-in",
+		data: {
+			username : signinObj.email,
+			password : signinObj.token
+		},
+		success: function(){
+			location.replace("/");
+		},
+		error: function(){
+			alert('비동기 처리 오류!');
+		}
+	})
+	
+}
+
+function signup(){
+	let signupObj = {
+		name : su_name.value,
+		email : su_email.value,
+		username : su_id.value,
+		comment : su_comment.value,
+		token : confirm_token.value
+	};
+	
+	$.ajax({
+		type: "post",
+		url: "/sign-up",
+		data: JSON.stringify(signupObj),
+		contentType: "application/json; charset=UTF-8",
+		dataType: "text",
+		success: function(data){
+			let signUpRespObj = JSON.parse(data);
+			if(signUpRespObj.code == 200){
+				alert('회원가입 완료!');
+				signin(signUpRespObj.data);
+			}else if(signUpRespObj.code == 400){
+				alert(signUpRespObj.data);
+			}
+		},
+		error: function(){
+			alert('비동기처리 오류');
+		}
+	})
+}
+
 sign_next.onclick = () => {
     // append child
     if(su_name.value.length == 0) {
@@ -74,6 +124,7 @@ sign_next.onclick = () => {
         errormsg[1].style.display = 'none';
         errormsg[2].style.display = 'none';
         errormsg[3].style.display = 'none';
+        signup();
     }
 }
 
