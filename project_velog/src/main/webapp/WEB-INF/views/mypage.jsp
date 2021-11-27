@@ -31,7 +31,7 @@
                         <button class="go_posting_btn header_btn" type="button" style="display: none;">새 글 작성</button>
                         <div class="user_nav_wrap" style="display: none;">
                             <a href="">
-                                <img src="img/user_icon.png" alt="">
+                                <img src="/img/user_icon.png" alt="">
                                 <i class="fas fa-caret-down"></i>
                             </a>
                             <div class="user_nav nav_box">

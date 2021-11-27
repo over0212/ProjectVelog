@@ -39,7 +39,7 @@
                 <!-- 회원가입 요청 -->
                 <div class="si_su_info">
                     <span class="su_question">아직 회원이 아니신가요?</span>
-                    <a href="sign-up" class="su_link"><span >회원가입</span></a>
+                    <a href="" class="su_link"><span >회원가입</span></a>
                 </div>
         	</div>
         </div>

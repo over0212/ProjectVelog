@@ -16,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthServiceImpl implements AuthService {
 	
 	private final UserRepository userRepository;
-	
 	private final ConfirmationTokenService confirmationTokenService;
 
 	@Override
@@ -41,8 +40,6 @@ public class AuthServiceImpl implements AuthService {
 		
 		// 토큰 만료 페이지 (리턴 0 을 해줌)
 		if(confirmationToken == null) {
-			// 
-			System.out.println(confirmationToken);
 			confirmationTokenService.updateExpired(token);
 		}else {
 			User user = confirmationTokenService.getUser(confirmationToken.getEmail());
@@ -56,8 +53,6 @@ public class AuthServiceImpl implements AuthService {
 				tokenFlag = 2;
 			}
 		}
-		//회원가입 안된 상태 (리턴 1을 해준다)
-		
 		
 		return tokenFlag;
 	}

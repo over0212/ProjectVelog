@@ -31,22 +31,29 @@ public class ConfirmationTokenService {
 		mailMessage.setSubject("이메일 인증");
 		mailMessage.setText("http://localhost:8000/confirm-email?token=" + emailConfirmationToken.getId());
 		emailSenderService.sendEmail(mailMessage);
+		System.out.println(emailConfirmationToken);
+		
 		return emailConfirmationToken.getId();
 	}
 	
 	public ConfirmationToken getToken(String confirmationTokenId) {
 		EmailTokenDto emailTokenDto = new EmailTokenDto();
+		
 		emailTokenDto.setConfirmationTokenId(confirmationTokenId);
 		emailTokenDto.setNow(LocalDateTime.now());
 		emailTokenDto.setExpired(0);
+		System.out.println(emailTokenDto);
+		
 		return confirmationTokenRepository.getConfirmationToken(emailTokenDto);
 	}
 	
 	public int updateExpired(String updateExpired) {
+		System.out.println(updateExpired);
 		return confirmationTokenRepository.updateExpired(updateExpired);
 	}
 	
 	public User getUser(String email) {
+		System.out.println(email);
 		return confirmationTokenRepository.getUserByEmail(email);
 	}
 }

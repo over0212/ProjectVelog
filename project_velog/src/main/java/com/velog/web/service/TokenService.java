@@ -29,7 +29,7 @@ public class TokenService {
 		mailMessage.setSubject("이메일 인증");
 		mailMessage.setText("http://localhost:8000/velog/confirm-email?token=" + emailConfirmToken.getId());
 		EmailSenderService.sendEmail(mailMessage);
-		
+		System.out.println(mailMessage);
 		return emailConfirmToken.getId();
 	}
 
