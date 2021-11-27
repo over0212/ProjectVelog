@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/token_expired.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
 </head>
 <body>
    	<jsp:include page="include/main_header.jsp"></jsp:include>
-
     <main id="main">
         <section>
-            <img src="img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
+            <img src="/img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
             <h4 class="token_txt">토큰이 만료되었습니다.</h4>
             <h4 class="relogin_txt">다시 로그인 후 이용해주세요.</h4>
             <button type="button" class="login_btn">로그인</button>
@@ -25,6 +25,7 @@
     </main>
     
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-    <script src="/js/login.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/sign_in.js"></script>
 </body>
 </html>

@@ -68,7 +68,7 @@ public class AuthController {
 		Map<String, String> confirmResult = authService.confirmEmail(token);
 		
 		if(confirmResult.get("tokenFlag").equals("0")) {
-			return "token_expired";
+			return "redirect:/token-expired";
 		} else if (confirmResult.get("tokenFlag").equals("1")) {
 			model.addAttribute("email", confirmResult.get("email"));
 			model.addAttribute("token", token);
