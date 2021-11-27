@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<sec:authorize access="isAuthenticated()">
-	<scr:authentication property="principal" var="principal"/>
-</sec:authorize>
-
-<jsp:include page="/setting/setting_taglib.jsp"></jsp:include>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,7 +28,7 @@
                     <a href="#" class="name_btn">이름순</a>
                 </span>
             </div>
-			<c:forEach var="" items="">
+			<%-- <c:forEach var="" items=""> --%>
 	            <div class="tl_list">
 	                <div class="list">
 	                    <div class="tl_title">
@@ -53,7 +46,7 @@
 	                    </div>
 	                </div>
 	            </div>			
-			</c:forEach>
+			<%-- </c:forEach> --%>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>

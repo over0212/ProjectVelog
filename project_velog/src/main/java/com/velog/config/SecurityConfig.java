@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		  .and()
 			.formLogin()
 			.loginPage("/login")
-			.loginProcessingUrl("/velog/sign-in")
+			.loginProcessingUrl("/sign-in")
 			.defaultSuccessUrl("/")
 		  .and()
 		  .oauth2Login()
