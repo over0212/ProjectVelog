@@ -20,7 +20,7 @@
 				<a href="search" class="search_btn"><i
 					class="fas fa-search search_icon"></i></a>
 				<c:choose>
-					<c:when test="${empty principal.email }">
+					<c:when test="${empty principal.user }">
 						<button class="login_btn header_btn" type="button">로그인</button>
 					</c:when>
 					<c:otherwise>

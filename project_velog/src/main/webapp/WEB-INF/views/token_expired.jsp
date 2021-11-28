@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/token_expired.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
 </head>
 <body>
    	<jsp:include page="include/main_header.jsp"></jsp:include>
-
     <main id="main">
         <section>
             <img src="/img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
@@ -31,6 +31,7 @@
     </main>
     
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-    <script src="/js/login.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/sign_in.js"></script>
 </body>
 </html>

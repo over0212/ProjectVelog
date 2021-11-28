@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
 </head>
 <body>
     <jsp:include page="include/main_header.jsp"></jsp:include>
@@ -31,5 +32,6 @@
 </body>
 
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-    <script src="/js/sign_up.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/sign_in.js"></script>
 </html>

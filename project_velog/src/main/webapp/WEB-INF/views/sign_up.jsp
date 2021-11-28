@@ -40,6 +40,7 @@
                     <div class="su_info">이메일</div>
                     <div class="ip_email_box">
                         <input type="text" class="su_email" placeholder="이메일" value="${principal.email }" readonly>
+                        <input type="text" class="su_email" value="${email }" placeholder="이메일" readonly>
                         <div><i class="fas fa-lock"></i></div>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
             </div>
         </div>
     </div>
-    
+    <input type="hidden" class="confirm-token" value="${token }">
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
     <script src="/js/sign_up.js"></script>
 </body>
