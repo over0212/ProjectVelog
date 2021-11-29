@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class Mypage {
 	private int id;
-	private String user_name;
+	private String username;
 	private String content;
-	private String user_title;
+	private String usertitle;
 
 }

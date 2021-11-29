@@ -17,7 +17,7 @@
 		update
 		   user_mst
 		set
-		   user_name = #{user_name}
+		   username = #{username}
 		where
 			id = #{id};
     </update>
@@ -27,6 +27,15 @@
 		   user_info
 		set
 		   content = #{content}
+		where
+			id = #{id};
+    </update>
+    
+    <update id="updateFrontTitle" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_info
+		set
+		   usertitle = #{usertitle}
 		where
 			id = #{id};
     </update>
