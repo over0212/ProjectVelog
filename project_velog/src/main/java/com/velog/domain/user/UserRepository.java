@@ -18,5 +18,4 @@ public interface UserRepository {
 	public int updateFrontContent(Mypage mypage);
 	
 	public int updateFrontTitle(Mypage mypage);
-	
 }

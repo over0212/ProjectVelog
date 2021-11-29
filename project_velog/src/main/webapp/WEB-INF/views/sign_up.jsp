@@ -4,9 +4,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
-	<scr:authentication property="principal" var="principal"/>
+	<sec:authentication property="principal" var="principal"/>
 </sec:authorize>
-    
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -39,7 +39,7 @@
                 <div class="ip_block">
                     <div class="su_info">이메일</div>
                     <div class="ip_email_box">
-                        <input type="text" class="su_email" placeholder="이메일" readonly>
+                        <input type="text" class="su_email" placeholder="이메일" value="${principal.email }" readonly>
                         <div><i class="fas fa-lock"></i></div>
                     </div>
                 </div>

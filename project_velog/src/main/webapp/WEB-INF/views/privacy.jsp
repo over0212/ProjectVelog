@@ -4,10 +4,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
-	<scr:authentication property="principal" var="principal"/>
+	<sec:authentication property="principal" var="principal"/>
 </sec:authorize>
-    
-<jsp:include page="/setting/setting_taglib.jsp"></jsp:include>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>

@@ -15,7 +15,7 @@ public class MypageDto {
     			 .id(id)
     			 .username(username)
     			 .content(content)
-    			 .user_title(usertitle)    			 
+    			 .usertitle(usertitle)    			 
     			 .build();
      }
 }

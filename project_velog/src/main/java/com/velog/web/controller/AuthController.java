@@ -27,7 +27,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 	
 	private final AuthService authService;
-	
 	private final ConfirmationTokenService confirmationTokenService;
 	
 //	@ResponseBody
@@ -64,11 +63,10 @@ public class AuthController {
 //		}
 //	}
 	
-	@ResponseBody
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
 		confirmationTokenService.createEmailConfirmationToken(email);
-		return "인증 메일 전송 완료";
+		return "index";
 	}
 
 

@@ -7,3 +7,14 @@ login_btn.onclick = () => {
     si_container.className = "si_container active"
     si_container.style.transform = "translateY(0px)";
 }
+
+const user_nav = document.querySelector('.user_nav');
+user_nav.style.display = 'none';
+
+user_nav.onclick = () => {
+	user_nav.style.display = 'block';
+}
+
+user_nav.onblur = () => {
+	user_nav.style.display = 'none';
+}
