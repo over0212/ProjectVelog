@@ -4,6 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
   <mapper namespace="com.velog.domain.user.UserRepository">
+  	<update id="updatePasswordByToken" parameterType="com.velog.domain.user.User">
+  		update
+  			user_mst
+  		set
+  			password = #{password}
+  		where
+  			id = #{id};
+  	</update>
+  	
+  	<select id="usernameCheck" parameterType="com.velog.domain.user.User" resultType="Integer">
+		select
+			count(username)  		
+		from
+			user_mst
+		where
+			username = #{username};
+  	</select>
+  	
   	<select id="userEmailCheck" parameterType="com.velog.domain.user.User" resultType="Integer">
 		select
 			count(email)  		
@@ -47,10 +65,10 @@
   		values(
   			0,
   			#{email},
+  			#{password},
   			#{username},
   			#{name},
   			#{comment},
-  			#{password},
   			#{provider},
   			now(),
   			now()
@@ -63,6 +81,6 @@
   		from
   			user_mst
   		where
-  			username = #{username}
+  			email = #{email}
   	</select>
   </mapper>

@@ -10,18 +10,29 @@ public interface UserRepository {
 	// DB와 이메일을 대조
 	public String userEmailCheck(User user);
 	
+<<<<<<< HEAD
+	public int usernameCheck(User user);
+=======
 	// DB와 이름을 대조
 	public int usernameCheck(User user);
 	
 	public String findById(String id);
 	
+	public int updateFrontName(Mypage mypage);
+	
+	public int updateFrontContent(Mypage mypage);
+>>>>>>> 284baa7c3091dca2c50347c74cf505e7cbf119ac
+	
 	public int signup(User user);
 	
 	public User  getUser(String email);
 	
+<<<<<<< HEAD
 	public int updateFrontName(Mypage mypage);
 	
 	public int updateFrontContent(Mypage mypage);
 	
 	public int updateFrontTitle(Mypage mypage);
+=======
+>>>>>>> 284baa7c3091dca2c50347c74cf505e7cbf119ac
 }

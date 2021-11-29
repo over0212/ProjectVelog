@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class SignUpRespDto<T> {
+	
 	private int code;
-	private T msg;
+	private T data;
+	
 }
