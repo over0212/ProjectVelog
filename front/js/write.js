@@ -5,41 +5,32 @@ const write_title = document.querySelector('.write_title');
 const write_txt = document.querySelector('.write_txt');
 const write_tag = document.querySelector('.write_tag');
 const ip_tags = document.querySelector('.ip_tags');
-const tag = document.querySelector('.tag');
 const tag_msg = document.querySelector('.tag_msg');
 const pre_title = document.querySelector('.pre_title');
 const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
-const tag_wrap = document.querySelector('.tag_wrap');
 
 tag_msg.style.display = "none";
-// let tags = [];
 
 ip_tags.onkeypress = () => {
-    if (window.event.keyCode == 13) {
+    if (window.event.keyCode == 13 && ip_tags.value.length != 0) { // enter
         window.event.preventDefault();
-        alert(ip_tags.value);
-        var tag = document.createElement('span').appendChild(document.createTextNode(ip_tags.value));
+        const tag_wrap = document.querySelector('.tag_wrap');
+        var tag = document.createElement('span')
         tag.className = "tag";
+        tag.appendChild(document.createTextNode(ip_tags.value));
         tag_wrap.appendChild(tag);
-
         ip_tags.value = "";
-        // tags.append(ip_tags.value);
-        // console.log(tags);
-        // for(let i=0; i<tags.size; i++){
-            
-        //     // write_tag.after(`<span class="tag">${tags[i]}</span>`);
-        //     // $(".ip_tags").before(`<span class="tag">${tags[i]}</span>`);
-        // }
     }
 }
 
-// $(function() {
-//     if($(".ip_tags").onkeypress == 13){
-//         alert($(".ip_tags").val);
-//         tags.append($(".ip_tags").val());
-//     }
-// })
+ip_tags.onkeydown = () => {
+    const tag_wrap = document.querySelector('.tag_wrap');
+    const tag = document.querySelector('.tag');
+    if(window.event.keyCode == 8 && ip_tags.value.length == 0 && tag != null){ // backspace
+        tag_wrap.lastChild.remove();
+    }
+}
 
 // 태그 입력창 클릭시 
 ip_tags.onclick = () => {
@@ -50,10 +41,26 @@ ip_tags.onblur = () => {
 }
 
 // 미리보기창
-// write_title.onkeypress = () => {
-//     alert($(".write_title").val());
-//     $(".pre_title").append($(".write_title").val);
-// }
+// title
+write_title.onkeyup = () => {
+    pre_title.textContent = write_title.value;
+}
+
+// content
+write_txt.onkeyup = () => {
+    var text = write_txt.value;
+    if(window.event.keyCode == 13){
+        pre_txt.innerHTML += '<br/>';
+    }else{
+        pre_txt.innerText = text;
+    }
+}
+
+write_txt.onkeydown = () => {
+    if(window.event.keyCode == 9){
+        write_txt.cursor();
+    }
+}
 
 // 출간하기 버튼 클릭시
 submit_btn.onclick = () => {
@@ -64,8 +71,15 @@ submit_btn.onclick = () => {
 // send_page --------------------------------------------
 const cancle_btn = document.querySelector('.cancle_btn');
 
+
+
+
 //취소 버튼
 cancle_btn.onclick = () => {
     send_page.style.display = "none";
-    write_page.style.display = "block"
+    write_page.style.display = "block";
 }
+
+// submit 버튼
+
+

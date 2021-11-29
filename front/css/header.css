@@ -138,6 +138,7 @@ header{
     align-self: center;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+    display: none;
 }
 
 .user_nav li{

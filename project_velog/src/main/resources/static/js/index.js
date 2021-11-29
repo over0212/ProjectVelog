@@ -49,7 +49,7 @@ plus_btn.onclick = () => {
     }
 }
 
-plus_btn.onclick = () => {
+plus_btn.onblur = () => {
 	plus_box.style.display = "none";
 }
 
