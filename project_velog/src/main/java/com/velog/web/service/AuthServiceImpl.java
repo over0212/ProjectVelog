@@ -45,7 +45,6 @@ public class AuthServiceImpl implements AuthService {
 		
 		// 토큰 만료 페이지 (리턴 0 을 해줌)
 		if(confirmationToken == null) {
-			confirmationTokenService.updateExpired(token);
 			confirmResult.put("tokenFlag", "0");
 			
 		}else {
