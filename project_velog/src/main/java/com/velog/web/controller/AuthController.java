@@ -79,6 +79,7 @@ public class AuthController {
 		}
 	}
 	
+	@ResponseBody
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
 		confirmationTokenService.createEmailConfirmationToken(email);

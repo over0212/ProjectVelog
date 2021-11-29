@@ -1,9 +1,11 @@
 package com.velog.web.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.velog.config.auth.PrincipalDetails;
 import com.velog.web.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
@@ -60,6 +62,14 @@ public class PageController {
 	public ModelAndView trendingNamePage() {
 		ModelAndView mav = new ModelAndView("trending_name");
 		return mav;
+	}
+	
+	@GetMapping("/mypage/{id}")
+	public String Mypage(/*@AuthenticationPrincipal PrincipalDetails principal*/) {
+	    /*if(principal.getUsername() == null ) {
+	      return "redirect:index";
+	    }*/
+		return "mypage";
 	}
 	
 }

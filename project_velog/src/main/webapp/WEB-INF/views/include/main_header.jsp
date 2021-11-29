@@ -35,7 +35,7 @@
 									<li class="mypage"><a href="#">내 벨로그</a></li>
 									<li class="temp_post"><a href="#">임시 글</a></li>
 									<li class="read_list"><a href="#">읽기 목록</a></li>
-									<li class="setting"><a href="mypage">설정</a></li>
+									<li class="setting"><a href="/mypage/${principal.id }">설정</a></li>
 									<li class="logout"><a href="#">로그아웃</a></li>
 								</ul>
 							</div>
