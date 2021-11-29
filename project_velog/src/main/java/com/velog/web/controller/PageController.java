@@ -62,4 +62,11 @@ public class PageController {
 		return mav;
 	}
 	
+	// 글 작성 페이지
+	@GetMapping("/write")
+	public ModelAndView writePage() {
+		ModelAndView mav = new ModelAndView("write");
+		return mav;
+	}
+	
 }

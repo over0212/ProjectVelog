@@ -78,7 +78,6 @@ header{
     transition: all 0.125s ease-in 0s;
     cursor: pointer;
 }
-
 .login_btn:hover{
     background-color: rgb(134, 142, 150);
 }
@@ -99,7 +98,7 @@ header{
     position: relative;
 }
 
-.user_nav_wrap a{
+.user_nav_wrap button{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,6 +131,30 @@ header{
     position: absolute;
     top: 150%; right: 15%;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+}
+
+.user_nav{
+    width: 192px;
+    align-self: center;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+}
+
+.user_nav li{
+    padding: 12px 16px;
+    border-bottom: 2px solid rgb(248, 249, 250);
+}
+
+.user_nav a{
+    font-size: 16px;
+}
+
+.user_nav li:last-child{
+    border-bottom: none;
+}
+
+.user_nav li:hover{
+    background-color: rgb(248, 249, 250);
 }
 
 @media  screen and (max-width:1320px) {

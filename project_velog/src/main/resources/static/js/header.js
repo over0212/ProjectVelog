@@ -1,5 +1,6 @@
 // 로그인 버튼
-const login_btns = document.querySelectorAll(".login_btn");
+const login_btns = document.querySelector(".login_btn");
+const go_posting_btn = document.querySelector(".go_posting_btn");
 
 for(let i = 0; i < login_btns.length; i++){
 	login_btns[i].onclick = () => {
@@ -19,4 +20,8 @@ user_nav.onclick = () => {
 
 user_nav.onblur = () => {
 	user_nav.style.display = 'none';
+}
+
+go_posting_btn.onclick = () => {
+	location.href = "/write";
 }

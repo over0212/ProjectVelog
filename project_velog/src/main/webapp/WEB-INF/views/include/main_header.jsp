@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-
-<sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal" />
-</sec:authorize>
 
 <header>
 	<div class="fixed_header">
@@ -24,8 +18,7 @@
 						<button class="login_btn header_btn" type="button">로그인</button>
 					</c:when>
 					<c:otherwise>
-						<button class="go_posting_btn header_btn" type="button">새
-							글 작성</button>
+						<button class="go_posting_btn header_btn" type="button">새 글 작성</button>
 						<div class="user_nav_wrap">
 							<button type="button"><img src="/img/user_icon.png" alt=""></button> 
 								<i class="fas fa-caret-down"></i>

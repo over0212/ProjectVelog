@@ -87,6 +87,7 @@ header{
     margin-right: 1em;
     color: rgb(52, 58, 64);
     background-color: #fff;
+    line-height: 2;
     transition: all 0.125s ease-in 0s;
 }
 
