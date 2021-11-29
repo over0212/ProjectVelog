@@ -79,11 +79,6 @@ public class AuthController {
 		}
 	}
 	
-	@GetMapping("/email/send")
-	public String sendEmail(@RequestParam String email) {
-		confirmationTokenService.createEmailConfirmationToken(email);
-		return "이메일 발송 완료.\n 이메일을 확인해주세요.";
-	}
 
 
 }

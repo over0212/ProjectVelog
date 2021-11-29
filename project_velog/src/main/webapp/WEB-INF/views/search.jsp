@@ -35,5 +35,7 @@
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <script src="/js/search.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/sign_in.js"></script>
 </body>
 </html>

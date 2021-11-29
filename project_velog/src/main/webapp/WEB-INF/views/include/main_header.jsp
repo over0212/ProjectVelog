@@ -27,7 +27,7 @@
 						<button class="go_posting_btn header_btn" type="button">새
 							글 작성</button>
 						<div class="user_nav_wrap">
-							<a href="mypage"> <img src="/img/user_icon.png" alt="">
+							<button type="button"><img src="/img/user_icon.png" alt=""></button> 
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<div class="user_nav nav_box">
@@ -35,7 +35,7 @@
 									<li class="mypage"><a href="#">내 벨로그</a></li>
 									<li class="temp_post"><a href="#">임시 글</a></li>
 									<li class="read_list"><a href="#">읽기 목록</a></li>
-									<li class="setting"><a href="mypage">설정</a></li>
+									<li class="setting"><a href="/mypage">설정</a></li>
 									<li class="logout"><a href="#">로그아웃</a></li>
 								</ul>
 							</div>

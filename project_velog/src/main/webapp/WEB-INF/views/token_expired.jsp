@@ -13,11 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>velog-relogin</title>
+    <title>velog-token-expired</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/token_expired.css">
     <link rel="stylesheet" href="/css/sign_in.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
    	<jsp:include page="include/main_header.jsp"></jsp:include>

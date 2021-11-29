@@ -99,7 +99,7 @@ header{
     position: relative;
 }
 
-.user_nav_wrap a{
+.user_nav_wrap button{
     display: flex;
     justify-content: space-between;
     align-items: center;
