@@ -1,37 +1,29 @@
 // write_page -------------------------------------------
 const submit_btn = document.querySelector('.on_submit'); 
 const write_page = document.querySelector('.write_page');
-const write_title = document.querySelector('.write_title');
-const write_txt = document.querySelector('.write_txt');
 const ip_tags = document.querySelector('.ip_tags');
-const tag = document.querySelector('.tag');
+const tag = document.querySelectorAll('.tag');
 const tag_msg = document.querySelector('.tag_msg');
-const pre_title = document.querySelector('.pre_title');
-const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
 
 tag.style.display = "none";
 tag_msg.style.display = "none";
 
+// 태그
+let tags = [];
+
+// 태그 입력 후 엔터 누르면 
 ip_tags.onkeypress = () => {
-    if (window.event.keyCode == 13) {
+	if (window.event.keyCode == 13) {
 		tag.appendChild(ip_tags.value);
 		tag.style.display = "block";
     }
 }
-
-// 태그 입력창 클릭시 
 ip_tags.onclick = () => {
     tag_msg.style.display = "block";
 }
 ip_tags.onblur = () => {
     tag_msg.style.display = "none";
-}
-
-// 미리보기창
-write_title.onkeypress = () => {
-    // alert(write_title.value);
-    pre_title.appendChild(write_title.value);
 }
 
 // 출간하기 버튼 클릭시

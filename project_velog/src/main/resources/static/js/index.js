@@ -3,6 +3,8 @@ const recent = document.querySelector('.nav_recent');
 const underbar = document.querySelector('.nav_underline');
 const times_wrap = document.querySelector('.times_wrap');
 const plus_btn = document.querySelector('.plus_btn');
+const time_box = document.querySelector('.times_select_box');
+const plus_box = document.querySelector('.plus_nav_box');
 
 // 트렌드,최신 underbar 움직이기
 recent.onclick = () => {
@@ -28,7 +30,6 @@ trend.onclick = () => {
 }
 
 times_wrap.onclick = () => {
-    const time_box = document.querySelector('.times_select_box');
     if(time_box.style.display == "none"){
         time_box.style.display = "block";
     }else{
@@ -36,13 +37,20 @@ times_wrap.onclick = () => {
     }
 }
 
+times_wrap.onblur = () => {
+	time_box.style.display = "none";
+}
+
 plus_btn.onclick = () => {
-    const plus_box = document.querySelector('.plus_nav_box');
     if(plus_box.style.display == "none"){
         plus_box.style.display = "block";
     }else{
         plus_box.style.display = "none";
     }
+}
+
+plus_btn.onclick = () => {
+	plus_box.style.display = "none";
 }
 
 

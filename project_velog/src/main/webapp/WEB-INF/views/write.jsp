@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>새 글 작성</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/write.css">
-    <link rel="stylesheet" href="css/writing_send.css">
-    <script src="https://code.jquery.com/jquery-latest.min.com"></script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/write.css">
+    <link rel="stylesheet" href="/css/writing_send.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="write_page">
@@ -53,7 +56,7 @@
             </section>
             <section class="write_right">
                 <h1 class="pre_title"></h1>
-                <pre class="pre_txt" readonly></pre>
+                <div class="pre_txt" readonly></div>
             </section>
         </div>
     </div>
@@ -108,6 +111,6 @@
     
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="js/write.js"></script>
+    <script src="/js/write.js"></script>
 </body>
 </html>

@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-
-<sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal" />
-</sec:authorize>
 
 <header>
 	<div class="fixed_header">
@@ -17,31 +11,31 @@
 			<!-- 왼쪽상단 -->
 			<div class="hd_btns">
 				<!-- 검색 버튼 -->
-				<a href="search" class="search_btn"><i
-					class="fas fa-search search_icon"></i></a>
-				<c:choose>
-					<c:when test="${empty principal.email }">
-						<button class="login_btn header_btn" type="button">로그인</button>
-					</c:when>
-					<c:otherwise>
-						<button class="go_posting_btn header_btn" type="button">새
-							글 작성</button>
-						<div class="user_nav_wrap">
-							<a href="mypage"> <img src="/img/user_icon.png" alt="">
-								<i class="fas fa-caret-down"></i>
-							</a>
-							<div class="user_nav nav_box">
-								<ul>
-									<li class="mypage"><a href="#">내 벨로그</a></li>
-									<li class="temp_post"><a href="#">임시 글</a></li>
-									<li class="read_list"><a href="#">읽기 목록</a></li>
-									<li class="setting"><a href="mypage">설정</a></li>
-									<li class="logout"><a href="#">로그아웃</a></li>
-								</ul>
-							</div>
-						</div>
-					</c:otherwise>
-				</c:choose>
+				<a href="search" class="search_btn"><i class="fas fa-search search_icon"></i></a>
+				<%-- <c:choose>
+					<!-- empty login_user인 경우 로그인 버튼 보이게 -->	
+                	<c:when test=""> --%>
+				<!-- 로그인 버튼 -->
+				<button class="login_btn header_btn" type="button">로그인</button>
+				<!-- </c:when> -->
+					<!-- login_user가 있는 경우 글입력버튼 및 user_nav 추가 -->	
+                	<!-- <c:otherwise> -->
+				<a href="/write" class="go_posting_btn header_btn">새 글 작성</a>
+				<%-- <div class="user_nav_wrap" style="display: none;">
+					<a href="#"> <img src="/img/user_icon.png" alt=""> <i class="fas fa-caret-down"></i>
+					</a>
+					<div class="user_nav nav_box">
+						<ul>
+							<li class="my_page"><a href="#">내 벨로그</a></li>
+							<li class="temp_post"><a href="#">임시 글</a></li>
+							<li class="read_list"><a href="#">읽기 목록</a></li>
+							<li class="setting"><a href="#">설정</a></li>
+							<li class="logout"><a href="#">로그아웃</a></li>
+						</ul>
+					</div>
+				</div> 
+				 </c:otherwise>
+                </c:choose>  --%>
 			</div>
 		</div>
 	</div>
