@@ -40,7 +40,6 @@ function sendLink(){
 				dataType: "text",
 				success: function(data){
 					alert(data);
-					
 				},
 				error: function(){
 					alert('비동기 처리 오류!');

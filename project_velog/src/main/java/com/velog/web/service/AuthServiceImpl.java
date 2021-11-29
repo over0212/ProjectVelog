@@ -47,12 +47,15 @@ public class AuthServiceImpl implements AuthService {
 		if(confirmationToken == null) {
 			confirmationTokenService.updateExpired(token);
 			confirmResult.put("tokenFlag", "0");
+			
 		}else {
 			User user = confirmationTokenService.getUser(confirmationToken.getEmail());
 			confirmResult.put("email", confirmationToken.getEmail()); //토큰 발행한 email 담아줌
+			
 			if(user == null) {
 				confirmResult.put("tokenFlag", "1");
 				//이미 회원가입이 된 상태 (리턴 2를 해준다)
+				
 			}else {
 				user.setPassword(new BCryptPasswordEncoder().encode(token));
 				userRepository.updatePasswordByToken(user);

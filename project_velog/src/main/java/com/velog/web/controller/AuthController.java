@@ -39,7 +39,7 @@ public class AuthController {
 			}
 			SignUpRespDto<Map<String, String>> signUpRespDto = new SignUpRespDto<Map<String,String>>();
 			signUpRespDto.setCode(400);
-			signUpRespDto.setMsg(errorMap);
+			signUpRespDto.setData(errorMap);
 			return signUpRespDto;
 		}else {
 			// 회원가입 진행
@@ -48,52 +48,20 @@ public class AuthController {
 			if(signUpResult == 1) {
 				//회원가입 성공
 				signUpRespDto.setCode(200);
-				signUpRespDto.setMsg("회원가입 성공");
+				signUpRespDto.setData("회원가입 성공");
 			}else if(signUpResult == 2) {
 				// 이미 가입된 사용자
 				signUpRespDto.setCode(410);
-				signUpRespDto.setMsg("이미 가입된 회원 입니다.");
+				signUpRespDto.setData("이미 가입된 회원 입니다.");
 			}else {
 				// 회원가입 실패
 				signUpRespDto.setCode(500);
-				signUpRespDto.setMsg("회원가입 실패. 관리자에게 문의하세요.");
+				signUpRespDto.setData("회원가입 실패. 관리자에게 문의하세요.");
 			}
 			return signUpRespDto;
 		}
 	}
-//	@ResponseBody
-//	@PostMapping("/auth/signup")
-//	public Object signup(@Valid SignUpDto signUpDto, BindingResult bindingResult) {
-//		if(bindingResult.hasErrors()) {
-//			//유효성 검사 Error
-//			Map<String, String> errorMap = new HashMap<String, String>();
-//			for(FieldError error : bindingResult.getFieldErrors()) {
-//				errorMap.put(error.getField(), error.getDefaultMessage());
-//			}
-//			SignUpRespDto<Map<String, String>> signUpRespDto = new SignUpRespDto<Map<String,String>>();
-//			signUpRespDto.setCode(400);
-//			signUpRespDto.setMsg(errorMap);
-//			return signUpRespDto;
-//		}else {
-//			// 회원가입 진행
-//			SignUpRespDto<String> signUpRespDto = new SignUpRespDto<String>();
-//			int signUpResult = authService.signUp(signUpDto);
-//			if(signUpResult == 1) {
-//				//회원가입 성공
-//				signUpRespDto.setCode(200);
-//				signUpRespDto.setMsg("회원가입 성공");
-//			}else if(signUpResult == 2) {
-//				// 이미 가입된 사용자
-//				signUpRespDto.setCode(410);
-//				signUpRespDto.setMsg("이미 가입된 회원 입니다.");
-//			}else {
-//				// 회원가입 실패
-//				signUpRespDto.setCode(500);
-//				signUpRespDto.setMsg("회원가입 실패. 관리자에게 문의하세요.");
-//			}
-//			return signUpRespDto;
-//		}
-//	}
+
 	@GetMapping("/confirm-email")
 	public String signUpForm(Model model, @RequestParam String token) {
 		Map<String, String> confirmResult = authService.confirmEmail(token);

@@ -22,7 +22,7 @@ public class ConfirmationTokenService {
 	private final EmailSenderService emailSenderService;
 	
 	@Value("${server.port}")
-	private String prot;
+	private String port;
 	
 	public String createEmailConfirmationToken(String receiverEmail) {
 		Assert.hasText(receiverEmail, "receiverEmail는 필수 입니다.");
@@ -33,7 +33,7 @@ public class ConfirmationTokenService {
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(receiverEmail);
 		mailMessage.setSubject("이메일 인증");
-		mailMessage.setText("http://localhost:" + prot + "/confirm-email?token=" + emailConfirmationToken.getId());
+		mailMessage.setText("http://localhost:" + port + "/confirm-email?token=" + emailConfirmationToken.getId());
 		emailSenderService.sendEmail(mailMessage);
 		System.out.println(emailConfirmationToken);
 		
