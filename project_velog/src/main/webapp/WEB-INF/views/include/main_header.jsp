@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-
-<sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal" />
-</sec:authorize>
 
 <header>
 	<div class="fixed_header">
@@ -24,10 +18,9 @@
 						<button class="login_btn header_btn" type="button">로그인</button>
 					</c:when>
 					<c:otherwise>
-						<button class="go_posting_btn header_btn" type="button">새
-							글 작성</button>
+						<button class="go_posting_btn header_btn" type="button">새 글 작성</button>
 						<div class="user_nav_wrap">
-							<a href="mypage"> <img src="/img/user_icon.png" alt="">
+							<button type="button"><img src="/img/user_icon.png" alt=""></button> 
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<div class="user_nav nav_box">
@@ -35,7 +28,11 @@
 									<li class="mypage"><a href="#">내 벨로그</a></li>
 									<li class="temp_post"><a href="#">임시 글</a></li>
 									<li class="read_list"><a href="#">읽기 목록</a></li>
+<<<<<<< HEAD
 									<li class="setting"><a href="/mypage/${principal.id }">설정</a></li>
+=======
+									<li class="setting"><a href="/mypage">설정</a></li>
+>>>>>>> a2162d9058bd90175a7ca0c40091d992387b8fb9
 									<li class="logout"><a href="#">로그아웃</a></li>
 								</ul>
 							</div>

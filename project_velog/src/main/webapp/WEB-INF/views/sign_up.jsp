@@ -39,7 +39,7 @@
                 <div class="ip_block">
                     <div class="su_info">이메일</div>
                     <div class="ip_email_box">
-                        <input type="text" class="su_email" placeholder="이메일" value="${principal.email }" readonly>
+                        <%-- <input type="text" class="su_email" placeholder="이메일" value="${principal.email }" readonly> --%>
                         <input type="text" class="su_email" value="${email }" placeholder="이메일" readonly>
                         <div><i class="fas fa-lock"></i></div>
                     </div>

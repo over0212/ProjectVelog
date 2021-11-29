@@ -1,12 +1,15 @@
 package com.velog.web.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.velog.web.model.dto.auth.SignUpDto;
 import com.velog.web.model.dto.auth.SignUpRespDto;
 import com.velog.web.service.AuthService;
+import com.velog.web.service.ConfirmationTokenService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,7 +17,15 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class SignRestController {
 	
-	private final AuthService authService; 
+	private final AuthService authService;
+	private final ConfirmationTokenService confirmationTokenService;
+	
+	@GetMapping("/email/send")
+	public String sendEmail(@RequestParam String email) {
+		confirmationTokenService.createEmailConfirmationToken(email);
+		return "이메일 발송 완료.\n 이메일을 확인해주세요.";
+	}
+
 	
 	@PostMapping("/sign-up")
 	public SignUpRespDto<?> signUp(@RequestBody SignUpDto signUpDto) {
