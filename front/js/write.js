@@ -3,6 +3,7 @@ const submit_btn = document.querySelector('.on_submit');
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
 const write_txt = document.querySelector('.write_txt');
+const write_tag = document.querySelector('.write_tag');
 const ip_tags = document.querySelector('.ip_tags');
 const tag = document.querySelector('.tag');
 const tag_msg = document.querySelector('.tag_msg');
@@ -15,7 +16,8 @@ tag_msg.style.display = "none";
 
 ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13) {
-		tag.appendChild(ip_tags.value);
+        alert(ip_tags.value);
+        write_tag.append(`<span class="tag">${ip_tags.value}</span>`);
 		tag.style.display = "block";
     }
 }
