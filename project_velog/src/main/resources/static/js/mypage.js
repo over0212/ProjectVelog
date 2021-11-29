@@ -37,7 +37,7 @@ function user_name() {
 	
 	$.ajax({
 		type: "patch",
-		url : "/mypage/front/16",
+		url : "/mypage/front/17",
 		data : JSON.stringify(user_info),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
@@ -76,7 +76,7 @@ function user_title() {
 	 
 $.ajax({
 		type: "patch",
-		url : "/mypage/front_title/16",
+		url : "/mypage/front_title/17",
 		data : JSON.stringify(user_info_title),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
