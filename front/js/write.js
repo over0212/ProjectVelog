@@ -10,17 +10,36 @@ const tag_msg = document.querySelector('.tag_msg');
 const pre_title = document.querySelector('.pre_title');
 const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
+const tag_wrap = document.querySelector('.tag_wrap');
 
-tag.style.display = "none";
 tag_msg.style.display = "none";
+// let tags = [];
 
 ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13) {
+        window.event.preventDefault();
         alert(ip_tags.value);
-        write_tag.append(`<span class="tag">${ip_tags.value}</span>`);
-		tag.style.display = "block";
+        var tag = document.createElement('span').appendChild(document.createTextNode(ip_tags.value));
+        tag.className = "tag";
+        tag_wrap.appendChild(tag);
+
+        ip_tags.value = "";
+        // tags.append(ip_tags.value);
+        // console.log(tags);
+        // for(let i=0; i<tags.size; i++){
+            
+        //     // write_tag.after(`<span class="tag">${tags[i]}</span>`);
+        //     // $(".ip_tags").before(`<span class="tag">${tags[i]}</span>`);
+        // }
     }
 }
+
+// $(function() {
+//     if($(".ip_tags").onkeypress == 13){
+//         alert($(".ip_tags").val);
+//         tags.append($(".ip_tags").val());
+//     }
+// })
 
 // 태그 입력창 클릭시 
 ip_tags.onclick = () => {
@@ -31,10 +50,10 @@ ip_tags.onblur = () => {
 }
 
 // 미리보기창
-write_title.onkeypress = () => {
-    // alert(write_title.value);
-    pre_title.appendChild(write_title.value);
-}
+// write_title.onkeypress = () => {
+//     alert($(".write_title").val());
+//     $(".pre_title").append($(".write_title").val);
+// }
 
 // 출간하기 버튼 클릭시
 submit_btn.onclick = () => {
