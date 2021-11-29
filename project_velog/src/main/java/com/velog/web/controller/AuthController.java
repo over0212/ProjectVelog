@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.velog.config.auth.PrincipalDetails;
 import com.velog.web.model.dto.auth.SignUpDto;
 import com.velog.web.model.dto.auth.SignUpRespDto;
 import com.velog.web.service.AuthService;
@@ -83,7 +81,7 @@ public class AuthController {
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
 		confirmationTokenService.createEmailConfirmationToken(email);
-		return "index";
+		return "이메일 발송 완료.\n 이메일을 확인해주세요.";
 	}
 
 

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
-	<scr:authentication property="principal" var="principal"/>
+	<sec:authentication property="principal" var="principal"/>
 </sec:authorize>
 
 <!DOCTYPE html>
@@ -22,7 +24,7 @@
 
     <main id="main">
         <section>
-            <img src="img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
+            <img src="/img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
             <h4>로그인 후 이용해주세요.</h4>
             <button type="button" class="login_btn">로그인</button>
         </section>

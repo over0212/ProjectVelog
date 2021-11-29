@@ -19,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthServiceImpl implements AuthService {
 	
 	private final UserRepository userRepository;
-	
 	private final ConfirmationTokenService confirmationTokenService;
 
 	@Override

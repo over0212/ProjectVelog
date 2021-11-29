@@ -10,7 +10,7 @@ for(let i = 0; i < login_btns.length; i++){
 	}
 }
 
-const user_nav = document.querySelector('.user_nav');
+/*const user_nav = document.querySelector('.user_nav');
 user_nav.style.display = 'none';
 
 user_nav.onclick = () => {
@@ -19,4 +19,4 @@ user_nav.onclick = () => {
 
 user_nav.onblur = () => {
 	user_nav.style.display = 'none';
-}
+}*/

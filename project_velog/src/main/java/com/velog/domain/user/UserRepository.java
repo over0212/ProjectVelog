@@ -9,6 +9,9 @@ public interface UserRepository {
 	
 	public String userEmailCheck(User user);
 	
+	// DB와 이름을 대조
+	public int usernameCheck(User user);
+	
 	public String findById(String id);
 	
 	public int updateFrontName(Mypage mypage);
@@ -18,7 +21,5 @@ public interface UserRepository {
 	public int signup(User user);
 	
 	public User getUser(String email);
-	
-	public int usernameCheck(User user);
 	
 }

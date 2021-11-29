@@ -3,6 +3,7 @@ package com.velog.web.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.velog.domain.email.ConfirmationToken;
 import com.velog.domain.user.Mypage;
 import com.velog.domain.user.UserRepository;
 import com.velog.web.model.dto.MypageDto;
@@ -15,12 +16,10 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
 	
 	private final UserRepository userRepository;
-	private final TokenService tokenService;
+	private final ConfirmationTokenService confirmationTokenService;
 	
 	public void confirmEmail(String token) {
-//		ConfirmToken confirmToken = tokenService.getConfirmToken(token);
-//		UserRepository userRepository = 
-		
+		confirmationTokenService.getToken(token);
 	}
 	
 	@Transactional
