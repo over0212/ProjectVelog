@@ -2,6 +2,7 @@ const trend = document.querySelector('.nav_trending');
 const recent = document.querySelector('.nav_recent');
 const underbar = document.querySelector('.nav_underline');
 const times_wrap = document.querySelector('.times_wrap');
+const plus_btn_wrap = document.querySelector('.plus_btn_wrap');
 const plus_btn = document.querySelector('.plus_btn');
 const time_box = document.querySelector('.times_select_box');
 const plus_box = document.querySelector('.plus_nav_box');
@@ -49,7 +50,7 @@ plus_btn.onclick = () => {
     }
 }
 
-plus_btn.onblur = () => {
+plus_btn_wrap.onblur = () => {
 	plus_box.style.display = "none";
 }
 

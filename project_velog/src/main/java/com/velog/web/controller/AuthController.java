@@ -26,7 +26,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 	
 	private final AuthService authService;
-	private final ConfirmationTokenService confirmationTokenService;
 	
 	@ResponseBody
 	@PostMapping("/auth/signup")
@@ -78,7 +77,5 @@ public class AuthController {
 			return "sign_in_post";
 		}
 	}
-	
-
 
 }

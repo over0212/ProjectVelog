@@ -15,11 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>velog</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/sign_in.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+
 <body>
     <jsp:include page="include/main_header.jsp"></jsp:include>
     <!-- index main -->
@@ -33,7 +32,7 @@
 	                <div class="content_wrap">
 	                    <a href="#">
 	                        <div class="img_box">
-	                            <img src="../img/test_content.png" alt="">
+	                            <img src="/img/test_content.png" alt="">
 	                        </div>
 	                    </a>
 	                    <div class="text_wrap">
@@ -64,8 +63,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="/js/header.js"></script>
-    <script src="/js/sign_in.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>

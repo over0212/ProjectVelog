@@ -15,12 +15,16 @@ public interface UserRepository {
 	
 	public String findById(String id);
 	
+	public int signup(User user);
+	
+	public User getUser(String email);
+	
 	public int updateFrontName(Mypage mypage);
 	
 	public int updateFrontContent(Mypage mypage);
 	
-	public int signup(User user);
+	public int updateFrontTitle(Mypage mypage);
 	
-	public User getUser(String email);
+	public int deleteUser(int id);
 	
 }

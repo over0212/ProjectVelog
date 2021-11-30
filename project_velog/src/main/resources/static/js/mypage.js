@@ -8,9 +8,10 @@ const top_info = document.querySelector('.top_info');
 const contents_box = document.querySelector('.contents_box');
 const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
+const user_id = document.querySelector('#id');
 
 var user_info = {
-	user_name : '',
+	name : '',
 	content: ''
 }
 
@@ -24,32 +25,33 @@ modify[0].onclick = () => {
 info_save[0].onclick = () => {
     info_creative.style.display = 'none';
     top_info.style.display = 'block';
-    user_info.user_name = inputs[0].value;
+    user_info.name = inputs[0].value;
     user_info.content = inputs[1].value;
      user_name();
 }
 
 function user_name() {
-	alert(JSON.stringify(user_info));
-	
 	$.ajax({
 		type: "patch",
-		url : "/mypage/front/7",
+		url : "/mypage/front/" + user_id.value,
 		data : JSON.stringify(user_info),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
-			console.log(data);
+			if(data == '2' || data == '1'){
+			alert('정보 수정 완료');
+			} else {
+				alert('회원 정보 수정 실패');
+			}
 		},
 		error: function() {
-			alert('이름내용 또류');
+			alert('비동기 처리 오류');
 		}
-		
 	})
 }
 
 var user_title = {
-	title_creative : ''
+	usertitle : ''
 }
 
 modify[1].onclick = () => {
@@ -62,7 +64,7 @@ info_save[1].onclick = () => {
     modify[1].style.display = 'block';
     contents_box.style.display = 'block';
     title_box_hidden[0].style.display = 'none';
-    user_title.title_creative = inputs[2].value;
+    user_title.usertitle = inputs[2].value;
     user_info_title();
 }
 
@@ -70,7 +72,7 @@ function user_info_title() {
 	
 	$.ajax({
 		type: "patch",
-		url: "/mypage/front/7",
+		url: "/mypage/front_title/" + user_id.value,
 		data: JSON.stringify(user_title),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
@@ -78,10 +80,12 @@ function user_info_title() {
 			alert(data);
 		},
 		error: function(){
-			alert('제목 또류');
+			alert('비동기 처리 오류');
 		}
 	})
 };
+
+const social = document.querySelectorAll('icon_box input');
 
 modify[2].onclick = () => {  
     modify[2].style.display = 'none';
@@ -91,8 +95,9 @@ modify[2].onclick = () => {
 info_save[2].onclick = () => {
     modify[2].style.display = 'block';
     title_box_hidden[1].style.display = 'none';
-
+    
 }
+
 
 // 스위치 온오프 기능
 const switch_off = document.querySelectorAll('.switch_off');
@@ -106,3 +111,43 @@ switch_off[0].onclick = () => {
 switch_off[1].onclick = () => {
     switch_off[1].style.background = '#12b886';
 }
+
+/* 회원 탈퇴 msg */
+const info_out = document.querySelector('.info_out');
+const so_container = document.querySelector('.so_container');
+const cancel = document.querySelector('.cancel');
+const sign_out = document.querySelector('.signout');
+so_container.style.display = 'none';
+
+info_out.onclick = () => {
+    if(so_container.style.display == 'none'){
+        so_container.style.display = 'block';
+    } else {
+        so_container.style.display == 'none'
+    }
+}
+
+cancel.onclick = () => {
+    so_container.style.display = 'none';
+}
+
+sign_out.onclick = () => {
+	$.ajax({
+		type: 'delete',
+		url: '/mypage/delete/' + user_id.value,
+		success: function(data){
+			if(data == '1'){
+			alert('회원 탈퇴 완료');
+			location.replace('/logout');
+			} else {
+			alert('회원 탈퇴 오류');
+			}
+		},
+		error: function(){
+				alert('비동기 처리 오류');
+		}
+	})
+}
+
+
+

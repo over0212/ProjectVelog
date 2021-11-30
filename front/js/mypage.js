@@ -55,3 +55,18 @@ switch_off[0].onclick = () => {
 switch_off[1].onclick = () => {
     switch_off[1].style.background = '#12b886';
 }
+
+const sign_out = document.querySelector('.info_out');
+const so_container = document.querySelector('.so_container');
+const cancel = document.querySelector('.cancel');
+sign_out.onclick = () => {
+    if(so_container.style.display == 'none'){
+        so_container.style.display = 'block';
+    } else {
+        so_container.style.display == 'none'
+    }
+}
+
+cancel.onclick = () => {
+    so_container.style.display = 'none';
+}

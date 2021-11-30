@@ -1,12 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal" />
+</sec:authorize>
+
+<head>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/sign_in.css">
+
+</head>
 <header>
 	<div class="fixed_header">
 		<div class="hd_wrap">
 			<!-- 로고 -->
 			<div class="hd_logo">
-				<a href="index"><span class="hd_logo_txt">velog</span></a>
+				<a href="/index"><span class="hd_logo_txt">velog</span></a>
 			</div>
 			<!-- 왼쪽상단 -->
 			<div class="hd_btns">
@@ -20,16 +32,17 @@
 					<c:otherwise>
 						<button class="go_posting_btn header_btn" type="button">새 글 작성</button>
 						<div class="user_nav_wrap">
-							<button type="button"><img src="/img/user_icon.png" alt=""></button> 
+							<button type="button" class="user_btn">
+								<img src="/img/user_icon.png" alt="">
 								<i class="fas fa-caret-down"></i>
-							</a>
-							<div class="user_nav nav_box">
+							</button>
+							<div class="user_nav">
 								<ul>
 									<li class="mypage"><a href="#">내 벨로그</a></li>
 									<li class="temp_post"><a href="#">임시 글</a></li>
 									<li class="read_list"><a href="#">읽기 목록</a></li>
-									<li class="setting"><a href="/mypage">설정</a></li>
-									<li class="logout"><a href="#">로그아웃</a></li>
+									<li class="setting"><a href="mypage/${principal.user.id }">설정</a></li>
+									<li class="logout"><a href="logout">로그아웃</a></li>
 								</ul>
 							</div>
 						</div>
@@ -39,4 +52,7 @@
 		</div>
 	</div>
 	<jsp:include page="sign_in.jsp"></jsp:include>
+	<script src="/js/header.js"></script>
+	<script src="/js/sign_in.js"></script>
 </header>
+	

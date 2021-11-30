@@ -164,6 +164,8 @@ body{
     width: 100%;
     line-height: 25px;
     text-align: center;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .plus_btn_wrap i{

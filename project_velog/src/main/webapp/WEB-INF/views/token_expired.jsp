@@ -15,9 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>velog-token-expired</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/token_expired.css">
-    <link rel="stylesheet" href="/css/sign_in.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
@@ -32,7 +30,5 @@
     </main>
     
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
-    <script src="/js/header.js"></script>
-    <script src="/js/sign_in.js"></script>
 </body>
 </html>

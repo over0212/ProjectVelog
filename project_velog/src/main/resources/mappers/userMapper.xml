@@ -13,6 +13,15 @@
   			id = #{id};
   	</update>
   	
+  	<select id="getUser" resultType="com.velog.domain.user.User">
+  		select
+  			*
+  		from
+  			user_mst
+  		where
+  			email = #{email}
+  	</select>
+  	
   	<select id="usernameCheck" parameterType="com.velog.domain.user.User" resultType="Integer">
 		select
 			count(username)  		
@@ -31,25 +40,6 @@
 			email = #{email};
   	</select>
   	
-  	<update id="updateFrontName" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_mst
-		set
-		   user_name = #{user_name}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontContent" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_info
-		set
-		   content = #{content}
-		where
-			id = #{id};
-    </update>
-  	
-
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
@@ -66,12 +56,38 @@
   		);
   	</insert>
   	
-  	<select id="getUser" resultType="com.velog.domain.user.User">
-  		select
-  			*
+  	<update id="updateFrontName" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_mst
+		set
+		   name = #{name}
+		where
+			id = #{id};
+    </update>
+    
+    <update id="updateFrontContent" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_info
+		set
+		   content = #{content}
+		where
+			id = #{id};
+    </update>
+    
+    <update id="updateFrontTitle" parameterType="com.velog.domain.user.Mypage">
+		update
+		   user_info
+		set
+		   usertitle = #{usertitle}
+		where
+			id = #{id};
+    </update>
+  	
+  	<delete id="deleteUser">
+  		delete
   		from
   			user_mst
   		where
-  			email = #{email}
-  	</select>
+  			id = #{id};
+  	</delete>
   </mapper>
