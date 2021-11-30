@@ -14,9 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>search</title>
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/search.css">
-    <link rel="stylesheet" href="/css/sign_in.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
@@ -35,7 +33,5 @@
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <script src="/js/search.js"></script>
-    <script src="/js/header.js"></script>
-    <script src="/js/sign_in.js"></script>
 </body>
 </html>

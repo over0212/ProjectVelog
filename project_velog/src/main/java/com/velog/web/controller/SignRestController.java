@@ -1,15 +1,20 @@
 package com.velog.web.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.velog.config.auth.PrincipalDetails;
 import com.velog.web.model.dto.auth.SignUpDto;
 import com.velog.web.model.dto.auth.SignUpRespDto;
 import com.velog.web.service.AuthService;
 import com.velog.web.service.ConfirmationTokenService;
+import com.velog.web.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,6 +24,7 @@ public class SignRestController {
 	
 	private final AuthService authService;
 	private final ConfirmationTokenService confirmationTokenService;
+	private final UserService userService;
 	
 	@GetMapping("/email/send")
 	public String sendEmail(@RequestParam String email) {
@@ -43,6 +49,14 @@ public class SignRestController {
 			signUpRespDto.setData("이미 존재하는 아이디입니다.");
 			return signUpRespDto;
 		}
+	}
+	
+	@DeleteMapping("/mypage/delete/{id}")
+	public String deleteUser(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id) {
+		int result = userService.deleteUser(id);
+		System.out.println(result);
+		System.out.println(id);
+		return Integer.toString(result);
 	}
 
 }

@@ -8,6 +8,7 @@ const top_info = document.querySelector('.top_info');
 const contents_box = document.querySelector('.contents_box');
 const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
+const user_id = document.querySelector('#id');
 
 var user_info = {
 	name : '',
@@ -30,21 +31,22 @@ info_save[0].onclick = () => {
 }
 
 function user_name() {
-	alert(JSON.stringify(user_info));
-	
 	$.ajax({
 		type: "patch",
-		url : "/mypage/front/17",
+		url : "/mypage/front/" + user_id.value,
 		data : JSON.stringify(user_info),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
-			console.log(data);
+			if(data == '2' || data == '1'){
+			alert('정보 수정 완료');
+			} else {
+				alert('회원 정보 수정 실패');
+			}
 		},
 		error: function() {
 			alert('비동기 처리 오류');
 		}
-		
 	})
 }
 
@@ -70,7 +72,7 @@ function user_info_title() {
 	
 	$.ajax({
 		type: "patch",
-		url: "/mypage/front_title/17",
+		url: "/mypage/front_title/" + user_id.value,
 		data: JSON.stringify(user_title),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
@@ -109,3 +111,43 @@ switch_off[0].onclick = () => {
 switch_off[1].onclick = () => {
     switch_off[1].style.background = '#12b886';
 }
+
+/* 회원 탈퇴 msg */
+const info_out = document.querySelector('.info_out');
+const so_container = document.querySelector('.so_container');
+const cancel = document.querySelector('.cancel');
+const sign_out = document.querySelector('.signout');
+so_container.style.display = 'none';
+
+info_out.onclick = () => {
+    if(so_container.style.display == 'none'){
+        so_container.style.display = 'block';
+    } else {
+        so_container.style.display == 'none'
+    }
+}
+
+cancel.onclick = () => {
+    so_container.style.display = 'none';
+}
+
+sign_out.onclick = () => {
+	$.ajax({
+		type: 'delete',
+		url: '/mypage/delete/' + user_id.value,
+		success: function(data){
+			if(data == '1'){
+			alert('회원 탈퇴 완료');
+			location.replace('/logout');
+			} else {
+			alert('회원 탈퇴 오류');
+			}
+		},
+		error: function(){
+				alert('비동기 처리 오류');
+		}
+	})
+}
+
+
+

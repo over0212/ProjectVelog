@@ -26,7 +26,6 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 	
 	private final AuthService authService;
-	private final ConfirmationTokenService confirmationTokenService;
 	
 	@ResponseBody
 	@PostMapping("/auth/signup")
@@ -78,13 +77,5 @@ public class AuthController {
 			return "sign_in_post";
 		}
 	}
-	
-	@ResponseBody
-	@GetMapping("/email/send")
-	public String sendEmail(@RequestParam String email) {
-		confirmationTokenService.createEmailConfirmationToken(email);
-		return "이메일 발송 완료.\n 이메일을 확인해주세요.";
-	}
-
 
 }

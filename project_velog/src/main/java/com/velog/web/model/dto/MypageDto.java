@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 public class MypageDto {
+	
      private String name;
      private String content;
      private String usertitle;

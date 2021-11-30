@@ -2,19 +2,20 @@ package com.velog.web.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.velog.config.auth.PrincipalDetails;
-import com.velog.web.service.AuthService;
+import com.velog.web.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class PageController {
-	
-	private final AuthService authService;
 	
 	@GetMapping("/token-expired")
 	public String tokenExpired() {
@@ -64,20 +65,20 @@ public class PageController {
 		return mav;
 	}
 	
-<<<<<<< HEAD
 	@GetMapping("/mypage/{id}")
-	public String Mypage(/*@AuthenticationPrincipal PrincipalDetails principal*/) {
-	    /*if(principal.getUsername() == null ) {
+	public String Mypage(@AuthenticationPrincipal PrincipalDetails principal) {
+	    if(principal.getUsername() == null) {
 	      return "redirect:index";
-	    }*/
-		return "mypage";
-=======
+	    }else {
+	    	return "mypage";
+	    }
+	}
+	
 	// 글 작성 페이지
 	@GetMapping("/write")
 	public ModelAndView writePage() {
 		ModelAndView mav = new ModelAndView("write");
 		return mav;
->>>>>>> a2162d9058bd90175a7ca0c40091d992387b8fb9
 	}
 	
 }
