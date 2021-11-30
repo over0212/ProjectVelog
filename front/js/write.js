@@ -1,5 +1,5 @@
 // write_page -------------------------------------------
-const submit_btn = document.querySelector('.on_submit'); 
+const temp_submit = document.querySelector('.temp_submit'); 
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
 const write_txt = document.querySelector('.write_txt');
@@ -9,6 +9,7 @@ const tag_msg = document.querySelector('.tag_msg');
 const pre_title = document.querySelector('.pre_title');
 const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
+const h1 = document.querySelector('.h1');
 
 tag_msg.style.display = "none";
 
@@ -48,31 +49,51 @@ write_title.onkeyup = () => {
 
 // content
 write_txt.onkeyup = () => {
-    var text = write_txt.value;
-    if(window.event.keyCode == 13){
-        pre_txt.innerHTML += '<br/>';
-    }else{
-        pre_txt.innerText = text;
-    }
+    // var text = write_txt.value;
+    // if(window.event.keyCode == 13){
+        // pre_txt.innerHTML += '<br/>';
+    // }else{
+    //     pre_txt.innerText = text;
+    // }
+    pre_txt.textContent = write_txt.value;
 }
 
-write_txt.onkeydown = () => {
-    if(window.event.keyCode == 9){
-        write_txt.cursor();
-    }
-}
+// write_txt.onkeydown = () => {
+//     if(window.event.keyCode == 9){
+//         write_txt.cursor();
+//     }
+// }
+
+// tool bar
+// h1.onclick = () => {
+//     if(window.event.keyCode == 13){
+//         alert('enter');
+//         write_txt.style.fontSize = '1em';
+//         write_txt.style.fontWeight = "300";
+//     }else{
+//         write_txt.style.fontSize = '2em';
+//         write_txt.style.fontWeight = '700';
+//     }
+// }
 
 // 출간하기 버튼 클릭시
-submit_btn.onclick = () => {
+temp_submit.onclick = () => {
     send_page.style.display = "block";
-    write_page.style.display = "none"
+    write_page.style.display = "none";
+
+    const post_title = document.querySelector('.post_title');
+    const post_content = document.querySelector('.post_content');
+    const ip_url = document.querySelector('.ip_url');
+    var title = write_txt.value;
+    var contents = write_txt.value;
+
+    post_title.value = title;
+    post_content.value = contents;
+    ip_url.value = title;
 }
 
 // send_page --------------------------------------------
 const cancle_btn = document.querySelector('.cancle_btn');
-
-
-
 
 //취소 버튼
 cancle_btn.onclick = () => {

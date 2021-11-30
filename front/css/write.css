@@ -207,20 +207,20 @@ body{
     font-weight: 500;
     cursor: pointer;
 }
-.temp_submit{
+.temp_store{
     color: #495057;
     background-color: #e9ecef;
 }
-.temp_submit:hover{
+.temp_store:hover{
     background-color: #f2f4f7;
     
 }
-.on_submit{
+.temp_submit{
     color: #fff;
     background-color: #12b886;
     margin-left: 9px;
 }
-.on_submit:hover{
+.temp_submit:hover{
     background-color: #54c9a6;
 
 }

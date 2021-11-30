@@ -45,18 +45,19 @@
                     <div class="write_footer">
                         <button type="button" class="exit_btn"><i class="fas fa-arrow-left"></i> 나가기</button>
                         <div class="submit_btns">
-                            <button type="button" class="temp_submit">임시저장</button>
-                            <button type="button" class="on_submit">출간하기</button>
+                            <button type="button" class="temp_store">임시저장</button>
+                            <button type="button" class="temp_submit">출간하기</button>
                         </div>
                     </div>
                 </form>
             </section>
             <section class="write_right">
                 <h1 class="pre_title"></h1>
-                <pretext class="pre_txt"></pretext>
+                <pre class="pre_txt"></pre>
             </section>
         </div>
     </div>
+    <!-- send page -->
     <div class="send_page">
         <div class="writing_send_container">
             <div class="main_body">
@@ -68,8 +69,8 @@
                             <button type="button" class="upload_button">썸네일 업로드</button>
                         </div>
                         <div class="input_box">
-                            <div class="post_title">${border.title}</div>
-                            <textarea class="post_summary" type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150">${border.content}</textarea>
+                            <input class="post_title" readonly></input>
+                            <textarea class="post_content" type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150">${border.content}</textarea>
                             <div class="length_box"><span class="text_length">0</span>/150</div>
                         </div>
                     </div>
@@ -86,7 +87,7 @@
                         </div>
                         <div class="settings">
                             <h3 class="send_h3">URL 설정</h3>
-                            <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text" value="title"></div>
+                            <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
                             
                         </div>
                         <div class="settings">
@@ -97,7 +98,7 @@
                     <div class="submit_btns">
                         <button type="button" class="cancle_btn">취소</button>
                         <button type="button" class="select_btn" style="display: none;">선택하기</button>
-                        <button type="button" class="submit_btn">출간하기</button>
+                        <button type="button" class="real_submit">출간하기</button>
                     </div>
                 </div>
             </div>
