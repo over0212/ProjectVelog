@@ -64,20 +64,18 @@ public class PageController {
 		return mav;
 	}
 	
-<<<<<<< HEAD
 	@GetMapping("/mypage/{id}")
 	public String Mypage(/*@AuthenticationPrincipal PrincipalDetails principal*/) {
 	    /*if(principal.getUsername() == null ) {
 	      return "redirect:index";
 	    }*/
 		return "mypage";
-=======
+}
 	// 글 작성 페이지
 	@GetMapping("/write")
 	public ModelAndView writePage() {
 		ModelAndView mav = new ModelAndView("write");
 		return mav;
->>>>>>> a2162d9058bd90175a7ca0c40091d992387b8fb9
 	}
 	
 }
