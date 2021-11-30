@@ -10,12 +10,12 @@ body{
     /* z-index: 7000; */
     width: 100%; height: 930px;
     box-sizing: border-box;
+    position: relative;
 }
 .write_wrap{
     width: 100%; height: 100%;
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 .write_left{
     width: 100%; height: 100%;

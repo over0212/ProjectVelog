@@ -85,7 +85,6 @@ write_txt.onkeyup = () => {
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
-    write_page.style.display = "none";
 
     var title = write_title.value;
     var contents = write_txt.value;
