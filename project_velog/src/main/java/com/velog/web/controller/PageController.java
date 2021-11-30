@@ -74,10 +74,10 @@ public class PageController {
 	    }
 	}
 	
-	// 글 작성 페이지
-	@GetMapping("/write")
+	// border-insert 페이지
+	@GetMapping("/insert")
 	public ModelAndView writePage() {
-		ModelAndView mav = new ModelAndView("write");
+		ModelAndView mav = new ModelAndView("border_insert");
 		return mav;
 	}
 	

@@ -1,4 +1,5 @@
 const temp_submit = document.querySelector('.temp_submit'); 
+const exit_btn = document.querySelector('.exit_btn');
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
 const write_txt = document.querySelector('.write_txt');
@@ -82,10 +83,14 @@ write_txt.onkeyup = () => {
 //     }
 // }
 
+// 나가기 버튼 클릭시 뒤로가기
+exit_btn.onclick = () => {
+	window.history.back();
+}
+
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
-    write_page.style.display = "none";
 
     var title = write_title.value;
     var contents = write_txt.value;
@@ -116,7 +121,27 @@ cancle_btn.onclick = () => {
 
 // submit 버튼
 real_submit.onclick() = () => {
-	
+	$.ajax({
+		type: "post",
+		url: "/border/insert",
+		encType: "multipart/form-data",
+		data: formData,
+		processData: false,
+		contentType: false,
+		success: function(data){ // controller가 0또는 border_code를 반환해주어야함
+			if(data == 0){
+				alert('게시글 등록에 실패하었습니다.');
+				location.href = '/';
+			}else{
+				alert('게시글 등록이 완료되었습니다.');
+				location.href = '/border/'+data; // 디테일 페이지로 전달
+				
+			}
+		},
+		error: function(){
+			alert('전송 실패!');
+		}
+	})
 
 }
 
