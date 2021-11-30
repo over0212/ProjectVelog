@@ -1,4 +1,7 @@
 /* terms & privacy */
+body{
+    font-weight: 900;	
+}
 #content{
     margin: 0 auto;
     display: block;
