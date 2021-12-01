@@ -16,17 +16,17 @@
                     <div class="si_close"><i class="fas fa-times"></i></div>
                     <!-- 로그인 부분 -->
                     <div class="si_input">
-                        <h2>로그인</h2>
-                        <h4>이메일로 로그인</h4>
+                        <h2  class="text_c">로그인</h2>
+                        <h4  class="text_c">이메일로 로그인</h4>
                         <div class="si_form">
                             <!-- 로그인 input -->
                             <input type="text" class="email_ip" name="email" placeholder="이메일을 입력하세요">
                             <!-- 로그인 버튼 -->
-                            <button type ="button" class="si_button">로그인</button>
+                            <button type ="button" class="si_button text_c">로그인</button>
                         </div>
                         <!-- 소셜 로그인 -->
                         <div class="social_login">
-                            <h4>소셜 계정으로 로그인</h4>
+                            <h4  class="text_c">소셜 계정으로 로그인</h4>
                             <div class="social_btns">
                                 <!-- api의 로그인 버튼 및 이미지 -->
                                 <a href="/oauth2/authorization/github" class="btn github_btn"><img src="/icon/github.png" alt=""></a>
@@ -38,8 +38,8 @@
                 </div>
                 <!-- 회원가입 요청 -->
                 <div class="si_su_info">
-                    <span class="su_question">아직 회원이 아니신가요?</span>
-                    <a href="" class="su_link"><span >회원가입</span></a>
+                    <span class="su_question text_c">아직 회원이 아니신가요?</span>
+                    <span class="su_link"><button type="button" class="text_c">회원가입</button></span>
                 </div>
         	</div>
         </div>

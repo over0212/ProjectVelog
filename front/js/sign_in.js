@@ -46,3 +46,28 @@ function email_check(email_ip) {
         return false;
     }
 }
+
+const su_link = document.querySelector('.su_link');
+const text_c = document.querySelectorAll('.text_c');
+
+var changeFlag = 0;
+
+su_link.onclick = () => {
+    if(changeFlag == 0){
+        text_c[0].textContent = '회원가입';
+        text_c[1].textContent = '이메일로 회원가입';
+        text_c[2].textContent = '회원가입';
+        text_c[3].textContent = '소셜 계정으로 회원가입';
+        text_c[4].textContent = '계정이 이미 있으신가요?';
+        text_c[5].textContent = '로그인';
+        changeFlag = 1;
+    } else {
+        text_c[0].textContent = '로그인';
+        text_c[1].textContent = '이메일로 로그인';
+        text_c[2].textContent = '로그인';
+        text_c[3].textContent = '소셜 계정으로 로그인';
+        text_c[4].textContent = '아직 회원이 아니신가요?';
+        text_c[5].textContent = '회원가입';
+        changeFlag = 0;
+    }
+}

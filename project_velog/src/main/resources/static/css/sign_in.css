@@ -194,17 +194,20 @@
 }
 .su_question{
     font-size: 16px;
+    font-weight: 300;
     margin-right: 4px;
 }
 .su_link{
     font-weight: 700;
     cursor: pointer;
 }
-.su_link span{
+.su_link button{
     font-size: 16px;
     color: rgb(18, 184, 134);
+    font-weight: 500;
+    cursor: pointer;
 }
-.su_link span:hover{
+.su_link button:hover{
     text-decoration: underline;
 }
 

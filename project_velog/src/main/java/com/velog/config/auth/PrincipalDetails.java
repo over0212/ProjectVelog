@@ -11,7 +11,6 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import com.velog.domain.user.User;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User{
