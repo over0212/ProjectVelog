@@ -74,10 +74,20 @@ public class PageController {
 	    }
 	}
 	
-	// 글 작성 페이지
-	@GetMapping("/write")
+	// myborder 페이지
+	@GetMapping("/myborder/{username}")
+	public String myVelog(@AuthenticationPrincipal PrincipalDetails principal) {
+		if(principal.getUsername() == null) {
+	      return "redirect:index";
+	    }else {
+	    	return "myborder";
+	    }
+	}
+	
+	// border-insert 페이지
+	@GetMapping("/insert")
 	public ModelAndView writePage() {
-		ModelAndView mav = new ModelAndView("write");
+		ModelAndView mav = new ModelAndView("border_insert");
 		return mav;
 	}
 	

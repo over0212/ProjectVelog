@@ -27,5 +27,5 @@ user_nav_wrap.onblur = () => {
 }
 
 go_posting_btn.onclick = () => {
-	location.href = "/write";
+	location.href = "/insert";
 }

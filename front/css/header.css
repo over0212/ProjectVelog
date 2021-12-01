@@ -20,8 +20,21 @@ header{
     width: 80px;
     height: 100%;
 }
+/* border에서 보여질 logo */
+.border_hd_logo{
+    width: auto;
+    display: flex;
+}
+.border_logo_img{
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+}
+.border_hd_icon{
+    width: 28px; height: 28px;
+}
 
-.hd_logo a{
+.hd_logo_a{
     height: inherit;
     display: flex;
     align-items: center;
@@ -30,6 +43,14 @@ header{
 
 .hd_logo_txt{
     font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-family: "Recursive";
+}
+.border_logo_txt{
+    font-size: 1.5em;
     font-weight: 600;
     text-align: center;
     line-height: 20px;
