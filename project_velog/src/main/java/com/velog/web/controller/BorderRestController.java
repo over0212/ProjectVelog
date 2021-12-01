@@ -15,7 +15,6 @@ public class BorderRestController {
 	
 	@PostMapping("/insert")
 	public String borderInsert(BorderInsertDto borderInsertDto) { // form-data 를 받음
-		
 		return "";
 	}
 }
