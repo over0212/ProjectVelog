@@ -25,7 +25,7 @@ public class MypageController {
 		int result = userService.updateMypage(mypageDto, id);
 		if(result == 2 || result == 1) {
 			principalDetails.getUser().setName(mypageDto.getName());
-			principalDetails.getUser().setComment(mypageDto.getContent());
+			principalDetails.getUser().setComment(mypageDto.getComment());
 			return Integer.toString(result);
 		}
 		return Integer.toString(result);

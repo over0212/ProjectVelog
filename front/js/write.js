@@ -1,4 +1,3 @@
-// write_page -------------------------------------------
 const temp_submit = document.querySelector('.temp_submit'); 
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
@@ -10,7 +9,14 @@ const pre_title = document.querySelector('.pre_title');
 const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
 const h1 = document.querySelector('.h1');
-
+const post_title = document.querySelector('.post_title');
+const post_content = document.querySelector('.post_content');
+const ip_url = document.querySelector('.ip_url');
+const text_length = document.querySelector('.text_length');
+const cancle_btn = document.querySelector('.cancle_btn');
+const length_box = document.querySelector('.length_box');
+const real_submit = document.querySelector('.real_submit');
+// write_page -------------------------------------------
 tag_msg.style.display = "none";
 
 ip_tags.onkeypress = () => {
@@ -79,21 +85,27 @@ write_txt.onkeyup = () => {
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
-    write_page.style.display = "none";
 
-    const post_title = document.querySelector('.post_title');
-    const post_content = document.querySelector('.post_content');
-    const ip_url = document.querySelector('.ip_url');
-    var title = write_txt.value;
+    var title = write_title.value;
     var contents = write_txt.value;
 
-    post_title.value = title;
+    post_title.appendChild(document.createTextNode(title));
     post_content.value = contents;
     ip_url.value = title;
+    text_length.appendChild(document.createTextNode(contents.length));
 }
 
 // send_page --------------------------------------------
-const cancle_btn = document.querySelector('.cancle_btn');
+post_content.onkeydown = () => {
+	var txt_length = post_content.value.length;
+	if(txt_length > 150){
+		post_content.value = post_content.value.substr(0,150);
+		length_box.style.color = "red";
+	}else{
+		length_box.style.color = "black";
+		text_length.textContent = txt_length;
+	}
+}
 
 //취소 버튼
 cancle_btn.onclick = () => {
@@ -102,5 +114,7 @@ cancle_btn.onclick = () => {
 }
 
 // submit 버튼
+real_submit.onclick() = () => {
 
+}
 

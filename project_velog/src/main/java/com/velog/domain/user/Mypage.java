@@ -9,7 +9,7 @@ public class Mypage {
 	
 	private int id;
 	private String name;
-	private String content;
-	private String usertitle;
+	private String comment;
+	private String nickname;
 
 }

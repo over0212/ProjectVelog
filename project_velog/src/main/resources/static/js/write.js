@@ -15,7 +15,7 @@ const ip_url = document.querySelector('.ip_url');
 const text_length = document.querySelector('.text_length');
 const cancle_btn = document.querySelector('.cancle_btn');
 const length_box = document.querySelector('.length_box');
-
+const real_submit = document.querySelector('.real_submit');
 // write_page -------------------------------------------
 tag_msg.style.display = "none";
 
@@ -85,7 +85,6 @@ write_txt.onkeyup = () => {
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
-    write_page.style.display = "none";
 
     var title = write_title.value;
     var contents = write_txt.value;
@@ -97,17 +96,14 @@ temp_submit.onclick = () => {
 }
 
 // send_page --------------------------------------------
-var txt_length = 0;
-if(txt_length != 150){
-	post_content.onkeydown = () => {
-		txt_length = post_content.value.length;
-		if(txt_length > 150){
-			post_content.value = post_content.value.substr(0,150);
-			length_box.style.color = "red";
-		}else{
-			length_box.style.color = "black";
-			text_length.textContent = txt_length;
-		}
+post_content.onkeydown = () => {
+	var txt_length = post_content.value.length;
+	if(txt_length > 150){
+		post_content.value = post_content.value.substr(0,150);
+		length_box.style.color = "red";
+	}else{
+		length_box.style.color = "black";
+		text_length.textContent = txt_length;
 	}
 }
 
@@ -118,5 +114,8 @@ cancle_btn.onclick = () => {
 }
 
 // submit 버튼
+real_submit.onclick() = () => {
+	
 
+}
 

@@ -34,7 +34,7 @@
 				</div>
 				<div class="top_info">
 					<h2 class="name">${principal.user.name }</h2>
-					<p>${principal.user.comment }</p>
+					<p class="comment">${principal.user.comment }</p>
 					<div class="info_modify_box">
 						<button class="info_modify">수정</button>
 					</div>
