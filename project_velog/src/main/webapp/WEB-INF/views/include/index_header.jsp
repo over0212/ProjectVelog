@@ -35,7 +35,7 @@
         <button type="button" class="plus_btn"><i class="fas fa-ellipsis-v"></i></button>
         <div class="plus_nav_box">
             <ul>
-                <li><a href="#">공지사항</a></li>
+                <li><a href="/notice">공지사항</a></li>
                 <li><a href="/trending-tag">태그 목록</a></li>
                 <li><a href="/terms">서비스 정책</a></li>
                 <li><a href="#">Slack</a></li>

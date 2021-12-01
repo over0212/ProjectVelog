@@ -49,5 +49,7 @@ items.addEventListener("click", event => {
     for(let i=0; i<itemObjs.length; i++){
             itemObjs[i].style.color = "rgb(73, 80, 87)";
     }
-    event.target.style.color = "rgb(32, 201, 151)";
+    if(event.target.className == "item"){
+        event.target.style.color = "rgb(32, 201, 151)";
+    }
 }) 

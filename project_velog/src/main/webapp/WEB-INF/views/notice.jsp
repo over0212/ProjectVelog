@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,96 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>velog (벨로그) - velog</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/notice.css">
-    <link rel="stylesheet" href="css/sign_in.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/notice.css">
 </head>
 <body>
-    <header>
-        <div class="fixed_header">
-            <div class="hd_wrap">
-                <div class="hd_logo">
-                    <a href="#">
-                        <span class="hd_logo_txt">velog.log</span>
-                    </a>
-                </div>
-                <div class="hd_btns">
-                    <button class="search_btn"><i class="fas fa-search search_icon"></i></button>
-                    <button class="header_btn login_btn" type="button">로그인</button>
-                    <button class="header_btn go_posting_btn" type="button" style="display: none;">새 글 작성</button>
-                <div class="user_nav_wrap" style="display: none;">
-                    <a href="">
-                        <img src="img/user_icon.png" alt="">
-                        <i class="fas fa-caret-down"></i>
-                    </a>
-                    <div class="user_nav nav_box">
-                        <ul>
-                            <li class="my_page"><a href="#">내 벨로그</a></li>
-                            <li class="temp_post"><a href="#">임시 글</a></li>
-                            <li class="read_list"><a href="#">읽기 목록</a></li>
-                            <li class="setting"><a href="#">설정</a></li>
-                            <li class="logout"><a href="#">로그아웃</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="si_container" style="display: none;">
-            <div class="si_warp">
-                <!-- 로그인 창 -->
-                <div class="si_box">
-                    <!-- 왼쪽 area -->
-                    <div class="si_img">
-                        <img src="img/login.svg" alt="login-img">
-                        <span>환영합니다!</span>
-                    </div>
-                    <!-- 오른쪽 area -->
-                    <div class="si_block">
-                        <!-- <div class="login_si_api"> -->
-                            <!-- 종료버튼 -->
-                            <div class="si_close"><i class="fas fa-times"></i></div>
-                            <!-- 로그인 부분 -->
-                            <div class="si_input">
-                                <h2>로그인</h2>
-                                <h4>이메일로 로그인</h4>
-                                <form action="" class="si_form">
-                                    <!-- 로그인 input -->
-                                    <input type="text" class="email_ip" placeholder="이메일을 입력하세요">
-                                    <!-- 로그인 버튼 -->
-                                    <button class="si_button">로그인</button>
-                                </form>
-                                <!-- 소셜 로그인 -->
-                                <div class="social_login">
-                                    <h4>소셜 계정으로 로그인</h4>
-                                    <div class="social_btns">
-                                        <!-- api의 로그인 버튼 및 이미지 -->
-                                        <div class="btn"><i class="fab fa-google"></i></div>
-                                        <div class="btn"><i class="fab fa-google"></i></div>
-                                        <div class="btn"><i class="fab fa-google"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- </div> -->
-                        <!-- 회원가입 요청 -->
-                        <div class="si_su_info">
-                            <span class="su_question">아직 회원이 아니신가요?</span>
-                            <span class="su_link"><a href="">회원가입</a></span>
-                        </div>   
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <jsp:include page="include/main_header.jsp"></jsp:include>
     <div class="notice_container">
         <div class="notice_body">
-                            <!-- 벨로그 로고 및 소개글 -->
+            <!-- 벨로그 로고 및 소개글 -->
             <div class="velog_introduction_box"><!--변수명 수정 필요 -->
-                <div class="img_box"><img src="img/green favicon.png" class="velog_logo" alt=""></div>
+                <div class="img_box"><img src="/img/green favicon.png" class="velog_logo" alt=""></div>
                 <div class="velog_info_box">
-                    <div class="velog_name">
-                        <a href="">벨로그</a>
-                    </div>
+                    <div class="velog_name"><a href="">벨로그</a></div>
                     <div class="velog_info">
                         벨로그 공식 계정입니다. 
                         공지사항 및 벨로그 프로젝트 관련 포스트를 올립니다.
@@ -118,7 +43,7 @@
                 </div>
                 <div class="notice">
                     <!-- 공지 이미지 태그 (이미지 미첨부시에 js구현필요)-->
-                    <a href="#"><img src="img/Group 2.png" alt=""></a>
+                    <a href="#"><img src="/img/Group 2.png" alt=""></a>
                     <!-- 공지 제목 태그 -->
                     <h2>독자들에게 후원을 받아보세요: ThankYouFor___</h2>
                     <!-- 공지 내용 태그 -->
@@ -172,9 +97,7 @@
             </div>
         </div>
     </div>
-    <script src="js/header.js"></script>
-    <script src="js/sign_in.js"></script>
-    <script src="js/notice.js"></script>
+    <script src="/js/notice.js"></script>
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
 </body>
 </html>

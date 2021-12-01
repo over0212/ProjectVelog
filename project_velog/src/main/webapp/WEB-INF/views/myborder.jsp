@@ -22,7 +22,6 @@
 <body>
     <!-- border header -->
     <header>
-    	<input type="hidden" id="username" value="${principal.user.username }">
         <div class="fixed_header">
             <div class="hd_wrap">
                 <div class="hd_logo border_hd_logo">
