@@ -70,4 +70,10 @@ public class PageController {
 	    }
 	}
 	
+	// notice 페이지
+	@GetMapping("/notice")
+	public ModelAndView notice(){
+		ModelAndView mav = new ModelAndView("notice");
+		return mav;
+	}
 }
