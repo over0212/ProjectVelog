@@ -74,6 +74,13 @@ public class PageController {
 	    }
 	}
 	
+	// notice 페이지
+	@GetMapping("/notice")
+	public ModelAndView notice(){
+		ModelAndView mav = new ModelAndView("notice");
+		return mav;
+	}
+	
 	// myborder 페이지
 	@GetMapping("/myborder/{username}")
 	public String myVelog(@AuthenticationPrincipal PrincipalDetails principal) {
