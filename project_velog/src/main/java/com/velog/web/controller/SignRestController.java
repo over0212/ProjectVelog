@@ -54,8 +54,6 @@ public class SignRestController {
 	@DeleteMapping("/mypage/delete/{id}")
 	public String deleteUser(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id) {
 		int result = userService.deleteUser(id);
-		System.out.println(result);
-		System.out.println(id);
 		return Integer.toString(result);
 	}
 

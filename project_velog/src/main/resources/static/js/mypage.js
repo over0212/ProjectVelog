@@ -103,7 +103,7 @@ modify[2].onclick = () => {
 	title_box_hidden[1].style.display = 'block';
 }
 
-var user_info_social = ["mail", "github", "twitter", "facebook", "home"]
+/*var user_info_social = ["mail", "github", "twitter", "facebook", "home"]
 
 info_save[2].onclick = () => {
 	icon_box_block.style.display ='none';
@@ -125,13 +125,13 @@ function user_social() {
 		url: "/mypage/front_social/17",
 		data: JSON.stringify()
 	})
-}
-social_modify.onclick = () => {
+}*/
+/*social_modify.onclick = () => {
 	title_box_hidden[1].style.display = 'block';
 	social_box_block.style.display = 'none';
 	icon_box_block.style.display = 'block';
 }
-
+*/
 
 
 // 스위치 온오프 기능
@@ -182,6 +182,10 @@ sign_out.onclick = () => {
 				alert('비동기 처리 오류');
 		}
 	})
+}
+
+cancel.onclick = () => {
+    so_container.style.display = 'none';
 }
 
 
