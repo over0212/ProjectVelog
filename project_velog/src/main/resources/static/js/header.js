@@ -7,6 +7,7 @@ const user_nav = document.querySelector('.user_nav');
 
 for (let i = 0; i < login_btns.length; i++) {
 	login_btns[i].onclick = () => {
+		console.log(login_btns[i]);
 		const si_container = document.querySelector(".si_container");
 		si_container.style.display = "block";
 		si_container.className = "si_container active"
