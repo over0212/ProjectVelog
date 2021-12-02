@@ -10,6 +10,18 @@ const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
 const user_id = document.querySelector('#id');
 
+<<<<<<< HEAD
+var user_info = {
+	name : '',
+	content: ''
+}
+=======
+
+
+
+
+>>>>>>> Leo
+
 modify[0].onclick = () => {
 	top_info.style.display = 'none';
 	info_creative.style.display = 'block';
@@ -22,7 +34,10 @@ var user_info = {
 	comment: ''
 }
 
+
+
 info_save[0].onclick = () => {
+<<<<<<< HEAD
     info_creative.style.display = 'none';
     top_info.style.display = 'block';
     user_info.name = inputs[0].value;
@@ -33,9 +48,25 @@ info_save[0].onclick = () => {
 function user_name() {
 	$.ajax({
 		type: "patch",
-		url: "/mypage/front/" + user_id.value,
+		url : "/mypage/front/" + user_id.value,
+		data : JSON.stringify(user_info),
+=======
+	info_creative.style.display = 'none';
+	top_info.style.display = 'block';
+	user_info.name = inputs[0].value;
+	user_info.comment = inputs[1].value;
+	user_name();
+}
+
+function user_name() {
+	alert(JSON.stringify(user_info));
+
+	$.ajax({
+		type: "patch",
+		url: "/mypage/front/17",
 		data: JSON.stringify(user_info),
-		contentType: "application/json; charset=UTF-8",
+>>>>>>> Leo
+		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
 			if(data == '2' || data == '1'){
@@ -47,11 +78,20 @@ function user_name() {
 		error: function() {
 			alert('비동기 처리 오류');
 		}
+<<<<<<< HEAD
 	})
 }
 
 var user_title = {
-	username : ''
+	usertitle : ''
+=======
+
+	})
+}
+
+var user_info_title = {
+	username: ''
+>>>>>>> Leo
 }
 
 modify[1].onclick = () => {
@@ -61,17 +101,20 @@ modify[1].onclick = () => {
 }
 
 info_save[1].onclick = () => {
+<<<<<<< HEAD
     modify[1].style.display = 'block';
     contents_box.style.display = 'block';
     title_box_hidden[0].style.display = 'none';
     user_title.usertitle = inputs[2].value;
     user_info_title();
+=======
 	modify[1].style.display = 'block';
 	contents_box.style.display = 'block';
 	title_box_hidden[0].style.display = 'none';
 
 	user_info_title.username = inputs[2].value;
 	user_username();
+>>>>>>> Leo
 }
 
 
@@ -80,24 +123,35 @@ function user_username() {
 
 	$.ajax({
 		type: "patch",
+<<<<<<< HEAD
 		url: "/mypage/front_title/" + user_id.value,
 		data: JSON.stringify(user_title),
-		contentType: "application/json; charset=UTF-8",
+=======
+		url: "/mypage/front_username/17",
+		data: JSON.stringify(user_info_title),
+>>>>>>> Leo
+		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
 			console.log(data);
 		},
+<<<<<<< HEAD
+		error: function(){
+=======
 		error: function() {
+>>>>>>> Leo
 			alert('비동기 처리 오류');
 		}
 	})
 }
 
+<<<<<<< HEAD
 const social = document.querySelectorAll('icon_box input');
 
-modify[2].onclick = () => {
+modify[2].onclick = () => {  
     modify[2].style.display = 'none';
     title_box_hidden[1].style.display = 'block';
+=======
 const social_modify = document.querySelector('.social_modify');
 const social_icon = document.querySelectorAll('.social_icon');
 const social_span = document.querySelectorAll('.social_icon span');
@@ -108,15 +162,20 @@ modify[2].onclick = () => {
 	modify[2].style.display = 'none';
 	social_box_block.style.display = 'none';
 	title_box_hidden[1].style.display = 'block';
+>>>>>>> Leo
 }
 
 var user_info_social = ["mail", "github", "twitter", "facebook", "home"]
 
 info_save[2].onclick = () => {
+<<<<<<< HEAD
     modify[2].style.display = 'block';
     title_box_hidden[1].style.display = 'none';
     
 }
+
+
+=======
 	icon_box_block.style.display ='none';
 	for (i = 0; i < social_span[i].length; i++) {
 		social_span[i] = inputs[i + 3].value;
@@ -145,6 +204,7 @@ social_modify.onclick = () => {
 
 
 
+>>>>>>> Leo
 // 스위치 온오프 기능
 const switch_off = document.querySelectorAll('.switch_off');
 const switch_on = document.querySelectorAll('.switch_on');
@@ -155,6 +215,7 @@ switch_off[0].onclick = () => {
 }
 
 switch_off[1].onclick = () => {
+<<<<<<< HEAD
     switch_off[1].style.background = '#12b886';
 }
 
@@ -194,3 +255,10 @@ sign_out.onclick = () => {
 		}
 	})
 }
+
+
+
+=======
+	switch_off[1].style.background = '#12b886';
+}
+>>>>>>> Leo
