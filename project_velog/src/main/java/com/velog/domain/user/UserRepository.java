@@ -21,11 +21,7 @@ public interface UserRepository {
 	
 	public int updateFrontName(Mypage mypage);
 	
-	public User  getUser(String email);
-	
-	public int updateFrontTitle(Mypage mypage);
+	public int updateFrontUsername(Mypage mypage);
 	
 	public int deleteUser(int id);
-	
-	public int updateFrontNickname(Mypage mypage);
 }

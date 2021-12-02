@@ -8,14 +8,14 @@ import lombok.Data;
 public class MypageDto {
 	private String name;
 	private String comment;
-     private String username;
-     
-     public Mypage toEntity(int id) {
-    	 return Mypage.builder()
-    			 .id(id)
-    			 .name(name)   			 
-    			 .comment(comment)   			 
-    			 .username(username)
-    			 .build();
-     }
+	private String username;
+
+	public Mypage toEntity(int id) {
+		return Mypage.builder()
+				.id(id)
+				.name(name)
+				.comment(comment)
+				.username(username)
+				.build();
+	}
 }

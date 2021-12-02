@@ -9,20 +9,12 @@
 		   user_mst
 		set
 		   name = #{name}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontComment" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_mst
-		set
 		   comment = #{comment}
 		where
 			id = #{id};
     </update>
-    
-    <update id="updateFrontNickname" parameterType="com.velog.domain.user.Mypage">
+
+    <update id="updateFrontUsername" parameterType="com.velog.domain.user.Mypage">
 		update
 		   user_mst
 		set
