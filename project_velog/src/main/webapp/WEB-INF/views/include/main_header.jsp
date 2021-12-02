@@ -18,12 +18,12 @@
 			<!-- 로고 -->
 			<div class="hd_logo border_hd_logo">
 			<c:choose>
-				<c:when test="${empty principal.writer}">
-					<a href="/index"><span class="hd_logo_txt">velog</span></a>
-				</c:when>
-				<c:otherwise>
+				<c:when test="${not empty principal.writer}">
 					<a href="/" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
                     <a class="hd_logo_a"><span class="border_logo_txt">${principal.writer}.log</span></a>
+				</c:when>
+				<c:otherwise>
+					<a href="/index"><span class="hd_logo_txt">velog</span></a>
 				</c:otherwise>
 			</c:choose>
 			</div>

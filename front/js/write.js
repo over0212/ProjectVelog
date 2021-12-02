@@ -88,7 +88,7 @@ write_txt.onkeyup = () => {
         // alert(mirror_code.innerHTML);
     }
     
-    pre_txt.innerHTML += mirror_code.outerHTML;
+    pre_txt.innerHTML = mirror_code.outerHTML;
 }
 
 
