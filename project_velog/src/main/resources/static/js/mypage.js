@@ -10,11 +10,6 @@ const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
 const user_id = document.querySelector('#id');
 
-
-
-
-
-
 modify[0].onclick = () => {
 	top_info.style.display = 'none';
 	info_creative.style.display = 'block';

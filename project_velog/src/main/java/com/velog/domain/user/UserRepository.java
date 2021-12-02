@@ -17,11 +17,14 @@ public interface UserRepository {
 	
 	public int signup(User user);
 	
-	public User  getUser(String email);
+	public User getUser(String email);
+	
+	public int deleteUser(int id);
 	
 	public int updateFrontName(Mypage mypage);
-	
+		
 	public int updateFrontComment(Mypage mypage);
 	
-	public int updateFrontNickname(Mypage mypage);
+	public int updateFrontUsername(Mypage mypage);
+	
 }

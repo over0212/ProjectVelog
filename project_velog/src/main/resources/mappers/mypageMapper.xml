@@ -22,7 +22,7 @@
 			id = #{id};
     </update>
     
-    <update id="updateFrontNickname" parameterType="com.velog.domain.user.Mypage">
+    <update id="updateFrontUsername" parameterType="com.velog.domain.user.Mypage">
 		update
 		   user_mst
 		set
