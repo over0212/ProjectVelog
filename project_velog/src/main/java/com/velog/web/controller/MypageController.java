@@ -4,7 +4,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.velog.config.auth.PrincipalDetails;
@@ -20,7 +19,7 @@ public class MypageController {
 	private final UserService userService;
 	
 	
-	@PatchMapping("/mypage/front/{id}")
+	@PatchMapping("/mypage/profile/{id}")
 	public String name(@AuthenticationPrincipal PrincipalDetails principalDetails,  @PathVariable int id,
 					   @RequestBody MypageDto mypageDto) {
 		int result = userService.updateMypage(mypageDto, id);
@@ -32,12 +31,11 @@ public class MypageController {
 		return Integer.toString(result);
 	}
 	
-	@ResponseBody
-	@PatchMapping("/mypage/front_username/{id}")
+	@PatchMapping("/mypage/username/{id}")
 	public String title(@PathVariable int id,
 			@RequestBody MypageDto mypageDto) {
 		
-		return Integer.toString(userService.updateMypage_Username(mypageDto, id));
+		return Integer.toString(userService.updateMypageUsername(mypageDto, id));
 	}
 	
 

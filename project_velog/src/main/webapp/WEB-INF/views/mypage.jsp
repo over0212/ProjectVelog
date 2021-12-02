@@ -22,6 +22,7 @@
 <body>
     <div class="mp_container">
         <header>
+        <input type="hidden" id="id" value="${principal.user.id }">
             <div class="fixed_header">
                 <div class="hd_wrap">
                     <div class="hd_logo"><a href="#"><span class="hd_logo_txt">velog</span></a></div>

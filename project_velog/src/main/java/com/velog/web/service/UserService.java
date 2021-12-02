@@ -3,7 +3,7 @@ package com.velog.web.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.velog.domain.user.Mypage;
+import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
 import com.velog.web.model.dto.MypageDto;
 
@@ -25,19 +25,20 @@ public class UserService {
 	public int updateMypage(MypageDto mypageDto, int id) {
 		
 		int completeCount = 0;
-		Mypage mypage = mypageDto.toEntity(id);
-		completeCount += userRepository.updateFrontName(mypage);
-		completeCount += userRepository.updateFrontComment(mypage);
+		User user = mypageDto.toEntity(id);
+		completeCount += userRepository.updateProfile(user);
+		completeCount += userRepository.updateProfile(user);
 		
 		return completeCount;
 	}
 	@Transactional
-	public int updateMypage_Username(MypageDto mypageDto, int id) {
+	public int updateMypageUsername(MypageDto mypageDto, int id) {
 		int completeCount = 0;
-		Mypage mypage = mypageDto.toEntity(id);
-		completeCount += userRepository.updateFrontUsername(mypage);
+		User user = mypageDto.toEntity(id);
+		completeCount += userRepository.updateUsername(user);
 		return completeCount;
 	}
+	
 	public int deleteUser(int id) {
 		int deleteFlag = userRepository.deleteUser(id);
 		return deleteFlag;

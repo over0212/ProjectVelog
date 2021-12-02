@@ -39,11 +39,7 @@
 		where
 			email = #{email};
   	</select>
-<<<<<<< HEAD
   	
-=======
-
->>>>>>> Leo
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
