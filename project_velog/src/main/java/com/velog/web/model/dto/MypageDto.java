@@ -1,18 +1,17 @@
 package com.velog.web.model.dto;
 
-import com.velog.domain.user.User;
+import com.velog.domain.user.Mypage;
 
 import lombok.Data;
 
 @Data
 public class MypageDto {
-	private int id;
 	private String name;
 	private String comment;
      private String username;
      
-     public User toEntity(int id) {
-    	 return User.builder()
+     public Mypage toEntity(int id) {
+    	 return Mypage.builder()
     			 .id(id)
     			 .name(name)   			 
     			 .comment(comment)   			 
