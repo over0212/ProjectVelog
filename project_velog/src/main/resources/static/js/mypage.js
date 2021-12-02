@@ -10,17 +10,19 @@ const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
 const user_id = document.querySelector('#id');
 
+modify[0].onclick = () => {
+	top_info.style.display = 'none';
+	info_creative.style.display = 'block';
+
+}
+// var FormData = new FormData(form);
+
 var user_info = {
-	name : '',
-	content: ''
+	name: '',
+	comment: ''
 }
 
-modify[0].onclick = () => {
-    top_info.style.display  = 'none';
-    info_creative.style.display = 'block';
-   
-}
- // var FormData = new FormData(form);
+
 
 info_save[0].onclick = () => {
     info_creative.style.display = 'none';
@@ -47,56 +49,89 @@ function user_name() {
 		error: function() {
 			alert('비동기 처리 오류');
 		}
+
 	})
 }
 
-var user_title = {
-	usertitle : ''
+var user_info_title = {
+	username: ''
 }
 
 modify[1].onclick = () => {
-    contents_box.style.display = 'none';
-    modify[1].style.display = 'none';
-    title_box_hidden[0].style.display = 'block';
+	contents_box.style.display = 'none';
+	modify[1].style.display = 'none';
+	title_box_hidden[0].style.display = 'block';
 }
 
 info_save[1].onclick = () => {
-    modify[1].style.display = 'block';
-    contents_box.style.display = 'block';
-    title_box_hidden[0].style.display = 'none';
-    user_title.usertitle = inputs[2].value;
-    user_info_title();
+	modify[1].style.display = 'block';
+	contents_box.style.display = 'block';
+	title_box_hidden[0].style.display = 'none';
+
+	user_info_title.username = inputs[2].value;
+	user_username();
 }
 
-function user_info_title() {
-	
+
+function user_username() {
+	alert(JSON.stringify(user_info_title));
+
 	$.ajax({
 		type: "patch",
 		url: "/mypage/front_title/" + user_id.value,
 		data: JSON.stringify(user_title),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
-		success: function(data){
-			alert(data);
+		success: function(data) {
+			console.log(data);
 		},
 		error: function(){
 			alert('비동기 처리 오류');
 		}
 	})
-};
-
-const social = document.querySelectorAll('icon_box input');
-
-modify[2].onclick = () => {  
-    modify[2].style.display = 'none';
-    title_box_hidden[1].style.display = 'block';
 }
+
+const social_modify = document.querySelector('.social_modify');
+const social_icon = document.querySelectorAll('.social_icon');
+const social_span = document.querySelectorAll('.social_icon span');
+const social_box_block = document.querySelector('.social_box_block');
+const icon_box_block = document.querySelector('.icon_box_block');
+
+modify[2].onclick = () => {
+	modify[2].style.display = 'none';
+	social_box_block.style.display = 'none';
+	title_box_hidden[1].style.display = 'block';
+}
+
+var user_info_social = ["mail", "github", "twitter", "facebook", "home"]
 
 info_save[2].onclick = () => {
-    modify[2].style.display = 'block';
-    title_box_hidden[1].style.display = 'none';
-    
+	icon_box_block.style.display ='none';
+	for (i = 0; i < social_span[i].length; i++) {
+		social_span[i] = inputs[i + 3].value;
+		social_span[i].style.display = 'none';
+		if (social_span[i] != null) {
+			social_box_block.style.display = 'block';
+			social_span[i].style.display = 'block';
+
+		}
+	}
 }
+
+
+function user_social() {
+	$.ajax({
+		type: "patch",
+		url: "/mypage/front_social/17",
+		data: JSON.stringify()
+	})
+}
+social_modify.onclick = () => {
+	title_box_hidden[1].style.display = 'block';
+	social_box_block.style.display = 'none';
+	icon_box_block.style.display = 'block';
+}
+
 
 
 // 스위치 온오프 기능
@@ -105,7 +140,7 @@ const switch_on = document.querySelectorAll('.switch_on');
 const circle = document.querySelectorAll('.circle');
 
 switch_off[0].onclick = () => {
-    switch_off[0].style.background = '#12b886';
+	switch_off[0].style.background = '#12b886';
 }
 
 switch_off[1].onclick = () => {

@@ -8,8 +8,8 @@ import lombok.Data;
 public class Mypage {
 	
 	private int id;
-	private String name;
-	private String username;
-	private String comment;
+	private String user_name;
+	private String content;
+	private String user_title;
 
 }

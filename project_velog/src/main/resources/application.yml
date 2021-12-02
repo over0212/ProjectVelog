@@ -50,7 +50,8 @@ spring:
           github:
             client-id: 6e5e8f99ac8982016ec2
             client-secret: cdeae795546ad00d16105c8c63c8ccdfb968dcd8
-            scope:            - email
+            scope:
+            - email
             - name
           naver:
             client-id: CKV35qpjCfqbk1nEEUpH
@@ -69,4 +70,5 @@ spring:
             user-name-attribute: response #회원정보를 json형태로 가지고 올때 response라는 key값으로 데이터를 전달해 준다
 
 mybatis:
-  mapper-locations:  - /mappers/*xml
+  mapper-locations:
+  - /mappers/*xml
