@@ -15,8 +15,6 @@ public class BorderDto {
 	private String main_content;
 	private String origin_img_name;
 	private String temp_img_name;
-	private String origin_file_name;
-	private String temp_file_name;
 	private String preview_img_origin_name;
 	private String preview_img_temp_name;
 	private String preview_txt;
@@ -30,8 +28,6 @@ public class BorderDto {
 				.main_content(main_content)
 				.origin_img_name(origin_img_name)
 				.temp_img_name(temp_img_name)
-				.origin_file_name(origin_file_name)
-				.temp_file_name(temp_file_name)
 				.preview_img_origin_name(preview_img_origin_name)
 				.preview_img_temp_name(preview_img_temp_name)
 				.preview_txt(preview_txt)
