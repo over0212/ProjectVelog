@@ -25,8 +25,6 @@ public interface UserRepository {
 		
 	public int updateFrontComment(Mypage mypage);
 	
-	public User  getUser(String email);
-	
 	public int updateFrontTitle(Mypage mypage);
 	
 }
