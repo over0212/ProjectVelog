@@ -22,8 +22,6 @@ var user_info = {
 	comment: ''
 }
 
-
-
 info_save[0].onclick = () => {
     info_creative.style.display = 'none';
     top_info.style.display = 'block';
@@ -37,7 +35,7 @@ function user_name() {
 		type: "patch",
 		url : "/mypage/front/" + user_id.value,
 		data : JSON.stringify(user_info),
-		contentType: "application/json;charset=UTF-8",
+		contentType: "application/json; charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
 			if(data == '2' || data == '1'){
