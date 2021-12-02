@@ -180,6 +180,13 @@ sign_out.onclick = () => {
 }
 
 cancel.onclick = () => {
+<<<<<<< HEAD
 	so_container.style.display = 'none';
 }
+=======
+    so_container.style.display = 'none';
+}
+
+
+>>>>>>> main
 

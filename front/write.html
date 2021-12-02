@@ -12,97 +12,105 @@
 </head>
 <body>
     <div class="write_page">
-        <div class="write_wrap">
-            <section class="write_left">
-                <form class="write_form" action="" method="post">
-                    <div class="write_ip"> 
-                        <textarea class="write_title" name="" id="" placeholder="제목을 입력하세요"></textarea>
-                        <div class="seperate"></div>
-                        <div class="write_tag">
-                            <span class="tag_wrap"></span>
-                            <input class="ip_tags" type="text" placeholder="태그를 입력하세요">
-                            <div class="tag_msg">쉼표 혹은 엔터를 입력하여 태그를 등록할 수 있습니다.<br>등록된 태그를 클릭하면 삭제됩니다.</div>
+        <form class="write_container form" action="" method="post">
+            <div class="write_wrap">
+                <div class="write_ip"> 
+                    <textarea class="write_title" name="" id="" placeholder="제목을 입력하세요"></textarea>
+                    <div class="seperate"></div>
+                    <div class="write_tag">
+                        <span class="tag_wrap"></span>
+                        <input class="ip_tags" type="text" placeholder="태그를 입력하세요">
+                        <div class="tag_msg">쉼표 혹은 엔터를 입력하여 태그를 등록할 수 있습니다.<br>등록된 태그를 클릭하면 삭제됩니다.</div>
+                    </div>
+                </div>
+                <div class="deco_bar">
+                    <button type="button" class="h1 font_size">H<span>1</span></button>
+                    <button type="button" class="h2 font_size">H<span>2</span></button>
+                    <button type="button" class="h3 font_size">H<span>3</span></button>
+                    <button type="button" class="h4 font_size">H<span>4</span></button>
+                    <div class="seper"></div>
+                    <button type="button" class="bold"><i class="fas fa-bold"></i></button>
+                    <button type="button" class="italic"><i class="fas fa-italic"></i></button>
+                    <button type="button" class="overline"><i class="fas fa-minus"></i></button>
+                    <div class="seper"></div>
+                    <button type="button" class="quote"><i class="fas fa-quote-right"></i></button>
+                    <button type="button" class="link"><i class="fas fa-link"></i></button>
+                    <input type="file" name="file" id="imgFile" onchange="imgFileLoad()" style="display: none;">
+                    <button type="button" class="image" onclick="document.all.file.click()"><i class="fas fa-image"></i></button>
+                    <button type="button" class="code"><i class="fas fa-code"></i></button>
+                </div>
+                <div class="text_wrap">
+                    <textarea class="write_txt" placeholder="textarea" cols="79"></textarea>
+                    <div class="mirror_wrap">
+                        <div class="mirror_write">
+                            <pre class="default_msg">당신의 이야기를 적어보세요...</pre>
+                            <div class="write_cursor"><div class="cursor"></div></div>
+                            <pre class="mirror_code"> <!--보여지는 곳-->
+                                <div class="mirror_line"></div>
+                            </pre>
                         </div>
                     </div>
-                    <div class="deco_bar">
-                        <button type="button" class="h1 font_size">H<span>1</span></button>
-                        <button type="button" class="h2 font_size">H<span>2</span></button>
-                        <button type="button" class="h3 font_size">H<span>3</span></button>
-                        <button type="button" class="h4 font_size">H<span>4</span></button>
-                        <div class="seper"></div>
-                        <button type="button" class="bold"><i class="fas fa-bold"></i></button>
-                        <button type="button" class="italic"><i class="fas fa-italic"></i></button>
-                        <button type="button" class="overline"><i class="fas fa-minus"></i></button>
-                        <div class="seper"></div>
-                        <button type="button" class="quote"><i class="fas fa-quote-right"></i></button>
-                        <button type="button" class="link"><i class="fas fa-link"></i></button>
-                        <button type="button" class="image"><i class="fas fa-image"></i></button>
-                        <button type="button" class="code"><i class="fas fa-code"></i></button>
+                </div>
+                <div class="write_footer">
+                    <button type="button" class="exit_btn"><i class="fas fa-arrow-left"></i> 나가기</button>
+                    <div class="submit_btns">
+                        <button type="button" class="temp_store">임시저장</button>
+                        <button type="button" class="temp_submit">출간하기</button>
                     </div>
-                    <div class="text_box">
-                        <textarea class="write_txt" placeholder="당신의 이야기를 적어보세요..."></textarea>
-                    </div>
-                    <div class="write_footer">
-                        <button type="button" class="exit_btn"><i class="fas fa-arrow-left"></i> 나가기</button>
-                        <div class="submit_btns">
-                            <button type="button" class="temp_store">임시저장</button>
-                            <button type="button" class="temp_submit">출간하기</button>
-                        </div>
-                    </div>
-                    <!-- send page -->
-                    <div class="send_page">
-                        <div class="writing_send_container">
-                            <div class="main_body">
-                                <div class="left_wrap">
-                                    <h3 class="send_h3">포스트 미리보기</h3>
-                                    <div class="preview_contents">
-                                        <div class="img_upload">
-                                            <div class="img"><i class="far fa-image"></i></div>
-                                            <button type="button" class="upload_button">썸네일 업로드</button>
-                                        </div>
-                                        <div class="input_box">
-                                            <input class="post_title" readonly></input>
-                                            <textarea class="post_content" type="text" placeholder="당신의 포스트를 짧게 소개해보세요."></textarea>
-                                            <div class="length_box"><span class="text_length">0</span>/150</div>
-                                        </div>
+                </div>
+                <!-- send page -->
+                <div class="send_page">
+                    <div class="writing_send_container">
+                        <div class="main_body">
+                            <div class="left_wrap">
+                                <h3 class="send_h3">포스트 미리보기</h3>
+                                <div class="preview_contents">
+                                    <div class="img_upload">
+                                        <div class="img"><i class="far fa-image"></i></div>
+                                        <button type="button" class="upload_button">썸네일 업로드</button>
+                                    </div>
+                                    <div class="input_box">
+                                        <input class="post_title" readonly></input>
+                                        <textarea class="post_content" type="text" placeholder="당신의 포스트를 짧게 소개해보세요."></textarea>
+                                        <div class="length_box"><span class="text_length">0</span>/150</div>
                                     </div>
                                 </div>
-                                <div class="seper_line"></div>
-                                <div class="right_wrap">
-                                    <div class="settings_wrap">
-                                        <div class="settings">
-                                            <h3 class="send_h3">공개 설정</h3>
-                                            <div class="public_btn_wrap">
-                                                <button type="button" class="public_active"><i class="fas fa-globe-europe"></i>전체 공개</button>
-                                                <button type="button"><i class="fas fa-lock"></i>비공개</button>
-                                            </div>
-                                        </div>
-                                        <div class="settings">
-                                            <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
-                                            
-                                        </div>
-                                        <div class="settings">
-                                            <h3 class="send_h3">시리즈 설정</h3>
-                                            <button type="button" class="append_serise"><i class="fas fa-plus"></i>시리즈에 추가하기</button>
+                            </div>
+                            <div class="seper_line"></div>
+                            <div class="right_wrap">
+                                <div class="settings_wrap">
+                                    <div class="settings">
+                                        <h3 class="send_h3">공개 설정</h3>
+                                        <div class="public_btn_wrap">
+                                            <button type="button" class="public_active"><i class="fas fa-globe-europe"></i>전체 공개</button>
+                                            <button type="button"><i class="fas fa-lock"></i>비공개</button>
                                         </div>
                                     </div>
-                                    <div class="submit_btns">
-                                        <button type="button" class="cancle_btn">취소</button>
-                                        <button type="button" class="select_btn" style="display: none;">선택하기</button>
-                                        <button type="button" class="real_submit">출간하기</button>
+                                    <div class="settings">
+                                        <h3 class="send_h3">URL 설정</h3>
+                                        <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
+                                        
                                     </div>
+                                    <div class="settings">
+                                        <h3 class="send_h3">시리즈 설정</h3>
+                                        <button type="button" class="append_serise"><i class="fas fa-plus"></i>시리즈에 추가하기</button>
+                                    </div>
+                                </div>
+                                <div class="submit_btns">
+                                    <button type="button" class="cancle_btn">취소</button>
+                                    <button type="button" class="select_btn" style="display: none;">선택하기</button>
+                                    <button type="button" class="real_submit">출간하기</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
-            </section>
-            <section class="write_right">
-                <h1 class="pre_title"></h1>
-                <pre class="pre_txt"></pre>
-            </section>
-        </div>
+                </div>
+            </div>
+            <div class="preview_wrap">
+                <div class="pre_title"></div>
+                <div class="pre_txt"></div>
+            </div>
+        </form>
     </div>
     
     
