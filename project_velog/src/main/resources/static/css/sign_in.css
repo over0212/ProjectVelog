@@ -204,7 +204,7 @@
 .su_link button{
     font-size: 16px;
     color: rgb(18, 184, 134);
-    font-weight: 500;
+    font-weight: 900;
     cursor: pointer;
 }
 .su_link button:hover{

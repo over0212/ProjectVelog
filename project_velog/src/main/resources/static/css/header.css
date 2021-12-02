@@ -14,6 +14,13 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
+/* main_header */
+.hd_logo{
+    margin-left: 0px;
+    width: 80px;
+    height: 100%;
+}
 /* border에서 보여질 logo */
 .border_hd_logo{
     width: auto;
@@ -28,23 +35,15 @@ header{
     width: 28px; height: 28px;
 }
 
-
-/* main_header */
-.hd_logo{
-    margin-left: 0px;
-    width: 80px;
-    height: 100%;
-}
-
 .hd_logo a{
     height: inherit;
     display: flex;
     align-items: center;
     color: #343a40;
 }
-border_logo_txt{
-    font-size: 1.5em;
-    font-weight: 600;
+.border_logo_txt{
+    font-size: 2em;
+    font-weight: 800;
     text-align: center;
     line-height: 20px;
     letter-spacing: 1px;

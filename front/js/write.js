@@ -16,6 +16,8 @@ const text_length = document.querySelector('.text_length');
 const cancle_btn = document.querySelector('.cancle_btn');
 const length_box = document.querySelector('.length_box');
 const real_submit = document.querySelector('.real_submit');
+const imgFile = document.querySelector('#imgFile');
+
 // write_page -------------------------------------------
 tag_msg.style.display = "none";
 
@@ -23,7 +25,7 @@ ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13 && ip_tags.value.length != 0) { // enter
         window.event.preventDefault();
         const tag_wrap = document.querySelector('.tag_wrap');
-        var tag = document.createElement('span')
+        var tag = document.createElement('span');
         tag.className = "tag";
         tag.appendChild(document.createTextNode(ip_tags.value));
         tag_wrap.appendChild(tag);
@@ -50,38 +52,78 @@ ip_tags.onblur = () => {
 // 미리보기창
 // title
 write_title.onkeyup = () => {
-    pre_title.textContent = write_title.value;
+    pre_title.innerHTML = `<h1 class="pre_title">${write_title.value}</h1>`;
 }
 
 // content
-write_txt.onkeyup = () => {
-    // var text = write_txt.value;
-    // if(window.event.keyCode == 13){
-        // pre_txt.innerHTML += '<br/>';
-    // }else{
-    //     pre_txt.innerText = text;
-    // }
-    pre_txt.textContent = write_txt.value;
+const text_wrap = document.querySelector('.text_wrap');
+const default_msg = document.querySelector('.default_msg');
+const mirror_wrap = document.querySelector('mirror_wrap'); // mirror_wrap
+const mirror_code = document.querySelector('.mirror_code');
+const mirror_line = document.querySelectorAll('.mirror_line'); // appendChild span
+const text_cursor =  document.querySelector('.cursor');
+
+// content 부분 누르면 textarea로 focus
+text_wrap.onclick = () => {
+    write_txt.focus();
 }
 
-// write_txt.onkeydown = () => {
-//     if(window.event.keyCode == 9){
-//         write_txt.cursor();
-//     }
-// }
+// 글자 입력이 들어오면 메세지 삭제
+write_txt.onkeydown = () => {
+    if(mirror_line[0].innerText.length != 0){
+        default_msg.textContent = "";
+    }else{
+        default_msg.textContent = "당신의 이야기를 적어보세요...";
+    }
+}
 
-// tool bar
-// h1.onclick = () => {
-//     if(window.event.keyCode == 13){
-//         alert('enter');
-//         write_txt.style.fontSize = '1em';
-//         write_txt.style.fontWeight = "300";
-//     }else{
-//         write_txt.style.fontSize = '2em';
-//         write_txt.style.fontWeight = '700';
-//     }
-// }
+write_txt.onkeyup = () => {
+    if(window.event.keyCode == 13){
+        let newLine = document.createElement('div');
+        newLine.className = "mirror_line";
+        mirror_code.appendChild(newLine);
+        mirror_line[mirror_line.length-2].innerHTML += '</br>';
+    }else{
+        mirror_line[mirror_line.length-1].innerHTML = `<span>${write_txt.value}</span>`;
+        // alert(mirror_code.innerHTML);
+    }
+    
+    pre_txt.innerHTML = mirror_code.outerHTML;
+}
 
+
+// img tool
+function imgFileLoad(){
+    let fileList = imgFile.files;
+    let reader = new FileReader();
+    
+    // 그 다음 실행됨
+    reader.onload = () => {
+        let src = reader.result;
+        let fileName = fileList[0].name;
+        pre_txt.innerHTML += `<div  style="display:flex; justify-content:center;"><img src="${src}"></img></div>`;
+        insertImgURL(fileName);
+    }
+    
+    // 함수 실행되면 먼저 실행됨
+    reader.readAsDataURL(fileList[0]);
+}
+// img url wirte_txt에 삽입
+function insertImgURL(fileName){
+    let uuid = getUUID();
+    let url = ` http://images.velog.io/images/username/post/${uuid}/${fileName}`;
+
+    mirror_line[mirror_line.length-1].innerHTML += `<span class="img_marker">!</span><span class="img_code">[]</span><span>${url}</span>`;
+    // pre_txt.innerHTML = mirror_line.innerText;
+}
+function getUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+pre_txt.innerHTML = mirror_code.outerHTML;
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
@@ -114,7 +156,7 @@ cancle_btn.onclick = () => {
 }
 
 // submit 버튼
-real_submit.onclick() = () => {
+// real_submit.onclick() = () => {
 
-}
+// }
 
