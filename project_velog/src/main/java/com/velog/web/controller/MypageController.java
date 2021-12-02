@@ -16,42 +16,32 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RestController
 public class MypageController {
-	
+
 	private final UserService userService;
-	
-	
+
 	@PatchMapping("/mypage/front/{id}")
-	public String name(@AuthenticationPrincipal PrincipalDetails principalDetails,  @PathVariable int id,
-					   @RequestBody MypageDto mypageDto) {
+	public String name(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id,
+			@RequestBody MypageDto mypageDto) {
+
 		int result = userService.updateMypage(mypageDto, id);
-		if(result == 2 || result == 1) {
+
+		if (result == 1) {
 			principalDetails.getUser().setName(mypageDto.getName());
 			principalDetails.getUser().setComment(mypageDto.getComment());
-			return Integer.toString(result);
 		}
 		return Integer.toString(result);
 	}
-	
-	@ResponseBody
-	@PatchMapping("/mypage/front_username/{id}")
-	public String title(@PathVariable int id,
+
+	@PatchMapping("/mypage/username/{id}")
+	public String title(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id,
 			@RequestBody MypageDto mypageDto) {
-		
-		return Integer.toString(userService.updateMypage_Username(mypageDto, id));
+
+		int result = userService.updateMypageUsername(mypageDto, id);
+		if (result == 1) {
+			principalDetails.getUser().setUsername(mypageDto.getUsername());
+
+		}
+		return Integer.toString(result);
 	}
-	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -39,6 +39,7 @@
 		where
 			email = #{email};
   	</select>
+  	
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
@@ -49,38 +50,13 @@
   			#{username},
   			#{name},
   			#{comment},
+  			#{profile_img_origin_name},
+  			#{profile_img_temp_name},
   			#{provider},
   			now(),
   			now()
   		);
   	</insert>
-  	
-  	<update id="updateFrontName" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_mst
-		set
-		   name = #{name}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontContent" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_info
-		set
-		   comment = #{comment}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontTitle" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_info
-		set
-		   nickname = #{nickname}
-		where
-			id = #{id};
-    </update>
   	
   	<delete id="deleteUser">
   		delete
