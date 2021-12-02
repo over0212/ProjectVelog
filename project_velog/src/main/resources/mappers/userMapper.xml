@@ -30,34 +30,6 @@
 		where
 			email = #{email};
   	</select>
-  	
-  	<update id="updateFrontName" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_mst
-		set
-		   username = #{username}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontContent" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_info
-		set
-		   content = #{content}
-		where
-			id = #{id};
-    </update>
-    
-    <update id="updateFrontTitle" parameterType="com.velog.domain.user.Mypage">
-		update
-		   user_info
-		set
-		   usertitle = #{usertitle}
-		where
-			id = #{id};
-    </update>
-  	
 
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into

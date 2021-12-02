@@ -32,15 +32,37 @@ info_save[1].onclick = () => {
     
 }
 
+const social_modify = document.querySelector('.social_modify');
+const social_icon = document.querySelectorAll('.social_icon');
+const social_text = document.querySelectorAll('.icon input');
+const social_box_block = document.querySelector('.social_box_block');
+const icon_box_block = document.querySelector('.icon_box_block');
+
 modify[2].onclick = () => {  
     modify[2].style.display = 'none';
+    social_box_block.style.display = 'none';
     title_box_hidden[1].style.display = 'block';
+    
 }
 
 info_save[2].onclick = () => {
-    modify[2].style.display = 'block';
-    title_box_hidden[1].style.display = 'none';
+    for (let i = 0; i < social_text.length; i++) {
+        social_icon[i].style.display='none';
+        if (social_text[i].value != null) {
+            icon_box_block.style.display='none';
+            social_box_block.style.display = 'block';
+            social_icon[i].style.display='block';
+        } else{
+            title_box_hidden[1].style.display = 'none';
+            modify[2].style.display = 'block';
+        }
+    }
+}
 
+social_modify.onclick = () => {
+    title_box_hidden[1].style.display = 'block';
+    social_box_block.style.display = 'none';
+    icon_box_block.style.display='block';
 }
 
 // 스위치 온오프 기능

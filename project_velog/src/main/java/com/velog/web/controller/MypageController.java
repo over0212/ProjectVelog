@@ -35,12 +35,13 @@ public class MypageController {
 	}
 	
 	@ResponseBody
-	@PatchMapping("/mypage/front_title/{id}")
+	@PatchMapping("/mypage/front_username/{id}")
 	public String title(@PathVariable int id,
 			@RequestBody MypageDto mypageDto) {
 		
-		return Integer.toString(userService.updateMypage_Title(mypageDto, id));
+		return Integer.toString(userService.updateMypage_Username(mypageDto, id));
 	}
+	
 
 }
 

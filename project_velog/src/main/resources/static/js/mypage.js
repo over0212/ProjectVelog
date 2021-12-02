@@ -10,35 +10,39 @@ const title_box_hidden = document.querySelectorAll('.title_box_hidden');
 const inputs = document.querySelectorAll('input');
 
 
+
+
+
+
 modify[0].onclick = () => {
-    top_info.style.display  = 'none';
-    info_creative.style.display = 'block';
-   
+	top_info.style.display = 'none';
+	info_creative.style.display = 'block';
+
 }
- // var FormData = new FormData(form);
+// var FormData = new FormData(form);
 
 var user_info = {
-	user_name : '',
-	content: ''
+	name: '',
+	comment: ''
 }
 
 
 
 info_save[0].onclick = () => {
-    info_creative.style.display = 'none';
-    top_info.style.display = 'block';
-    user_info.user_name = inputs[0].value;
-    user_info.content = inputs[1].value;	
-     user_name();
+	info_creative.style.display = 'none';
+	top_info.style.display = 'block';
+	user_info.name = inputs[0].value;
+	user_info.comment = inputs[1].value;
+	user_name();
 }
 
 function user_name() {
-	 alert(JSON.stringify(user_info));
-	
+	alert(JSON.stringify(user_info));
+
 	$.ajax({
 		type: "patch",
-		url : "/mypage/front/17",
-		data : JSON.stringify(user_info),
+		url: "/mypage/front/17",
+		data: JSON.stringify(user_info),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
@@ -47,37 +51,37 @@ function user_name() {
 		error: function() {
 			alert('비동기 처리 오류');
 		}
-		
+
 	})
 }
 
 var user_info_title = {
-	title_creative : ''
+	username: ''
 }
 
 modify[1].onclick = () => {
-    contents_box.style.display = 'none';
-    modify[1].style.display = 'none';
-    title_box_hidden[0].style.display = 'block';
+	contents_box.style.display = 'none';
+	modify[1].style.display = 'none';
+	title_box_hidden[0].style.display = 'block';
 }
 
 info_save[1].onclick = () => {
-    modify[1].style.display = 'block';
-    contents_box.style.display = 'block';
-    title_box_hidden[0].style.display = 'none';
-    
-    user_info_title.title_creative = inputs[2].value;
-    user_title();
+	modify[1].style.display = 'block';
+	contents_box.style.display = 'block';
+	title_box_hidden[0].style.display = 'none';
+
+	user_info_title.username = inputs[2].value;
+	user_username();
 }
 
 
-function user_title() {
-	  alert(JSON.stringify(user_info_title));
-	 
-$.ajax({
+function user_username() {
+	alert(JSON.stringify(user_info_title));
+
+	$.ajax({
 		type: "patch",
-		url : "/mypage/front_title/17",
-		data : JSON.stringify(user_info_title),
+		url: "/mypage/front_username/17",
+		data: JSON.stringify(user_info_title),
 		contentType: "application/json;charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
@@ -89,15 +93,45 @@ $.ajax({
 	})
 }
 
-modify[2].onclick = () => {  
-    modify[2].style.display = 'none';
-    title_box_hidden[1].style.display = 'block';
+const social_modify = document.querySelector('.social_modify');
+const social_icon = document.querySelectorAll('.social_icon');
+const social_span = document.querySelectorAll('.social_icon span');
+const social_box_block = document.querySelector('.social_box_block');
+const icon_box_block = document.querySelector('.icon_box_block');
+
+modify[2].onclick = () => {
+	modify[2].style.display = 'none';
+	social_box_block.style.display = 'none';
+	title_box_hidden[1].style.display = 'block';
 }
 
+var user_info_social = ["mail", "github", "twitter", "facebook", "home"]
+
 info_save[2].onclick = () => {
-    modify[2].style.display = 'block';
-    title_box_hidden[1].style.display = 'none';
-    
+	icon_box_block.style.display ='none';
+	for (i = 0; i < social_span[i].length; i++) {
+		social_span[i] = inputs[i + 3].value;
+		social_span[i].style.display = 'none';
+		if (social_span[i] != null) {
+			social_box_block.style.display = 'block';
+			social_span[i].style.display = 'block';
+
+		}
+	}
+}
+
+
+function user_social() {
+	$.ajax({
+		type: "patch",
+		url: "/mypage/front_social/17",
+		data: JSON.stringify()
+	})
+}
+social_modify.onclick = () => {
+	title_box_hidden[1].style.display = 'block';
+	social_box_block.style.display = 'none';
+	icon_box_block.style.display = 'block';
 }
 
 
@@ -108,9 +142,9 @@ const switch_on = document.querySelectorAll('.switch_on');
 const circle = document.querySelectorAll('.circle');
 
 switch_off[0].onclick = () => {
-    switch_off[0].style.background = '#12b886';
+	switch_off[0].style.background = '#12b886';
 }
 
 switch_off[1].onclick = () => {
-    switch_off[1].style.background = '#12b886';
+	switch_off[1].style.background = '#12b886';
 }

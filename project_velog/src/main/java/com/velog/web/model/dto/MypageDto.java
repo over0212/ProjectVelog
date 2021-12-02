@@ -6,16 +6,16 @@ import lombok.Data;
 
 @Data
 public class MypageDto {
+	private String name;
+	private String comment;
      private String username;
-     private String content;
-     private String usertitle;
      
      public Mypage toEntity(int id) {
     	 return Mypage.builder()
     			 .id(id)
+    			 .name(name)   			 
+    			 .comment(comment)   			 
     			 .username(username)
-    			 .content(content)
-    			 .usertitle(usertitle)    			 
     			 .build();
      }
 }

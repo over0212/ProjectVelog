@@ -149,6 +149,7 @@
     flex-grow: 2;
 }
 .contents{
+    width: 570px;
     font-size: 16px;
     color: #495057;
 }
@@ -221,6 +222,57 @@
     width: 16px; height: 16px;
     margin-right: 8px;
     font-size: 15px;
+}
+/* 소셜 추가했을시 */
+.info_modify_box{
+
+}
+.social_box_block{
+    display: flex;
+}
+.social_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.social_icon{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: rgb(73, 80, 87);
+    width: 570px; height: 24px;
+    font-size: 14px;
+}
+.social_icon span{
+    font-size: 16px;
+}
+.social_icon:first-child{
+    margin-top: 0px;
+}
+.social{
+    margin-right: 8px;
+}
+.social i{
+    font-size: 14px;
+}
+.social_modify{
+    cursor: pointer;
+}
+
+.social_modify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    margin-left: 12px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #12b886;
+    font-weight: 300;
+    cursor: pointer;
+}
+.social_modify:hover{
+    color: #6ce2bd;
 }
 /* 이메일 수신 스위치 */
 .creative_info_comments{

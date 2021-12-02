@@ -21,7 +21,7 @@ public interface UserRepository {
 	
 	public int updateFrontName(Mypage mypage);
 	
-	public int updateFrontContent(Mypage mypage);
+	public int updateFrontComment(Mypage mypage);
 	
-	public int updateFrontTitle(Mypage mypage);
+	public int updateFrontNickname(Mypage mypage);
 }

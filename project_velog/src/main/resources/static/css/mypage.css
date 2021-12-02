@@ -11,7 +11,7 @@
     display: flex;
     width: 768px; height: 220px;
 }
-/*  프로필 이미지 추가 제거 */
+/*  �봽濡쒗븘 �씠誘몄� 異붽� �젣嫄� */
 .mp_img{
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
 .img_delete:hover{
     background-color: #baf8e5;
 }
-/* 이름 소개글 */
+/* �씠由� �냼媛쒓� */
 .top_info{
     height: 100%;
     padding-left: 24px;
@@ -76,7 +76,7 @@
     color: #6ce2bd;
 
 }
-/* 이름 소개글 수정 */
+/* �씠由� �냼媛쒓� �닔�젙 */
 .top_info_creative{
     width: 100%;
     padding-left: 24px;
@@ -124,7 +124,7 @@
 .info_save:hover{
     background-color: #36ca9e;
 }
-/* 메인 정보 수정 */
+/* 硫붿씤 �젙蹂� �닔�젙 */
 .middle_info{
     margin-top: 64px;
 }
@@ -187,7 +187,7 @@
     display: flex;
     height: 56px;
 }
-/* 정보 추가 (소설 정보) */
+/* �젙蹂� 異붽� (�냼�꽕 �젙蹂�) */
 .icon_box_block{
     width: 400px;
 }
@@ -222,9 +222,55 @@
     margin-right: 8px;
     font-size: 15px;
 }
-/* 이메일 수신 스위치 */
-.creative_info_comments{
+/* 소셜 추가했을시 */
+.info_modify_box{
+	
+}
+.social_box_block{
     display: flex;
+}
+.social_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.social_icon{
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: rgb(73, 80, 87);
+    width: 570px; height: 24px;
+    font-size: 14px;
+}
+.social_icon span{
+    font-size: 16px;
+}
+.social_icon:first-child{
+    margin-top: 0px;
+}
+.social{
+    margin-right: 8px;
+}
+.social i{
+    font-size: 14px;
+}
+.social_modify{
+    cursor: pointer;
+}
+.social_modify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    margin-left: 12px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #12b886;
+    font-weight: 300;
+    cursor: pointer;
+}
+.social_modify:hover{
+    color: #6ce2bd;
 }
 .creative_info_comments h3{
     width: 152px; height: 27px;
@@ -259,7 +305,7 @@
     border-radius: 50%;
     background-color: #ffffff;
 }
-/* 회원 탈퇴 */
+/* �쉶�썝 �깉�눜 */
 .creative_info_out{
     display: flex;
 }
