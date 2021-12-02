@@ -8,11 +8,11 @@ import com.velog.web.model.dto.email.EmailTokenDto;
 @Mapper
 public interface ConfirmationTokenRepository {
 	
-	// 확인된 토큰의 정보를 들고온다.
-	public ConfirmationToken getConfirmationToken(EmailTokenDto emailTokenDto);
-	
 	// 토큰을 생성한다.
 	public int createToken(ConfirmationToken confirmationToken);
+	
+	// 확인된 토큰의 정보를 들고온다.
+	public ConfirmationToken getConfirmationToken(EmailTokenDto emailTokenDto);
 	
 	// 토큰의 아이디를 가져와서 만료가 되었다는 것을 바꿔준다.
 	public int updateExpired(String confirmationTokenId);

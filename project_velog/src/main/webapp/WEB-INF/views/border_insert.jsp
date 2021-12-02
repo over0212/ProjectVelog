@@ -43,7 +43,8 @@
 						<div class="seper"></div>
 						<button type="button" class="quote"><i class="fas fa-quote-right"></i></button>
 						<button type="button" class="link"><i class="fas fa-link"></i></button>
-						<button type="button" class="image"><i class="fas fa-image"></i></button>
+						<input type="file" name="file" onchange="" style="display:None;">
+						<button type="button" class="image" onclick="document.all.file.click()"><i class="fas fa-image"></i></button>
 						<button type="button" class="code"><i class="fas fa-code"></i></button>
 					</div>
 					<div class="text_box"><textarea class="write_txt" name="border_content" placeholder="당신의 이야기를 적어보세요..." cols="79"></textarea></div>
