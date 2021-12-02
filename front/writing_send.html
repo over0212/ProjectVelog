@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(작성중) title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/writing_send.css">
+</head>
+<body>
+    <div class="writing_send_container">
+        <div class="main_body">
+            <div class="left_wrap">
+                <h3 class="send_h3">포스트 미리보기</h3>
+                <div class="preview_contents">
+                    <div class="img_upload">
+                        <div class="img"><i class="far fa-image"></i></div>
+                        <button class="upload_button">썸네일 업로드</button>
+                    </div>
+                    <div class="input_box">
+                        <h4 class="post_title">hihi</h4>
+                        <textarea type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150"></textarea>
+                        <div class="text_length">
+                            <span>0/150</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="seper_line"></div>
+            <div class="right_wrap">
+                <div class="settings_wrap">
+                    <div class="settings">
+                        <h3 class="send_h3">공개 설정</h3>
+                        <div class="public_btn_wrap">
+                            <button class="public_active"><i class="fas fa-globe-europe"></i>전체 공개</button>
+                            <button><i class="fas fa-lock"></i>비공개</button>
+                        </div>
+                    </div>
+                    <div class="settings">
+                        <h3 class="send_h3">URL 설정</h3>
+                        <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
+                        
+                    </div>
+                    <div class="settings">
+                        <h3 class="send_h3">시리즈 설정</h3>
+                        <button class="append_serise"><i class="fas fa-plus"></i>시리즈에 추가하기</button>
+                    </div>
+                </div>
+                <div class="submit_btns">
+                    <button class="cancle_btn">취소</button>
+                    <button class="select_btn" style="display: none;">선택하기</button>
+                    <button class="submit_btn">출간하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
+    <script src="js/writing_send.js"></script>
+</body>
+</html>
