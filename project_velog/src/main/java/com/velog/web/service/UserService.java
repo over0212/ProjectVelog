@@ -35,7 +35,7 @@ public class UserService {
 	public int updateMypage_Username(MypageDto mypageDto, int id) {
 		int completeCount = 0;
 		Mypage mypage = mypageDto.toEntity(id);
-		completeCount += userRepository.updateFrontNickname(mypage);
+		completeCount += userRepository.updateFrontUsername(mypage);
 		return completeCount;
 	}
 	public int deleteUser(int id) {
