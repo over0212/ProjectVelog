@@ -25,7 +25,7 @@
         <div class="fixed_header">
             <div class="hd_wrap">
                 <div class="hd_logo border_hd_logo">
-                    <a href="#" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
+                    <a href="/" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
                     <a href="#" class="hd_logo_a"><span class="border_logo_txt">${principal.user.username}.log</span></a>
                 </div>
                 <div class="hd_btns">
