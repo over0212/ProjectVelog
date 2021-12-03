@@ -15,12 +15,13 @@ header{
     justify-content: space-between;
 }
 
+/* main_header */
 .hd_logo{
     margin-left: 0px;
     width: 80px;
     height: 100%;
 }
-/* border에서 보여질 logo */
+/* border�뿉�꽌 蹂댁뿬吏� logo */
 .border_hd_logo{
     width: auto;
     display: flex;
@@ -34,23 +35,22 @@ header{
     width: 28px; height: 28px;
 }
 
-.hd_logo_a{
+.hd_logo a{
     height: inherit;
     display: flex;
     align-items: center;
     color: #343a40;
 }
-
-.hd_logo_txt{
+.border_logo_txt{
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 800;
     text-align: center;
     line-height: 20px;
     letter-spacing: 1px;
     font-family: "Recursive";
 }
-.border_logo_txt{
-    font-size: 1.5em;
+.hd_logo_txt{
+    font-size: 2em;
     font-weight: 600;
     text-align: center;
     line-height: 20px;
@@ -118,6 +118,7 @@ header{
 .user_nav_wrap{
     width: 60px; height: 40px;
     position: relative;
+    cursor: pointer;
 }
 
 .user_nav_wrap button{
@@ -153,6 +154,7 @@ header{
     position: absolute;
     top: 150%; right: 15%;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+    display: none;
 }
 
 .user_nav{
@@ -160,7 +162,6 @@ header{
     align-self: center;
     background-color: #fff;
     box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
-    display: none;
 }
 
 .user_nav li{
