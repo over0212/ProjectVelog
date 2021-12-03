@@ -25,8 +25,6 @@ var user_info = {
 	comment: ''
 }
 
-
-
 info_save[0].onclick = () => {
 	info_creative.style.display = 'none';
 	top_info.style.display = 'block';
@@ -39,8 +37,8 @@ function user_name() {
 	alert(JSON.stringify(user_info))
 	$.ajax({
 		type: "patch",
-		url: "/mypage/front/" + user_id.value,
-		data: JSON.stringify(user_info),
+		url : "/mypage/front/" + user_id.value,
+		data : JSON.stringify(user_info),
 		contentType: "application/json; charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
@@ -180,5 +178,6 @@ sign_out.onclick = () => {
 }
 
 cancel.onclick = () => {
-	so_container.style.display = 'none';
+    so_container.style.display = 'none';
 }
+
