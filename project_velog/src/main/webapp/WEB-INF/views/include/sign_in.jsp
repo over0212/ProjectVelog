@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <div class="si_container">
-    <div class="si_warp">
+    <div class="si_wrap">
         <!-- 로그인 창 -->
         <div class="si_box">
        	    <!-- 왼쪽 area -->
