@@ -6,7 +6,7 @@ const user_nav = document.querySelector('.user_nav');
 const login_btn = document.querySelector('.login_btn');
 
 // 로그인 버튼 클릭 -> 로그인 창 block
-login_btn.onclick = () => {
+function login(){
 	const si_container = document.querySelector('.si_container');
 	si_container.style.display = 'block';
 	si_container.className = 'si_container active';
@@ -15,7 +15,7 @@ login_btn.onclick = () => {
 
 // 사용자 profile 클릭 -> 사용자메뉴 block 
 user_nav.style.display = "none";
-user_btn.onclick = () => {
+function showNav(){
 	if (user_nav.style.display == 'none') {
 		user_nav.style.display = 'block';
 	} else {

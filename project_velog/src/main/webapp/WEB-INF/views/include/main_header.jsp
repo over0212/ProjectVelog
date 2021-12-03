@@ -33,12 +33,12 @@
 				<a href="search" class="search_btn"><i class="fas fa-search search_icon"></i></a>
 				<c:choose>
 					<c:when test="${empty principal.user }">
-						<button class="login_btn header_btn" type="button">로그인</button>
+						<button class="login_btn header_btn" type="button" onclick="login()">로그인</button>
 					</c:when>
 					<c:otherwise>
 						<button class="go_posting_btn header_btn" type="button">새 글 작성</button>
 						<div class="user_nav_wrap">
-							<button type="button" class="user_btn">
+							<button type="button" class="user_btn" onclick = "showNav()">
 								<img src="/img/user_icon.png" alt="">
 								<i class="fas fa-caret-down"></i>
 							</button>
