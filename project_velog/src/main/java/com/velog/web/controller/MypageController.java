@@ -31,7 +31,7 @@ public class MypageController {
 		return Integer.toString(result);
 	}
 	
-	@PatchMapping("/mypage/front_username/{id}")
+	@PatchMapping("/mypage/username/{id}")
 	public String title(@PathVariable int id,
 			@RequestBody MypageDto mypageDto) {
 		return Integer.toString(userService.updateMypageUsername(mypageDto, id));

@@ -21,6 +21,7 @@ public interface UserRepository {
 	
 	public int deleteUser(int id);
 	
+	// mypage
 	public int updateProfile(User user);
 	
 	public int updateUsername(User user);
