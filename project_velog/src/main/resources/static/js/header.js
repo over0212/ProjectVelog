@@ -14,6 +14,7 @@ login_btn.onclick = () => {
 }
 
 // 사용자 profile 클릭 -> 사용자메뉴 block 
+user_nav.style.display = "none";
 user_btn.onclick = () => {
 	if (user_nav.style.display == 'none') {
 		user_nav.style.display = 'block';
