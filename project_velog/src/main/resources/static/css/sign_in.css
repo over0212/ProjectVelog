@@ -6,7 +6,7 @@
     display: none;
 }
 
-.si_warp{
+.si_wrap{
     z-index: 9;
     height: 100%;
     display: flex;

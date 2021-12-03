@@ -19,8 +19,6 @@ public class Border {
 	private String main_content;
 	private String origin_img_name;
 	private String temp_img_name;
-	private String origin_file_name;
-	private String temp_file_name;
 	private String preview_img_origin_name;
 	private String preview_img_temp_name;
 	private String preview_txt;

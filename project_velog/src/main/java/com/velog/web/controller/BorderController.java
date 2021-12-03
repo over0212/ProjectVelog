@@ -2,6 +2,7 @@ package com.velog.web.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,6 +20,7 @@ public class BorderController {
 		if(principal.getUsername() == null) {
 	      return "redirect:index";
 	    }else {
+	    	principal.setWriter(principal.getUser().getUsername());
 	    	return "myborder";
 	    }
 	}

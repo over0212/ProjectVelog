@@ -21,10 +21,8 @@ public interface UserRepository {
 	
 	public int deleteUser(int id);
 	
-	public int updateFrontName(Mypage mypage);
-		
-	public int updateFrontComment(Mypage mypage);
+	public int updateProfile(User user);
 	
-	public int updateFrontTitle(Mypage mypage);
+	public int updateUsername(User user);
 	
 }

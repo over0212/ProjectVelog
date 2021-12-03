@@ -23,7 +23,7 @@ public class MypageController {
 	public String name(@AuthenticationPrincipal PrincipalDetails principalDetails,  @PathVariable int id,
 					   @RequestBody MypageDto mypageDto) {
 		int result = userService.updateMypage(mypageDto, id);
-		if(result == 2 || result == 1) {
+		if(result == 1) {
 			principalDetails.getUser().setName(mypageDto.getName());
 			principalDetails.getUser().setComment(mypageDto.getComment());
 			return Integer.toString(result);
@@ -34,7 +34,7 @@ public class MypageController {
 	@PatchMapping("/mypage/front_username/{id}")
 	public String title(@PathVariable int id,
 			@RequestBody MypageDto mypageDto) {
-		return Integer.toString(userService.updateMypage_Username(mypageDto, id));
+		return Integer.toString(userService.updateMypageUsername(mypageDto, id));
 	}
 	
 }

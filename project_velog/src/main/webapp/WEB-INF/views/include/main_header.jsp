@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -18,17 +17,20 @@
 		<div class="hd_wrap">
 			<!-- 로고 -->
 			<div class="hd_logo border_hd_logo">
-				<c:if test="">
-					<a href="/index" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
-                    <a href="#" class="hd_logo_a"><span class="border_logo_txt">${principal.user.username}.log</span></a>
-				</c:if>
-				<a href="/index"><span class="hd_logo_txt">velog</span></a>
+			<c:choose>
+				<c:when test="${not empty principal.writer}">
+					<a href="/" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
+                    <a class="hd_logo_a"><span class="border_logo_txt">${principal.writer}.log</span></a>
+				</c:when>
+				<c:otherwise>
+					<a href="/index"><span class="hd_logo_txt">velog</span></a>
+				</c:otherwise>
+			</c:choose>
 			</div>
 			<!-- 왼쪽상단 -->
 			<div class="hd_btns">
 				<!-- 검색 버튼 -->
-				<a href="search" class="search_btn"><i
-					class="fas fa-search search_icon"></i></a>
+				<a href="search" class="search_btn"><i class="fas fa-search search_icon"></i></a>
 				<c:choose>
 					<c:when test="${empty principal.user }">
 						<button class="login_btn header_btn" type="button">로그인</button>

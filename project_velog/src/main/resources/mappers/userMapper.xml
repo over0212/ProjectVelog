@@ -39,6 +39,7 @@
 		where
 			email = #{email};
   	</select>
+  	
   	<insert id="signup" parameterType="com.velog.domain.user.User">
   		insert into
   			user_mst
@@ -56,7 +57,7 @@
   			now()
   		);
   	</insert>
-
+  	
   	<delete id="deleteUser">
   		delete
   		from

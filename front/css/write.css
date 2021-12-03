@@ -1,41 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 body{
-    width: 100%; overflow: hidden;
-    font-size: 13px;
-    font-weight: 900;
+    font-size: 12px;
     color: #343a40;
+    overflow: visible;
+    background-color: #fff;
 }
 
 .write_page{
-    /* z-index: 7000; */
-    width: 100%; height: 1040px;
+    width: 100%; 
     box-sizing: border-box;
-    position: relative;
+}
+.write_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 .write_wrap{
-    width: 100%; height: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.write_left{
-    width: 100%; height: 100%;
-    display: flex;
-    padding-bottom: 64px;
-    background-color: #fff;
-}
-.write_form{
-    width: 100%; height: 100%;
+    width: 50%; height: 100vh;
     display: flex;
     flex-direction: column;
+    z-index: 1;
+    background-color: #fff;
+    
 }
 .write_ip{
     padding: 4em 0 1em 4em;
-    width: 100%; height: auto;
+/*     width: 100%; height: 100%; */
     box-sizing: border-box;
 }
 .write_title{
-    width: 100%; height: 66px;
+    width: 100%; height: auto;
     font-size: 46px;
     font-weight: 600;
     line-height: 1;
@@ -48,7 +43,7 @@ body{
     color: #b0b0b0;
 }
 .seperate{
-    margin: 1.5em 0;
+    margin: 1em 0;
     width: 5.5em; height: 0.5em;
     border-radius: 1px;
     background-color: #495057;
@@ -99,13 +94,14 @@ body{
 }
 .tag_msg{
     z-index: 100;
-    padding: 1em;
-    width: 330px; height: auto;
+    padding: 1.1em;
+    width: auto; height: auto;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1em;
     letter-spacing: 1px;
     position: absolute; top: 100%; left: 0;
-    background-color: rgb(162, 161, 161);
+    background-color: #2a2a2a;
+    transition: all 0.125s ease-in 0s;
 }
 
 /* 데코바? */
@@ -120,6 +116,7 @@ body{
     font-family: 'Lora', serif;
 }
 .font_size span{
+    font-weight: 900;
     margin-left: -0.15em;
 }
 .deco_bar button{
@@ -147,27 +144,35 @@ body{
     background-color: #cde4da;
 }
 /* 글적기 */
-.text_box{
-    height: 100%;
+.text_wrap{
+    max-width:100%; min-height: 705px;
     box-sizing: border-box;
-    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+    background-color: ivory;
 }
 .write_txt{
+    width: 100%; height: 2em;
+    overflow: hidden;
     padding-left: 3em;
-    width: 100%;  height: 100%;
     font-size: 1.5em;
     border: none;
     outline: none;
     resize: none;
-    box-sizing: border-box;
+    /* visibility: hidden; */
 }
-.write_txt::placeholder{
-    font-style: italic;
-    color: #a4a9a7;
+.mirror_wrap{
+    padding: 0 1em 0 4em;
+    height: 100%;
+    background-color: bisque;
 }
+.default_msg{
+    font-size: 1.3em;
+}
+
 /* 푸터 */
 .write_footer{
-    position: absolute;
+    position: fixed;
     bottom: 0; left: 0;
     padding: 0 16px;
     width: 50%; height: 5.34em;
@@ -184,9 +189,9 @@ body{
     align-items: center;
     box-sizing: border-box;
     line-height: 1;
-    width: 6.34em; height: 2.22em;
+    width: 7em; height: 2.22em;
     padding: 8px 16px;
-    font-size: 18px;
+    font-size: 1.4em;
     cursor: pointer;
 }
 .exit_btn:hover{
@@ -225,27 +230,248 @@ body{
 
 }
 /* 프리뷰 */
-.write_right{
-    padding: 3em;
-    width: 96%; height: 100%;
+.preview_wrap{
+    padding: 5em;
+    width: 50%;  height: 100vh;
+    overflow-y: scroll;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    word-break: break-word;
     color: rgb(33, 37, 41);
     background-color: rgb(251, 253, 252);
 }
 .pre_title{
-    width: 100%; height: auto;
-    font-size: 2.5em;
-    margin-bottom: 4em;
-    font-weight: 800;
+    margin-bottom: 1em;
+    width:100%;  height: auto;
+    font-size: 2em;
+    font-weight: 900;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .pre_txt{
-    width: 100%; height: auto;
+    width:100%; height: auto;
     font-size: 1.5em;
     border: none;
     resize: none;
     outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
+/* ----------------------------------------------------------------------------- */
+/*send page*/
+.send_page{
+    width: 100%; height: 100%;
+    z-index: 15;
+    position: fixed;
+    top: 0px; left: 0px;
+    display: none;
+    background: rgb(248, 249, 250);
+}
+
+/* container */
+.writing_send_container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    animation: 0.25s ease-in 0s 1 normal forwards running open_send;
+    animation: open_send 0.25s ease-in;
+}
+.writing_send_container button{
+    height: 3em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.writing_send_container button > i{
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 1em;
+}
+
+@keyframes open_send {
+    0%{
+        transform: translateY(100%);}
+    100%{
+        transform: translateY(0%);}
+}
+
+/* box wrap */
+.main_body{
+    width: 768px; height: 434px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 왼쪽 - 포스트 미리보기 */
+.left_wrap{
+    width: 100%;
+}
+.send_h3{
+    font-size: 21px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.contents{
+    height: 30.65em;
+}
+.img_upload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 16.15em;
+    background-color:  rgb(233, 236, 239);
+}
+.img i{
+    color: #808080;
+    font-size: 8em;
+}
+.upload_button{
+    margin-top: 0.4em;
+    padding: 1em;
+    height: 2em;
+    border-radius: 4px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #20c997;
+    box-sizing: border-box;
+    background-color: #fff;
+    cursor: pointer;
+}
+.input_box{
+    margin-top: 1.2em;
+    width: 100%; height: 177px;
+    display: flex;
+    flex-direction: column;
+
+}
+.post_title{
+    width: fit-content;
+    height: 2em;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-size: 1.4em;
+    font-weight: 600;
+    background-color: rgb(248, 249, 250);
+}
+.post_content{
+    padding: 1em;
+    width: 100%; height: 150px;
+    white-space: pre-wrap;
+    font-size: 16px;
+    font-weight: 300;
+    border: none;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 3%) 0px 0px 4px 0px;
+}
+.length_box{
+    margin-top: 5px;
+    width: 100%; height: 1em;
+    display: flex;
+    justify-content: end;
+    text-align: right;
+    line-height: 1;
+}
+
+/* 중간 라인 */
+.seper_line{
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(233, 236, 239);
+}
+
+/* 오른쪽 */
+.right_wrap{
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.settings_wrap{
+    width: 100%;
+    box-sizing: border-box;
+}
+.settings{
+    margin-top: 20px;
+}
+.settings:first-child{
+    margin-top: 0;
+}
+.settings button{
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px 0px;
+    background-color: #fff;
+}
+
+.public_btn_wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.public_btn_wrap > button{
+    width: 48%;
+    font-size: 1.3em;
+}
+.public_active{
+    color: #20c997;
+    border: 3px solid #20c997;
+}
+
+.user_url_box{
+    padding: 0.7em;
+    width: 100%; height: 3.5em;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px 0px;
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.user_name{
+    color: rgb(171, 169, 169);
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+}
+.ip_url{
+    width: 100%;
+    border: none;
+    font-size: 1.3em;
+}
+
+.append_serise{
+    width: 100%;
+    color: #20c997;
+    font-size: 1.5em;
+}
+
+.submit_btns{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.submit_btns > button{
+    padding: 0 1em;
+    height: 2.2em;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    width: auto;
+}
+.cancle_btn{color: #fff; background-color: rgb(134, 142, 150);}
+.select_btn{color: #ccc; background-color: rgb(134, 142, 150);}
+.real_submit{color: #fff; background-color: rgb(18, 184, 134);}

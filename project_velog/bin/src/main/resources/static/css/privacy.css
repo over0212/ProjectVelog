@@ -1,0 +1,84 @@
+/* terms & privacy */
+#content{
+    display: block;
+    margin: 0 auto;
+    width: 768px;
+    margin-bottom: 20em;
+}
+
+.choose{
+    display: flex;
+    justify-content: center;
+}
+.ch_menu{
+    display: flex;
+}
+.ch_menu a{
+    display: block;
+    width: 160px;
+    text-align: center;
+    font-size: 18px;
+    padding: 0.6em 2em;
+}
+.terms{
+    color: #acb1b9;
+    border-bottom: none;
+}
+.privacy{
+    color: rgb(32, 201, 151);
+    border-bottom: 3px solid rgb(32, 201, 151);
+}
+
+/* privacy */
+/* main title */
+#content h1{
+    margin: 1em 0;
+    font-size: 36px;
+}
+
+/* small title */
+#content h2{
+    font-size: 32px;
+    margin: 1em 0 0.6em 0;
+    font-weight: 100;
+}
+
+#content h3{
+    font-size: 20px;
+}
+
+#content > div > ol > li{
+    padding-left: 2em;
+    font-size: 16px;
+}
+
+#content p{
+    font-size: 16px;
+    margin: 1.2em 0;
+}
+
+/* small title */
+#content h2{
+    font-size: 28px;
+    margin: 1em 0 0.6em 0;
+    font-weight: 600;
+}
+#content ul{
+    margin-left: 0.4em;
+}
+#content ul li{
+    margin-left: 2em;
+    font-size: 16px;
+    letter-spacing: 0.7px;
+    font-weight: 300;
+    line-height: 1.7em;
+    list-style: disc;
+}
+
+#content p{
+    font-size: 16px;
+    margin: 1em 0;
+    font-weight: 300;
+    line-height: 1.5em;
+    word-spacing: 1px;
+}
