@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body{
+    width: 100%; overflow: hidden;
+    font-size: 12px;
+    color: #343a40;
+}
+
+.write_page{
+    /* z-index: 7000; */
+    width: 100%; height: 930px;
+    box-sizing: border-box;
+    position: relative;
+}
+.write_wrap{
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.write_left{
+    width: 100%; height: 100%;
+    display: flex;
+    padding-bottom: 64px;
+    background-color: #fff;
+    
+}
+.write_form{
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.write_ip{
+    padding: 4em 0 1em 4em;
+    width: 100%; height: auto;
+    box-sizing: border-box;
+}
+.write_title{
+    width: 100%; height: auto;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1;
+    border: none;
+    resize: none;
+    outline: none;
+    color: rgb(33, 37, 41);
+}
+.write_title::placeholder{
+    color: #b0b0b0;
+}
+.seperate{
+    margin: 1.5em 0;
+    width: 5.5em; height: 0.5em;
+    border-radius: 1px;
+    background-color: #495057;
+}
+.write_tag{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    position: relative;
+    height: auto;
+}
+.tag{
+    margin-right: 0.75em;
+    margin-bottom: 0.75rem;
+    padding-right: 1em;
+    padding-left: 1em;
+    height: 1.8em;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 1em;
+    font-size: 1.3em;
+    color: rgb(12, 166, 120);
+    transition: all 0.125s ease-in 0s;
+    cursor: pointer;
+    background: rgb(241, 243, 245);
+    animation: 0.125s ease-in-out 0s 1 normal forwards running show_tags;
+}
+@keyframes show_tags {
+    0%{
+        opacity: 0.7;
+        transform: scale3d(0.8, 0.8, 1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+.ip_tags{
+    display: inline-flex;
+    padding: 1px 2px;
+    margin-bottom: 0.5em;
+    min-width: 8rem;
+    height: auto;
+    border: none;
+    font-size: 1.3em;
+    cursor: text;
+}
+.tag_msg{
+    z-index: 100;
+    padding: 1em;
+    width: 330px; height: auto;
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    position: absolute; top: 100%; left: 0;
+    background-color: rgb(162, 161, 161);
+}
+
+/* 데코바? */
+.deco_bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 48px;
+    margin-bottom: 16px;
+}
+.font_size{
+    font-family: 'Lora', serif;
+}
+.font_size span{
+    margin-left: -0.15em;
+}
+.deco_bar button{
+    width: 3em; height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #868e96;
+    cursor: pointer;
+}
+.deco_bar button:hover{
+    background-color: rgb(244, 249, 255);
+}
+.deco_bar i{
+    font-size: 1em;
+}
+.seper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    margin: 0 8px;
+    width: 1px; height: 20px;
+    background-color: #cde4da;
+}
+/* 글적기 */
+.text_box{
+    height: 100%;
+    box-sizing: border-box;
+    background-color: lightcyan;
+}
+.write_txt{
+    padding-left: 3em;
+    width: 100%;  height: 100%;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+}
+.write_txt::placeholder{
+    font-style: italic;
+    color: #a4a9a7;
+}
+/* 푸터 */
+.write_footer{
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 0 16px;
+    width: 50%; height: 5.34em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+    background-color: #fff;
+}
+.exit_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    line-height: 1;
+    width: 6.34em; height: 2.22em;
+    padding: 8px 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.exit_btn:hover{
+    background-color: rgb(236, 236, 236);
+
+}
+.exit_btn i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+.submit_btns{
+    width: 19.67em; height: 3.33em;
+}
+.submit_btns button{
+    width: 112px; height: 40px;
+    font-size: 18px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.temp_store{
+    color: #495057;
+    background-color: #e9ecef;
+}
+.temp_store:hover{
+    background-color: #f2f4f7;
+    
+}
+.temp_submit{
+    color: #fff;
+    background-color: #12b886;
+    margin-left: 9px;
+}
+.temp_submit:hover{
+    background-color: #54c9a6;
+
+}
+/* 프리뷰 */
+.write_right{
+    padding: 3em;
+    width: 96%; height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+    color: rgb(33, 37, 41);
+    background-color: rgb(251, 253, 252);
+}
+.pre_title{
+    width: 100%; height: auto;
+    font-size: 2.5em;
+    margin-bottom: 4em;
+    font-weight: 800;
+}
+.pre_txt{
+    width: 100%; height: auto;
+    font-size: 1.5em;
+    border: none;
+    resize: none;
+    outline: none;
+}
+
