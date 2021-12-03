@@ -14,18 +14,43 @@ function login(){
 }
 
 // 사용자 profile 클릭 -> 사용자메뉴 block 
-user_nav.style.display = "none";
-function showNav(){
+user_nav.style.display = 'none';
+
+/*user_btn.onclick =() => {
 	if (user_nav.style.display == 'none') {
 		user_nav.style.display = 'block';
 	} else {
 		user_nav.style.display = 'none';
 	}
-}
+}*/
+
+//화면 전체를 클릭 했을 때
+window.addEventListener('click', (e) => {
+	
+	//만약 요소의 클래스에 user_btn가 포함되어있고, 요소의 클래스에 user_nav_wrap가 포함되어있고 , 요소의 태그이름이 IMG 이고 , 요소의 클래스에 fa-caret-down가 포함되어있을때
+	if(e.target.classList.contains('user_btn') || e.target.classList.contains('user_nav_wrap') || e.target.tagName == 'IMG' || e.target.classList.contains('fa-caret-down')){
+	  //user_nav가 none인 상태면
+	  if(user_nav.style.display == 'none'){
+		//user_nav를 보여주고
+		user_nav.style.display = 'block';
+	    }
+	//user_nav가 보여진 상태면 
+	else if(user_nav.style.display == 'block'){
+		//user_nav를 숨긴다.
+		user_nav.style.display = 'none';
+	}
+    //window를 클릭했을 때 위의 네 개의 요소가 아닐 때(위의 세개의 요소를 제외하고)
+	}else {
+		//user_nav를 숨긴다.
+		user_nav.style.display = 'none';
+	}
+});
 
 user_nav_wrap.onblur = () => {
 	user_nav.style.display = 'none';
 }
+
+
 
 go_posting_btn.onclick = () => {
 	location.href = "/insert";
