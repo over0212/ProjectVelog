@@ -180,5 +180,6 @@ sign_out.onclick = () => {
 }
 
 cancel.onclick = () => {
-	so_container.style.display = 'none';
+    so_container.style.display = 'none';
 }
+
