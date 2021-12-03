@@ -8,7 +8,7 @@ import lombok.Data;
 public class MypageDto {
 	private String name;
 	private String comment;
-     private String username;
+    private String username;
      
      public User toEntity(int id) {
     	 return User.builder()

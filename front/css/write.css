@@ -152,7 +152,7 @@ body{
     background-color: ivory;
 }
 .write_txt{
-    width: 100%; height: 2em;
+    width: 90%; height: 2em;
     overflow: hidden;
     padding-left: 3em;
     font-size: 1.5em;
