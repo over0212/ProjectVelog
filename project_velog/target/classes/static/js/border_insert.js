@@ -1,8 +1,6 @@
 const temp_submit = document.querySelector('.temp_submit'); 
-const exit_btn = document.querySelector('.exit_btn');
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
-const write_txt = document.querySelector('.write_txt');
 const write_tag = document.querySelector('.write_tag');
 const ip_tags = document.querySelector('.ip_tags');
 const tag_msg = document.querySelector('.tag_msg');
@@ -11,12 +9,15 @@ const pre_txt = document.querySelector('.pre_txt');
 const send_page = document.querySelector('.send_page');
 const h1 = document.querySelector('.h1');
 const post_title = document.querySelector('.post_title');
-const post_content = document.querySelector('.post_content');
 const ip_url = document.querySelector('.ip_url');
 const text_length = document.querySelector('.text_length');
 const cancle_btn = document.querySelector('.cancle_btn');
 const length_box = document.querySelector('.length_box');
 const real_submit = document.querySelector('.real_submit');
+const imgFile = document.querySelector('#imgFile');
+const post_content = document.querySelector('.post_content');
+
+let write_txt = document.querySelector('.write_txt');
 // write_page -------------------------------------------
 tag_msg.style.display = "none";
 
@@ -24,10 +25,16 @@ ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13 && ip_tags.value.length != 0) { // enter
         window.event.preventDefault();
         const tag_wrap = document.querySelector('.tag_wrap');
-        var tag = document.createElement('span')
+        var tag = document.createElement('span');
+        var hidden = document.createElement('input');
+        hidden.setAttribute('type', 'hidden');
+        hidden.value = ip_tags.value;
+        hidden.className = "tag_hidden";
         tag.className = "tag";
         tag.appendChild(document.createTextNode(ip_tags.value));
+        // tag.appendChild(document)
         tag_wrap.appendChild(tag);
+        tag_wrap.appendChild(hidden);
         ip_tags.value = "";
     }
 }
@@ -36,6 +43,7 @@ ip_tags.onkeydown = () => {
     const tag_wrap = document.querySelector('.tag_wrap');
     const tag = document.querySelector('.tag');
     if(window.event.keyCode == 8 && ip_tags.value.length == 0 && tag != null){ // backspace
+        tag_wrap.lastChild.remove();
         tag_wrap.lastChild.remove();
     }
 }
@@ -50,42 +58,115 @@ ip_tags.onblur = () => {
 
 // 미리보기창
 // title
+pre_title.style.display = 'none';
 write_title.onkeyup = () => {
-    pre_title.textContent = write_title.value;
+    if (write_title.value.length != 0) {
+        pre_title.style.display = 'block';
+        pre_title.innerHTML = `<h1 class="pre_title">${write_title.value}</h1>`;
+    } else {
+        pre_title.style.display = 'none';
+    }
 }
 
 // content
+const text_wrap = document.querySelector('.text_wrap');
+
 write_txt.onkeyup = () => {
-    // var text = write_txt.value;
-    // if(window.event.keyCode == 13){
-        // pre_txt.innerHTML += '<br/>';
-    // }else{
-    //     pre_txt.innerText = text;
-    // }
-    pre_txt.textContent = write_txt.value;
+    pre_txt.innerHTML = "";
+    let lines = write_txt.value.split(/\r\n|\r|\n/);
+    console.log(lines);
+    for(let i=0; i<lines.length; i++){
+        edit(lines[i]);
+    }
 }
 
-// write_txt.onkeydown = () => {
-//     if(window.event.keyCode == 9){
-//         write_txt.cursor();
-//     }
-// }
+let src = "";
+function edit(data){
+    let splitdata = data.split(' ');
+    let cmd = splitdata[0];
+    let fortext = splitdata.slice(1, splitdata.length);
+    let text = fortext.join(" ");
+    if(data.length != 0){
+        if(cmd == '#'){ // h1
+            pre_txt.innerHTML += `<h1 class="pre_h1">${text}</h1>`;
+        } else if(cmd == '##'){ // h2
+            pre_txt.innerHTML += `<h2 class="pre_h2">${text}</h2>`;
+        } else if(cmd == '###'){ // h3
+            pre_txt.innerHTML += `<h3 class="pre_h3">${text}</h3>`;
+        } else if(cmd == '####'){ // h4
+            pre_txt.innerHTML += `<h4 class="pre_h4">${text}</h4>`;
+        }else if(cmd == '**'){ // bold
+            pre_txt.innerHTML += `<p class="pre_bold">${text}</p>`;
+        }else if(cmd == '__'){ // italic
+            pre_txt.innerHTML += `<p class="pre_italic">${text}</p>`;
+        }else if(cmd == '~~'){ // overline
+            pre_txt.innerHTML += `<p class="pre_overline">${text}</p>`;
+        }else if(cmd == '>'){ //  quote
+        }else if(cmd == '@@'){ // link
+            console.log(link);
+        }else if(cmd == '![]'){ // img
+            console.log('img');
+            pre_txt.innerHTML += `<div class="img" style="display:flex; justify-content:center;"><img src="${src}"></img></div>`;
+        }else if(cmd == '```'){ // code
+        } else{
+            text = data;
+            pre_txt.innerHTML += `<p class="pre_text">${text}</p>`;
+        }
+    }else{
+        pre_txt.innerHTML += '<br>';
+    }
+}
 
-// tool bar
-// h1.onclick = () => {
-//     if(window.event.keyCode == 13){
-//         alert('enter');
-//         write_txt.style.fontSize = '1em';
-//         write_txt.style.fontWeight = "300";
-//     }else{
-//         write_txt.style.fontSize = '2em';
-//         write_txt.style.fontWeight = '700';
-//     }
-// }
+// toolbox 클릭 이벤트 함수
+function appendTool(){
+    if(event.target.className == "h1 font_size"){
+        write_txt.value += '\n# ';
+        write_txt.focus();
+    }else if(event.target.className == "h2 font_size"){
+        write_txt.value += '\n## ';
+        write_txt.focus();
+    }else if(event.target.className == "h3 font_size"){
+        write_txt.value += '\n### ';
+        write_txt.focus();
+    }else if(event.target.className == "h4 font_size"){
+        write_txt.value += '\n#### ';
+        write_txt.focus();
+    }else if(event.target.className == "bold"){
+        write_txt.value += '\n** ';
+        write_txt.focus();
+    }else if(event.target.className == "italic"){
+        write_txt.value += '\n__  ';
+        write_txt.focus();
+    }else if(event.target.className == "overline"){
+        write_txt.value += '\n~~  ';
+        write_txt.focus();
+    }
+}
 
-// 나가기 버튼 클릭시 뒤로가기
-exit_btn.onclick = () => {
-	window.history.back();
+// img tool
+function imgFileLoad(){
+    let fileList = imgFile.files;
+    let reader = new FileReader();
+    // 그 다음 실행됨
+    reader.onload = () => {
+        src = reader.result;
+        let fileName = fileList[0].name;
+        src = insertImgURL(fileName, src);
+    }
+    // 함수 실행되면 먼저 실행됨
+    reader.readAsDataURL(fileList[0]);
+}
+// img url wirte_txt에 삽입
+function insertImgURL(fileName, src){
+    let uuid = getUUID();
+    src = ` http://images.velog.io/images/username/post/${uuid}/${fileName}`;
+    write_txt.value += `\n![]${src} \n`;
+}
+function getUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
 }
 
 // 출간하기 버튼 클릭시
@@ -96,16 +177,21 @@ temp_submit.onclick = () => {
     var contents = write_txt.value;
 
     post_title.appendChild(document.createTextNode(title));
-    post_content.value = contents;
     ip_url.value = title;
-    text_length.appendChild(document.createTextNode(contents.length));
+    text_length.textContent = contents.length;
+    
+    if(text_length.value >= 150){
+	    post_content.value = contents.slice(0, 149);    
+    }else{
+    	post_content.value = contents;
+    }	
 }
 
 // send_page --------------------------------------------
 post_content.onkeydown = () => {
 	var txt_length = post_content.value.length;
 	if(txt_length > 150){
-		post_content.value = post_content.value.substr(0,150);
+		post_content.value = post_content;
 		length_box.style.color = "red";
 	}else{
 		length_box.style.color = "black";
@@ -120,26 +206,7 @@ cancle_btn.onclick = () => {
 }
 
 // submit 버튼
-//real_submit.onclick() = () => {
-//	$.ajax({
-//		type: "post",
-//		url: "/border/insert",
-//		encType: "multipart/form-data",
-//		data: formData,
-//		processData: false,
-//		contentType: false,
-//		success: function(data){ // controller가 0또는 border_code를 반환해주어야함
-//			if(data == 0){
-//				alert('게시글 등록에 실패하었습니다.');
-//				location.href = '/';
-//			}else{
-//				alert('게시글 등록이 완료되었습니다.');
-//				location.href = '/border/'+data; // 디테일 페이지로 전달		
-//			}
-//		},
-//		error: function(){
-//			alert('전송 실패!');
-//		}
-//	})
-//}
+// real_submit.onclick() = () => {
+
+// }
 

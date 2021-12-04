@@ -39,7 +39,7 @@
 						<button class="go_posting_btn header_btn" type="button" >새 글 작성</button>
 						<div class="user_nav_wrap">
 							<button type="button" class="user_btn">
-								<img src="/img/user_icon.png" alt="">
+								<img class="img" src="/img/user_icon.png" alt="">
 								<i class="fas fa-caret-down"></i>
 							</button>
 							<div class="user_nav">
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 	<jsp:include page="sign_in.jsp"></jsp:include>
-	<script src="/js/header.js"></script>
-	<script src="/js/sign_in.js"></script>
+	<script defer="defer" src="/js/header.js"></script>
+	<script defer="defer"  src="/js/sign_in.js"></script>
 </header>
 	
