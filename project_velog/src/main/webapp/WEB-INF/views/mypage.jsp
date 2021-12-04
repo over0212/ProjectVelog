@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -25,11 +26,14 @@
 		<div class="mp_main">
 			<div class="mp_profile">
 				<div class="mp_img">
-					<div class="my_img">
-						<img src="/img/user_icon.png" alt="">
-					</div>
-					<button class="img_insert">이미지 업로드</button>
-					<button class="img_delete">이미지 제거</button>
+					<form>
+						<div class="my_img">
+							<img id="imgNull" src="/img/user_icon.png" alt="">
+						</div>
+						<input class="image" type="file" name="file" id="imgFile" style="display: none;" onchange="imgUpload()"></input>
+						<button type="button" class="img_insert" onclick="document.all.file.click()">이미지 업로드</button>
+						<button class="img_delete">이미지 제거</button>
+					</form>
 				</div>
 				<div class="top_info">
 					<h2 class="name">${principal.user.name }</h2>
@@ -39,8 +43,9 @@
 					</div>
 				</div>
 				<div class="top_info_creative">
-					<input type="text" class="info_name user_ip" value="${principal.user.name }">
-					<input type="text" class="info_text user_ip" value="${principal.user.comment }">
+					<input type="text" class="info_name user_ip"
+						value="${principal.user.name }"> <input type="text"
+						class="info_text user_ip" value="${principal.user.comment }">
 					<div class="info_save_box">
 						<button class="info_save">저장</button>
 					</div>
@@ -57,10 +62,10 @@
 							<div class="info_modify_box">
 								<button class="info_modify">수정</button>
 							</div>
-
 							<div class="title_box_hidden">
 								<div class="title_creative_box">
-									<input type="text" class="title_creative user_ip" value="${principal.user.username }">
+									<input type="text" class="title_creative user_ip"
+										value="${principal.user.username }">
 									<div class="info_save_box">
 										<button class="info_save">저장</button>
 									</div>
@@ -172,11 +177,12 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<jsp:include page="include/sign_out.jsp"></jsp:include>
 	<input type="hidden" id="id" value="${principal.user.id }">
-	
-	<script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/0b11c2b6d9.js"
+		crossorigin="anonymous"></script>
 	<script src="/js/mypage.js"></script>
 </body>
 </html>
