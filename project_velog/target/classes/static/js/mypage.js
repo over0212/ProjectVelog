@@ -36,8 +36,8 @@ function imgUpload() {
 		}
 	})
 }*/
-	const my_img = document.querySelector('.my_img');
-
+const my_img = document.querySelector('.my_img');
+	
 function imgUpload(){
     /*let fileList = imgFile.files*/;
     let reader = new FileReader();
@@ -52,7 +52,6 @@ function imgUpload(){
     // 함수 실행되면 먼저 실행됨
     reader.readAsDataURL(fileList[0]);
 }
-
 
 modify[0].onclick = () => {
 	top_info.style.display = 'none';
