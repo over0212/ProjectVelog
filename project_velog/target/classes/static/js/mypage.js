@@ -12,13 +12,53 @@ const user_id = document.querySelector('#id');
 const name = document.querySelector('.name');
 const comment = document.querySelector('.comment');
 const username = document.querySelector('.username');
+const img_insert = document.querySelector('.img_insert');
+
+// 이미지 업로드
+/*img_insert.onclick = () => {
+	let FormData = new FormData(form);
+	imgUpload();
+}
+
+function imgUpload() {
+	$.ajax({
+		type: 'post',
+		url: '/mypage/imgUpload/' + user_id.value,
+		data: FormData,
+		enctype: 'file/form-data',
+		processData: false,
+		contentType: false,
+		success: function(data){
+			alert('전송');
+		},
+		error: function(){
+			alert('실패');
+		}
+	})
+}*/
+	const my_img = document.querySelector('.my_img');
+
+function imgUpload(){
+    /*let fileList = imgFile.files*/;
+    let reader = new FileReader();
+    
+    // 그 다음 실행됨
+    reader.onload = () => {
+        let src = reader.result;
+       /* let fileName = fileList[0].name;*/
+        my_img.innerHTML += `<img src="${src}"></img>`;
+    }
+    
+    // 함수 실행되면 먼저 실행됨
+    reader.readAsDataURL(fileList[0]);
+}
+
 
 modify[0].onclick = () => {
 	top_info.style.display = 'none';
 	info_creative.style.display = 'block';
 
 }
-// var FormData = new FormData(form);
 
 var user_info = {
 	name: '',
@@ -37,8 +77,8 @@ function user_name() {
 	alert(JSON.stringify(user_info))
 	$.ajax({
 		type: "patch",
-		url : "/mypage/front/" + user_id.value,
-		data : JSON.stringify(user_info),
+		url: "/mypage/front/" + user_id.value,
+		data: JSON.stringify(user_info),
 		contentType: "application/json; charset=UTF-8",
 		dataType: "text",
 		success: function(data) {
@@ -178,6 +218,6 @@ sign_out.onclick = () => {
 }
 
 cancel.onclick = () => {
-    so_container.style.display = 'none';
+	so_container.style.display = 'none';
 }
 
