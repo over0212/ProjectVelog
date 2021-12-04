@@ -241,9 +241,8 @@ body{
     background-color: thistle;
 }
 .pre_txt{
+    /* flex쓰면 안됨 */
     width:100%; height: auto;
-    display: flex;
-    flex-direction: column;
     font-size: 1.5em;
     border: none;
     resize: none;
