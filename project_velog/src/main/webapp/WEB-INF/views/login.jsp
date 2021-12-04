@@ -25,7 +25,7 @@
         <section>
             <img src="/img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
             <h4>로그인 후 이용해주세요.</h4>
-            <button type="button" class="login">로그인</button>
+            <button type="button" class="login_btn">로그인</button>
         </section>
     </main>
 </body>
