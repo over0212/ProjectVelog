@@ -3,6 +3,7 @@ package com.velog.web.controller;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,4 +38,9 @@ public class MypageController {
 		return Integer.toString(userService.updateMypageUsername(mypageDto, id));
 	}
 	
+	@PostMapping("/mypage/imgUpload/{id}")
+	public String imgInsert(@PathVariable int id,@RequestBody MypageDto mypageDto) {
+		
+		return "1";
+	}
 }
