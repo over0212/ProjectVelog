@@ -1,0 +1,238 @@
+.notice_container{
+    width: 100%; height: 100%;
+    padding-bottom: 64px;
+}
+.notice_body{
+    margin: 0 auto;
+    width: 768px; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 헤더 logo link */
+.hd_logo_img{
+    width: 0.1px; height: 0.1px;
+}
+
+/* velog 소개 */
+.velog_introduction_box{
+    margin-top: 4em;
+    width: 100%; height: 185px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+/* 로고 */
+.img_box{
+    width: 10.5em; height: 10.5em;
+}
+.velog_logo{
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 소개글 */
+.velog_info_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1.3em;
+}
+    .velog_name a{
+        font-size: 2em;
+        color: #212529;
+        font-weight: 700;
+    }
+    .velog_info{
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: #495057;
+    }
+.notice_info_line{
+    margin-top: 0.5em; margin-bottom: 1em;
+    width: 100%; height: 1px;
+    background-color: #e9ecef;
+}
+/* 글,시리즈,소개 선택 메뉴 */
+.notice_menu{
+    display: flex;
+    justify-content: center;
+    height: 48px;
+    margin: 72px 0;
+}
+    .notice_menu a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 128px;
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+    .menu_writing{
+        color: rgb(32, 201, 151);
+        border-bottom: 3px solid rgb(32, 201, 151);
+    }
+    .menu_series{
+        color: #000;
+        border-bottom: none;
+    }
+    .menu_introduction{
+        color: #000;
+        border-bottom: none;
+    }
+/* 공지사항 메인 */
+.notice_main{
+    width: 100%; height: 100%;
+}
+.notice_search_box{
+    display: flex;
+    justify-content: flex-end;
+    height: 36px;
+    margin-bottom: 32px;
+}
+/* 공지사항 검색 */
+.notice_search{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(173, 181, 189);
+    padding: 0 10px;
+    background-color: white;
+    transition: all 300ms ease-in-out;
+}
+.notice_search > .search_icon{
+    font-size: 16px;
+    margin-right: 8px;
+    color: rgb(173, 181, 189);
+    transition: all 300ms ease-in-out;
+}
+/* 공지사항 input */
+.notice_ip{
+    outline: none;
+    border: none;
+    height: 16px; width: 154px;
+    font-size: 15px;
+}
+.notice_ip::placeholder{
+    color: rgb(173, 181, 189)
+}
+/* 공지사항 */
+.notice {
+    width: 100%; height: 100%;
+    padding: 64px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.notice:first-child{
+    padding-top: 0px;
+    border-bottom: none;
+}
+    /* 공지 이미지 태그 */
+    .notice img{
+        width: 100%; height: 33.5em;
+    }
+    /* 공지 제목 태그 */
+    .notice h2{
+        height: 1.5em;
+        font-size: 2em;
+        cursor: pointer;
+        line-height: 1.5;
+        letter-spacing: 0.1px;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    /* 공지 내용 태그 */
+    .notice p{
+        margin: 0.8em 0 1em 0;
+        width: 100%; height: 5em;
+        font-size: 1.2em;
+        line-height: 1.6;
+        letter-spacing: 0.1px;
+        overflow-wrap: break-word;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    /* 공지 키워드 태그 */
+    .notice_keyword{
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+        .notice_keyword a{
+            display: flex;
+            align-items: center;
+            height: 32px;
+            border-radius: 16px;
+            font-size: 16px;
+            margin-right: 14px;
+            margin-bottom: 14px;
+            padding: 0 16px;
+            color: #0ca678;
+            background-color: rgb(241, 243, 245);
+        }
+        .notice_keyword a:hover{
+            background-color: rgb(248, 248, 248);
+        }
+    /* 공지 날짜 및 댓글수 태그 */
+    .notice_subinfo{
+        display: flex;
+        height: 1.75em;
+        margin-top: 1.35em;
+        color: #868e96;
+    }
+        .create_date{
+            margin-right: 0.2em;
+        }
+        .count_reply{
+            margin-left: 0.2em;
+        }
+        .notice_subinfo div{
+            display: flex;
+            align-items: center;
+            margin: 0 8px;
+            font-size: 1.2em;
+        }
+/* notice 컨트롤 태그 */
+.notice_control{
+    position: absolute; top: 45em; left: -20em;
+    width: 15.3em; height: 35em;
+}
+.tag_list{
+    height: 33px;
+    font-size: 1.6em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    color: rgb(73, 80, 87);
+    border-bottom: 1px solid rgb(173, 181, 189);
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.items{
+    margin: 16px 0;
+}
+.items li{
+    height: 21px;
+    margin-top:  0.5em;
+}
+.items li:first-child{
+    margin: 0;
+}
+.item{
+    /* color: #343a40; */
+    font-size: 14px;
+}
+.item:hover{
+    text-decoration: underline;
+}
+.item span{
+    color: rgb(134, 142, 150);
+    font-size: 14px;
+    margin-left: 8px;
+}
