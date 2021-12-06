@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>velog-relogin</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/token_expired.css">
+</head>
+<body>
+    <header>
+        <!-- 고정된 header -->
+        <div class="fixed_header">
+            <div class="hd_wrap">
+                <div class="hd_logo"><a href="#"><span class="hd_logo_txt">velog</span></a></div>
+                <div class="hd_btns">
+                    <button class="search_btn"><i class="fas fa-search search_icon"></i></button>
+                    <button class="login_btn header_btn" type="button">로그인</button>
+                    <button class="go_posting_btn header_btn" type="button" style="display: none;">새 글 작성</button>
+                    <div class="user_nav_wrap" style="display: none;">
+                        <a href="">
+                            <img src="img/user_icon.png" alt="">
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="user_nav nav_box">
+                            <ul>
+                                <li class="my_page"><a href="#">내 벨로그</a></li>
+                                <li class="temp_post"><a href="#">임시 글</a></li>
+                                <li class="read_list"><a href="#">읽기 목록</a></li>
+                                <li class="setting"><a href="#">설정</a></li>
+                                <li class="logout"><a href="#">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            <!-- sign_in -->
+            <div class="si_container" style="display: none;">
+                <div class="si_warp">
+                    <!-- 로그인 창 -->
+                    <div class="si_box">
+                        <!-- 왼쪽 area -->
+                        <div class="si_img">
+                            <img src="img/login.svg" alt="login-img">
+                            <span>환영합니다!</span>
+                        </div>
+                        <!-- 오른쪽 area -->
+                        <div class="si_block">
+                            <!-- <div class="login_si_api"> -->
+                                <!-- 종료버튼 -->
+                                <div class="si_close"><i class="fas fa-times"></i></div>
+                                <!-- 로그인 부분 -->
+                                <div class="si_input">
+                                    <h2>로그인</h2>
+                                    <h4>이메일로 로그인</h4>
+                                    <form action="" class="si_form">
+                                        <!-- 로그인 input -->
+                                        <input type="text" class="email_ip" placeholder="이메일을 입력하세요">
+                                        <!-- 로그인 버튼 -->
+                                        <button class="si_button">로그인</button>
+                                    </form>
+                                    <!-- 소셜 로그인 -->
+                                    <div class="social_login">
+                                        <h4>소셜 계정으로 로그인</h4>
+                                        <div class="social_btns">
+                                            <!-- api의 로그인 버튼 및 이미지 -->
+                                            <div class="btn"><i class="fab fa-google"></i></div>
+                                            <div class="btn"><i class="fab fa-google"></i></div>
+                                            <div class="btn"><i class="fab fa-google"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                            <!-- 회원가입 요청 -->
+                            <div class="si_su_info">
+                                <span class="su_question">아직 회원이 아니신가요?</span>
+                                <span class="su_link"><a href="">회원가입</a></span>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section>
+            <img src="img/undraw_login_v483.23825b9b.svg" alt="로그인 이미지">
+            <h4 class="token_txt">토큰이 만료되었습니다.</h4>
+            <h4 class="relogin_txt">다시 로그인 후 이용해주세요.</h4>
+            <button type="button" class="login_btn">로그인</button>
+        </section>
+    </main>
+</body>
+</html>
