@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.velog.domain.user.UserRepository">
+  	<update id="updateProfile" parameterType="com.velog.domain.user.User">
+		update
+		   user_mst
+		set
+		   name = #{name},
+		   comment = #{comment}
+		where
+			id = #{id};
+    </update>
+    
+    <update id="updateUsername" parameterType="com.velog.domain.user.User">
+		update
+		   user_mst
+		set
+		   username = #{username}
+		where
+			id = #{id};
+    </update>
+    
+    <insert id="imgUpload" parameterType="com.velog.web.model.dto.mypage.MypageDto" >
+    	insert into
+    		user_mst
+    	values(
+    	0,
+    	#{profile_img_origin_name},
+    	#{profile_img_temp_name}
+    );
+    </insert>
+    
+  </mapper>

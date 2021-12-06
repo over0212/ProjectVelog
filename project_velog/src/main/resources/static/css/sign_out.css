@@ -1,0 +1,94 @@
+.so_container{
+    width: 100%; height: 100%;
+    z-index: 8;
+    position: fixed;
+    top: 0px; left: 0px;
+}
+
+.so_warp{
+    z-index: 9;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(233, 233, 232, 0.8);
+}
+
+/* 로그인창 */
+.so_box{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 35em;
+    height: 18em;
+    padding: 0 2em;
+    letter-spacing: 1.5px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    animation: open_so 0.4s ease-in-out;
+}
+/* 
+.active{
+} */
+
+@keyframes open_so{
+    0%{
+        opacity: 0;
+        transform: translateY(400px) scale(0.75);
+    }
+    75%{
+        opacity: 1;
+        transform: translateY(-16px) scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.inactive{
+    animation: close_si 0.4s ease-in-out ;
+}
+
+.txt_area h2{
+    font-size: 2.5em;
+    color: #353b41;
+}
+.txt_area h5{
+    margin: 0.7em 0;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.btn_area{
+    display: flex;
+    justify-content: end;
+}
+
+.btn_area button{
+    width: 4.5em;
+    height: 2em;
+    opacity: 1;
+    font-size: 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel{
+    margin-right: 0.8em;
+    background-color: #e9ecef;
+}
+.cancel:hover{
+    opacity: 0.8;
+}
+.signout{
+    background-color: #13b886;
+    color: #ffffff;
+}
+.signout:hover{
+    opacity: 0.8;
+}
