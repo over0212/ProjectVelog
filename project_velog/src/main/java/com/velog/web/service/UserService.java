@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.velog.domain.user.Mypage;
 import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
-import com.velog.web.model.dto.MypageDto;
+import com.velog.web.model.dto.mypage.MypageDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -45,4 +45,16 @@ public class UserService {
 		int deleteFlag = userRepository.deleteUser(id);
 		return deleteFlag;
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -13,44 +13,33 @@ const name = document.querySelector('.name');
 const comment = document.querySelector('.comment');
 const username = document.querySelector('.username');
 const img_insert = document.querySelector('.img_insert');
-
+const insert_img = document.querySelector('#insert_img');
+const profileimg = document.querySelectorAll('.profileimg');
 // 이미지 업로드
-/*img_insert.onclick = () => {
-	let FormData = new FormData(form);
-	imgUpload();
-}
 
-function imgUpload() {
+
+function img_Upload() {
+	let formData = new FormData(insert_img);
+	
 	$.ajax({
 		type: 'post',
 		url: '/mypage/imgUpload/' + user_id.value,
-		data: FormData,
-		enctype: 'file/form-data',
+		data: formData,
+		enctype: 'multipart/form-data',
 		processData: false,
 		contentType: false,
 		success: function(data){
-			alert('전송');
+			if(data == 1){
+				alert('전송 성공')	
+				
+			} else {
+				alert('전송 실패')
+			}
 		},
 		error: function(){
 			alert('실패');
 		}
 	})
-}*/
-const my_img = document.querySelector('.my_img');
-	
-function imgUpload(){
-    /*let fileList = imgFile.files*/;
-    let reader = new FileReader();
-    
-    // 그 다음 실행됨
-    reader.onload = () => {
-        let src = reader.result;
-       /* let fileName = fileList[0].name;*/
-        my_img.innerHTML += `<img src="${src}"></img>`;
-    }
-    
-    // 함수 실행되면 먼저 실행됨
-    reader.readAsDataURL(fileList[0]);
 }
 
 modify[0].onclick = () => {

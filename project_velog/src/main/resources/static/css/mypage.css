@@ -11,17 +11,18 @@
     display: flex;
     width: 768px; height: 220px;
 }
-/*  占쎈늄嚥≪뮉釉� 占쎌뵠沃섎챷占� �빊遺쏙옙 占쎌젫椰꾬옙 */
+/*  �뜝�럥�뒆�슖�돦裕됮뇡占� �뜝�럩逾졿쾬�꼶梨룟뜝占� 占쎈퉲�겫�룞�삕 �뜝�럩�젷濾곌쒀�삕 */
 .mp_img{
     display: flex;
     flex-direction: column;
     height: 100%;
     padding-right: 24px;
 }
-.my_img img {
+.profileimg{
     width: 128px; height: 128px;
     margin-bottom: 20px;
     border-radius: 50%;
+    background-color: blue; 
 }
 .mp_img button{
     display: flex;
@@ -50,7 +51,7 @@
 .img_delete:hover{
     background-color: #baf8e5;
 }
-/* 占쎌뵠�뵳占� 占쎈꺖揶쏆뮄占� */
+/* �뜝�럩逾좑옙逾녑뜝占� �뜝�럥爰뽪뤆�룇裕꾢뜝占� */
 .top_info{
     height: 100%;
     padding-left: 24px;
@@ -77,7 +78,7 @@
     color: #6ce2bd;
 
 }
-/* 占쎌뵠�뵳占� 占쎈꺖揶쏆뮄占� 占쎈땾占쎌젟 */
+/* �뜝�럩逾좑옙逾녑뜝占� �뜝�럥爰뽪뤆�룇裕꾢뜝占� �뜝�럥�빢�뜝�럩�젧 */
 .top_info_creative{
     width: 100%;
     padding-left: 24px;
@@ -126,7 +127,7 @@
 .info_save:hover{
     background-color: #36ca9e;
 }
-/* 筌롫뗄�뵥 占쎌젟癰귨옙 占쎈땾占쎌젟 */
+/* 嶺뚮∥�뾼占쎈데 �뜝�럩�젧�솻洹⑥삕 �뜝�럥�빢�뜝�럩�젧 */
 .middle_info{
     margin-top: 64px;
 }
@@ -194,7 +195,7 @@
     display: flex;
     height: 56px;
 }
-/* 占쎌젟癰귨옙 �빊遺쏙옙 (占쎈꺖占쎄퐬 占쎌젟癰귨옙) */
+/* �뜝�럩�젧�솻洹⑥삕 占쎈퉲�겫�룞�삕 (�뜝�럥爰뽩뜝�럡�맟 �뜝�럩�젧�솻洹⑥삕) */
 .icon_box_block{
     width: 400px;
 }
@@ -229,7 +230,7 @@
     margin-right: 8px;
     font-size: 15px;
 }
-/* �냼�뀥 異붽��뻽�쓣�떆 */
+/* 占쎈꺖占쎈�� �빊遺쏙옙占쎈뻥占쎌뱽占쎈뻻 */
 .info_modify_box{
 	
 }
@@ -315,7 +316,7 @@
     border-radius: 50%;
     background-color: #ffffff;
 }
-/* 占쎌돳占쎌뜚 占쎄퉱占쎈닚 */
+/* �뜝�럩�뤂�뜝�럩�쐸 �뜝�럡�돮�뜝�럥�떄 */
 .creative_info_out{
     display: flex;
 }

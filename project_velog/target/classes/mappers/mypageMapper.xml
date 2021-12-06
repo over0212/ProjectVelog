@@ -22,4 +22,15 @@
 		where
 			id = #{id};
     </update>
+    
+    <insert id="imgUpload" parameterType="com.velog.web.model.dto.mypage.MypageDto" >
+    	insert into
+    		user_mst
+    	values(
+    	0,
+    	#{profile_img_origin_name},
+    	#{profile_img_temp_name}
+    );
+    </insert>
+    
   </mapper>

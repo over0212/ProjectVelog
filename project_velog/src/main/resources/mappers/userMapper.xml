@@ -57,6 +57,13 @@
   			now()
   		);
   	</insert>
+  	<insert id="profileImgInsert" parameterType="com.velog.domain.user.User">
+  		insert into
+  			user_mst
+  		values(
+  			#{profile_img_url}
+  		);
+  	</insert>
   	
   	<delete id="deleteUser">
   		delete

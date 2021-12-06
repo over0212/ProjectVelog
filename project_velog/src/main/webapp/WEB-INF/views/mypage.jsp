@@ -26,11 +26,11 @@
 		<div class="mp_main">
 			<div class="mp_profile">
 				<div class="mp_img">
-					<form>
-						<div class="my_img">
-							<img id="imgNull" src="/img/user_icon.png" alt="">
+					<form id="insert_img">
+						<div class="my_img"> 
+							<input type="file" name="file" id="imgFile" " onchange="img_Upload()" style="display: none"></input>
+							<img class = "profileimg" alt="" src="">
 						</div>
-						<input class="image" type="file" name="file" id="imgFile" style="display: none;" onchange="imgUpload()"></input>
 						<button type="button" class="img_insert" onclick="document.all.file.click()">이미지 업로드</button>
 						<button class="img_delete">이미지 제거</button>
 					</form>
