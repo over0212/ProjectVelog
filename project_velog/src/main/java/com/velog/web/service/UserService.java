@@ -29,7 +29,6 @@ public class UserService {
 		User user = mypageDto.toEntity(id);
 		completeCount += userRepository.updateProfile(user);
 		
-		
 		return completeCount;
 	}
 	

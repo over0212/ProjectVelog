@@ -16,10 +16,11 @@
     <title>새 글 작성</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/border_insert.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="write_page">
-        <form class="form" action="" method="post">
+        <form class="form">
             <div class="write_container">
                 <div class="write_wrap">
                     <div class="write_ip"> 
@@ -102,7 +103,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>2
                     </div>  
                 </div>
                 <div class="preview_wrap">

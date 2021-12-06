@@ -2,6 +2,7 @@ const temp_submit = document.querySelector('.temp_submit');
 const write_page = document.querySelector('.write_page');
 const write_title = document.querySelector('.write_title');
 const write_tag = document.querySelector('.write_tag');
+const write_txt = document.querySelector('.write_txt');
 const ip_tags = document.querySelector('.ip_tags');
 const tag_msg = document.querySelector('.tag_msg');
 const pre_title = document.querySelector('.pre_title');
@@ -11,13 +12,13 @@ const h1 = document.querySelector('.h1');
 const post_title = document.querySelector('.post_title');
 const ip_url = document.querySelector('.ip_url');
 const text_length = document.querySelector('.text_length');
-const cancle_btn = document.querySelector('.cancle_btn');
+const post_content = document.querySelector('.post_content');
 const length_box = document.querySelector('.length_box');
+const cancle_btn = document.querySelector('.cancle_btn');
 const real_submit = document.querySelector('.real_submit');
 const imgFile = document.querySelector('#imgFile');
-const post_content = document.querySelector('.post_content');
 const form = document.querySelector('form');
-let write_txt = document.querySelector('.write_txt');
+
 // write_page -------------------------------------------
 tag_msg.style.display = "none";
 
@@ -80,6 +81,7 @@ write_txt.onkeyup = () => {
     }
 }
 
+let src = "";
 function edit(data){
     let splitdata = data.split(' ');
     let cmd = splitdata[0];
@@ -105,7 +107,7 @@ function edit(data){
             console.log(link);
         }else if(cmd == '![]'){ // img
             console.log('img');
-            pre_txt.innerHTML += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${src}"></img></div>`;
+            pre_txt.innerHTML += `<div class="img" style="display:flex; justify-content:center;"><img src="${src}"></img></div>`;
         }else if(cmd == '```'){ // code
         } else{
             text = data;
@@ -164,29 +166,26 @@ function imgFileLoad(){
 		processData: false,
 		contentType: false,
 		success: function(data){
-			console.log(data);
-			src = data;
-			edit('![] '+data);
+			pre_txt.innerHTML += `<img src="/image/${data}"/>`
 		},
 		error: function(){
 			alert('비동기 처리 오류');
 		}
-	});
+		
+	})
 }
-var src = '';
-
 // img url wirte_txt에 삽입
-function insertImgURL(src){
-   // let uuid = getUUID();
-    src = `result`;
+function insertImgURL(fileName, src){
+    let uuid = getUUID();
+    src = ` http://images.velog.io/images/username.value/post/${uuid}/${fileName}`;
     write_txt.value += `\n![]${src} \n`;
 }
-/*function getUUID() {
+function getUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
-}*/
+}
 
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
@@ -203,7 +202,7 @@ temp_submit.onclick = () => {
 	    post_content.value = contents.slice(0, 149);    
     }else{
     	post_content.value = contents;
-    }	
+    }
 }
 
 // send_page --------------------------------------------

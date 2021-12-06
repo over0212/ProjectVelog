@@ -13,10 +13,8 @@ public class BorderDto {
 	private int id;
 	private String main_title;
 	private String main_content;
-	private String origin_img_name;
-	private String temp_img_name;
-	private String preview_img_origin_name;
-	private String preview_img_temp_name;
+	private String main_img_url;
+	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime create_date;
 	
@@ -26,10 +24,8 @@ public class BorderDto {
 				.id(id)
 				.main_title(main_title)
 				.main_content(main_content)
-				.origin_img_name(origin_img_name)
-				.temp_img_name(temp_img_name)
-				.preview_img_origin_name(preview_img_origin_name)
-				.preview_img_temp_name(preview_img_temp_name)
+				.main_img_url(main_img_url)
+				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
 				.create_date(create_date)
 				.build();

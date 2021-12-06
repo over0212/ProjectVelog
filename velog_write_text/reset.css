@@ -3,7 +3,7 @@
 /* font-family: 'Recursive', sans-serif;  header logo에만 적용할 폰트*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Recursive:wght@500&display=swap');
 *{
-    margin: 0; padding: 0; font-size: 12px;
+    margin: 0; padding: 0;
     font-family: 'Nanum Gothic', "Recursive", sans-serif;
 }
 
