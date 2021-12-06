@@ -28,6 +28,7 @@ ip_tags.onkeypress = () => {
         var tag = document.createElement('span');
         var hidden = document.createElement('input');
         hidden.setAttribute('type', 'hidden');
+        hidden.name = 'tags';
         hidden.value = ip_tags.value;
         hidden.className = "tag_hidden";
         tag.className = "tag";
@@ -184,7 +185,7 @@ temp_submit.onclick = () => {
 	    post_content.value = contents.slice(0, 149);    
     }else{
     	post_content.value = contents;
-    }	
+    }
 }
 
 // send_page --------------------------------------------
@@ -205,8 +206,31 @@ cancle_btn.onclick = () => {
     write_page.style.display = "block";
 }
 
+const username = document.querySelector('#username');
+const insert_form = document.querySelector('.form');
+function insertForm(){
+	let formData = new Formdata(insert_form);
+	
+	$.ajax({
+			type: 'post',
+			url: '/border/insert/' + username.value,
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formData,
+			success: function(data){
+				
+			},
+			error: function(){
+				alert('비동기 처리 오류');
+			}
+			
+		})
+	
+} 
+
 // submit 버튼
 // real_submit.onclick() = () => {
-
+		
 // }
 

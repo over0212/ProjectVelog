@@ -13,8 +13,9 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/border")
 public class BorderRestController {
 	
-	@PostMapping("/insert")
+	@PostMapping("/insert/{username}/")
 	public String borderInsert(BorderDto borderInsertDto) { // form-data 를 받음
+		
 		return "";
 	}
 }

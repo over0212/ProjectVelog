@@ -11,17 +11,16 @@
   			#{url},
   			#{id},
   			#{main_title},
+  			#{main_tags},
   			#{main_content},
   			#{origin_img_name},
   			#{temp_img_name},
-  			#{origin_file_name},
-  			#{temp_file_name},
   			#{preview_img_origin_name},
   			#{preview_img_temp_name},
   			#{preview_txt},
   			now(),
   			now()
-  		)
+  		);
   	</insert>
   
   </mapper>

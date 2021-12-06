@@ -16,6 +16,7 @@ public class Border {
 	private String url;
 	private int id;
 	private String main_title;
+	private String main_tags;
 	private String main_content;
 	private String origin_img_name;
 	private String temp_img_name;

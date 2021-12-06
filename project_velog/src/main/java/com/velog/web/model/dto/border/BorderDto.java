@@ -12,6 +12,7 @@ public class BorderDto {
 	private String url;
 	private int id;
 	private String main_title;
+	private String main_tags;
 	private String main_content;
 	private String origin_img_name;
 	private String temp_img_name;
@@ -25,6 +26,7 @@ public class BorderDto {
 				.url(url)
 				.id(id)
 				.main_title(main_title)
+				.main_tags(main_tags)
 				.main_content(main_content)
 				.origin_img_name(origin_img_name)
 				.temp_img_name(temp_img_name)

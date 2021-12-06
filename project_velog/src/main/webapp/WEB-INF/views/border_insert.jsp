@@ -20,6 +20,7 @@
 <body>
     <div class="write_page">
         <form class="form" action="" method="post">
+        	<input type="hidden" id="username" value="${principal.user.username }">
             <div class="write_container">
                 <div class="write_wrap">
                     <div class="write_ip"> 
@@ -87,7 +88,7 @@
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
+                                            <div class="user_url_box"><span class="user_name">/@ ${principal.user.username }/</span><input class="ip_url" type="text"></div>
                                             
                                         </div>
                                         <div class="settings">
@@ -112,8 +113,6 @@
             </div>
         </form>
     </div>
-    
-    
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <script src="/js/border_insert.js" ></script>
