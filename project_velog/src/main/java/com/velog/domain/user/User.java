@@ -19,7 +19,8 @@ public class User {
 	private String username;
 	private String name;
 	private String comment;
-	private String profile_img_url;
+	private String profile_img_origin_name;
+	private String profile_img_temp_name;
 	private String provider;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

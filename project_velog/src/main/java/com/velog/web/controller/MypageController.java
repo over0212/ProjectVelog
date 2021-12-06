@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.velog.config.auth.PrincipalDetails;
-import com.velog.web.model.dto.mypage.MypageDto;
-import com.velog.web.service.ImgService;
+import com.velog.web.model.dto.MypageDto;
 import com.velog.web.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +18,6 @@ import lombok.RequiredArgsConstructor;
 public class MypageController {
 	
 	private final UserService userService;
-	private final ImgService imgService;
 	
 	
 	@PatchMapping("/mypage/front/{id}")
@@ -42,21 +39,8 @@ public class MypageController {
 	}
 	
 	@PostMapping("/mypage/imgUpload/{id}")
-		public String imgInsert(MypageDto mypageDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		      String imageFile = imgService.fileUpload(principalDetails.getUser().getUsername(),mypageDto);
-		      mypageDto.setMypageImg();
-		      return imageFile;
+	public String imgInsert(@PathVariable int id,@RequestBody MypageDto mypageDto) {
+		
+		return "1";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

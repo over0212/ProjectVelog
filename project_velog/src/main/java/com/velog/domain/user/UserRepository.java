@@ -26,6 +26,4 @@ public interface UserRepository {
 	
 	public int updateUsername(User user);
 	
-	// mypage img
-	public int profileImgInsert(User user);
 }
