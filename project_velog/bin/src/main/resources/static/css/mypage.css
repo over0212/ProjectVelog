@@ -11,14 +11,14 @@
     display: flex;
     width: 768px; height: 220px;
 }
-/*  �봽濡쒗븘 �씠誘몄� 異붽� �젣嫄� */
+/*  占쎈쐻占쎈윥占쎈뭷占쎌뒙占쎈룱獒뺣맢�눀�뜝占� 占쎈쐻占쎈윪�얠×苡э옙瑗띰㎖猷잙쐻�뜝占� �뜝�럥�돯占쎄껀占쎈짗占쎌굲 占쎈쐻占쎈윪占쎌졆癲꾧퀗��占쎌굲 */
 .mp_img{
     display: flex;
     flex-direction: column;
     height: 100%;
     padding-right: 24px;
 }
-.my_img img {
+.profileimg{
     width: 128px; height: 128px;
     margin-bottom: 20px;
     border-radius: 50%;
@@ -50,13 +50,14 @@
 .img_delete:hover{
     background-color: #baf8e5;
 }
-/* �씠由� �냼媛쒓� */
+/* 占쎈쐻占쎈윪�얠쥜�삕�얜뀘�쐻�뜝占� 占쎈쐻占쎈윥�댆戮る쨬占쎈즵獒뺢쐼�쐻�뜝占� */
 .top_info{
     height: 100%;
     padding-left: 24px;
     border-left: 1px solid #e9ecef;
 }
 .top_info h2{
+	height: 54px;
     font-size: 36px;
 }
 .top_info p{
@@ -76,7 +77,7 @@
     color: #6ce2bd;
 
 }
-/* �씠由� �냼媛쒓� �닔�젙 */
+/* 占쎈쐻占쎈윪�얠쥜�삕�얜뀘�쐻�뜝占� 占쎈쐻占쎈윥�댆戮る쨬占쎈즵獒뺢쐼�쐻�뜝占� 占쎈쐻占쎈윥占쎈묄占쎈쐻占쎈윪占쎌젳 */
 .top_info_creative{
     width: 100%;
     padding-left: 24px;
@@ -125,7 +126,7 @@
 .info_save:hover{
     background-color: #36ca9e;
 }
-/* 硫붿씤 �젙蹂� �닔�젙 */
+/* 癲ル슢�닪占쎈씔�뜝�럥�뜲 占쎈쐻占쎈윪占쎌젳占쎌녃域밟뫁�굲 占쎈쐻占쎈윥占쎈묄占쎈쐻占쎈윪占쎌젳 */
 .middle_info{
     margin-top: 64px;
 }
@@ -148,6 +149,11 @@
 }
 .contents_box{
     flex-grow: 2;
+}
+.contents_box p{
+	height: 24px;
+	font-size: 16px;
+	font-weight: 100;
 }
 .contents{
     font-size: 16px;
@@ -188,7 +194,7 @@
     display: flex;
     height: 56px;
 }
-/* �젙蹂� 異붽� (�냼�꽕 �젙蹂�) */
+/* 占쎈쐻占쎈윪占쎌젳占쎌녃域밟뫁�굲 �뜝�럥�돯占쎄껀占쎈짗占쎌굲 (占쎈쐻占쎈윥�댆戮⑸쐻占쎈윞占쎈쭫 占쎈쐻占쎈윪占쎌젳占쎌녃域밟뫁�굲) */
 .icon_box_block{
     width: 400px;
 }
@@ -223,7 +229,7 @@
     margin-right: 8px;
     font-size: 15px;
 }
-/* 소셜 추가했을시 */
+/* �뜝�럥爰뽩뜝�럥占쏙옙 占쎈퉲�겫�룞�삕�뜝�럥六ε뜝�럩諭썲뜝�럥六� */
 .info_modify_box{
 	
 }
@@ -273,8 +279,11 @@
 .social_modify:hover{
     color: #6ce2bd;
 }
+.creative_info_comments{
+	display: flex;
+}
 .creative_info_comments h3{
-    width: 152px; height: 27px;
+    width: 152px;
     font-size: 20px;
     font-weight: 500;
 }
@@ -306,7 +315,7 @@
     border-radius: 50%;
     background-color: #ffffff;
 }
-/* �쉶�썝 �깉�눜 */
+/* 占쎈쐻占쎈윪占쎈쨧占쎈쐻占쎈윪占쎌맱 占쎈쐻占쎈윞占쎈룼占쎈쐻占쎈윥占쎈뻹 */
 .creative_info_out{
     display: flex;
 }

@@ -2,7 +2,6 @@ const email_ip = document.querySelector('.email_ip');
 const si_button = document.querySelector('.si_button');
 const si_close = document.querySelector('.si_close i');
 const si_container = document.querySelector('.si_container');
-
 si_button.onkeypress = () => {
     if (window.event.keyCode == 13) {
         window.event.preventDefault();

@@ -18,10 +18,7 @@ public class Border {
 	private String main_title;
 	private String main_tags;
 	private String main_content;
-	private String origin_img_name;
-	private String temp_img_name;
-	private String preview_img_origin_name;
-	private String preview_img_temp_name;
+	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

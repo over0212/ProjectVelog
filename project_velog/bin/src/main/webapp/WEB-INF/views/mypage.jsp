@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -22,15 +23,17 @@
 <body>
 	<div class="mp_container">
 		<jsp:include page="include/main_header.jsp"></jsp:include>
-		<input type="hidden" id="id" value="${principal.user.id }">
 		<div class="mp_main">
 			<div class="mp_profile">
 				<div class="mp_img">
-					<div class="my_img">
-						<img src="/img/user_icon.png" alt="">
-					</div>
-					<button class="img_insert">이미지 업로드</button>
-					<button class="img_delete">이미지 제거</button>
+					<form id="insert_img">
+						<div class="my_img"> 
+							<input type="file" name="file" id="imgFile" " onchange="img_Upload()" style="display: none"></input>
+							<img class = "profileimg" src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}">
+						</div>
+						<button type="button" class="img_insert" onclick="document.all.file.click()">이미지 업로드</button>
+						<button class="img_delete" type="button">이미지 제거</button>
+					</form>
 				</div>
 				<div class="top_info">
 					<h2 class="name">${principal.user.name }</h2>
@@ -40,8 +43,9 @@
 					</div>
 				</div>
 				<div class="top_info_creative">
-					<input type="text" class="info_name" value="${principal.user.name }">
-					<input type="text" class="info_text" value="${principal.user.comment }">
+					<input type="text" class="info_name user_ip"
+						value="${principal.user.name }"> <input type="text"
+						class="info_text user_ip" value="${principal.user.comment }">
 					<div class="info_save_box">
 						<button class="info_save">저장</button>
 					</div>
@@ -53,15 +57,15 @@
 						<div class="velog_title">
 							<h3>벨로그 제목</h3>
 							<div class="contents_box">
-								<div class="contents">${principal.user.username }</div>
+								<p class="username">${principal.user.username }</p>
 							</div>
 							<div class="info_modify_box">
 								<button class="info_modify">수정</button>
 							</div>
-
 							<div class="title_box_hidden">
 								<div class="title_creative_box">
-									<input type="text" class="title_creative" value="${principal.user.username }">
+									<input type="text" class="title_creative user_ip"
+										value="${principal.user.username }">
 									<div class="info_save_box">
 										<button class="info_save">저장</button>
 									</div>
@@ -173,10 +177,12 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<jsp:include page="include/sign_out.jsp"></jsp:include>
-	
-	<script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
+	<input type="hidden" id="id" value="${principal.user.id }">
+
+	<script src="https://kit.fontawesome.com/0b11c2b6d9.js"
+		crossorigin="anonymous"></script>
 	<script src="/js/mypage.js"></script>
 </body>
 </html>

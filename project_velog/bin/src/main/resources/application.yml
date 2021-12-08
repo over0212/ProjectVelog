@@ -27,6 +27,12 @@ spring:
           connectiontimeout: 5000
           timeout: 5000
           writetimeout: 5000
+          
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+        
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
@@ -72,3 +78,6 @@ spring:
 mybatis:
   mapper-locations:
   - /mappers/*xml
+  
+file:
+  path: D:\Project_Velog\ProjectVelog\image\

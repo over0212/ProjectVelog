@@ -22,4 +22,39 @@
 		where
 			id = #{id};
     </update>
+    
+    <update id="updateProfileImg" parameterType="com.velog.domain.user.User" >
+    	update
+    		user_mst
+    	set
+    		profile_img_url = #{profile_img_url}
+    	where
+    		id = #{id};
+    </update>
+    
+    <update id="deleteProfileImg">
+    	update
+    		user_mst
+    	set
+    		profile_img_url = null
+    	where
+    		id = #{id};
+    </update>
+    
   </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

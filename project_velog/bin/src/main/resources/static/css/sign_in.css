@@ -6,7 +6,7 @@
     display: none;
 }
 
-.si_warp{
+.si_wrap{
     z-index: 9;
     height: 100%;
     display: flex;
@@ -131,6 +131,7 @@
     padding: 16px;
     font-size: 16px;
     border-radius: 2px;
+    font-weight: 700;
 }
 .email_ip:focus{
     border: 2px solid black;
@@ -204,7 +205,7 @@
 .su_link button{
     font-size: 16px;
     color: rgb(18, 184, 134);
-    font-weight: 500;
+    font-weight: 900;
     cursor: pointer;
 }
 .su_link button:hover{
