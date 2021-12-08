@@ -12,8 +12,7 @@ public class IndexBorderDto {
 	private String url;
 	private int id;
 	private String main_title;
-	private String preview_img_origin_name;
-	private String preview_img_temp_name;
+	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime create_date;
 	
@@ -22,8 +21,7 @@ public class IndexBorderDto {
 				.url(url)
 				.id(id)
 				.main_title(main_title)
-				.preview_img_origin_name(preview_img_origin_name)
-				.preview_img_temp_name(preview_img_temp_name)
+				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
 				.create_date(create_date)
 				.build();

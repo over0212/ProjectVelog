@@ -10,18 +10,22 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 public class WebMvcConfig implements WebMvcConfigurer{
 	
 	@Value("${file.path}")
-	private String profileForder;
+	private String filePath;
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		registry
 			.addResourceHandler("/image/**")
-			.addResourceLocations("file:///" + profileForder)// 서버에서 입력해줘야하느네 서버에 실질적인 파일을 숨겨주기위해  경로노출방지를위해
-			.setCachePeriod(60*60) //캐시 유지시간(60초 * 60 = 1시간)
+			.addResourceLocations("file:///" + filePath)
+			.setCachePeriod(60*60) // 캐시의 유지시간을 설정한다.(60초 * 60 = 1시간)
 			.resourceChain(true)
-			.addResolver(new PathResourceResolver()); 
+			.addResolver(new PathResourceResolver());
 		
+		/*
+		 * /image/** 이 경로가 ${file.path.profile} 이경로로 대체가 된다. 즉, file:///+" + profileFolder 이 경로로 대체된다는 것이다.
+		 * 커스터마이징 가능한건 경로와 캐시유지시간이 있다.
+		 */
 	}
 
 }

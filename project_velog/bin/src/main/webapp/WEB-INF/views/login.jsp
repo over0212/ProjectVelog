@@ -29,6 +29,14 @@
         </section>
     </main>
 </body>
-
+	
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		const login = document.querySelector('.login');
+		login.onclick = () => {
+			si_container.style.display = 'block';
+			si_container.className = 'si_container active';
+			si_container.style.transform = 'translateY(0px)';
+		}
+	</script>
 </html>
