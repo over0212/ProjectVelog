@@ -33,7 +33,7 @@ ip_tags.onkeypress = () => {
         hidden.setAttribute('type', 'hidden');
         hidden.value = ip_tags.value;
         hidden.className = "tag_hidden";
-        hidden.name = "tag_names";
+        hidden.name = "main_tags";
         tag.className = "tag";
         tag.appendChild(document.createTextNode(ip_tags.value));
         // tag.appendChild(document)
@@ -76,12 +76,6 @@ write_title.onkeyup = () => {
 const text_wrap = document.querySelector('.text_wrap');
 
 write_txt.onkeyup = () => {
-    // pre_txt.innerText = write_txt.value;
-    
-    // write(write_txt.value);
-
-    // 강사님이 주신 로직
-    
     edit(write_txt.value, '', 0);
 }
 
@@ -216,6 +210,8 @@ function edit(data, preText, imgcnt){
             data = datastr(data);
             imgcnt++;
             if(imgcnt == 1){
+				const preview_img_url = document.querySelector('#preview_img_url');
+				preview_img_url.value = text;
 				img_upload[1].innerHTML = `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}" width="100%"></img></div>`;
 				img_upload[0].style = 'display: none';
 				img_upload[1].style = 'display: block';
@@ -297,17 +293,21 @@ temp_submit.onclick = () => {
     var title = write_title.value;
     var contents = write_txt.value;
 
-    post_title.appendChild(document.createTextNode(title));
-    post_content.value = contents;
+    post_title.textContent = title;
     ip_url.value = title;
-    text_length.appendChild(document.createTextNode(contents.length));
+    text_length.textContent = contents.length;
+    
+    if(text_length.value >= 150){
+	    post_content.value = contents.slice(0, 149);    
+    }else{
+    	post_content.value = contents;
+    }
 }
 
 // send_page --------------------------------------------
 post_content.onkeydown = () => {
 	var txt_length = post_content.value.length;
 	if(txt_length > 150){
-		post_content.value = post_content.value.substr(0,150);
 		length_box.style.color = "red";
 	}else{
 		length_box.style.color = "black";
@@ -319,6 +319,8 @@ post_content.onkeydown = () => {
 cancle_btn.onclick = () => {
     send_page.style.display = "none";
     write_page.style.display = "block";
+    post_content.value.length = 0;
+    text_length.textContent = "0";
 }
 
 const tag_names = document.querySelectorAll('.tag_names');
@@ -326,26 +328,21 @@ const tag_hidden = document.querySelectorAll('.tag_hidden');
 const user_id = document.querySelector('#id');
 // submit 버튼
 real_submit.onclick = () => {
-	let borderObj = {
-		url : ip_url.value,
-		id : user_id.value,
-		main_title : write_title.value,
-		main_tag : tag_hidden.values,
-		main_content : write_txt.value,
-		preview_txt : post_content.value
-	}
+	let formData = new FormData(form);
 	
 	$.ajax({
 		type: "post",
 		url: "/border/insert/" + user_id.value,
-		data: JSON.stringify(borderObj),
-		contentType: "application/json; charset=UTF-8",
+		enctype: "multipart/form-data", /* 파일 업로드 할 땐 꼭 필요한 코드(enctype, processData, contentType)*/
+		data: formData,
+		processData: false,
+		contentType: false,
 		dataType: "text",
 		success: function(data){
 			let insertBorder = JSON.parse(data);
 			if(insertBorder == 1){
 				alert('게시글이 등록되었습니다.');
-				location.href = "/myborder";
+				location.href = "/myborder/"+user_id.value;
 			} else {
 				alert("게시글 등록 실패!");
 			}

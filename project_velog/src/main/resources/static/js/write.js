@@ -76,12 +76,6 @@ write_title.onkeyup = () => {
 const text_wrap = document.querySelector('.text_wrap');
 
 write_txt.onkeyup = () => {
-    // pre_txt.innerText = write_txt.value;
-    
-    // write(write_txt.value);
-
-    // 강사님이 주신 로직
-    
     edit(write_txt.value, '', 0);
 }
 
@@ -299,17 +293,21 @@ temp_submit.onclick = () => {
     var title = write_title.value;
     var contents = write_txt.value;
 
-    post_title.appendChild(document.createTextNode(title));
-    post_content.value = contents;
+    post_title.textContent = title;
     ip_url.value = title;
-    text_length.appendChild(document.createTextNode(contents.length));
+    text_length.textContent = contents.length;
+    
+    if(text_length.value >= 150){
+	    post_content.value = contents.slice(0, 149);    
+    }else{
+    	post_content.value = contents;
+    }
 }
 
 // send_page --------------------------------------------
 post_content.onkeydown = () => {
 	var txt_length = post_content.value.length;
 	if(txt_length > 150){
-		post_content.value = post_content.value.substr(0,150);
 		length_box.style.color = "red";
 	}else{
 		length_box.style.color = "black";
@@ -321,6 +319,8 @@ post_content.onkeydown = () => {
 cancle_btn.onclick = () => {
     send_page.style.display = "none";
     write_page.style.display = "block";
+    post_content.value.length = 0;
+    text_length.textContent = "0";
 }
 
 const tag_names = document.querySelectorAll('.tag_names');

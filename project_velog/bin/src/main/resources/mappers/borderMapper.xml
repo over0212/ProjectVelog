@@ -17,7 +17,7 @@
   			#{preview_txt},
   			now(),
   			now()
-  		)
+  		);
   	</insert>
   
   </mapper>
