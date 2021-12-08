@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
 import com.velog.web.model.dto.mypage.MypageDto;
+import com.velog.web.service.ImgService;
 
 @Service
 public class ImgServiceImpl implements ImgService {
@@ -20,8 +21,6 @@ public class ImgServiceImpl implements ImgService {
 
 	@Autowired
 	private UserRepository userRepository;
-	
-	private User user;
 
 	@Override
 	public String updateProfileImg(int id, MypageDto mypageDto) {
@@ -31,10 +30,10 @@ public class ImgServiceImpl implements ImgService {
 		String userFolder = "profile/" + id + "/";
 		String imageFilePath = filePath + userFolder + tempfilename;
 		
-		String oldFileName = user.getProfile_img_url();
-		String oldFileFolder = filePath + userFolder ;
-		File oldFile = new File(oldFileFolder);
-		
+//		String oldFileName = userRepository.
+//		String oldFileFolder = filePath + userFolder ;
+//		File oldFile = new File(oldFileFolder);
+//		
 		File file = new File(imageFilePath);
 		if (!file.exists()) {
 			file.mkdirs(); // 폴더경로 생성
