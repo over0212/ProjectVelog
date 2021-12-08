@@ -16,17 +16,6 @@ public class BorderController {
 	
 	private final BorderService borderService;
 	
-//	// myborder 페이지
-//	@GetMapping("/myborder/{username}")
-//	public String myVelog(@AuthenticationPrincipal PrincipalDetails principal) {
-//		if(principal.getUsername() == null) {
-//	      return "redirect:index";
-//	    }else {
-//	    	principal.setWriter(principal.getUser().getUsername());
-//	    	return "myborder";
-//	    }
-//	}
-	
 	// border-insert 페이지
 	@GetMapping("/insert")
 	public ModelAndView writePage() {
@@ -39,16 +28,14 @@ public class BorderController {
 	public ModelAndView DtlBorderIndex(@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		ModelAndView mav = new ModelAndView("border_dtl");
 		mav.addObject("border", borderService.getDtlBorderIndex(principalDetails.getUser().getId()));
-		System.out.println(mav);
 		return mav;
 	}
 	
 	// myborder page
-	@GetMapping("/myborder/{username}")
+	@GetMapping({"/myborder/{username}", "/border/{username}"})
 	public ModelAndView getBorderList(@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		ModelAndView mav = new ModelAndView("myborder");
 		mav.addObject("borderList", borderService.getBorderList(principalDetails.getUser().getId()));
-		System.out.println(mav);
 		return mav;
 	}
 

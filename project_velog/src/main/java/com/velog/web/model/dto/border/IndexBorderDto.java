@@ -4,8 +4,10 @@ import java.time.LocalDateTime;
 
 import com.velog.domain.border.Border;
 
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
 public class IndexBorderDto {
 	
@@ -16,15 +18,5 @@ public class IndexBorderDto {
 	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime update_date;
-	
-	public Border IndexBorderEntity() {
-		return Border.builder()
-				.url(url)
-				.id(id)
-				.main_title(main_title)
-				.preview_img_url(preview_img_url)
-				.preview_txt(preview_txt)
-				.build();
-	}
 
 }

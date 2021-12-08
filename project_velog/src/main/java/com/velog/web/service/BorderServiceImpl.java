@@ -87,7 +87,6 @@ public class BorderServiceImpl implements BorderService {
 			borderListDtos.add(borderListDto);
 		}
 		
-		
 		return borderListDtos;
 	}
 }

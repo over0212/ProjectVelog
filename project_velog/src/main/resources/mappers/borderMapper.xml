@@ -29,13 +29,30 @@
   			id = #{id};
   	</select>
   	
-  	 	<select id="getBorderList" resultType="com.velog.domain.border.Border">
+  	 <select id="getBorderList" resultType="com.velog.domain.border.Border">
   		select
   			*
   		from
   			border_mst
   		where
-  			id = #{id};
+  			id = #{id}
+  		order by
+  		 	update_date desc;
   	</select>
   
+   	 <select id="getBorderAll" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			bm.preview_txt,
+  			bm.update_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+		order by
+			update_date desc;
+  	</select>
   </mapper>

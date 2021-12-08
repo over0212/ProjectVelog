@@ -3,6 +3,7 @@ package com.velog.domain.border;
 import java.time.LocalDateTime;
 
 import com.velog.web.model.dto.border.BorderListDto;
+import com.velog.web.model.dto.border.IndexBorderDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,4 +37,16 @@ public class Border {
 				.create_date(create_date)
 				.build();
 	}
+	
+	public IndexBorderDto toIndexDto() {
+		return IndexBorderDto.builder()
+				.url(url)
+				.id(id)
+				.main_title(main_title)
+				.preview_img_url(preview_img_url)
+				.preview_txt(preview_txt)
+				.update_date(update_date)
+				.build();
+	}
+
 }

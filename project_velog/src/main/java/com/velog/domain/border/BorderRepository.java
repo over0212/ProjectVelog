@@ -12,5 +12,8 @@ public interface BorderRepository {
 	public Border getDtlBorderIndex(int id);
 	
 	public List<Border> getBorderList(int id);
+	
+	// index
+	public List<Border> getBorderAll();
 
 }

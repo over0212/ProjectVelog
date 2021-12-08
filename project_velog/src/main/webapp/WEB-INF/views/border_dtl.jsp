@@ -44,7 +44,7 @@
     
             <!-- 메인 컨텐츠 부분 -->
             <section class="dtl_body">
-                <div class="dtl_content">sdfsdfsdf</div>
+                <div class="dtl_content">${border.main_content }</div>
             </section>
     
             <!-- 하단 프로필 부분 -->

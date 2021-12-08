@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.velog.config.auth.PrincipalDetails;
+import com.velog.web.service.IndexService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,15 +14,18 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PageController {
 	
+	private final IndexService indexService;
+	
 	@GetMapping("/token-expired")
 	public String tokenExpired() {
 		return "token_expired";
 	}
 	
-	// 메인 페이지
 	@GetMapping({"/", "/index"})
-	public String index() {
-		return "index";
+	public ModelAndView index(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		ModelAndView mav = new ModelAndView("index");
+		mav.addObject("indexList", indexService.getIndexList());
+		return mav;
 	}
 	
 	@GetMapping("/login")
