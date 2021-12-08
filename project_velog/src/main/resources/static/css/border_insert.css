@@ -467,12 +467,10 @@ body{
 }
 .user_name{
     color: rgb(171, 169, 169);
-    /* width: 10em; */
     font-size: 1.3em;
     letter-spacing: 0.5px;
 }
 .ip_url{
-    width: 100%;
     border: none;
     font-size: 1.3em;
 }
