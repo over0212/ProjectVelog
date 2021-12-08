@@ -12,7 +12,7 @@ public class MypageDto {
 	private String name;
 	private String comment;
     private String username;
-    private MultipartFile mypageImg;
+    private MultipartFile file;
      
      public User toEntity(int id) {
     	 return User.builder()

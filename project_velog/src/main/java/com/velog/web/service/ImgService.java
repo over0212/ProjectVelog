@@ -4,6 +4,6 @@ import com.velog.web.model.dto.mypage.MypageDto;
 
 public interface ImgService {
 
-	public String fileUpload(String username,MypageDto mypageDto);
-	public int mypageinsert(MypageDto mypageDto);
+	public String updateProfileImg(int id,MypageDto mypageDto); 
+	public int deleteProfileImg(int id);
 }

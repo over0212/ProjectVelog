@@ -14,7 +14,9 @@ const comment = document.querySelector('.comment');
 const username = document.querySelector('.username');
 const img_insert = document.querySelector('.img_insert');
 const insert_img = document.querySelector('#insert_img');
-const profileimg = document.querySelectorAll('.profileimg');
+const profileimg = document.querySelector('.profileimg');
+const img = document.querySelector('.img');
+const img_delete = document.querySelector('.img_delete');
 // 이미지 업로드
 
 
@@ -22,25 +24,38 @@ function img_Upload() {
 	let formData = new FormData(insert_img);
 	
 	$.ajax({
-		type: 'post',
+		type: 'patch',
 		url: '/mypage/imgUpload/' + user_id.value,
 		data: formData,
 		enctype: 'multipart/form-data',
 		processData: false,
 		contentType: false,
 		success: function(data){
-			if(data == 1){
-				alert('전송 성공')	
-				
-			} else {
-				alert('전송 실패')
-			}
+			profileimg.src = "/image/profile/"+ user_id.value + '/' +data;
+			img.src = "/image/profile/"+ user_id.value+ '/'  +data;
 		},
 		error: function(){
 			alert('실패');
 		}
 	})
 }
+
+img_delete.onclick = () => {
+	$.ajax({
+		type: 'delete',
+		url: '/mypage/imgDelete/' + user_id.value,
+		success: function(){
+			alert('삭제 성공');
+			profileimg.src = "/image/profile/"+'user_icon.png';
+			img.src = "/image/profile/"+'user_icon.png';
+		},
+		error: function(){
+			alert('삭제 실패');
+		}
+	})
+	
+}
+
 
 modify[0].onclick = () => {
 	top_info.style.display = 'none';

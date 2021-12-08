@@ -50,18 +50,10 @@
   			#{username},
   			#{name},
   			#{comment},
-  			#{profile_img_origin_name},
-  			#{profile_img_temp_name},
+  			#{profile_img_url},
   			#{provider},
   			now(),
   			now()
-  		);
-  	</insert>
-  	<insert id="profileImgInsert" parameterType="com.velog.domain.user.User">
-  		insert into
-  			user_mst
-  		values(
-  			#{profile_img_url}
   		);
   	</insert>
   	

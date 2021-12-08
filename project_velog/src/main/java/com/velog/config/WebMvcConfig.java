@@ -17,10 +17,10 @@ public class WebMvcConfig implements WebMvcConfigurer{
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 		registry
 			.addResourceHandler("/image/**")
-			.addResourceLocations("file:///" + profileForder)
+			.addResourceLocations("file:///" + profileForder)// 서버에서 입력해줘야하느네 서버에 실질적인 파일을 숨겨주기위해  경로노출방지를위해
 			.setCachePeriod(60*60) //캐시 유지시간(60초 * 60 = 1시간)
 			.resourceChain(true)
-			.addResolver(new PathResourceResolver());
+			.addResolver(new PathResourceResolver()); 
 		
 	}
 

@@ -29,10 +29,10 @@
 					<form id="insert_img">
 						<div class="my_img"> 
 							<input type="file" name="file" id="imgFile" " onchange="img_Upload()" style="display: none"></input>
-							<img class = "profileimg" alt="" src="">
+							<img class = "profileimg" src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}">
 						</div>
 						<button type="button" class="img_insert" onclick="document.all.file.click()">이미지 업로드</button>
-						<button class="img_delete">이미지 제거</button>
+						<button class="img_delete" type="button">이미지 제거</button>
 					</form>
 				</div>
 				<div class="top_info">

@@ -23,14 +23,38 @@
 			id = #{id};
     </update>
     
-    <insert id="imgUpload" parameterType="com.velog.web.model.dto.mypage.MypageDto" >
-    	insert into
+    <update id="updateProfileImg" parameterType="com.velog.domain.user.User" >
+    	update
     		user_mst
-    	values(
-    	0,
-    	#{profile_img_origin_name},
-    	#{profile_img_temp_name}
-    );
-    </insert>
+    	set
+    		profile_img_url = #{profile_img_url}
+    	where
+    		id = #{id};
+    </update>
+    
+    <update id="deleteProfileImg">
+    	update
+    		user_mst
+    	set
+    		profile_img_url = null
+    	where
+    		id = #{id};
+    </update>
     
   </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
