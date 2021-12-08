@@ -45,7 +45,6 @@ img_delete.onclick = () => {
 		type: 'delete',
 		url: '/mypage/imgDelete/' + user_id.value,
 		success: function(){
-			alert('삭제 성공');
 			profileimg.src = "/image/profile/"+'user_icon.png';
 			img.src = "/image/profile/"+'user_icon.png';
 		},

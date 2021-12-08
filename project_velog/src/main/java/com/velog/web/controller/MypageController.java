@@ -42,14 +42,17 @@ public class MypageController {
 	@PatchMapping("/mypage/imgUpload/{id}")
 	public String imgInsert(MypageDto mypageDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		System.out.println(mypageDto);
-		String imageUrl = imgService.updateProfileImg(principalDetails.getUser().getId(), mypageDto);
+		String imageUrl = imgService.updateProfileImg(mypageDto,principalDetails.getUser());
 		principalDetails.getUser().setProfile_img_url(imageUrl);
 		return imageUrl;
 	}
 
 	@DeleteMapping("/mypage/imgDelete/{id}")
 	public String imgDelete(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-
-		return Integer.toString(imgService.deleteProfileImg(id));
+		int result = imgService.deleteProfileImg(principalDetails.getUser());
+		if (result == 1) {
+			principalDetails.getUser().setProfile_img_url(null);
+		}
+		return Integer.toString(result);
 	}
 }
