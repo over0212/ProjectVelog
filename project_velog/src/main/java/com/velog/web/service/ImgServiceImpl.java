@@ -65,19 +65,3 @@ public class ImgServiceImpl implements ImgService {
 	}
 
 }
-
-//	@Transactional public void imgUpload(MypageDto mypageDto, MultipartFile multipartFile) {
-//  
-//  User user = new User(); BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-// 
-//  String imgFileName = user.getId() + "-" +
-//  multipartFile.getOriginalFilename(); Path imgFilePath =
-//  Paths.get(uploadFolder + imgFileName);
-//  
-//  if (multipartFile.getSize() != 0) { // 파일이 업로드 되었는지 확인 try 
-//		{  if (user.getProfile_img_origin_name() != null) { // 프로필 사진이 있을경우 
-// File file = new File(uploadFolder + user.getProfile_img_origin_name()); file.delete(); // 원래파일 삭제 
-//	} Files.write(imgFilePath, multipartFile.getBytes()); } catch
-//  (Exception e) { e.printStackTrace(); }
-//  user.setProfile_img_origin_name(imgFileName); }
-//}
