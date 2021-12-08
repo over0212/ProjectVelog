@@ -2,6 +2,9 @@ package com.velog.web.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
 import com.velog.web.model.dto.border.BorderDto;
+import com.velog.web.model.dto.border.BorderListDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -45,11 +49,9 @@ public class BorderServiceImpl implements BorderService {
 
 	@Override
 	public int insertBorder(BorderDto borderDto) {
-		System.out.println(borderDto);
 		StringBuilder tagName = new StringBuilder();
 
 		Border border = borderDto.toEntity();
-		System.out.println(border);
 		String[] tagValues = borderDto.getMain_tags();
 		if(tagValues != null) {
 			for (String str : tagValues) {
@@ -61,8 +63,31 @@ public class BorderServiceImpl implements BorderService {
 			border.setMain_tags(tagName.toString());
 		}
 		
-		System.out.println(border);
-		
 		return borderRepository.insertBorder(border);
+	}
+	
+	@Override
+	public Border getDtlBorderIndex(int id) {
+		return borderRepository.getDtlBorderIndex(id);
+	}
+	
+	@Override
+	public List<BorderListDto> getBorderList(int id) {
+		List<Border> borderList = borderRepository.getBorderList(id);
+		List<BorderListDto> borderListDtos = new ArrayList<BorderListDto>();
+		for (Border border : borderList) {
+			BorderListDto borderListDto = border.toDto();
+			StringTokenizer st = new StringTokenizer(border.getMain_tags(), ",");
+			List<String> tags = new ArrayList<String>();
+			
+			while(st.hasMoreTokens()) {
+				tags.add(st.nextToken()); 
+			}
+			borderListDto.setMain_tags(tags);
+			borderListDtos.add(borderListDto);
+		}
+		
+		
+		return borderListDtos;
 	}
 }

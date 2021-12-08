@@ -11,10 +11,11 @@ public class IndexBorderDto {
 	
 	private String url;
 	private int id;
+	private String username;
 	private String main_title;
 	private String preview_img_url;
 	private String preview_txt;
-	private LocalDateTime create_date;
+	private LocalDateTime update_date;
 	
 	public Border IndexBorderEntity() {
 		return Border.builder()
@@ -23,7 +24,6 @@ public class IndexBorderDto {
 				.main_title(main_title)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
-				.create_date(create_date)
 				.build();
 	}
 

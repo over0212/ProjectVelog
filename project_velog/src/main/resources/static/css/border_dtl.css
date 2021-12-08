@@ -1,0 +1,79 @@
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#dtl_container{
+    width: 768px;
+}
+#dtl_head{
+    margin-top: 6.8em;
+}
+.dtl_title h1{
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+.dtl_nav{
+    display: flex;
+    justify-content: space-between;
+}
+.dtl_info a{
+    font-weight: 900;
+    font-size: 16px;
+}
+.dtl_info a:hover{
+    text-decoration: underline;
+}
+.dtl_info span{
+    font-size: 16px;
+}
+.dtl_point{
+    margin: 0px 2px;
+}
+.dtl_btn button{
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.dtl_btn button:hover{
+    opacity: 1;
+}
+.update_btn{
+    margin: 0 8px;
+}
+.dtl_body{
+    width: 100%;
+    height: auto;
+    margin: 6em auto 0;
+}
+.dtl_content{
+    font-size: 18px;
+    min-height: 380px;
+}
+#footer{
+    margin-top: 5em;
+    display: flex;
+    padding-bottom: 3em;
+    border-bottom: 1px solid #ccc;
+}
+#footer img{
+    border-radius: 50%;
+}
+.user_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+}
+.dtl_writer{
+    font-size: 24px;
+    margin-bottom: 0.5em;
+    font-weight: 900;
+}
+.dtl_writer:hover{
+    text-decoration: underline;
+}
+.dtl_comment{
+    font-size: 18px;
+}

@@ -2,6 +2,8 @@ package com.velog.domain.border;
 
 import java.time.LocalDateTime;
 
+import com.velog.web.model.dto.border.BorderListDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +25,15 @@ public class Border {
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 	
+	public BorderListDto toDto() {
+		return BorderListDto.builder()
+				.url(url)
+				.id(id)
+				.main_title(main_title)
+				.main_content(main_content)
+				.preview_img_url(preview_img_url)
+				.preview_txt(preview_txt)
+				.create_date(create_date)
+				.build();
+	}
 }

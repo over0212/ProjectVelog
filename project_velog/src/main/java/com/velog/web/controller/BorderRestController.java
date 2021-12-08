@@ -27,9 +27,7 @@ public class BorderRestController {
 
 	@PostMapping("/insert/{id}")
 	public String borderInsert(BorderDto borderDto) { // form-data 를 받음
-		System.out.println(borderDto);
 		int insertFlag =  borderService.insertBorder(borderDto);
-		System.out.println(insertFlag);
 		return Integer.toString(insertFlag);
 	}
 }

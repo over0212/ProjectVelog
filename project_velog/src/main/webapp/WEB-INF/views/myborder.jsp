@@ -7,7 +7,7 @@
 </sec:authorize>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,7 @@
     <!-- border list -->
     <div class="bl_container">
         <div class="bl_info_wrap">
-            <div class="img_wrap"><img class="user_img" src="/img/user_icon.png" alt=""></div>
+            <div class="img_wrap"><img class="user_img" src="/image/${principal.user.profile_img_url }" alt=""></div>
             <div class="user_info">
                 <h2 class="user_name">${principal.user.name}</h2>
                 <p class="user_comment">${principal.user.comment}</p>
@@ -71,35 +71,26 @@
                     <input type="text" class="border_ip" placeholder="검색어를 입력하세요" autofocus>
                 </div>
             </div>
+            <c:forEach var="border_list" items="${borderList }">
             <div class="border_list">
-                <!-- 공지 이미지 태그 (이미지 미첨부시에 js구현필요)-->
-                <a href="#" class="to_detail"><img class="border_main_img" src="/img/Group 2.png" alt=""></a>
-                <a href="#" class="to_detail"><h2 class="border_title">{border.title}</h2></a>
+                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
+                <a href="#" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
                 <p class="border_pre_content">
-                    해외의 Buy Me a Coffee와 유사한 서비스 ThankYouFor___를 소개드립니다. 
-                    이 서비스는 카카오페이로 결제가 가능하며, 
-                    서비스 수수료가 0% 입니다. (참고: 이 서비스는 벨로그와 관계가 없습니다.)
-                    aaaaaaaasdfagsa
-                    gdasgsdfsdafdsfsdfdsfdsfsfsdafa  skfaljdlsafddsjklajfklsdajfdsafksdad
-                    teststeststesttetsetsetseteststeststesttetsetsetseteststeststesttetsetsetse
-                <!-- 키워드 태그 foreach?? -->
+                    
+                <c:forEach var="tag_list" items="${border_list.main_tags }">
                 <div class="border_keyword">
-                    <a href="#">도레미</a>
-                    <a href="#">파솔라시</a>
-                    <a href="#">도레이파솔</a>
-                    <a href="#">라시도레미파</a>
-                    <a href="#">솔라시도레미파</a>
-                    <a href="#">솔라시도레미파솔</a>
-                    <a href="#">라시도레미파솔라시</a>
-                    <a href="#">도레미파솔라시도레미</a>
-                </div>
+                    <a href="#">${tag_list }</a>
+                    </div>
+                </c:forEach>
                 <!-- 공지 날짜 및 댓글수 태그 -->
                 <div class="border_subinfo">
-                    <span class="create_date">1996년 00월 00일</span>
+                    <span class="create_date">${border_list.create_date }</span>
                     ·
-                    <span class="count_reply">99999개의 댓글</span>
+                    <span class="count_reply">0개의 댓글</span>
                 </div>
             </div>
+            
+            </c:forEach>
         </div>
         <div class="border_control">
             <div class="tag_list">태그 목록</div>

@@ -19,5 +19,23 @@
   			now()
   		);
   	</insert>
+  	
+  	<select id="getDtlBorderIndex" resultType="com.velog.domain.border.Border">
+  		select
+  			*
+  		from
+  			border_mst
+  		where
+  			id = #{id};
+  	</select>
+  	
+  	 	<select id="getBorderList" resultType="com.velog.domain.border.Border">
+  		select
+  			*
+  		from
+  			border_mst
+  		where
+  			id = #{id};
+  	</select>
   
   </mapper>
