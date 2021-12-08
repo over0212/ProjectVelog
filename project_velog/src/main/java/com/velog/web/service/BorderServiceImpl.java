@@ -46,25 +46,23 @@ public class BorderServiceImpl implements BorderService {
 	@Override
 	public int insertBorder(BorderDto borderDto) {
 		System.out.println(borderDto);
-		int insertFlag = 0;
 		StringBuilder tagName = new StringBuilder();
 
 		Border border = borderDto.toEntity();
 		System.out.println(border);
 		String[] tagValues = borderDto.getMain_tags();
-		for (String str : tagValues) {
+		if(tagValues != null) {
+			for (String str : tagValues) {
 
-			tagName.append(str);
-			tagName.append(",");
+				tagName.append(str);
+				tagName.append(",");
+			}
+			tagName.delete(tagName.length() - 1, tagName.length());
+			border.setMain_tags(tagName.toString());
 		}
-		tagName.delete(tagName.length() - 1, tagName.length());
-		border.setMain_tags(tagName.toString());
-		System.out.println(tagName);
-
-		if (insertFlag == 1) {
-			return borderRepository.insertBorder(border);
-		} else {
-			return insertFlag;
-		}
+		
+		System.out.println(border);
+		
+		return borderRepository.insertBorder(border);
 	}
 }

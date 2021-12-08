@@ -33,7 +33,7 @@ ip_tags.onkeypress = () => {
         hidden.setAttribute('type', 'hidden');
         hidden.value = ip_tags.value;
         hidden.className = "tag_hidden";
-        hidden.name = "tag_names";
+        hidden.name = "main_tags";
         tag.className = "tag";
         tag.appendChild(document.createTextNode(ip_tags.value));
         // tag.appendChild(document)
@@ -216,6 +216,8 @@ function edit(data, preText, imgcnt){
             data = datastr(data);
             imgcnt++;
             if(imgcnt == 1){
+				const preview_img_url = document.querySelector('#preview_img_url');
+				preview_img_url.value = text;
 				img_upload[1].innerHTML = `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}" width="100%"></img></div>`;
 				img_upload[0].style = 'display: none';
 				img_upload[1].style = 'display: block';
@@ -326,26 +328,21 @@ const tag_hidden = document.querySelectorAll('.tag_hidden');
 const user_id = document.querySelector('#id');
 // submit 버튼
 real_submit.onclick = () => {
-	let borderObj = {
-		url : ip_url.value,
-		id : user_id.value,
-		main_title : write_title.value,
-		main_tag : tag_hidden.values,
-		main_content : write_txt.value,
-		preview_txt : post_content.value
-	}
+	let formData = new FormData(form);
 	
 	$.ajax({
 		type: "post",
 		url: "/border/insert/" + user_id.value,
-		data: JSON.stringify(borderObj),
-		contentType: "application/json; charset=UTF-8",
+		enctype: "multipart/form-data", /* 파일 업로드 할 땐 꼭 필요한 코드(enctype, processData, contentType)*/
+		data: formData,
+		processData: false,
+		contentType: false,
 		dataType: "text",
 		success: function(data){
 			let insertBorder = JSON.parse(data);
 			if(insertBorder == 1){
 				alert('게시글이 등록되었습니다.');
-				location.href = "/myborder";
+				location.href = "/myborder/"+user_id.value;
 			} else {
 				alert("게시글 등록 실패!");
 			}
