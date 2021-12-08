@@ -81,8 +81,13 @@ write_txt.onkeyup = () => {
 }
 
 function edit(data){
+	const img = document.querySelector('img');
+	console.log(pre_txt.childNodes);
     let splitdata = data.split(' ');
     let cmd = splitdata[0];
+/*    if(cmd ==''){
+	  cmd = '![]';
+}*/
     let fortext = splitdata.slice(1, splitdata.length);
     let text = fortext.join(" ");
     if(data.length != 0){
@@ -104,8 +109,8 @@ function edit(data){
         }else if(cmd == '@@'){ // link
             console.log(link);
         }else if(cmd == '![]'){ // img
-            console.log('img');
-            pre_txt.innerHTML += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${src}"></img></div>`;
+            console.log(src);
+            pre_txt.innerHTML += `<div class="img" style="display:flex; justify-content:center;"><img src="/post/${src}"></img></div>`;
         }else if(cmd == '```'){ // code
         } else{
             text = data;
@@ -144,16 +149,16 @@ function appendTool(){
 
 // img tool
 function imgFileLoad(){
-    //let fileList = imgFile.files;
-    //let reader = new FileReader();
+	/*    let fileList = imgFile.files;
+    let reader = new FileReader();
     // 그 다음 실행됨
-    //reader.onload = () => {
-    //    src = reader.result;
-    //    let fileName = fileList[0].name;
-    //    src = insertImgURL(fileName, src);
-    //}
+    reader.onload = () => {
+        src = reader.result;
+        let fileName = fileList[0].name;
+        src = insertImgURL(fileName, src);
+    }
     // 함수 실행되면 먼저 실행됨
-    //reader.readAsDataURL(fileList[0]);
+    reader.readAsDataURL(fileList[0]);*/
     let formData = new FormData(form);
     
     $.ajax({
@@ -164,7 +169,6 @@ function imgFileLoad(){
 		processData: false,
 		contentType: false,
 		success: function(data){
-			console.log(data);
 			src = data;
 			edit('![] '+data);
 		},
@@ -177,16 +181,10 @@ var src = '';
 
 // img url wirte_txt에 삽입
 function insertImgURL(src){
-   // let uuid = getUUID();
-    src = `result`;
+    src = `http://images.velog.io ${src}`;
     write_txt.value += `\n![]${src} \n`;
 }
-/*function getUUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}*/
+
 
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {

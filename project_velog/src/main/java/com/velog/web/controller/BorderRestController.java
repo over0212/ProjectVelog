@@ -21,12 +21,15 @@ public class BorderRestController {
 
 	@PostMapping("/imgupload")
 	public String imgUpload(MultipartFile file, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		String imageFile = borderService.imageUpload(principalDetails.getUser().getUsername(), file);
+		String imageFile = borderService.imageUpload(principalDetails.getUser().getId() , file);
 		return imageFile;
 	}
 
-	@PostMapping("/insert")
-	public String borderInsert(BorderDto borderInsertDto) { // form-data 를 받음
-		return "";
+	@PostMapping("/insert/{id}")
+	public String borderInsert(BorderDto borderDto) { // form-data 를 받음
+		int insertFlag =  borderService.insertBorder(borderDto);
+		System.out.println(insertFlag);
+		System.out.println(borderDto);
+		return Integer.toString(insertFlag);
 	}
 }

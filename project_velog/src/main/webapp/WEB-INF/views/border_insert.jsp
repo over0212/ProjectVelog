@@ -21,10 +21,11 @@
 <body>
     <div class="write_page">
         <form class="form">
+        <input type="hidden" id="id" value="${principal.user.id }">
             <div class="write_container">
                 <div class="write_wrap">
                     <div class="write_ip"> 
-                        <textarea class="write_title" name="" id="" placeholder="제목을 입력하세요"></textarea>
+                        <textarea class="write_title" name="main_title" id="" placeholder="제목을 입력하세요"></textarea>
                         <div class="seperate"></div>
                         <div class="write_tag">
                             <span class="tag_wrap"></span>
@@ -49,7 +50,7 @@
                         <button type="button" class="code"><i class="fas fa-code"></i></button>
                     </div>
                     <div class="text_wrap">
-                        <textarea class="write_txt" cols="79" placeholder="당신의 이야기를 적어보세요..."></textarea>
+                        <textarea class="write_txt" name="write_txt" cols="79" placeholder="당신의 이야기를 적어보세요..."></textarea>
                     </div>
                     <div class="write_footer">
                         <button type="button" class="exit_btn"><i class="fas fa-arrow-left"></i> 나가기</button>
@@ -66,12 +67,13 @@
                                     <h3 class="send_h3">포스트 미리보기</h3>
                                     <div class="preview_contents">
                                         <div class="img_upload">
-                                            <div class="img"><i class="far fa-image"></i></div>
+                                             <div class="img"><i class="far fa-image"></i></div>
                                             <button type="button" class="upload_button">썸네일 업로드</button>
                                         </div>
+                                        <div class="img_upload"></div>
                                         <div class="input_box">
                                             <input class="post_title" readonly></input>
-                                            <textarea class="post_content" type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150"></textarea>
+                                            <textarea class="post_content" name="post_content" type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150"></textarea>
                                             <div class="length_box"><span class="text_length"></span>/150</div>
                                         </div>
                                     </div>
@@ -88,7 +90,7 @@
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/@username/</span><input class="ip_url" type="text"></div>
+                                            <div class="user_url_box"><span class="user_name">/@${principal.user.username } /</span><input class="ip_url" type="text" name="url"></div>
                                             
                                         </div>
                                         <div class="settings">
@@ -103,7 +105,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>2
+                        </div>
                     </div>  
                 </div>
                 <div class="preview_wrap">
@@ -117,6 +119,7 @@
     
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <script src="/js/border_insert.js" ></script>
+    <!-- <script src="/js/border_insert.js" ></script> -->
+    <script src="/js/write.js" ></script>
 </body>
 </html>
