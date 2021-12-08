@@ -18,6 +18,7 @@ const length_box = document.querySelector('.length_box');
 const real_submit = document.querySelector('.real_submit');
 const imgFile = document.querySelector('#imgFile');
 const img_upload = document.querySelectorAll('.img_upload');
+const exit_btn = document.querySelector('.exit_btn');
 		
 // write_page -------------------------------------------
 img_upload[0].style = 'display: flex';
@@ -291,17 +292,24 @@ temp_submit.onclick = () => {
     send_page.style.display = "block";
 
     var title = write_title.value;
-    var contents = write_txt.value;
-
-    post_title.textContent = title;
+    var forsplit = pre_txt.innerText;
+    var forjoin = forsplit.split(/\r\n|\r|\n/);
+    var content = forjoin.join(" ");
+    post_title.value = title;
     ip_url.value = title;
-    text_length.textContent = contents.length;
     
-    if(text_length.value >= 150){
-	    post_content.value = contents.slice(0, 149);    
+    if(content.length >= 150){
+	    post_content.value = content.substr(149); 
+	    text_length.textContent = post_content.value.length;
     }else{
-    	post_content.value = contents;
+    	post_content.value = content;
+	    text_length.textContent = content.length;
     }
+}
+
+// exit_btn 나가기 버튼
+exit_btn.onclick = () => {
+	history.back();
 }
 
 // send_page --------------------------------------------
@@ -309,6 +317,7 @@ post_content.onkeydown = () => {
 	var txt_length = post_content.value.length;
 	if(txt_length > 150){
 		length_box.style.color = "red";
+		text_length.textContent = "150";
 	}else{
 		length_box.style.color = "black";
 		text_length.textContent = txt_length;
@@ -321,6 +330,7 @@ cancle_btn.onclick = () => {
     write_page.style.display = "block";
     post_content.value.length = 0;
     text_length.textContent = "0";
+    post_content.value = "";
 }
 
 const tag_names = document.querySelectorAll('.tag_names');
