@@ -23,7 +23,6 @@ public class BorderDto {
 				.url(url)
 				.id(id)
 				.main_title(main_title)
-				.main_tags(main_tags)
 				.main_content(main_content)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)

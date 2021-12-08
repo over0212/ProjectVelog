@@ -13,14 +13,7 @@
   			#{main_title},
   			#{main_tags},
   			#{main_content},
-<<<<<<< HEAD
-  			#{origin_img_name},
-  			#{temp_img_name},
-  			#{preview_img_origin_name},
-  			#{preview_img_temp_name},
-=======
 			#{preview_img_url},
->>>>>>> main
   			#{preview_txt},
   			now(),
   			now()
