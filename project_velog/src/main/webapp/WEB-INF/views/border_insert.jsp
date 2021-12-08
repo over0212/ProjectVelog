@@ -66,12 +66,12 @@
                                 <div class="left_wrap">
                                     <h3 class="send_h3">포스트 미리보기</h3>
                                     <div class="preview_contents">
-                                        <div class="img_upload">
+                                        <div class="img_upload"> <!-- [0] -->
                                         <input type="hidden" id="preview_img_url" name="preview_img_url">
-                                             <div class="img"><i class="far fa-image"></i></div>
+                                             <div class="default_img"><i class="far fa-image"></i></div>
                                             <button type="button" class="upload_button">썸네일 업로드</button>
                                         </div>
-                                        <div class="img_upload"></div>
+                                        <div class="img_upload thumnail"></div> <!-- [1] -->
                                         <div class="input_box">
                                             <input class="post_title" readonly></input>
                                             <textarea class="post_content" name="preview_txt" type="text" placeholder="당신의 포스트를 짧게 소개해보세요." maxlength="150"></textarea>
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/@${principal.user.username } /</span><input class="ip_url" type="text" name="url"></div>
+                                            <div class="user_url_box"><span class="user_name">/@${principal.user.username }/</span><input class="ip_url" type="text" name="url"></div>
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">시리즈 설정</h3>

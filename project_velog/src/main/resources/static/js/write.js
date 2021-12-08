@@ -134,14 +134,6 @@ function italicTextStyle(text){
     return text;
 }
 
-/*function searchImage(imageText){
-	let searchIndex = imageTag.indexof('![]');
-	
-	if(searchIndex != -1){
-		let 
-	}
-}*/
-
 //취소선 적용
 function lineTextStyle(text){
     let cmdLineIndex = text.indexOf('~~');
@@ -186,9 +178,9 @@ function edit(data, preText, imgcnt){
 	
     if(data.length != 0){
         let cmdIndex = data.indexOf(' '); // 공백찾기
-        let cmd = '';
-        if(cmdIndex != -1){
-            cmd = data.substr(0, cmdIndex); // 명령어담는 변수
+        let cmd = ''; // 명령어담는 변수
+        if(cmdIndex != -1){ // 공백이 없음
+            cmd = data.substr(0, cmdIndex); 
         }
         let text = '';
         if(cmd == '#' || cmd == '##' || cmd == '###' || cmd == '####'){
@@ -209,16 +201,18 @@ function edit(data, preText, imgcnt){
             //이미지
             text = subtext(data, cmdIndex);
             data = datastr(data);
-            imgcnt++;
-            if(imgcnt == 1){
+            preText += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}"></img></div>`;
+            const imgs = document.querySelectorAll(".img");
+            if(imgs.length == 1){
+	            console.log(imgs[0]);
 				const preview_img_url = document.querySelector('#preview_img_url');
 				preview_img_url.value = text;
-				img_upload[1].innerHTML = `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}" width="100%"></img></div>`;
+				//img_upload[1].innerHTML = `<div class="thumnail_img" style="display:flex; justify-content:center;"><img src="/image/${text}" width="100%"></img></div>`;
+				img_upload[1].innerHTML = imgs[0].outerHTML;
 				img_upload[0].style = 'display: none';
 				img_upload[1].style = 'display: block';
 			}
-            preText += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}"></img></div>`;
-            console.log(preText);
+            //console.log(preText);
         }else{
             //일반 텍스트
             text = subtext(data, -1);
@@ -230,7 +224,6 @@ function edit(data, preText, imgcnt){
         pre_txt.innerHTML = preText;
         return;
     }
-    
 }
 
 function appendTool(){
@@ -277,7 +270,7 @@ function imgFileLoad(){
 		contentType: false,
 		success: function(data){
 			src = data;
-			write_txt.value += '![] ' + data;
+			write_txt.value += '\n![] ' + data;
 			edit(write_txt.value, '', 0);
 		},
 		error: function(){
@@ -285,22 +278,38 @@ function imgFileLoad(){
 		}
 	});
 }
+
 var src = '';
 
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
     send_page.style.display = "block";
-
+    
+    const imgs = document.querySelectorAll(".img");
+    console.log(imgs[0]);
+	const preview_img_url = document.querySelector('#preview_img_url');
+	var thumnail_src = imgs[0].querySelector('img').src;
+	var start_index = thumnail_src.indexOf("e/")+2;
+	var thumnail_value = thumnail_src.substr(start_index, thumnail_src.length);
+	
+	preview_img_url.value = thumnail_value;
+	img_upload[1].innerHTML =imgs[0].innerHTML;
+	img_upload[0].style = 'display: none';
+	img_upload[1].style = 'display: block';
+    
+  
+    // post_content 부분
     var title = write_title.value;
-    var forsplit = pre_txt.innerText;
-    var forjoin = forsplit.split(/\r\n|\r|\n/);
-    var content = forjoin.join(" ");
+    var text = pre_txt.innerText;
+    var text_list = text.split(/\r\n|\r|\n/);
+    var content = text_list.join(" ");
     post_title.value = title;
     ip_url.value = title;
     
     if(content.length >= 150){
-	    post_content.value = content.substr(149); 
+	    post_content.value = content.substr(0, 150); 
 	    text_length.textContent = post_content.value.length;
+	    length_box.style.color = "red";
     }else{
     	post_content.value = content;
 	    text_length.textContent = content.length;
@@ -315,7 +324,7 @@ exit_btn.onclick = () => {
 // send_page --------------------------------------------
 post_content.onkeydown = () => {
 	var txt_length = post_content.value.length;
-	if(txt_length > 150){
+	if(txt_length >= 150){
 		length_box.style.color = "red";
 		text_length.textContent = "150";
 	}else{

@@ -72,24 +72,22 @@
                 </div>
             </div>
             <c:forEach var="border_list" items="${borderList }">
-            <div class="border_list">
-                <a href="/border/${principal.user.username }/${border_list.url}" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
-                <a href="/border/${principal.user.username }/${border_list.url}" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
-                <p class="border_pre_content">
-                    
-                <c:forEach var="tag_list" items="${border_list.main_tags }">
-                <div class="border_keyword">
-                    <a href="#">${tag_list }</a>
-                    </div>
-                </c:forEach>
-                <!-- 공지 날짜 및 댓글수 태그 -->
-                <div class="border_subinfo">
-                    <span class="create_date">${border_list.create_date }</span>
-                    ·
-                    <span class="count_reply">0개의 댓글</span>
-                </div>
-            </div>
-            
+	            <div class="border_list">
+	                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
+	                <a href="#" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
+	                <p class="border_pre_content">${border_list.main_content }</p>
+	               	<div class="border_keyword">
+		                <c:forEach var="tag_list" items="${border_list.main_tags }">
+	                    	<a href="#">${tag_list }</a>
+		                </c:forEach>
+	                 </div>
+	                <!-- 공지 날짜 및 댓글수 태그 -->
+	                <div class="border_subinfo">
+	                    <span class="create_date">${border_list.create_date }</span>
+	                    ·
+	                    <span class="count_reply">0개의 댓글</span>
+	                </div>
+	            </div>
             </c:forEach>
         </div>
         <div class="border_control">
