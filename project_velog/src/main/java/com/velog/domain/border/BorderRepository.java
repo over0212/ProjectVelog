@@ -9,9 +9,9 @@ public interface BorderRepository {
 	
 	public int insertBorder(Border border);
 	
-	public Border getDtlBorderIndex(int id);
+	public Border getDtlBorderIndex(String url);
 	
-	public List<Border> getBorderList(int id);
+	public List<Border> getBorderList(String username);
 	
 	// index
 	public List<Border> getBorderAll();
