@@ -103,7 +103,7 @@ function boldTextStyle(text){
             startText = text.substr(0, cmdBoldIndex);
             centerText = text.substr(cmdBoldIndex + 2, boldTextEndIndex);
             endText = text.substr(cmdBoldIndex + 2 + boldTextEndIndex + 2);
-            text = startText + `<b class="pre_bold">${centerText}</b>` + endText;
+            text = startText + `<strong class="pre_bold">${centerText}</strong>` + endText;
             text = boldTextStyle(text);
         }else{
             return text;
@@ -113,11 +113,11 @@ function boldTextStyle(text){
 }
 //이텔릭체 적용
 function italicTextStyle(text){
-    let cmdItalicIndex = text.indexOf('__');
+    let cmdItalicIndex = text.indexOf('_');
 
     if(cmdItalicIndex != -1){
         let italicText = text.substr(cmdItalicIndex + 1);
-        let italicTextEndIndex = italicText.indexOf('__ ');
+        let italicTextEndIndex = italicText.indexOf('_ ');
         let startText = '';
         let centerText = '';
         let endText = '';
@@ -201,23 +201,12 @@ function edit(data, preText, imgcnt){
             //이미지
             text = subtext(data, cmdIndex);
             data = datastr(data);
-            preText += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}"></img></div>`;
-            const imgs = document.querySelectorAll(".img");
-            if(imgs.length == 1){
-	            console.log(imgs[0]);
-				const preview_img_url = document.querySelector('#preview_img_url');
-				preview_img_url.value = text;
-				//img_upload[1].innerHTML = `<div class="thumnail_img" style="display:flex; justify-content:center;"><img src="/image/${text}" width="100%"></img></div>`;
-				img_upload[1].innerHTML = imgs[0].outerHTML;
-				img_upload[0].style = 'display: none';
-				img_upload[1].style = 'display: block';
-			}
-            //console.log(preText);
+            preText += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}"></img></div>`;            
         }else{
             //일반 텍스트
             text = subtext(data, -1);
             data = datastr(data);
-            preText += text;
+            preText += `<p class="pre_text">${text}</p>`;
         }
         edit(data, preText);
     }else {
@@ -240,13 +229,13 @@ function appendTool(){
         write_txt.value += '\n#### ';
         write_txt.focus();
     }else if(event.target.className == "bold"){
-        write_txt.value += '\n** ';
+        write_txt.value += '**텍스트** ';
         write_txt.focus();
     }else if(event.target.className == "italic"){
-        write_txt.value += '\n__ ';
+        write_txt.value += '_텍스트_ ';
         write_txt.focus();
     }else if(event.target.className == "overline"){
-        write_txt.value += '\n~~ ';
+        write_txt.value += '~~텍스트~~ ';
         write_txt.focus();
     }
 }
@@ -286,25 +275,33 @@ temp_submit.onclick = () => {
     send_page.style.display = "block";
     
     const imgs = document.querySelectorAll(".img");
-    console.log(imgs[0]);
-	const preview_img_url = document.querySelector('#preview_img_url');
-	var thumnail_src = imgs[0].querySelector('img').src;
-	var start_index = thumnail_src.indexOf("e/")+2;
-	var thumnail_value = thumnail_src.substr(start_index, thumnail_src.length);
-	
-	preview_img_url.value = thumnail_value;
-	img_upload[1].innerHTML =imgs[0].innerHTML;
-	img_upload[0].style = 'display: none';
-	img_upload[1].style = 'display: block';
+    if(imgs.length != 0){   
+		const preview_img_url = document.querySelector('#preview_img_url');
+		var thumnail_src = imgs[0].querySelector('img').src;
+		var start_index = thumnail_src.indexOf("e/")+2;
+		var thumnail_value = thumnail_src.substr(start_index, thumnail_src.length);
+
+		preview_img_url.value = thumnail_value;
+		img_upload[1].innerHTML =imgs[0].innerHTML;
+		img_upload[0].style = 'display: none';
+		img_upload[1].style = 'display: block';
+	}
     
+    // 제목
+    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+    var origin_title = write_title.value;
+    var usable_title = "";
+    if(regExp.test(origin_title)){
+    	usable_title = origin_title.replace(regExp, "");
+    }
+    console.log(usable_title);
+    ip_url.value = usable_title;
+    post_title.value = usable_title;
   
     // post_content 부분
-    var title = write_title.value;
     var text = pre_txt.innerText;
     var text_list = text.split(/\r\n|\r|\n/);
     var content = text_list.join(" ");
-    post_title.value = title;
-    ip_url.value = title;
     
     if(content.length >= 150){
 	    post_content.value = content.substr(0, 150); 

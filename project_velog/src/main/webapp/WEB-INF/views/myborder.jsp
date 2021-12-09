@@ -75,7 +75,7 @@
 	            <div class="border_list">
 	                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
 	                <a href="#" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
-	                <p class="border_pre_content">${border_list.main_content }</p>
+	                <p class="border_pre_content">${border_list.preview_txt }</p>
 	               	<div class="border_keyword">
 		                <c:forEach var="tag_list" items="${border_list.main_tags }">
 	                    	<a href="#">${tag_list }</a>
