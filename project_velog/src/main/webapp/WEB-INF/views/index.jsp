@@ -30,13 +30,13 @@
             <div class="contents_wrap">
             	<c:forEach var="indexList" items="${indexList }">
 	                <div class="content_wrap">
-	                    <a href="/${indexList.username }${indexList.url }">
+	                    <a href="/border/${indexList.username }/${indexList.url }">
 	                        <div class="img_box">
 	                            <img src="/image/${indexList.preview_img_url }" alt="">
 	                        </div>
 	                    </a>
 	                    <div class="text_wrap">
-	                        <a href="/${indexList.username }${indexList.url }">
+	                        <a href="/border/${indexList.username }/${indexList.url }">
 	                            <h4 class="text_title">${indexList.main_title }</h4>
 	                            <p class="text_area">${indexList.preview_txt }</p>
 	                        </a>

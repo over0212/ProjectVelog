@@ -28,7 +28,7 @@
                 </div>
                 <div class="dtl_nav">
                     <div class="dtl_info">
-                        <a href="/border/${principal.writer }">${principal.writer }</a>
+                        <a href="/border/${border.username }">${border.username }</a>
                         <span class="dtl_point">·</span>
                         <span class="dtl_date">${border.create_date }</span>
                     </div>
@@ -42,15 +42,15 @@
     
             <!-- 메인 컨텐츠 부분 -->
             <section class="dtl_body">
-                <div class="dtl_content">${border.main_content }</div>
+                <div class="dtl_content">${border.preview_txt }</div>
             </section>
     
             <!-- 하단 프로필 부분 -->
             <section id="footer">
-                <a href="/border/${principal.writer }"><img src="img/user_icon.png" alt="" width="128" height="128"></a>
+                <a href="/border/${border.username }"><img src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}" alt=""></a>
                 <div class="user_info">
-                    <a href="/border/${principal.writer }" class="dtl_writer">${principal.writer }</a>
-                    <span class="dtl_comment">${principal.user.comment }</span>
+                    <a href="/border/${border.username }" class="dtl_writer">${border.username }</a>
+                    <span class="dtl_comment">${border.comment }</span>
                 </div>
             </section>
         </div>

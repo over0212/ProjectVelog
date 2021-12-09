@@ -2,7 +2,9 @@ package com.velog.web.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,17 +29,17 @@ public class BorderController {
 	
 	// border dtl page(작성된 게시글 확인 페이지)
 	@GetMapping("/{username}/{url}")
-	public ModelAndView DtlBorderIndex(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+	public ModelAndView DtlBorderIndex(Model model, @PathVariable String url) {
 		ModelAndView mav = new ModelAndView("border_dtl");
-		mav.addObject("border", borderService.getDtlBorderIndex(principalDetails.getUser().getId()));
+		mav.addObject("border", borderService.getDtlBorderIndex(url));
 		return mav;
 	}
 	
 	// myborder page (회원정보 페이지)
 	@GetMapping({"/myborder/{username}", "/{username}"})
-	public ModelAndView getBorderList(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+	public ModelAndView getBorderList(@PathVariable String username) {
 		ModelAndView mav = new ModelAndView("myborder");
-		mav.addObject("borderList", borderService.getBorderList(principalDetails.getUser().getId()));
+		mav.addObject("borderList", borderService.getBorderList(username));
 		return mav;
 	}
 

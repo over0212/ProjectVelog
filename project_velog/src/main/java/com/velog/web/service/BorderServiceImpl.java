@@ -66,14 +66,16 @@ public class BorderServiceImpl implements BorderService {
 		return borderRepository.insertBorder(border);
 	}
 	
+	// border_dtl에 대한 정보들을 들고온다.
 	@Override
-	public Border getDtlBorderIndex(int id) {
-		return borderRepository.getDtlBorderIndex(id);
+	public Border getDtlBorderIndex(String url) {
+		return borderRepository.getDtlBorderIndex(url);
 	}
 	
+	// 태그 들고오기
 	@Override
-	public List<BorderListDto> getBorderList(int id) {
-		List<Border> borderList = borderRepository.getBorderList(id);
+	public List<BorderListDto> getBorderList(String username) {
+		List<Border> borderList = borderRepository.getBorderList(username);
 		List<BorderListDto> borderListDtos = new ArrayList<BorderListDto>();
 		for (Border border : borderList) {
 			BorderListDto borderListDto = border.toDto();
