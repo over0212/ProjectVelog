@@ -37,10 +37,10 @@
                         </button>
                         <div class="user_nav">
                             <ul>
-                                <li class="my_page"><a href="myborder/${principal.user.username}">내 벨로그</a></li>
+                                <li class="my_page"><a href="/myborder/${principal.user.username}">내 벨로그</a></li>
                                 <li class="temp_post"><a href="#">임시 글</a></li>
                                 <li class="read_list"><a href="#">읽기 목록</a></li>
-                                <li class="setting"><a href="mypage/${principal.user.id}">설정</a></li>
+                                <li class="setting"><a href="/mypage/${principal.user.id}">설정</a></li>
                                 <li class="logout"><a href="logout">로그아웃</a></li>
                             </ul>
                         </div>
@@ -52,7 +52,7 @@
     <!-- border list -->
     <div class="bl_container">
         <div class="bl_info_wrap">
-            <div class="img_wrap"><img class="user_img" src="/image/${principal.user.profile_img_url }" alt=""></div>
+            <div class="img_wrap"><img class="user_img" src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}" alt=""></div>
             <div class="user_info">
                 <h2 class="user_name">${principal.user.name}</h2>
                 <p class="user_comment">${principal.user.comment}</p>
@@ -73,8 +73,8 @@
             </div>
             <c:forEach var="border_list" items="${borderList }">
 	            <div class="border_list">
-	                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
-	                <a href="#" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
+	                <a href=<%-- "/border/${principal.user.username }/${borderList.url }" --%> class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
+	                <a href=<%-- "/border/${principal.user.username }/${borderList.url }" --%> class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
 	                <p class="border_pre_content">${border_list.main_content }</p>
 	               	<div class="border_keyword">
 		                <c:forEach var="tag_list" items="${border_list.main_tags }">

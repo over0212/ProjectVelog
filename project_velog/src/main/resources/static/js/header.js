@@ -56,6 +56,6 @@ user_nav_wrap.onblur = () => {
 
 
 go_posting_btn.onclick = () => {
-	location.href = "/insert";
+	location.href = "/border/insert";
 }
 

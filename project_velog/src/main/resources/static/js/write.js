@@ -202,7 +202,7 @@ function edit(data, preText, imgcnt){
             text = subtext(data, cmdIndex);
             data = datastr(data);
             preText += `<div class="img" style="display:flex; justify-content:center;"><img src="/image/${text}"></img></div>`;
-            const imgs = document.querySelectorAll(".img");
+           /* const imgs = document.querySelectorAll(".img");
             if(imgs.length == 1){
 	            console.log(imgs[0]);
 				const preview_img_url = document.querySelector('#preview_img_url');
@@ -211,7 +211,7 @@ function edit(data, preText, imgcnt){
 				img_upload[1].innerHTML = imgs[0].outerHTML;
 				img_upload[0].style = 'display: none';
 				img_upload[1].style = 'display: block';
-			}
+			}*/
             //console.log(preText);
         }else{
             //일반 텍스트
@@ -372,20 +372,3 @@ real_submit.onclick = () => {
 		
 	})
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

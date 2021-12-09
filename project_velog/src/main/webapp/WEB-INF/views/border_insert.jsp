@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/@${principal.user.username }/</span><input class="ip_url" type="text" name="url"></div>
+                                            <div class="user_url_box"><span class="user_name">/${principal.user.username }/</span><input class="ip_url" type="text" name="url"></div>
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">시리즈 설정</h3>

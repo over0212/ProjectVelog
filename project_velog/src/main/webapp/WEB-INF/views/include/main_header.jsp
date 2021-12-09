@@ -44,7 +44,7 @@
 							</button>
 							<div class="user_nav">
 								<ul>
-									<li class="mypage"><a href="/myborder/${principal.user.username}">내 벨로그</a></li>
+									<li class="mypage"><a href="/border/myborder/${principal.user.username}">내 벨로그</a></li>
 									<li class="temp_post"><a href="#">임시 글</a></li>
 									<li class="read_list"><a href="#">읽기 목록</a></li>
 									<li class="setting"><a href="/mypage/${principal.user.id}">설정</a></li>

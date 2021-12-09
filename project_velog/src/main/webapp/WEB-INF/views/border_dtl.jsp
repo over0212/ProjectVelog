@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>게시글</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/border_dtl.css">
 </head>
 <body>
-
-    <jsp:include page="include/main_header.jsp"></jsp:include>
-
+  <jsp:include page="include/main_header.jsp"></jsp:include>
     <main id="main">
         <div id="dtl_container">
             <!-- 헤더부분 -->
@@ -30,7 +28,7 @@
                 </div>
                 <div class="dtl_nav">
                     <div class="dtl_info">
-                        <a href="#">${principal.user.username }</a>
+                        <a href="/border/${principal.writer }">${principal.writer }</a>
                         <span class="dtl_point">·</span>
                         <span class="dtl_date">${border.create_date }</span>
                     </div>
@@ -49,9 +47,9 @@
     
             <!-- 하단 프로필 부분 -->
             <section id="footer">
-                <a href="#"><img src="img/user_icon.png" alt="" width="128" height="128"></a>
+                <a href="/border/${principal.writer }"><img src="img/user_icon.png" alt="" width="128" height="128"></a>
                 <div class="user_info">
-                    <a href="#" class="dtl_writer">${principal.user.username }</a>
+                    <a href="/border/${principal.writer }" class="dtl_writer">${principal.writer }</a>
                     <span class="dtl_comment">${principal.user.comment }</span>
                 </div>
             </section>

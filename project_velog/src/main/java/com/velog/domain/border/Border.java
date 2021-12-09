@@ -18,9 +18,11 @@ public class Border {
 	
 	private String url;
 	private int id;
+	private String username;
 	private String main_title;
 	private String main_tags;
 	private String main_content;
+	private String profile_img_url;
 	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime create_date;
@@ -43,6 +45,8 @@ public class Border {
 				.url(url)
 				.id(id)
 				.main_title(main_title)
+				.username(username)
+				.profile_img_url(profile_img_url)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
 				.update_date(update_date)

@@ -47,6 +47,7 @@
   			um.username,
   			bm.main_title,
   			bm.preview_img_url,
+  			um.profile_img_url,
   			bm.preview_txt,
   			bm.update_date
   		from

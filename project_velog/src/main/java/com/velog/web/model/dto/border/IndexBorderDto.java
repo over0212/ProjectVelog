@@ -15,6 +15,7 @@ public class IndexBorderDto {
 	private int id;
 	private String username;
 	private String main_title;
+	private String profile_img_url;
 	private String preview_img_url;
 	private String preview_txt;
 	private LocalDateTime update_date;
