@@ -110,13 +110,6 @@ body{
     padding: 0 48px;
     margin-bottom: 16px;
 }
-.font_size{
-    font-family: 'Lora', serif;
-}
-.font_size span{
-    font-weight: 900;
-    margin-left: -0.15em;
-}
 .deco_bar button{
     width: 3em; height: 3em;
     display: flex;
@@ -125,6 +118,14 @@ body{
     font-size: 1.5em;
     color: #868e96;
     cursor: pointer;
+}
+.font_size{
+    font-family: 'Lora', serif;
+    font-weight: 300;
+}
+.font_size span{
+	font-size: 0.8em;
+    margin-left: -0.1em;
 }
 .deco_bar button:hover{
     background-color: rgb(244, 249, 255);
@@ -156,7 +157,6 @@ body{
     outline: none;
     resize: none;
     box-sizing: border-box;
-    /* visibility: hidden; */
 }
 /* 푸터 */
 .write_footer{
@@ -233,7 +233,7 @@ body{
 .pre_title{
     margin-bottom: 1em;
     width:100%;  height: auto;
-    font-size: 2em;
+    font-size: 1.6em;
     font-weight: 900;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -248,20 +248,24 @@ body{
     white-space: pre-wrap;
     word-wrap: break-word;
 }
+.pre_txt::placeholder{
+	color: #ccc;
+	font-weight: 300;
+}
 .pre_h1{
-    font-size: 2em;
+    font-size: 2.7em;
     font-weight: 900;
 }
 .pre_h2{
-    font-size: 1.8em;
+    font-size: 2.4em;
     font-weight: 800;
 }
 .pre_h3{
-    font-size: 1.6em;
+    font-size: 2.1em;
     font-weight: 700;
 }
 .pre_h4{
-    font-size: 1.4em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 .pre_text{

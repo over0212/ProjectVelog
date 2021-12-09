@@ -19,8 +19,13 @@ const real_submit = document.querySelector('.real_submit');
 const imgFile = document.querySelector('#imgFile');
 const img_upload = document.querySelectorAll('.img_upload');
 const exit_btn = document.querySelector('.exit_btn');
+const form = document.querySelector('form');
+const tag_names = document.querySelectorAll('.tag_names');
+const tag_hidden = document.querySelectorAll('.tag_hidden');
+const user_id = document.querySelector('#id');
 		
 // write_page -------------------------------------------
+
 img_upload[0].style = 'display: flex';
 img_upload[1].style = 'display: none';
 tag_msg.style.display = "none";
@@ -77,7 +82,7 @@ write_title.onkeyup = () => {
 const text_wrap = document.querySelector('.text_wrap');
 
 write_txt.onkeyup = () => {
-    edit(write_txt.value, '', 0);
+    edit(write_txt.value, '');
 }
 
 //줄바꿈 이후 데이터 추출
@@ -90,6 +95,7 @@ function datastr(data){
     }
     return data;
 }
+
 //볼드체 적용
 function boldTextStyle(text){
     let cmdBoldIndex = text.indexOf('**');
@@ -111,6 +117,7 @@ function boldTextStyle(text){
     }
     return text;
 }
+
 //이텔릭체 적용
 function italicTextStyle(text){
     let cmdItalicIndex = text.indexOf('_');
@@ -156,6 +163,7 @@ function lineTextStyle(text){
     }
     return text;
 }
+
 //줄바꿈 전까지의 문자열 추출
 function subtext(data, cmdIndex){
     let textIndex = data.indexOf('\n');
@@ -169,13 +177,10 @@ function subtext(data, cmdIndex){
     text = lineTextStyle(text);
     return text;
 }
+
 //전체 로직
-function edit(data, preText, imgcnt){
-	if(imgcnt == 0){
-		img_upload[0].style = 'display: flex';
-		img_upload[1].style = 'display: none';
-	}
-	
+function edit(data, preText){
+		
     if(data.length != 0){
         let cmdIndex = data.indexOf(' '); // 공백찾기
         let cmd = ''; // 명령어담는 변수
@@ -215,6 +220,7 @@ function edit(data, preText, imgcnt){
     }
 }
 
+// tool var
 function appendTool(){
     if(event.target.className == "h1 font_size"){
         write_txt.value += '\n# ';
@@ -240,13 +246,9 @@ function appendTool(){
     }
 }
 
-// h1
-function fontsize(){
-    write_txt.value += '# ';
-}
-
-const form = document.querySelector('form');
 // img tool
+var src = '';
+
 function imgFileLoad(){
     let formData = new FormData(form);
     
@@ -268,52 +270,55 @@ function imgFileLoad(){
 	});
 }
 
-var src = '';
 
 // 출간하기 버튼 클릭시
 temp_submit.onclick = () => {
-    send_page.style.display = "block";
-    
-    const imgs = document.querySelectorAll(".img");
-    if(imgs.length != 0){   
-		const preview_img_url = document.querySelector('#preview_img_url');
-		var thumnail_src = imgs[0].querySelector('img').src;
-		var start_index = thumnail_src.indexOf("e/")+2;
-		var thumnail_value = thumnail_src.substr(start_index, thumnail_src.length);
 
-		preview_img_url.value = thumnail_value;
-		img_upload[1].innerHTML =imgs[0].innerHTML;
-		img_upload[0].style = 'display: none';
-		img_upload[1].style = 'display: block';
+	if(write_title.value.length == 0){
+		alert("제목이 비어있습니다.");
+		write_title.focus();
+	}else{	
+	    send_page.style.display = "block";	    
+	    const imgs = document.querySelectorAll(".img");
+	    if(imgs.length != 0){   
+			const preview_img_url = document.querySelector('#preview_img_url');
+			var thumnail_src = imgs[0].querySelector('img').src;
+			var start_index = thumnail_src.indexOf("e/")+2;
+			var thumnail_value = thumnail_src.substr(start_index, thumnail_src.length);
+	
+			preview_img_url.value = thumnail_value;
+			img_upload[1].innerHTML =imgs[0].innerHTML;
+			img_upload[0].style = 'display: none';
+			img_upload[1].style = 'display: block';
+		}else{
+			img_upload[0].style = 'display: flex';
+			img_upload[1].style = 'display: none';
+		}
+		
+	    // 제목
+	    post_title.value = write_title.value;
+	    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+	    var origin_title = write_title.value;
+	    var usable_title = origin_title.replace(regExp, "");
+	    ip_url.value = usable_title;
+	  
+	    // post_content 부분
+	    var text = pre_txt.innerText;
+	    var text_list = text.split(/\r\n|\r|\n/);
+	    var content = text_list.join(" ");
+	    
+	    if(content.length >= 150){
+		    post_content.value = content.substr(0, 150); 
+		    text_length.textContent = post_content.value.length;
+		    length_box.style.color = "red";
+	    }else{
+	    	post_content.value = content;
+		    text_length.textContent = content.length;
+	    }
 	}
-    
-    // 제목
-    var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
-    var origin_title = write_title.value;
-    var usable_title = "";
-    if(regExp.test(origin_title)){
-    	usable_title = origin_title.replace(regExp, "");
-    }
-    console.log(usable_title);
-    ip_url.value = usable_title;
-    post_title.value = usable_title;
-  
-    // post_content 부분
-    var text = pre_txt.innerText;
-    var text_list = text.split(/\r\n|\r|\n/);
-    var content = text_list.join(" ");
-    
-    if(content.length >= 150){
-	    post_content.value = content.substr(0, 150); 
-	    text_length.textContent = post_content.value.length;
-	    length_box.style.color = "red";
-    }else{
-    	post_content.value = content;
-	    text_length.textContent = content.length;
-    }
 }
 
-// exit_btn 나가기 버튼
+// 나가기 버튼 - 뒤로가기
 exit_btn.onclick = () => {
 	history.back();
 }
@@ -339,33 +344,36 @@ cancle_btn.onclick = () => {
     post_content.value = "";
 }
 
-const tag_names = document.querySelectorAll('.tag_names');
-const tag_hidden = document.querySelectorAll('.tag_hidden');
-const user_id = document.querySelector('#id');
 // submit 버튼
 real_submit.onclick = () => {
-	let formData = new FormData(form);
 	
-	$.ajax({
-		type: "post",
-		url: "/border/insert/" + user_id.value,
-		enctype: "multipart/form-data", /* 파일 업로드 할 땐 꼭 필요한 코드(enctype, processData, contentType)*/
-		data: formData,
-		processData: false,
-		contentType: false,
-		dataType: "text",
-		success: function(data){
-			let insertBorder = JSON.parse(data);
-			if(insertBorder == 1){
-				alert('게시글이 등록되었습니다.');
-				location.href = "/myborder/"+user_id.value;
-			} else {
-				alert("게시글 등록 실패!");
-			}
-		},
-		error: function(){
-			alert("비동기 처리 오류!");
-		}
+	if(ip_url.value.length == 0){
+		alert("url이 비었습니다.");
+		ip_url.focus();
+	}else{
+		let formData = new FormData(form);
 		
-	})
+		$.ajax({
+			type: "post",
+			url: "/border/insert/" + user_id.value,
+			/* 파일 업로드 할 땐 꼭 필요한 코드(enctype, processData, contentType)*/
+			enctype: "multipart/form-data", 
+			data: formData,
+			processData: false,
+			contentType: false,
+			dataType: "text",
+			success: function(data){
+				let insertBorder = JSON.parse(data);
+				if(insertBorder == 1){
+					alert('게시글이 등록되었습니다.');
+					location.href = "/myborder/"+user_id.value;
+				} else {
+					alert("게시글 등록 실패!");
+				}
+			},
+			error: function(){
+				alert("비동기 처리 오류!");
+			}			
+		})
+	}
 }
