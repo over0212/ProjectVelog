@@ -58,6 +58,7 @@
     width: 128px;
     font-size: 1.8em;
     font-weight: 700;
+    cursor: pointer;
 }
 .list{
     color: rgb(32, 201, 151);
