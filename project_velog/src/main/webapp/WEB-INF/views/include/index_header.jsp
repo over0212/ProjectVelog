@@ -20,7 +20,7 @@
         </div>
         <div class="times_wrap">
             이번 주
-            <i class="fas fa-caret-down"></i>
+            <i class="fas fa-caret-down down-icon"></i>
         </div>
         <div class="times_select_box nav_box">
             <ul>

@@ -1,6 +1,5 @@
 body{
     background-color: #f8f9fa;
-    /* background-color: lightpink; */
 }
 
 .index_wrap{
@@ -226,6 +225,7 @@ body{
     width: 100%;
     justify-content: left;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .content_wrap{
@@ -299,12 +299,41 @@ body{
 }
 
 .writer_info{
-    padding: 10px 16px;
-    height: 23px;
+	padding: 0 10px;
+	height: 100%;
     line-height: 1.5;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid rgb(248, 249, 250);
     box-sizing: inherit;
     align-items: center;
+}
+.user_info{
+	display: flex;
+	justify-content: left;
+	align-items: center;	
+}
+.user_profile{
+	margin-right: 10px;
+	width: 27px; height: 27px;
+	border-radius: 50%;
+}
+.user_info span{
+	color: rgb(134, 142, 150);
+	font-weight: 300;
+}
+.writer_name{
+	font-size:1em;
+	color: #000;
+	font-weight: 900;
+}
+.likes{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	font-size: 1em;
+}
+.likes span{
+	margin-left: 5px;
+	font-size: 1.1em;
 }

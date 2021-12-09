@@ -31,7 +31,7 @@ user_nav.style.display = 'none';
 window.addEventListener('click', (e) => {
 
 	//만약 요소의 클래스에 user_btn가 포함되어있고, 요소의 클래스에 user_nav_wrap가 포함되어있고 , 요소의 태그이름이 IMG 이고 , 요소의 클래스에 fa-caret-down가 포함되어있을때
-	if (e.target.classList.contains('user_btn') || e.target.classList.contains('user_nav_wrap') || e.target.classList.contains('img') || e.target.classList.contains('fa-caret-down')) {
+	if (e.target.classList.contains('user_btn') || e.target.classList.contains('user_nav_wrap') || e.target.classList.contains('img') || e.target.classList.contains('down')) {
 		//user_nav가 none인 상태면
 		if (user_nav.style.display == 'none') {
 			//user_nav를 보여주고
@@ -49,9 +49,9 @@ window.addEventListener('click', (e) => {
 	}
 });
 
-user_nav_wrap.onblur = () => {
-	user_nav.style.display = 'none';
-}
+//user_nav_wrap.onblur = () => {
+//	user_nav.style.display = 'none';
+//}
 
 
 

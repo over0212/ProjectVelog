@@ -21,6 +21,7 @@ public class Border {
 	private String username;
 	private String main_title;
 	private String main_tags;
+	private String comment;
 	private String main_content;
 	private String profile_img_url;
 	private String preview_img_url;
@@ -33,8 +34,11 @@ public class Border {
 				.url(url)
 				.id(id)
 				.main_title(main_title)
+				.username(username)
 				.main_content(main_content)
+				.comment(comment)
 				.preview_img_url(preview_img_url)
+				.profile_img_url(profile_img_url)
 				.preview_txt(preview_txt)
 				.create_date(create_date)
 				.build();

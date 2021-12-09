@@ -14,8 +14,8 @@ public interface BorderService {
 	
 	public int insertBorder(BorderDto borderDto);
 	
-	public Border getDtlBorderIndex(int id);
+	public Border getDtlBorderIndex(String url);
 	
-	public List<BorderListDto> getBorderList(int id);
+	public List<BorderListDto> getBorderList(String username);
 	
 }

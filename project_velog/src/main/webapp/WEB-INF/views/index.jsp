@@ -30,13 +30,13 @@
             <div class="contents_wrap">
             	<c:forEach var="indexList" items="${indexList }">
 	                <div class="content_wrap">
-	                    <a href="/${indexList.username }${indexList.url }">
+	                    <a href="/border/${indexList.username }/${indexList.url }">
 	                        <div class="img_box">
 	                            <img src="/image/${indexList.preview_img_url }" alt="">
 	                        </div>
 	                    </a>
 	                    <div class="text_wrap">
-	                        <a href="/${indexList.username }${indexList.url }">
+	                        <a href="/border/${indexList.username }/${indexList.url }">
 	                            <h4 class="text_title">${indexList.main_title }</h4>
 	                            <p class="text_area">${indexList.preview_txt }</p>
 	                        </a>
@@ -48,11 +48,12 @@
 	                    </div>
 	                    <div class="writer_info">
 	                        <a href="" class="user_info">
-	                            <img src="/image/profile/${indexList.profile_img_url }" alt="" class="user_profile">
-	                            <span>by <b>${indexList.username }</b></span>
+	                            <img src="/image/profile/${(empty indexList.profile_img_url)? ('user_icon.png'):(indexList.id += '/' += indexList.profile_img_url)}" alt="" class="user_profile">
+	                            <span>by <strong class=writer_name>${indexList.username }</strong></span>
 	                        </a>
 	                        <div class="likes">
 	                            <i class="fas fa-heart"></i>
+	                            <span>0</span>
 	                        </div>
 	                    </div>
 	                </div>
