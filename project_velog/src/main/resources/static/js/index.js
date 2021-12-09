@@ -6,6 +6,8 @@ const plus_btn_wrap = document.querySelector('.plus_btn_wrap');
 const plus_btn = document.querySelector('.plus_btn');
 const time_box = document.querySelector('.times_select_box');
 const plus_box = document.querySelector('.plus_nav_box');
+const img_boxes = document.querySelectorAll('.img_box');
+const thumnails = document.querySelectorAll('.img_box img');
 
 // 트렌드,최신 underbar 움직이기
 recent.onclick = () => {
@@ -64,4 +66,9 @@ window.addEventListener('click', (e) => {
 	}
 });
 
-
+// img 엑박 처리
+for(let i=0; i<thumnails.length; i++){
+	thumnails[i].onerror = () => {
+		img_boxes[i].style.display = "none";
+	}
+}
