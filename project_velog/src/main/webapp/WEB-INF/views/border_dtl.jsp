@@ -16,6 +16,8 @@
     <title>게시글</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/border_dtl.css">
+    <link rel="stylesheet" href="/css/border_insert.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
   <jsp:include page="include/main_header.jsp"></jsp:include>
@@ -42,7 +44,8 @@
     
             <!-- 메인 컨텐츠 부분 -->
             <section class="dtl_body">
-                <div class="dtl_content">${border.preview_txt }</div>
+                <input class="main_content" type="hidden" value="${border.main_content }">
+                <div class="pre_txt"></div>
             </section>
     
             <!-- 하단 프로필 부분 -->
@@ -55,5 +58,14 @@
             </section>
         </div>
     </main>
+    <script type="text/javascript">
+		 // detail_page
+	    const main_content = document.querySelector('.main_content');
+	
+	    $(document).ready(function(){
+	    	edit(main_content.value,'');
+	    });
+    </script>
+    <script type="text/javascript" src="/js/write.js"></script>
 </body>
 </html>
