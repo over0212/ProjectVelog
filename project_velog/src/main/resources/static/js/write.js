@@ -355,13 +355,11 @@ real_submit.onclick = () => {
 		contentType: false,
 		dataType: "text",
 		success: function(data){
-			let insertBorder = JSON.parse(data);
-			if(insertBorder == 1){
+			
 				alert('게시글이 등록되었습니다.');
-				location.href = "/myborder/"+user_id.value;
-			} else {
-				alert("게시글 등록 실패!");
-			}
+				location.href = "/";
+			
+			
 		},
 		error: function(){
 			alert("비동기 처리 오류!");

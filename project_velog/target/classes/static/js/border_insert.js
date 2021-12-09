@@ -236,7 +236,8 @@ function insertForm(){
 			contentType: false,
 			data: formData,
 			success: function(data){
-				
+				alert('게')
+				location.href = ""
 			},
 			error: function(){
 				alert('비동기 처리 오류');

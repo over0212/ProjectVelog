@@ -25,7 +25,7 @@
             <div class="hd_wrap">
                 <div class="hd_logo border_hd_logo">
                     <a href="/" class="border_logo_img"><img class="border_hd_icon" src="/img/black_favicon.png" alt=""></a>
-                    <a href="#" class="hd_logo_a"><span class="border_logo_txt">${principal.user.username}.log</span></a>
+                    <a href="#" class="hd_logo_a"><span class="border_logo_txt">${borderList.username}.log</span></a>
                 </div>
                 <div class="hd_btns">
                     <button class="search_btn"><i class="fas fa-search search_icon"></i></button>
@@ -37,7 +37,7 @@
                         </button>
                         <div class="user_nav">
                             <ul>
-                                <li class="my_page"><a href="/myborder/${principal.user.username}">내 벨로그</a></li>
+                                <li class="my_page"><a href="/border/myborder/${principal.user.username}">내 벨로그</a></li>
                                 <li class="temp_post"><a href="#">임시 글</a></li>
                                 <li class="read_list"><a href="#">읽기 목록</a></li>
                                 <li class="setting"><a href="/mypage/${principal.user.id}">설정</a></li>
@@ -73,7 +73,7 @@
             </div>
             <c:forEach var="border_list" items="${borderList }">
 	            <div class="border_list">
-	                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt=""></a>
+	                <a href="#" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt="" width="180px" height="180px"></a>
 	                <a href="#" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
 	                <p class="border_pre_content">${border_list.preview_txt }</p>
 	               	<div class="border_keyword">

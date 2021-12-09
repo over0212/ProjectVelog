@@ -79,14 +79,16 @@ public class BorderServiceImpl implements BorderService {
 		List<BorderListDto> borderListDtos = new ArrayList<BorderListDto>();
 		for (Border border : borderList) {
 			BorderListDto borderListDto = border.toDto();
-			StringTokenizer st = new StringTokenizer(border.getMain_tags(), ",");
-			List<String> tags = new ArrayList<String>();
-			
-			while(st.hasMoreTokens()) {
-				tags.add(st.nextToken()); 
+			if(border.getMain_tags() != null) {
+				StringTokenizer st = new StringTokenizer(border.getMain_tags(), ",");
+				List<String> tags = new ArrayList<String>();
+				
+				while(st.hasMoreTokens()) {
+					tags.add(st.nextToken()); 
+				}
+				borderListDto.setMain_tags(tags);
+				borderListDtos.add(borderListDto);
 			}
-			borderListDto.setMain_tags(tags);
-			borderListDtos.add(borderListDto);
 		}
 		
 		return borderListDtos;

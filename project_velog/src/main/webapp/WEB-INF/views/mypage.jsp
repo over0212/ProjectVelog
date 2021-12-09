@@ -64,8 +64,7 @@
 							</div>
 							<div class="title_box_hidden">
 								<div class="title_creative_box">
-									<input type="text" class="title_creative user_ip"
-										value="${principal.user.username }">
+									<input type="text" class="title_creative user_ip" value="${principal.user.username }">
 									<div class="info_save_box">
 										<button class="info_save">저장</button>
 									</div>
@@ -86,15 +85,11 @@
 								<div class="icon_box_block">
 									<div class="icon_box">
 										<div class="icon">
-											<div class="i">
-												<i class="fas fa-envelope"></i>
-											</div>
+											<div class="i"><i class="fas fa-envelope"></i></div>
 											<input type="text" placeholder="이메일을 입력하세요.">
 										</div>
 										<div class="icon">
-											<div class="i">
-												<i class="fab fa-github"></i>
-											</div>
+											<div class="i"><i class="fab fa-github"></i></div>
 											<input type="text" placeholder="Github 계정을 입력하세요.">
 										</div>
 										<div class="icon">
