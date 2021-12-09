@@ -36,8 +36,10 @@ public class BorderController {
 	// myborder page (회원정보 페이지)
 	@GetMapping({"/myborder/{username}", "/{username}"})
 	public ModelAndView getBorderList(@PathVariable String username) {
+		System.out.println(username);
 		ModelAndView mav = new ModelAndView("myborder");
 		mav.addObject("borderList", borderService.getBorderList(username));
+		System.out.println(mav);
 		return mav;
 	}
 

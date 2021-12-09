@@ -87,8 +87,8 @@ public class BorderServiceImpl implements BorderService {
 					tags.add(st.nextToken()); 
 				}
 				borderListDto.setMain_tags(tags);
-				borderListDtos.add(borderListDto);
 			}
+			borderListDtos.add(borderListDto);
 		}
 		
 		return borderListDtos;

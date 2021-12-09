@@ -36,9 +36,11 @@
                         <span class="dtl_date">${border.create_date }</span>
                     </div>
                     <div class="dtl_btn">
+                    <c:if test="${(border.username) == (principal.user.username) }">
                         <button type="button" class="graph_btn">통계</button>
                         <button type="button" class="update_btn">수정</button>
                         <button type="button" class="delete_btn">삭제</button>
+                    </c:if>
                     </div>
                 </div>
             </section>
