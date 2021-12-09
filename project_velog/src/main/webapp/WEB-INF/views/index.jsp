@@ -48,11 +48,12 @@
 	                    </div>
 	                    <div class="writer_info">
 	                        <a href="" class="user_info">
-	                            <img src="/image/profile/${indexList.profile_img_url }" alt="" class="user_profile">
-	                            <span>by <b>${indexList.username }</b></span>
+	                            <img src="/image/profile/${(empty indexList.profile_img_url)? ('user_icon.png'):(indexList.id += '/' += indexList.profile_img_url)}" alt="" class="user_profile">
+	                            <span>by <strong class=writer_name>${indexList.username }</strong></span>
 	                        </a>
 	                        <div class="likes">
 	                            <i class="fas fa-heart"></i>
+	                            <span>0</span>
 	                        </div>
 	                    </div>
 	                </div>

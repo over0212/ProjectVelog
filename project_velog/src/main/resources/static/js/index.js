@@ -30,29 +30,38 @@ trend.onclick = () => {
     times_wrap.style.display = "flex";
 }
 
-times_wrap.onclick = () => {
-    if(time_box.style.display == "none"){
-        time_box.style.display = "block";
-    }else{
-        time_box.style.display = "none";
-    }
-}
-
-times_wrap.onblur = () => {
-	time_box.style.display = "none";
-}
-
-plus_btn.onclick = () => {
-    if(plus_box.style.display == "none"){
-        plus_box.style.display = "block";
-    }else{
-        plus_box.style.display = "none";
-    }
-}
-
-plus_btn_wrap.onblur = () => {
-	plus_box.style.display = "none";
-}
-
+//화면 전체를 클릭 했을 때
+window.addEventListener('click', (e) => {
+	
+	// time_box
+	if (e.target.classList.contains('times_wrap') || e.target.classList.contains('down-icon')) {
+		
+		if (time_box.style.display == 'none') {
+			time_box.style.display = 'block';
+		}
+		
+		else if (time_box.style.display == 'block') {
+			time_box.style.display = 'none';
+		}
+		
+	} else {
+		time_box.style.display = 'none';
+	}
+	
+	// plus_btn
+	if (e.target.classList.contains('plus_btn') || e.target.classList.contains('plus_btn_wrap')) {
+		
+		if (plus_box.style.display == 'none') {
+			plus_box.style.display = 'block';
+		}
+		
+		else if (plus_box.style.display == 'block') {
+			plus_box.style.display = 'none';
+		}
+		
+	} else {
+		plus_box.style.display = 'none';
+	}
+});
 
 

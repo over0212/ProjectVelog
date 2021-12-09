@@ -40,7 +40,7 @@
 						<div class="user_nav_wrap">
 							<button type="button" class="user_btn">
 								<img class="img" src="/image/profile/${(empty principal.user.profile_img_url)? ('user_icon.png'):(principal.user.id += '/' += principal.user.profile_img_url)}">
-								<i class="fas fa-caret-down"></i>
+								<i class="fas fa-caret-down down"></i>
 							</button>
 							<div class="user_nav">
 								<ul>
