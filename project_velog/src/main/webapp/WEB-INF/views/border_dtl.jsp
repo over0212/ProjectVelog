@@ -53,7 +53,8 @@
     
             <!-- 하단 프로필 부분 -->
             <section id="footer">
-                <a href="/border/${border.username }"><img src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}" alt=""></a>
+                <a href="/border/${border.username }">
+                <img src="/image/profile/${(empty border.profile_img_url) ? ('user_icon.png') : (border.id += '/' += border.profile_img_url)}" alt="" width="180px" height="180px"></a>
                 <div class="user_info">
                     <a href="/border/${border.username }" class="dtl_writer">${border.username }</a>
                     <span class="dtl_comment">${border.comment }</span>
