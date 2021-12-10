@@ -41,7 +41,6 @@ public class MypageController {
 
 	@PatchMapping("/mypage/imgUpload/{id}")
 	public String imgInsert(MypageDto mypageDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
-		System.out.println(mypageDto);
 		String imageUrl = imgService.updateProfileImg(mypageDto,principalDetails.getUser());
 		principalDetails.getUser().setProfile_img_url(imageUrl);
 		return imageUrl;
