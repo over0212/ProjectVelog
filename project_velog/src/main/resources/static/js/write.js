@@ -33,20 +33,23 @@ tag_msg.style.display = "none";
 ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13 && ip_tags.value.length != 0) { // enter
         window.event.preventDefault();
-        const tag_wrap = document.querySelector('.tag_wrap');
-        var tag = document.createElement('span');
-        var hidden = document.createElement('input');
-        hidden.setAttribute('type', 'hidden');
-        hidden.value = ip_tags.value;
-        hidden.className = "tag_hidden";
-        hidden.name = "main_tags";
-        tag.className = "tag";
-        tag.appendChild(document.createTextNode(ip_tags.value));
-        // tag.appendChild(document)
-        tag_wrap.appendChild(tag);
-        tag_wrap.appendChild(hidden);
+		insertTag(ip_tags.value);
         ip_tags.value = "";
     }
+}
+
+function insertTag(data){
+	const tag_wrap = document.querySelector('.tag_wrap');
+    var tag = document.createElement('span');
+    var hidden = document.createElement('input');
+    hidden.setAttribute('type', 'hidden');
+    hidden.value = data;
+    hidden.className = "tag_hidden";
+    hidden.name = "main_tags";
+    tag.className = "tag";
+    tag.appendChild(document.createTextNode(data));
+    tag_wrap.appendChild(tag);
+    tag_wrap.appendChild(hidden);
 }
 
 ip_tags.onkeydown = () => {
