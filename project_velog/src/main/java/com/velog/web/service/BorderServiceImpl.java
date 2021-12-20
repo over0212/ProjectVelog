@@ -114,4 +114,11 @@ public class BorderServiceImpl implements BorderService {
 		return borderRepository.updateBorder(border);
 	}
 	
+	@Override
+	public int deleteBorder(String url) {
+		int result = 0;
+		result += borderRepository.deleteBorder(url);
+		return result;
+	}
+
 }

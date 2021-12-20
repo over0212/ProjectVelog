@@ -92,4 +92,13 @@
   		where
   			url = #{url};
   	</update>
+  	
+  	<delete id="deleteBorder">
+  		delete
+  		from
+  			border_mst
+  		where
+  			url = #{url}
+  	</delete>
+  	
   </mapper>

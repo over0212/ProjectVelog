@@ -22,4 +22,7 @@ public interface BorderRepository {
 	// update
 	public int updateBorder(Border border);
 	
+	// delete
+	public int deleteBorder(String url);
+	
 }

@@ -21,4 +21,6 @@ public interface BorderService {
 	public List<BorderListDto> getBorderList(String username);
 	
 	public int updateBorder(BorderUpdateDto borderUpdateDto);
+	
+	public int deleteBorder(String url);
 }

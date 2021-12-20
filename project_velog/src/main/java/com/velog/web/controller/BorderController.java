@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +56,13 @@ public class BorderController {
 		return mav;
 	}
 	
-
+	@DeleteMapping("/{username}/{url}")
+	public String deleteBorder(Model model, @PathVariable String url, @PathVariable String username) {
+		int result = borderService.deleteBorder(url);
+		if(result == 1) {
+			return "redirect:/index";
+		}
+		return "redirect:/border/" + username + "/" + url;
+	}
 
 }
