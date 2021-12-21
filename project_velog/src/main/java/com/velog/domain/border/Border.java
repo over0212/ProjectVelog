@@ -40,7 +40,7 @@ public class Border {
 				.preview_img_url(preview_img_url)
 				.profile_img_url(profile_img_url)
 				.preview_txt(preview_txt)
-				.create_date(create_date)
+				.update_date(update_date)
 				.build();
 	}
 	

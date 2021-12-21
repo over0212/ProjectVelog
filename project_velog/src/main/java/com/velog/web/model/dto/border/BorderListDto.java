@@ -20,6 +20,6 @@ public class BorderListDto {
 	private String profile_img_url;
 	private String preview_img_url;
 	private String preview_txt;
-	private LocalDateTime create_date;
+	private LocalDateTime update_date;
 
 }

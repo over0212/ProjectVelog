@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.velog.domain.border.BorderRepository">
+   	 <select id="searchBorder" resultType="com.velog.domain.border.Border">
+	   	 	select
+	  			bm.url,
+	  			bm.main_title,
+	  			bm.main_content,
+	  			bm.main_tags,
+	  			bm.id,
+	  			um.username,
+	  			um.profile_img_url,
+	  			bm.preview_img_url,
+	  			bm.preview_txt,
+	  			bm.update_date
+	  		from
+	  			border_mst bm
+	  			inner join user_mst um on(um.id = bm.id)
+	  		where
+	  			bm.main_title like concat('%', #{keyword}, '%') or
+	  			bm.main_content like concat('%', #{keyword}, '%') or
+	  			bm.main_tags like concat('%', #{keyword}, '%') or
+	  			bm.preview_txt like concat('%', #{keyword}, '%') or
+	  			um.username like concat('%', #{keyword}, '%')
+	  		order by
+	  			update_date desc;
+   	 </select>
+  </mapper>

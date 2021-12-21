@@ -27,13 +27,13 @@ public class BorderController {
 	
 	// border dtl page(작성된 게시글 확인 페이지)
 	@GetMapping("/{username}/{url}")
-	public ModelAndView DtlBorderIndex(Model model, @PathVariable String url) {
+	public ModelAndView DtlBorderIndex(@PathVariable String url) {
 		ModelAndView mav = new ModelAndView("border_dtl");
 		mav.addObject("border", borderService.getDtlBorderIndex(url));
 		return mav;
 	}
 	
-	// myborder page (회원정보 페이지)
+	// myborder page
 	@GetMapping({"/myborder/{username}", "/{username}"})
 	public ModelAndView getBorderList(@PathVariable String username) {
 		ModelAndView mav = new ModelAndView("myborder");

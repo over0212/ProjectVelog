@@ -43,6 +43,7 @@ window.addEventListener('click', (e) => {
 			user_nav.style.display = 'none';
 		}
 		//window를 클릭했을 때 위의 네 개의 요소가 아닐 때(위의 세개의 요소를 제외하고)
+		
 	} else {
 		//user_nav를 숨긴다.
 		user_nav.style.display = 'none';

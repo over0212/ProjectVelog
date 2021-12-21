@@ -32,7 +32,7 @@
                     <button class="go_posting_btn header_btn" type="button">새 글 작성</button>
                     <div class="user_nav_wrap">
                         <button class="user_btn" type="button">
-                            <img src="/img/user_icon.png" alt="">
+                            <img src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}" alt="">
                             <i class="fas fa-caret-down"></i>
                         </button>
                         <div class="user_nav">
@@ -83,9 +83,9 @@
 	                 </div>
 	                <!-- 공지 날짜 및 댓글수 태그 -->
 	                <div class="border_subinfo">
-	                    <span class="create_date">${border_list.create_date }</span>
+	                    <span class="create_date">${border_list.update_date }</span>
 	                    ·
-	                    <span class="count_reply">0개의 댓글</span>
+	                    <span class="count_reply"></span>
 	                </div>
 	            </div>
             </c:forEach>

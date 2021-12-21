@@ -15,5 +15,8 @@ public interface BorderRepository {
 	
 	// index
 	public List<Border> getBorderAll();
+	
+	//search
+	public List<Border> searchBorder(String keyword);
 
 }

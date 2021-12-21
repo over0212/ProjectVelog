@@ -31,7 +31,7 @@
   			bm.preview_img_url,
   			um.profile_img_url,
   			bm.preview_txt,
-  			bm.create_date
+  			bm.update_date
   		from
   			border_mst bm
   			left outer join user_mst um on(um.id = bm.id)
@@ -50,7 +50,7 @@
   			um.profile_img_url,
   			bm.preview_img_url,
   			bm.preview_txt,
-  			bm.create_date
+  			bm.update_date
   		from
   			border_mst bm
   			inner join user_mst um on(um.id = bm.id)
