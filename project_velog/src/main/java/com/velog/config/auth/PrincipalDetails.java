@@ -8,9 +8,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+import com.velog.domain.user.Mypage;
 import com.velog.domain.user.User;
+import com.velog.web.model.dto.mypage.MypageDto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User{
@@ -20,6 +24,11 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	private User user;
 	private Map<String, Object> attributes;
 	private String writer;
+	private String email;
+	private String github;
+	private String twitter;
+	private String facebook;
+	private String home;
 	// 일반로그인
 	public PrincipalDetails(User user) {
 		this.user = user;

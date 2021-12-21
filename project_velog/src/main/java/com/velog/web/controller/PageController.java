@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.velog.config.auth.PrincipalDetails;
+import com.velog.domain.user.User;
 import com.velog.web.service.IndexService;
+import com.velog.web.service.SocialService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 public class PageController {
 	
 	private final IndexService indexService;
+	private final SocialService socialService;
 	
 	@GetMapping("/token-expired")
 	public String tokenExpired() {
@@ -66,7 +69,7 @@ public class PageController {
 	}
 	
 	@GetMapping("/mypage/{id}")
-	public String Mypage(@AuthenticationPrincipal PrincipalDetails principal) {
+	public String Mypage(@AuthenticationPrincipal PrincipalDetails principal, User user) {
 	    if(principal.getUsername() == null) {
 	      return "redirect:index";
 	    }else {

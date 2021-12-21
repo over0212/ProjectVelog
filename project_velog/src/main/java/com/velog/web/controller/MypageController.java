@@ -4,7 +4,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +12,7 @@ import com.velog.config.auth.PrincipalDetails;
 import com.velog.web.model.dto.mypage.MypageDto;
 import com.velog.web.service.ImgService;
 import com.velog.web.service.UserService;
+import com.velog.web.service.SocialService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,6 +22,7 @@ public class MypageController {
 
 	private final UserService userService;
 	private final ImgService imgService;
+	private final SocialService socialService;
 
 	@PatchMapping("/mypage/front/{id}")
 	public String name(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id,
@@ -54,4 +56,39 @@ public class MypageController {
 		}
 		return Integer.toString(result);
 	}
+	
+	@PutMapping("/mypage/social/{id}")
+	public String socialupdate(@AuthenticationPrincipal PrincipalDetails principalDetails, @PathVariable int id,
+			@RequestBody MypageDto mypageDto) {
+		int result = socialService.updateSocial(mypageDto, id);
+		principalDetails.setEmail(mypageDto.getSocial_email());
+		principalDetails.setGithub(mypageDto.getSocial_github());
+		principalDetails.setTwitter(mypageDto.getSocial_twitter());
+		principalDetails.setFacebook(mypageDto.getSocial_facebook());
+		principalDetails.setHome(mypageDto.getSocial_home());
+		return Integer.toString(result);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -41,6 +41,19 @@
     		id = #{id};
     </update>
     
+    <update id="updateSocial">
+    	update
+    		user_info
+    	set
+    		social_email = #{social_email},
+    		social_github = #{social_github},
+    		social_twitter = #{social_twitter},
+    		social_facebook = #{social_facebook},
+    		social_home = #{social_home}
+    	where
+    		id = #{id};
+    </update>
+    
   </mapper>
   
   

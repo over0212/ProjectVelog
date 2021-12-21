@@ -26,16 +26,15 @@ public class UserService {
 	public int updateMypage(MypageDto mypageDto, int id) {
 		
 		int completeCount = 0;
-		User user = mypageDto.toEntity(id);
+		User user = mypageDto.toUEntity(id);
 		completeCount += userRepository.updateProfile(user);
-		
 		return completeCount;
 	}
 	
 	@Transactional
 	public int updateMypageUsername(MypageDto mypageDto, int id) {
 		int completeCount = 0;
-		User user = mypageDto.toEntity(id);
+		User user = mypageDto.toUEntity(id);
 		completeCount += userRepository.updateUsername(user);
 		return completeCount;
 	}
