@@ -59,6 +59,15 @@
             </div>
         </div>
         <div class="seper_line"></div>
+        <div class="social_banner">
+            <ul class="socials">
+                <a href="#"><i class="fab fa-github"><span>${principal.github }</span></i></a>
+                <a href="#"><i class="fab fa-twitter"><span>${principal.twitter }</span></i></a>
+                <a href="#"><i class="fab fa-facebook-square"><span>${principal.facebook }</span></i></a>
+                <a href="#"><i class="fas fa-home"><span>${principal.home }</span></i></a>
+                <a href="#"><i class="fas fa-envelope"><span>${principal.email }</span></i></a>
+            </ul>
+        </div>
         <div class="border_nav">
             <a class="list">글</a>
             <a class="series">시리즈</a>

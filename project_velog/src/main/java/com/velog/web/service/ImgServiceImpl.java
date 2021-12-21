@@ -41,7 +41,7 @@ public class ImgServiceImpl implements ImgService {
 				oldFile.delete();
 			}
 			mypageDto.getFile().transferTo(file); // 파일을 복붙느낌
-			User userntt = mypageDto.toEntity(mypageDto.getId());
+			User userntt = mypageDto.toUEntity(mypageDto.getId());
 			userntt.setProfile_img_url(tempfilename);
 			userRepository.updateProfileImg(userntt);
 		} catch (IllegalStateException | IOException e) {

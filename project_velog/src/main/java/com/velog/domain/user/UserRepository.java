@@ -26,10 +26,13 @@ public interface UserRepository {
 
 	public int updateUsername(User user);
 
-	// mypage img
+	// mypage img 프로필
 	public int updateProfileImg(User user);
 	
 	public int deleteProfileImg(int id);
+	
+	// 소셜 업데이트
+	public int updateSocial(Mypage mypage);
 
 }
 

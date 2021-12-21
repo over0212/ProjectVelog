@@ -7,6 +7,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.velog.domain.border.Border;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
+import com.velog.web.model.dto.border.BorderUpdateDto;
+import com.velog.web.model.dto.border.IndexBorderDto;
 
 public interface BorderService {
 	
@@ -18,4 +20,7 @@ public interface BorderService {
 	
 	public List<BorderListDto> getBorderList(String username);
 	
+	public int updateBorder(BorderUpdateDto borderUpdateDto);
+	
+	public int deleteBorder(String url);
 }

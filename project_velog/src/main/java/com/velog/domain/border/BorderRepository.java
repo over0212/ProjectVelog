@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.velog.web.model.dto.border.BorderDto;
+import com.velog.web.model.dto.border.BorderUpdateDto;
+
 @Mapper
 public interface BorderRepository {
 	
@@ -19,4 +22,10 @@ public interface BorderRepository {
 	//search
 	public List<Border> searchBorder(String keyword);
 
+	// update
+	public int updateBorder(Border border);
+	
+	// delete
+	public int deleteBorder(String url);
+	
 }

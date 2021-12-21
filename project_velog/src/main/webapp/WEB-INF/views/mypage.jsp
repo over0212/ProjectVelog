@@ -43,9 +43,8 @@
 					</div>
 				</div>
 				<div class="top_info_creative">
-					<input type="text" class="info_name user_ip"
-						value="${principal.user.name }"> <input type="text"
-						class="info_text user_ip" value="${principal.user.comment }">
+						<input type="text" class="info_name user_ip" value="${principal.user.name }">
+						<input type="text" class="info_text user_ip" value="${principal.user.comment }">
 					<div class="info_save_box">
 						<button class="info_save">저장</button>
 					</div>
@@ -82,44 +81,30 @@
 								<button class="info_modify">정보 추가</button>
 							</div>
 							<div class="title_box_hidden">
-								<div class="icon_box_block">
-									<div class="icon_box">
-										<div class="icon">
-											<div class="i"><i class="fas fa-envelope"></i></div>
-											<input type="text" placeholder="이메일을 입력하세요.">
-										</div>
-										<div class="icon">
-											<div class="i"><i class="fab fa-github"></i></div>
-											<input type="text" placeholder="Github 계정을 입력하세요.">
-										</div>
-										<div class="icon">
-											<div class="i">
-												<i class="fab fa-twitter"></i>
-											</div>
-											<input type="text" placeholder="Twitter 계정을 입력하세요.">
-										</div>
-										<div class="icon">
-											<div class="i">
-												<i class="fab fa-facebook-square"></i>
-											</div>
-											<input type="text" placeholder="http://facebook.com/">
-										</div>
-										<div class="icon">
-											<div class="i">
-												<i class="fas fa-home"></i>
-											</div>
-											<input type="text" placeholder="홈페이지 주소를 입력하세요.">
-										</div>
-									</div>
-									<div class="info_save_box">
-										<button class="info_save">저장</button>
-									</div>
-								</div>
-							</div>
+                                <div class="icon_box_block">
+                                    <div class="icon_box">
+                                        <div class="icon"><div class="i"><i class="fas fa-envelope"></i></div><input type="text" placeholder="이메일을 입력하세요." value="${principal.email }"></div>
+                                        <div class="icon"><div class="i"><i class="fab fa-github"></i></div><input type="text" placeholder="Github 계정을 입력하세요." value="${principal.github }"></div>
+                                        <div class="icon"><div class="i"><i class="fab fa-twitter"></i></div><input type="text" placeholder="Twitter 계정을 입력하세요." value="${principal.twitter }"></div>
+                                        <div class="icon"><div class="i"><i class="fab fa-facebook-square"></i></div><input type="text" placeholder="http://facebook.com/" value="${principal.facebook }"></div>
+                                        <div class="icon"><div class="i"><i class="fas fa-home"></i></div><input type="text" placeholder="홈페이지 주소를 입력하세요." value="${principal.home }"></div>
+                                    </div>
+                                    <div class="info_save_box"><button class="info_save">저장</button></div>
+                                </div>
+                                <div class="social_box_block">
+                                    <div class="social_box">
+                                        <div class="social_icon"><div class="social"><i class="fas fa-envelope"></i><span class="social_text">${principal.email }</span></div></div>
+                                        <div class="social_icon"><div class="social"><i class="fab fa-github"></i><span class="social_text">${principal.github }</span></div></div>
+                                        <div class="social_icon"><div class="social"><i class="fab fa-twitter"></i><span class="social_text">${principal.twitter }</span></div></div>
+                                        <div class="social_icon"><div class="social"><i class="fab fa-facebook-square"></i><span class="social_text">${principal.facebook }</span></div></div>
+                                        <div class="social_icon"><div class="social"><i class="fas fa-home"></i><span class="social_text">${principal.home }</span></div></div>
+                                    </div>
+                                    <button class="social_modify">수정</button>
+                                </div>
+                            </div>
 						</div>
 					</div>
-					<div class="info_explanation">포스트 및 블로그에서 보여지는 프로필에 공개되는 소셜
-						정보입니다.</div>
+					<div class="info_explanation">포스트 및 블로그에서 보여지는 프로필에 공개되는 소셜 정보입니다.</div>
 				</div>
 				<div class="mp_info">
 					<div class="creative_info">

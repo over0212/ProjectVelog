@@ -1,6 +1,7 @@
 package com.velog.web.model.dto.border;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.velog.domain.border.Border;
 
@@ -15,6 +16,7 @@ public class IndexBorderDto {
 	private int id;
 	private String username;
 	private String main_title;
+	private List<String> main_tags;
 	private String profile_img_url;
 	private String preview_img_url;
 	private String preview_txt;

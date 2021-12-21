@@ -2,6 +2,7 @@ package com.velog.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,12 +34,22 @@ public class BorderController {
 		return mav;
 	}
 	
-	// myborder page
+	// border-update (게시글 수정 페이지)
+	@GetMapping("/update/{username}/{url}")
+	public ModelAndView updateBorderIndex(@PathVariable String url) {
+		ModelAndView mav = new ModelAndView("border_update");
+		mav.addObject("border", borderService.getDtlBorderIndex(url)); //해당 게시글 들고옴
+		return mav;
+	}
+	
+	// myborder page (회원정보 페이지)
 	@GetMapping({"/myborder/{username}", "/{username}"})
 	public ModelAndView getBorderList(@PathVariable String username) {
 		ModelAndView mav = new ModelAndView("myborder");
 		mav.addObject("borderList", borderService.getBorderList(username));
 		return mav;
 	}
+	
+	
 
 }

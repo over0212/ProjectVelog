@@ -37,7 +37,8 @@
                     </div>
                     <div class="dtl_btn">
                     <c:if test="${(border.username) == (principal.user.username) }">
-                        <button type="button" class="graph_btn">통계</button>
+                    	<input id="username" type="hidden" value="${principal.user.username}">
+                    	<input id="url" type="hidden" value="${border.url }">
                         <button type="button" class="update_btn">수정</button>
                         <button type="button" class="delete_btn">삭제</button>
                     </c:if>
@@ -62,14 +63,7 @@
             </section>
         </div>
     </main>
-    <script type="text/javascript">
-		 // detail_page
-	    const main_content = document.querySelector('.main_content');
-	
-	    $(document).ready(function(){
-	    	edit(main_content.value,'');
-	    });
-    </script>
     <script type="text/javascript" src="/js/write.js"></script>
+    <script type="text/javascript" src="/js/border_dtl.js"></script>
 </body>
 </html>
