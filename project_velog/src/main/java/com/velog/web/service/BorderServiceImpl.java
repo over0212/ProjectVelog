@@ -15,6 +15,8 @@ import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
+import com.velog.web.model.dto.border.BorderUpdateDto;
+import com.velog.web.model.dto.border.IndexBorderDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -93,4 +95,30 @@ public class BorderServiceImpl implements BorderService {
 		
 		return borderListDtos;
 	}
+	
+@Override
+	public int updateBorder(BorderUpdateDto borderUpdateDto) {
+		StringBuilder tagName = new StringBuilder();
+
+		Border border = borderUpdateDto.toEntity();
+		String[] tagValues = borderUpdateDto.getMain_tags();
+		if(tagValues != null) {
+			for (String str : tagValues) {
+
+				tagName.append(str);
+				tagName.append(",");
+			}
+			tagName.delete(tagName.length() - 1, tagName.length());
+			border.setMain_tags(tagName.toString());
+		}
+		return borderRepository.updateBorder(border);
+	}
+	
+	@Override
+	public int deleteBorder(String url) {
+		int result = 0;
+		result += borderRepository.deleteBorder(url);
+		return result;
+	}
+
 }

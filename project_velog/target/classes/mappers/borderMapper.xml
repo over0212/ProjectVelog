@@ -28,6 +28,7 @@
   			um.username,
   			um.comment,
   			bm.main_content,
+  			bm.main_tags,
   			bm.preview_img_url,
   			um.profile_img_url,
   			bm.preview_txt,
@@ -76,4 +77,28 @@
 		order by
 			update_date desc;
   	</select>
+  	
+  	<update id="updateBorder" parameterType="com.velog.domain.border.Border">
+  		update
+  			border_mst
+  		set
+  			url = #{new_url},
+  			main_title = #{main_title},
+  			main_content = #{main_content},
+  			main_tags = #{main_tags},
+  			preview_img_url = #{preview_img_url},
+  			preview_txt = #{preview_txt},
+  			update_date = now()
+  		where
+  			url = #{url};
+  	</update>
+  	
+  	<delete id="deleteBorder">
+  		delete
+  		from
+  			border_mst
+  		where
+  			url = #{url}
+  	</delete>
+  	
   </mapper>

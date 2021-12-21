@@ -20,16 +20,20 @@
 </head>
 <body>
     <div class="write_page">
-        <form class="form">
-        <input type="hidden" id="id" value="${principal.user.id }">
+        <form class="updateForm">
+        <input type="hidden" id="id" value="${principal.user.id }"> 
         <input type="hidden" id="username" value="${principal.user.username }">
+        <input type="hidden" id="url" name="url" value="${border.url }">
             <div class="write_container">
                 <div class="write_wrap">
                     <div class="write_ip"> 
-                        <textarea class="write_title" name="main_title" id="" placeholder="제목을 입력하세요"></textarea>
+                        <textarea class="write_title" name="main_title" id="" placeholder="제목을 입력하세요">${border.main_title }</textarea>
                         <div class="seperate"></div>
                         <div class="write_tag">
-                            <span class="tag_wrap"></span>
+                        	<c:forEach var="main_tags" items="${border.main_tags }">
+                        		<input type="hidden" class="main_tags" value="${main_tags }">
+                        	</c:forEach>
+	                            <span class="tag_wrap"></span>                       			
                             <input class="ip_tags" type="text" placeholder="태그를 입력하세요">
                             <div class="tag_msg">쉼표 혹은 엔터를 입력하여 태그를 등록할 수 있습니다.<br>등록된 태그를 클릭하면 삭제됩니다.</div>
                         </div>
@@ -51,13 +55,13 @@
                         <button type="button" class="code"><i class="fas fa-code"></i></button>
                     </div>
                     <div class="text_wrap">
-                        <textarea class="write_txt" name="main_content" cols="79" placeholder="당신의 이야기를 적어보세요..."></textarea>
+                        <textarea class="write_txt" name="main_content" cols="79" placeholder="당신의 이야기를 적어보세요...">${border.main_content }</textarea>
                     </div>
                     <div class="write_footer">
                         <button type="button" class="exit_btn"><i class="fas fa-arrow-left"></i> 나가기</button>
                         <div class="submit_btns">
                             <button type="button" class="temp_store">임시저장</button>
-                            <button type="button" class="temp_submit">출간하기</button>
+                            <button type="button" class="temp_submit">수정하기</button>
                         </div>
                     </div>
                     <!-- send page -->
@@ -92,7 +96,7 @@
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">URL 설정</h3>
-                                            <div class="user_url_box"><span class="user_name">/${principal.user.username }/</span><input class="ip_url" type="text" name="url"></div>
+                                            <div class="user_url_box"><span class="user_name">/${principal.user.username }/</span><input class="ip_url" type="text" name="new_url"></div>
                                         </div>
                                         <div class="settings">
                                             <h3 class="send_h3">시리즈 설정</h3>
@@ -102,7 +106,7 @@
                                     <div class="submit_btns">
                                         <button type="button" class="cancle_btn">취소</button>
                                         <button type="button" class="select_btn" style="display: none;">선택하기</button>
-                                        <button type="button" class="real_submit">출간하기</button>
+                                        <button type="button" class="update_submit">수정하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,6 +123,7 @@
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <!-- <script src="/js/border_insert.js" ></script> -->
-    <script src="/js/write.js" ></script>
+    <script type="text/javascript" src="/js/write.js" ></script>
+    <script type="text/javascript" src="/js/border_update.js"></script>
 </body>
 </html>

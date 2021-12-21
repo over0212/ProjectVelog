@@ -23,6 +23,8 @@ const form = document.querySelector('form');
 const tag_names = document.querySelectorAll('.tag_names');
 const tag_hidden = document.querySelectorAll('.tag_hidden');
 const user_id = document.querySelector('#id');
+const user_name = document.querySelector("#username");
+const tag_wrap = document.querySelector('.tag_wrap');
 		
 // write_page -------------------------------------------
 
@@ -33,20 +35,49 @@ tag_msg.style.display = "none";
 ip_tags.onkeypress = () => {
     if (window.event.keyCode == 13 && ip_tags.value.length != 0) { // enter
         window.event.preventDefault();
-        const tag_wrap = document.querySelector('.tag_wrap');
-        var tag = document.createElement('span');
-        var hidden = document.createElement('input');
-        hidden.setAttribute('type', 'hidden');
-        hidden.value = ip_tags.value;
-        hidden.className = "tag_hidden";
-        hidden.name = "main_tags";
-        tag.className = "tag";
-        tag.appendChild(document.createTextNode(ip_tags.value));
-        // tag.appendChild(document)
-        tag_wrap.appendChild(tag);
-        tag_wrap.appendChild(hidden);
-        ip_tags.value = "";
+        console.log(tag_wrap.innerHTML);
+        
+        if(tag_wrap.innerHTML != ""){ 
+        	// tag_wrap에 값이 있을 경우
+         	const tags = document.querySelectorAll('.tag');
+         	   
+          	let flag = 0;
+          	for(let i=0; i < tags.length; i++){
+          		if(tags[i].textContent== ip_tags.value){
+          			flag = 1;
+          		}
+          	}
+          	
+    		if(flag == 1){
+    			// 중복 O
+    			ip_tags.value = "";
+    			
+    		}else{
+    			// 중복 X
+				insertTag(ip_tags.value);
+    		}
+        	
+        }else{
+			//tag_wrap에 아무 값도 없을 때
+        	insertTag(ip_tags.value);
+        }     
+		ip_tags.value = "";
     }
+}
+
+function insertTag(data){
+	if(data.length != 0){
+	    var tag = document.createElement('span');
+	    var hidden = document.createElement('input');
+	    hidden.setAttribute('type', 'hidden');
+	    hidden.value = data;
+	    hidden.className = "tag_hidden";
+	    hidden.name = "main_tags";
+	    tag.className = "tag";
+	    tag.appendChild(document.createTextNode(data));
+	    tag_wrap.appendChild(tag);
+	    tag_wrap.appendChild(hidden);	
+	}
 }
 
 ip_tags.onkeydown = () => {
@@ -363,10 +394,9 @@ real_submit.onclick = () => {
 			contentType: false,
 			dataType: "text",
 			success: function(data){
-				let insertBorder = JSON.parse(data);
-				if(insertBorder == 1){
+				if(data != null){
 					alert('게시글이 등록되었습니다.');
-					location.href = "/myborder/"+user_id.value;
+					location.href = "/border/myborder/"+user_name.value;
 				} else {
 					alert("게시글 등록 실패!");
 				}
