@@ -66,6 +66,7 @@
                 <a href="#"><i class="fab fa-facebook-square"><span>${principal.facebook }</span></i></a>
                 <a href="#"><i class="fas fa-home"><span>${principal.home }</span></i></a>
                 <a href="#"><i class="fas fa-envelope"><span>${principal.email }</span></i></a>
+                <div class="emailText">${principal.email }</div>
             </ul>
         </div>
         <div class="border_nav">

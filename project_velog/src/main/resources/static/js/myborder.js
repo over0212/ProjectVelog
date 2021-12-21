@@ -54,22 +54,30 @@ items.addEventListener("click", event => {
 	}
 })
 
-const socialText = document.querySelectorAll('.social a span')
-const socialIcon = document.querySelectorAll('.social a')
+const socialText = document.querySelectorAll('.socials a span')
+const socialIcon = document.querySelectorAll('.socials a')
 const social_banner = document.querySelector('.social_banner')
+const emailText = document.querySelector('.emailText')
 
 window.onload = () => {
-	for (let i = 0; i < 5; i++) {
-		if (socialText[i].textContent.length != 0){
-			social_banner.style.display = 'block';
+	for (let i = 0; i < socialIcon.length; i++) {
+		if (socialText[i].textContent.length == 0){
+			socialIcon[i].style.display = 'none';
+		}else {		
 			socialIcon[i].style.display = 'block';
-			socialIcon[i].style.display = 'flex';			
-		}else {
-			socialIcon[i].style.display = 'none';		
-			
 		}
 	
 	}
+}
+emailText.style.display = 'none';
+
+socialIcon[4].onmouseover = () => {
+	emailText.style.display = 'block';
+	emailText.style.display = 'flex';
+}
+socialIcon[4].onmouseout = () => {
+	emailText.style.display = 'none';
+	
 }
 
 
