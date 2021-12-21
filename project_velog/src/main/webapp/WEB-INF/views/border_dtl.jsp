@@ -63,7 +63,7 @@
             </section>
         </div>
     </main>
-    <script type="text/javascript" src="/js/border_dtl.js"></script>
     <script type="text/javascript" src="/js/write.js"></script>
+    <script type="text/javascript" src="/js/border_dtl.js"></script>
 </body>
 </html>

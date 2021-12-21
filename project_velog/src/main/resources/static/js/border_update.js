@@ -16,9 +16,9 @@ $(document).ready(function(){
 const update_submit = document.querySelector(".update_submit");
 const username = document.querySelector("#username");
 const updateForm= document.querySelector(".updateForm");
+const url = document.querySelector("#url");
 
-update_submit.onclick = () => {
-	
+update_submit.onclick = () => {	
 	updateBorder();
 }
 
@@ -27,6 +27,7 @@ function updateBorder(){
 	if(ip_url.value.length == 0){
 		alert("url이 비었습니다.");
 		ip_url.focus();
+		
 	}else{
 		let formData = new FormData(updateForm);
 
@@ -40,8 +41,8 @@ function updateBorder(){
 			contentType: false,
 			dataType: "text",
 			success: function(data){
-				let updateBorder = JSON.parse(data);
-				if(updateBorder == 1){
+				console.log(data);
+				if(data == 1){
 					alert('게시글이 수정되었습니다.');
 					location.href = "/border/"+username.value +"/"+ip_url.value;
 				} else {

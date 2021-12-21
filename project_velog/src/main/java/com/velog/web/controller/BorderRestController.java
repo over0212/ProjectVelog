@@ -1,6 +1,8 @@
 package com.velog.web.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -42,5 +44,12 @@ public class BorderRestController {
 		int updateFlag = 0;
 		updateFlag = borderService.updateBorder(borderUpdateDto);
 		return Integer.toString(updateFlag);
+	}
+	
+	@DeleteMapping("/delete/{username}/{url}")
+	public String deleteBorder(Model model, @PathVariable String url, @PathVariable String username) {
+		int result = borderService.deleteBorder(url);
+		
+		return Integer.toString(result);
 	}
 }

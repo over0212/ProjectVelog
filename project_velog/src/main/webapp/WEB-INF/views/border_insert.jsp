@@ -22,6 +22,7 @@
     <div class="write_page">
         <form class="form">
         <input type="hidden" id="id" value="${principal.user.id }">
+        <input type="hidden" id="username" value="${principal.user.username }">
             <div class="write_container">
                 <div class="write_wrap">
                     <div class="write_ip"> 

@@ -1,8 +1,5 @@
 package com.velog.web.controller;
 
-import java.io.Console;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.velog.web.model.dto.border.BorderDto;
-import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.service.BorderService;
 
 import lombok.RequiredArgsConstructor;
@@ -43,7 +38,6 @@ public class BorderController {
 	@GetMapping("/update/{username}/{url}")
 	public ModelAndView updateBorderIndex(@PathVariable String url) {
 		ModelAndView mav = new ModelAndView("border_update");
-		System.out.println(borderService.getDtlBorderIndex(url).getMain_tags());
 		mav.addObject("border", borderService.getDtlBorderIndex(url)); //해당 게시글 들고옴
 		return mav;
 	}
@@ -56,13 +50,6 @@ public class BorderController {
 		return mav;
 	}
 	
-	@DeleteMapping("/{username}/{url}")
-	public String deleteBorder(Model model, @PathVariable String url, @PathVariable String username) {
-		int result = borderService.deleteBorder(url);
-		if(result == 1) {
-			return "redirect:/index";
-		}
-		return "redirect:/border/" + username + "/" + url;
-	}
+	
 
 }
