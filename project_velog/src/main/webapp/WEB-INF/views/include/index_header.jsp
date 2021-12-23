@@ -36,9 +36,7 @@
         <div class="plus_nav_box">
             <ul>
                 <li><a href="/notice">공지사항</a></li>
-                <li><a href="/trending-tag">태그 목록</a></li>
                 <li><a href="/terms">서비스 정책</a></li>
-                <li><a href="#">Slack</a></li>
                 <li class="plus_nav_contact">
                         <strong>문의</strong><br>
                         coqja2014@gmail.com

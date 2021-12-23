@@ -33,10 +33,10 @@
 	</main>
 
 	<div id="search_body">
+		<p class="s_count">
+			총 <b>123개</b>의 포스트를 찾았습니다.
+		</p>
 		<%-- <div id="search_list">
-			<p class="s_count">
-				총 <b>123개</b>의 포스트를 찾았습니다.
-			</p>
 			<section id="s_form">
 				<div class="s_user_info">
 					<a href="" class="s_user_img"><img src="" alt=""></a>
