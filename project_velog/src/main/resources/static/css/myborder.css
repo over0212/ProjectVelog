@@ -92,7 +92,18 @@
 }
 
 .socials a span{
-	display: block;
+	display: none;
+}
+.emailText{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto; height: 30px;
+	background-color: #000;
+	color: #fff;
+	margin-left: 10px;
+	border-radius: 5px;
+	padding: 0 10px;
 }
 
 .border_nav {

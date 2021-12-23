@@ -30,7 +30,6 @@
                 <!-- 글,시리즈,소개 선택 메뉴 (선택시 불들어오는 js구현 필요)-->
             <div class="notice_menu">
                 <a href="#" class="menu_writing">글</a>
-                <a href="#" class="menu_series">시리즈</a>
                 <a href="#" class="menu_introduction">소개</a>
             </div>
             <div class="notice_main">
@@ -70,31 +69,6 @@
                         <div class="coutn_reply">99개의 댓글</d>
                     </div>
                 </div>
-                
-            <!-- notice 컨트롤 태그 -->
-            <div class="notice_control">
-                <div class="tag_list">
-                    태그 목록
-                </div>
-                <ul class="items">
-                    <li><a href="#" class="item">전체보기</a><span>(1)</span></li>
-                    <li><a  href="#" class="item">벨로그</a><span>(1)</span></li>
-                    <li><a href="#" class="item">벨로그</a><span>(1)</span></li>
-                    <li><a href="#" class="item">업데이트</a><span>(1)</span></li>
-                    <li><a href="#" class="item">도네이션</a><span>(1)</span></li>
-                    <li><a href="#" class="item">codesandbox</a><span>(1)</span></li>
-                    <li><a href="#" class="item">codepen</a><span>(1)</span></li>
-                    <li><a href="#" class="item">서비스 소개</a><span>(1)</span></li>
-                    <li><a href="#" class="item">공지사항</a><span>(1)</span></li>
-                    <li><a href="#" class="item">수식</a><span>(1)</span></li>
-                    <li><a href="#" class="item">twitter</a><span>(1)</span></li>
-                    <li><a href="#" class="item">ThankYouFor___</a><span>(1)</span></li>
-                    <li><a href="#" class="item">KaTeX</a><span>(1)</span></li>
-                    <li><a href="#" class="item">youtube</a><span>(1)</span></li>
-                    <li><a href="#" class="item">후원</a><span>(1)</span></li>
-                    <li><a href="#" class="item">읽기 목록</a><span>(1)</span></li>
-                </ul>
-            </div>
         </div>
     </div>
     <script src="/js/notice.js"></script>
