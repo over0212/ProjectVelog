@@ -34,6 +34,8 @@ search.onkeyup = () =>{
 			search_body.style.display = 'flex';
 			search_body.innerHTML = "";
 					
+					let date = search_list[i].update_date;
+					let formatDate = date.subString(0, 10);
 				for(let i = 0; i < search_list.length; i++){
 					search_body.innerHTML += `
 					<div id="search_list">		
@@ -56,15 +58,17 @@ search.onkeyup = () =>{
 							<div class="s_tag_list">
 							</div>
 							<div class="sub_info">
-								<span class="s_date">${search_list[i].update_date}</span>
+								<span class="s_date">${formatDate}</span>
 							</div>
 						</section>
 					</div>`;
 					
+					
+					
 					// 해당 태그의 배열을 변수에 대입
 					let list = search_list[i].main_tags;
 					// 태그의 배열을 for문을 통해 innerHTML에 입력
-					for(let j = 0; j < list.length; j++){
+					for(let j = 0; j < list.size; j++){
 						const s_tag_lists = document.querySelectorAll('.s_tag_list');
 						let last_list = s_tag_lists[s_tag_lists.length - 1];
 						last_list.innerHTML += `<a href="#">${list[j]}</a>`;
@@ -76,5 +80,6 @@ search.onkeyup = () =>{
 			alert("비동기 처리 오류!");
 		}
 	});
+	
 }
 

@@ -94,13 +94,18 @@ input:-webkit-autofill {
 .s_border{
 	display: flex;
 	flex-direction: column;
+	
 }
 .s_border_img{
+	width: 768px;
+	height: 400px;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 .s_border_img img{
-	width: 768px;
+	object-fit: cover;
+
 }
 .s_border_title h2{
     margin: 1em 0;

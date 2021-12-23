@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
@@ -33,10 +34,10 @@
 	</main>
 
 	<div id="search_body">
-		<%-- <div id="search_list">
 			<p class="s_count">
 				총 <b>123개</b>의 포스트를 찾았습니다.
 			</p>
+		<%-- <div id="search_list">
 			<section id="s_form">
 				<div class="s_user_info">
 					<a href="" class="s_user_img"><img src="" alt=""></a>
