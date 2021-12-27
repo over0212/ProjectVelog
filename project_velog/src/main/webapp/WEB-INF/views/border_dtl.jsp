@@ -64,14 +64,14 @@
         </div>
         <!-- 좋아요 버튼 부분 -->
         <div class="like_btn_block">
-        	<button class="like_btns">
+        	<div class="like_btns">
 	        	<div class="off_box">
 	        		<i class="fas fa-heart like_off"></i>
 	        	</div>
 	        	<div class="on_box" style="display: none">
 	        		<i class="fas fa-heart like_on"></i>
 	        	</div>
-        	</button>
+        	</div>
         	<span class="like_count">이엘자리</span>
         </div>
     </main>
