@@ -34,6 +34,7 @@ delete_btn.onclick = () => {
 		}
 	})
 }
+/* 좋아요 */
 const like_btns = document.querySelector('.like_btns');
 const off_box = document.querySelector('.off_box');
 const like_off = document.querySelector('.like_off');
@@ -41,29 +42,34 @@ const like_off = document.querySelector('.like_off');
 const on_box = document.querySelector('.on_box');
 const like_on = document.querySelector('.like_on');
 
-like_btns.onclick = () => {
-	like_btns.style.display ='none';
+off_box.onmouseover = () => {
+	off_box.style.border = '1px solid rgb(33, 37, 41)';
+	like_off.style.color = 'rgb(33, 37, 41)';
 }
-/*
-like_btns.onmouseover = () => {
-	off_box.style.border ='rgb(33, 37, 41)';
-	like_off.style.color ='rgb(33, 37, 41)';
-	on_box.style.border ='rgb(33, 37, 41)';
-}
-like_btns.onmouseout = () => {
-	off_box.style.border ='rgb(173, 181, 189)';
-	like_off.style.color ='rgb(173, 181, 189)';
-	on_box.style.border ='rgb(33, 37, 41)';
+off_box.onmouseout = () => {
+	off_box.style.border = '1px solid rgb(134, 142, 150)';
+	like_off.style.color = 'rgb(134, 142, 150)';
 }
 
-like_btns.onclick = () => {
+off_box.onclick = () => {
 	off_box.style.display = 'none';
 	on_box.style.display = 'block';
 	on_box.style.display = 'flex';
-	
 }
 
-*/
+on_box.onmouseover = () => {
+	on_box.style.background = '#38d9a9';
+}
+on_box.onmouseout = () => {
+	on_box.style.background = '#20c997';
+}
+
+on_box.onclick = () => {
+	on_box.style.display = 'none';
+	off_box.style.display = 'block';
+	off_box.style.display = 'flex';
+}
+
 
 
 
