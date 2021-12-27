@@ -43,7 +43,7 @@
 	                        <div class="text_info_box">
 	                            <span class="posting_date">${indexList.update_date }</span>
 	                            <span class="seperator">·</span>
-	                            <span class="reply_count">0개의 댓글</span>
+	                            <span class="reply_count">조회수 ${indexList.count } </span>
 	                        </div>
 	                    </div>
 	                    <div class="writer_info">

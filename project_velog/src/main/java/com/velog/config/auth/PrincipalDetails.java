@@ -29,6 +29,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	private String twitter;
 	private String facebook;
 	private String home;
+	
 	// 일반로그인
 	public PrincipalDetails(User user) {
 		this.user = user;

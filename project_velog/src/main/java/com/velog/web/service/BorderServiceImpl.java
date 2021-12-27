@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
 import com.velog.web.model.dto.border.BorderDto;
@@ -70,8 +71,25 @@ public class BorderServiceImpl implements BorderService {
 	
 	// border_dtl에 대한 정보들을 들고온다.
 	@Override
-	public Border getDtlBorderIndex(String url) {
-		return borderRepository.getDtlBorderIndex(url);
+	public Border getDtlBorderIndex(String url, PrincipalDetails principalDetails) {
+		Border border = borderRepository.getDtlBorderIndex(url);
+		
+		// 로그인시 자신의 게시물의 조회수는 +1 되지 않도록 하는 방어적 코드
+		if(principalDetails != null) {
+			if(!principalDetails.getUser().getUsername().equals(border.getUsername())) {
+				plusBorderCount(url);			
+			}
+		}else{
+			// 로그인이 안되어있을 경우 모든 게시글 조회수 +1
+			plusBorderCount(url);	
+		}
+		
+		return border;
+	}
+	
+	@Override
+	public void plusBorderCount(String url) {
+		borderRepository.plusBorderCount(url);
 	}
 	
 	// 태그 들고오기

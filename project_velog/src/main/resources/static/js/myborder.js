@@ -10,26 +10,14 @@ const itemObjs = document.querySelectorAll('.item');
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
 	list.style.borderBottom = '3px solid rgb(32, 201, 151)';
-	series.style.color = '#000000';
-	series.style.borderBottom = 'none';
-	intro.style.color = '#000000';
-	intro.style.borderBottom = 'none';
-}
 
-series.onclick = () => {
-	list.style.color = '#000000';
-	list.style.borderBottom = 'none';
 	intro.style.color = '#000000';
 	intro.style.borderBottom = 'none';
-	series.style.color = 'rgb(32, 201, 151)';
-	series.style.borderBottom = '3px solid rgb(32, 201, 151)';
 }
 
 intro.onclick = () => {
 	list.style.color = '#000000';
 	list.style.borderBottom = 'none';
-	series.style.color = '#000000';
-	series.style.borderBottom = 'none';
 	intro.style.color = 'rgb(32, 201, 151)';
 	intro.style.borderBottom = '3px solid rgb(32, 201, 151)';
 }

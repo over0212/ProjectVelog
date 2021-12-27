@@ -14,6 +14,8 @@ public interface BorderRepository {
 	
 	public Border getDtlBorderIndex(String url);
 	
+	public int plusBorderCount(String url);
+	
 	public List<Border> getBorderList(String username);
 	
 	// index

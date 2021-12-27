@@ -71,7 +71,6 @@
         </div>
         <div class="border_nav">
             <a class="list">글</a>
-            <a class="series">시리즈</a>
             <a class="intro">소개</a>
         </div>
         <div class="bl_wrap">
@@ -95,7 +94,7 @@
 	                <div class="border_subinfo">
 	                    <span class="create_date">${border_list.update_date }</span>
 	                    ·
-	                    <span class="count_reply"></span>
+	                    <span class="count_reply">조회수 ${border_list.count }</span>
 	                </div>
 	            </div>
             </c:forEach>

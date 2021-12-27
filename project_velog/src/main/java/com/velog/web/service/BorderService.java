@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
@@ -16,7 +17,9 @@ public interface BorderService {
 	
 	public int insertBorder(BorderDto borderDto);
 	
-	public Border getDtlBorderIndex(String url);
+	public Border getDtlBorderIndex(String url, PrincipalDetails principalDetails);
+	
+	public void plusBorderCount(String count);
 	
 	public List<BorderListDto> getBorderList(String username);
 	
