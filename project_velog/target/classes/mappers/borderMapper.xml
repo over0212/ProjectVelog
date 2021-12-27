@@ -25,6 +25,7 @@
   		select
   			bm.url,
   			bm.id,
+  			bm.count,
   			bm.main_title,
   			um.username,
   			um.comment,
@@ -41,6 +42,15 @@
   			url = #{url};
   	</select>
   	
+  	<update id="plusBorderCount">
+  		update
+  			border_mst
+  		set
+  			count = count + 1
+  		where
+  			url = #{url};
+  	</update>
+  	
   	 <select id="getBorderList" resultType="com.velog.domain.border.Border">
   		select
   			bm.url,
@@ -48,6 +58,7 @@
   			bm.main_content,
   			bm.main_tags,
   			bm.id,
+  			bm.count,
   			um.username,
   			um.profile_img_url,
   			bm.preview_img_url,
@@ -59,7 +70,29 @@
   		where
   			um.username = #{username}
   		order by
+<<<<<<< HEAD
   		 	bm.create_date desc;
+=======
+  		 	bm.update_date desc;
+  	</select>
+  
+   	 <select id="getBorderAll" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			bm.count,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.update_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+		order by
+			update_date desc;
+>>>>>>> main
   	</select>
   	
   	<update id="updateBorder" parameterType="com.velog.domain.border.Border">

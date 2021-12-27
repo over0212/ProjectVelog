@@ -10,5 +10,4 @@ public interface AuthService {
 	public Map<String, String> confirmEmail(String token);
 	
 	public int signUp(SignUpDto signUpDto);
-
 }

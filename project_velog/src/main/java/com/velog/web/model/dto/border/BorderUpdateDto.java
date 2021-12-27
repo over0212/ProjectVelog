@@ -15,6 +15,7 @@ public class BorderUpdateDto {
 	private String url;
 	private String new_url;
 	private int id;
+	private int count;
 	private String main_title;
 	private String[] main_tags;
 	private String main_content;
@@ -27,6 +28,7 @@ public class BorderUpdateDto {
 					.url(url)
 					.new_url(new_url)
 					.id(id)
+					.count(count)
 					.main_title(main_title)
 					.main_content(main_content)
 					.preview_img_url(preview_img_url)
