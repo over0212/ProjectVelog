@@ -94,7 +94,7 @@
 		                <div class="border_subinfo">
 		                    <span class="create_date">${border_list.update_date }</span>
 		                    ·
-		                    <span class="count_reply"></span>
+		                    <span class="count_reply">조회수 ${border_list.count }</span>
 		                </div>
 		            </div>
 	            </c:forEach>

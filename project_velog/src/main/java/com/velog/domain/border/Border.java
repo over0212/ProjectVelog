@@ -20,6 +20,7 @@ public class Border {
 	private String url;
 	private String new_url;
 	private int id;
+	private int count;
 	private String username;
 	private String main_title;
 	private String main_tags;
@@ -50,6 +51,7 @@ public class Border {
 		return IndexBorderDto.builder()
 				.url(url)
 				.id(id)
+				.count(count)
 				.main_title(main_title)
 				.username(username)
 				.profile_img_url(profile_img_url)
@@ -64,6 +66,7 @@ public class Border {
 				.url(url)
 				.new_url(new_url)
 				.id(id)
+				.count(count)
 				.main_title(main_title)
 				.main_content(main_content)
 				.preview_img_url(preview_img_url)

@@ -14,6 +14,7 @@ public class IndexBorderDto {
 	
 	private String url;
 	private int id;
+	private int count;
 	private String username;
 	private String main_title;
 	private List<String> main_tags;
