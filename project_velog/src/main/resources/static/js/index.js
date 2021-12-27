@@ -9,6 +9,12 @@ const plus_box = document.querySelector('.plus_nav_box');
 const img_boxes = document.querySelectorAll('.img_box');
 const thumnails = document.querySelectorAll('.img_box img');
 
+// 기간별 게시글 정리 하기위한 버튼들
+const today_btn = document.querySelector('.today');
+const this_week_btn = document.querySelector('.this_week');
+const this_month_btn = document.querySelector('.this_month');
+const this_year_btn = document.querySelector('.this_year');
+
 // 트렌드,최신 underbar 움직이기
 recent.onclick = () => {
     underbar.className = "nav_underline move_right"
@@ -71,4 +77,8 @@ for(let i=0; i<thumnails.length; i++){
 	thumnails[i].onerror = () => {
 		img_boxes[i].style.display = "none";
 	}
+}
+
+today_btn.onclick = () => {
+	
 }

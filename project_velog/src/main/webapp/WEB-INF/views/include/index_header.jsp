@@ -16,7 +16,7 @@
             <a href="#" class="nav_recent">
                 <i class="far fa-clock"></i> 최신
                 <div class="nav_underline"></div>
-            </a>                
+            </a>
         </div>
         <div class="times_wrap">
             이번 주
@@ -24,10 +24,10 @@
         </div>
         <div class="times_select_box nav_box">
             <ul>
-                <li class="today"><a href="#">오늘</a></li>
-                <li class="this_week" ><a href="#">이번주</a></li>
-                <li class="this_month"><a href="#">이번 달</a></li>
-                <li class="this_year"><a href="#">올해</a></li>
+                <li class="today"><a href="/index/today">오늘</a></li>
+                <li class="this_week" ><a href="/index/week">이번주</a></li>
+                <li class="this_month"><a href="/index/month">이번 달</a></li>
+                <li class="this_year"><a href="/index/year">올해</a></li>
             </ul>
         </div>
     </div>

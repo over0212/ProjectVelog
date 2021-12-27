@@ -3,9 +3,12 @@ const fa_search = document.querySelectorAll('.fa-search');
 const search = document.querySelector('#search');
 const search_body = document.querySelector('#search_body');
 const keyword = document.querySelector('.keyword');
+const search_result = document.querySelector('.search_result');
+const s_count = document.querySelector('.s_count b');
 
 // 처음에 display를 none으로 감춰준다.
 search_body.style.display = 'none';
+search_result.style.display = 'none';
 
 search.onfocus = () =>{
     main_in.style.border = '1px solid #000';
@@ -20,6 +23,7 @@ search.onblur = () => {
 search.onkeyup = () =>{
 	if(search.value.length == 0){
 		search_body.style.display = 'none';
+		search_result.style.display = 'none';
 	}
 	$.ajax({
 		type: "get",
@@ -28,47 +32,48 @@ search.onkeyup = () =>{
 		dataType: "text",
 		success: function(data){
 			
-			if(data != null){
-			
 			let search_list = JSON.parse(data);	
+			
+			if(data != null){
+			search_result.style.display = 'flex';
 			search_body.style.display = 'flex';
 			search_body.innerHTML = "";
+			s_count.innerHTML = search_list.borderList.length + " 개";
+			console.log(search_list.borderList);
 					
-					let date = search_list[i].update_date;
-					let formatDate = date.subString(0, 10);
-				for(let i = 0; i < search_list.length; i++){
+				for(let i = 0; i < search_list.borderList.length; i++){
+					console.log(search_list.borderList);
+					
 					search_body.innerHTML += `
 					<div id="search_list">		
 						<section id="s_form">
 							<div class="s_user_info">
-								<a href="/border/${search_list[i].username}" class="s_user_img">
-									<img src="/image/profile/${search_list[i].profile_img_url}">
+								<a href="/border/${search_list.borderList[i].username}" class="s_user_img">
+									<img src="/image/profile/${search_list.borderList[i].id}/${search_list.borderList[i].profile_img_url}">
 								</a>
-								<a href="/border/${search_list[i].username}" class="s_user_username">${search_list[i].username}</a>
+								<a href="/border/${search_list.borderList[i].username}" class="s_user_username">${search_list.borderList[i].username}</a>
 							</div>
 							<div class="s_border">
-								<a href="/border/${search_list[i].username}/${search_list[i].url}" class="s_border_img">
-								<img src=/image/${search_list[i].preview_img_url}
+								<a href="/border/${search_list.borderList[i].username}/${search_list.borderList[i].url}" class="s_border_img">
+								<img src=/image/${search_list.borderList[i].preview_img_url}
 								</a>
-								<a href="/border/${search_list[i].username}/${search_list[i].url}" class="s_border_title">
-								<h2>${search_list[i].main_title}</h2>
+								<a href="/border/${search_list.borderList[i].username}/${search_list.borderList[i].url}" class="s_border_title">
+								<h2>${search_list.borderList[i].main_title}</h2>
 								</a>
-								<p class="s_txt">${search_list[i].preview_txt}</p>
+								<p class="s_txt">${search_list.borderList[i].preview_txt}</p>
 							</div>
 							<div class="s_tag_list">
 							</div>
 							<div class="sub_info">
-								<span class="s_date">${formatDate}</span>
+								<span class="s_date">${search_list.borderList[i].create_date}</span>
 							</div>
 						</section>
 					</div>`;
 					
-					
-					
 					// 해당 태그의 배열을 변수에 대입
-					let list = search_list[i].main_tags;
+					let list = search_list.borderList[i].main_tags;
 					// 태그의 배열을 for문을 통해 innerHTML에 입력
-					for(let j = 0; j < list.size; j++){
+					for(let j = 0; j < list.length; j++){
 						const s_tag_lists = document.querySelectorAll('.s_tag_list');
 						let last_list = s_tag_lists[s_tag_lists.length - 1];
 						last_list.innerHTML += `<a href="#">${list[j]}</a>`;
@@ -80,6 +85,6 @@ search.onkeyup = () =>{
 			alert("비동기 처리 오류!");
 		}
 	});
-	
+
 }
 

@@ -50,12 +50,6 @@ window.addEventListener('click', (e) => {
 	}
 });
 
-//user_nav_wrap.onblur = () => {
-//	user_nav.style.display = 'none';
-//}
-
-
-
 go_posting_btn.onclick = () => {
 	location.href = "/border/insert";
 }

@@ -93,7 +93,7 @@
 	                 </div>
 	                <!-- 공지 날짜 및 댓글수 태그 -->
 	                <div class="border_subinfo">
-	                    <span class="create_date">${border_list.update_date }</span>
+	                    <span class="create_date">${border_list.create_date }</span>
 	                    ·
 	                    <span class="count_reply"></span>
 	                </div>

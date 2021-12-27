@@ -16,8 +16,20 @@ public interface BorderRepository {
 	
 	public List<Border> getBorderList(String username);
 	
-	// index
+	// index(recent)
 	public List<Border> getBorderAll();
+	
+	// today
+	public List<Border> getBorderToday();
+	
+	// this week
+	public List<Border> getBorderWeek();
+	
+	// this month
+	public List<Border> getBorderMonth();
+	
+	// this year
+	public List<Border> getBorderYear();
 	
 	//search
 	public List<Border> searchBorder(String keyword);

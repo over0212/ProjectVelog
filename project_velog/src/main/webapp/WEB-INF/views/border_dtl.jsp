@@ -33,7 +33,7 @@
                     <div class="dtl_info">
                         <a href="/border/${border.username }">${border.username }</a>
                         <span class="dtl_point">·</span>
-                        <span class="dtl_date">${border.update_date }</span>
+                        <span class="dtl_date"> ${border.create_date }</span>
                     </div>
                     <div class="dtl_btn">
                     <c:if test="${(border.username) == (principal.user.username) }">

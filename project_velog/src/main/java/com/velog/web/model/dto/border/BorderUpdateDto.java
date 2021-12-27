@@ -20,7 +20,7 @@ public class BorderUpdateDto {
 	private String main_content;
 	private String preview_img_url;
 	private String preview_txt;
-	private LocalDateTime update_date;
+	private LocalDateTime create_date;
 	
 	public Border toEntity() {
 		return Border.builder()
@@ -31,7 +31,7 @@ public class BorderUpdateDto {
 					.main_content(main_content)
 					.preview_img_url(preview_img_url)
 					.preview_txt(preview_txt)
-					.update_date(update_date)
+					.create_date(create_date)
 					.build();
 	}
 }

@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.user.User;
 import com.velog.web.service.IndexService;
-import com.velog.web.service.SocialService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,18 +16,10 @@ import lombok.RequiredArgsConstructor;
 public class PageController {
 	
 	private final IndexService indexService;
-	private final SocialService socialService;
 	
 	@GetMapping("/token-expired")
 	public String tokenExpired() {
 		return "token_expired";
-	}
-	
-	@GetMapping({"/", "/index"})
-	public ModelAndView index(@AuthenticationPrincipal PrincipalDetails principalDetails) {
-		ModelAndView mav = new ModelAndView("index");
-		mav.addObject("indexList", indexService.getIndexList());
-		return mav;
 	}
 	
 	@GetMapping("/login")

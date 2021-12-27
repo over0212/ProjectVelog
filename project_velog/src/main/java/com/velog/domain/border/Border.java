@@ -20,6 +20,7 @@ public class Border {
 	private String url;
 	private String new_url;
 	private int id;
+	private int count;
 	private String username;
 	private String main_title;
 	private String main_tags;
@@ -42,7 +43,6 @@ public class Border {
 				.preview_img_url(preview_img_url)
 				.profile_img_url(profile_img_url)
 				.preview_txt(preview_txt)
-				.update_date(update_date)
 				.build();
 	}
 	
@@ -55,7 +55,7 @@ public class Border {
 				.profile_img_url(profile_img_url)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
-				.update_date(update_date)
+				.create_date(create_date)
 				.build();
 	}
 	
@@ -68,11 +68,8 @@ public class Border {
 				.main_content(main_content)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
-				.update_date(update_date)
+				.create_date(create_date)
 				.build();
-		
 	}
-	
-	
 
 }

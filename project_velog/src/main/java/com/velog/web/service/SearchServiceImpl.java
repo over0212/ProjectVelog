@@ -1,6 +1,10 @@
 package com.velog.web.service;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -30,13 +34,20 @@ public class SearchServiceImpl implements SearchService {
 				
 				while(st.hasMoreTokens()) {
 					tags.add(st.nextToken()); 
-				}
+				} // end of while
 				borderListDto.setMain_tags(tags);
-			}
+				
+			} // end of if
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			borderListDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
+			
 			borderListDtos.add(borderListDto);
-		}
-
+			
+		} // end of for
+		
 		return borderListDtos;
-	}
+	} // end of searchBorder
+	
 	
 }

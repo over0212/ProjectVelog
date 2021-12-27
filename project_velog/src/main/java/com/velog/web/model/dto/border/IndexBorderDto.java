@@ -1,9 +1,8 @@
 package com.velog.web.model.dto.border;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
-
-import com.velog.domain.border.Border;
 
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +19,6 @@ public class IndexBorderDto {
 	private String profile_img_url;
 	private String preview_img_url;
 	private String preview_txt;
-	private LocalDateTime update_date;
+	private LocalDateTime create_date;
 
 }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.velog.domain.border.BorderRepository">
+   	 <select id="getBorderAll" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.create_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+		order by
+			create_date desc;
+  	</select>
+  	
+  	<select id="getBorderToday" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.create_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+  		where
+  			bm.create_date between date_add(now(), interval -1 day) and now()
+		order by
+			create_date desc;
+  	</select>
+  	
+  	<select id="getBorderWeek" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.create_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+  		where
+  			bm.create_date between date_add(now(), interval -1 week) and now()
+		order by
+			create_date desc;
+  	</select>
+  	
+  	<select id="getBorderMonth" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.create_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+  		where
+  			bm.create_date between date_add(now(), interval -1 month) and now()
+		order by
+			create_date desc;
+  	</select>
+  	
+  	<select id="getBorderYear" resultType="com.velog.domain.border.Border">
+  		select
+  			bm.url,
+  			bm.id,
+  			um.username,
+  			bm.main_title,
+  			bm.preview_img_url,
+  			um.profile_img_url,
+  			bm.preview_txt,
+  			bm.create_date
+  		from
+  			border_mst bm
+  			left outer join user_mst um on(um.id = bm.id)
+  		where
+  			bm.create_date between date_add(now(), interval -1 year) and now()
+		order by
+			create_date desc;
+  	</select>
+  	
+  </mapper>
