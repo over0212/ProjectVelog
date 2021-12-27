@@ -34,3 +34,47 @@ delete_btn.onclick = () => {
 		}
 	})
 }
+
+const likeBtn = document.querySelector('.like_btn');
+const likeBtnIcon = document.querySelector('.like_btn i');
+
+likeBtn.onmouseover = () => {
+	likeBtn.style.border = '1px solid rgb(33, 37, 41)';
+	likeBtnIcon.style.color = 'rgb(33, 37, 41)';
+}
+likeBtn.onmouseout = () => {
+	likeBtn.style.border = '1px solid rgb(173, 181, 189)';
+	likeBtnIcon.style.color = 'rgb(134, 142, 150)';
+}
+/* 좋아요가 안되어있으면 위코드 실행 */
+
+likeBtn.onclick = () => {
+	likeBtn.style.background = '#20c997';
+	likeBtn.style.border = 'none';
+	likeBtnIcon.style.color = 'white';
+}
+
+/* 좋아요가 되어있으면 밑코드 실행 */
+/*
+likeBtn.onmouseover = () => {
+	likeBtn.style.background = '#38d9a9';
+}
+likeBtn.onmouseout = () => {
+	likeBtn.style.background = '#20c997';
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

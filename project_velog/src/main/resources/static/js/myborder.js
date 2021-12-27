@@ -6,32 +6,25 @@ const border_search = document.querySelector('.border_search');
 const search_icon = document.querySelectorAll('.search_icon');
 const items = document.querySelector('.items');
 const itemObjs = document.querySelectorAll('.item');
+const content_write_box = document.querySelector('.content_write_box');
+const content_comment_box = document.querySelector('.content_comment_box');
 
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
 	list.style.borderBottom = '3px solid rgb(32, 201, 151)';
-	series.style.color = '#000000';
-	series.style.borderBottom = 'none';
 	intro.style.color = '#000000';
 	intro.style.borderBottom = 'none';
-}
-
-series.onclick = () => {
-	list.style.color = '#000000';
-	list.style.borderBottom = 'none';
-	intro.style.color = '#000000';
-	intro.style.borderBottom = 'none';
-	series.style.color = 'rgb(32, 201, 151)';
-	series.style.borderBottom = '3px solid rgb(32, 201, 151)';
+	content_write_box.style.display = 'block';
+	content_comment_box.style.display = 'none';
 }
 
 intro.onclick = () => {
 	list.style.color = '#000000';
 	list.style.borderBottom = 'none';
-	series.style.color = '#000000';
-	series.style.borderBottom = 'none';
 	intro.style.color = 'rgb(32, 201, 151)';
 	intro.style.borderBottom = '3px solid rgb(32, 201, 151)';
+	content_write_box.style.display = 'none';
+	content_comment_box.style.display = 'block';
 }
 
 
@@ -61,12 +54,12 @@ const emailText = document.querySelector('.emailText')
 
 window.onload = () => {
 	for (let i = 0; i < socialIcon.length; i++) {
-		if (socialText[i].textContent.length == 0){
+		if (socialText[i].textContent.length == 0) {
 			socialIcon[i].style.display = 'none';
-		}else {		
+		} else {
 			socialIcon[i].style.display = 'block';
 		}
-	
+
 	}
 }
 emailText.style.display = 'none';
@@ -77,9 +70,34 @@ socialIcon[4].onmouseover = () => {
 }
 socialIcon[4].onmouseout = () => {
 	emailText.style.display = 'none';
-	
+
 }
 
+const comment_write_btn = document.querySelector('.comment_write_btn');
+const comment_empty_hidden = document.querySelector('.comment_empty_hidden');
+const comment_write_hidden = document.querySelector('.comment_write_hidden');
+const comment_save = document.querySelector('.comment_save');
+
+comment_write_btn.onclick = () => {
+	comment_empty_hidden.style.display = 'none';
+	comment_write_hidden.style.display = 'block';
+}
+
+comment_save.onclick = () => {
+	comment_empty_hidden.style.display = 'block';
+	comment_write_hidden.style.display = 'none';
+
+}
+
+const comment_write = document.querySelector('.comment_write');
+comment_write.onkeydown = () => {
+	resize();
+}
+
+function resize() {
+	comment_write.style.height = "1px";
+	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
+}
 
 
 

@@ -5,7 +5,6 @@
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -71,45 +70,61 @@
         </div>
         <div class="border_nav">
             <a class="list">글</a>
-            <a class="series">시리즈</a>
-            <a class="intro">소개</a>
+            <a class="intro"	>소개</a>
         </div>
-        <div class="bl_wrap">
-            <div class="border_search_box">
-                <div class="border_search">
-                    <i class="fas fa-search search_icon"></i>
-                    <input type="text" class="border_ip" placeholder="검색어를 입력하세요" autofocus>
-                </div>
-            </div>
-            <c:forEach var="border_list" items="${borderList }">
-	            <div class="border_list">
-	                <a href="/border/${border_list.username }/${border_list.url }" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt="" width="180px" height="180px"></a>
-	                <a href="/border/${border_list.username }/${border_list.url }" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
-	                <p class="border_pre_content">${border_list.preview_txt }</p>
-	               	<div class="border_keyword">
-		                <c:forEach var="tag_list" items="${border_list.main_tags }">
-	                    	<a href="#">${tag_list }</a>
-		                </c:forEach>
-	                 </div>
-	                <!-- 공지 날짜 및 댓글수 태그 -->
-	                <div class="border_subinfo">
-	                    <span class="create_date">${border_list.update_date }</span>
-	                    ·
-	                    <span class="count_reply"></span>
+		<div class="content_write_box">
+	        <div class="bl_wrap">
+	            <div class="border_search_box">
+	                <div class="border_search">
+	                    <i class="fas fa-search search_icon"></i>
+	                    <input type="text" class="border_ip" placeholder="검색어를 입력하세요" autofocus>
 	                </div>
 	            </div>
-            </c:forEach>
-        </div>
-        <div class="border_control">
-            <div class="tag_list">태그 목록</div>
-            <ul class="items">
-                <li><a href="#" class="item">전체보기</a><span>(1)</span></li>
-                <li><a href="#" class="item">벨로그</a><span>(1)</span></li>
-                <li><a href="#" class="item">벨로그</a><span>(1)</span></li>
-            </ul>
-        </div>
+	            <c:forEach var="border_list" items="${borderList }">
+		            <div class="border_list">
+		                <a href="/border/${border_list.username }/${border_list.url }" class="to_detail"><img class="border_main_img" src="/image/${border_list.preview_img_url }" alt="" width="180px" height="180px"></a>
+		                <a href="/border/${border_list.username }/${border_list.url }" class="to_detail"><h2 class="border_title">${border_list.main_title}</h2></a>
+		                <p class="border_pre_content">${border_list.preview_txt }</p>
+		               	<div class="border_keyword">
+			                <c:forEach var="tag_list" items="${border_list.main_tags }">
+		                    	<a href="#">${tag_list }</a>
+			                </c:forEach>
+		                 </div>
+		                <!-- 공지 날짜 및 댓글수 태그 -->
+		                <div class="border_subinfo">
+		                    <span class="create_date">${border_list.update_date }</span>
+		                    ·
+		                    <span class="count_reply"></span>
+		                </div>
+		            </div>
+	            </c:forEach>
+	        </div>
+	        <div class="border_control">
+	            <div class="tag_list">태그 목록</div>
+	            <ul class="items">
+	                <li><a href="#" class="item">전체보기</a><span>(1)</span></li>
+	                <li><a href="#" class="item">벨로그</a><span>(1)</span></li>
+	                <li><a href="#" class="item">벨로그</a><span>(1)</span></li>
+	            </ul>
+	        </div>
+		</div>
+		<div class="content_comment_box" style="display: none">
+			<div class="comment_empty_hidden" >
+	            <div class="comment_empty">
+	                <img src="/img/comment.svg" alt="">
+	                <span class="empty_text">소개가 작성되지 않았습니다.</span>
+	                <button type="button" class="comment_write_btn">소개 글 작성하기</button>
+	            </div>
+	        </div>
+	        <div class="comment_write_hidden" style="display: none;">
+	            <div class="comment_write_box">
+	                <button type="button" class="comment_save">저장하기</button>
+	            </div>
+	            <textarea class="comment_write" name="comment" placeholder="당신은 어떤 사람인가요? 당신의 대해서 알려주세요."></textarea>
+	            <p></p	>
+	        </div>
+		</div>
     </div>
-
 </body>
 <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
 <script src="/js/header.js"></script>
