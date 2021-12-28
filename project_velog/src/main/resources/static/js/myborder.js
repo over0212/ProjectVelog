@@ -98,24 +98,3 @@ function resize() {
 	comment_write.style.height = "1px";
 	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/search.css">
 </head>
+
 <body>
     <!-- header -->
     <header>
@@ -22,26 +24,26 @@
                 </button>
                 <button class="login_btn" type="button">로그인</button>
                 <button class="go_posting_btn header_btn" type="button" style="display: none;">새 글 작성</button>
-                    <div class="user_nav_wrap" style="display: none;">
-                        <a href="">
-                            <img src="img/user_icon.png" alt="">
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                        <div class="user_nav nav_box">
-                            <ul>
-                                <li class="my_page"><a href="#">내 벨로그</a></li>
-                                <li class="temp_post"><a href="#">임시 글</a></li>
-                                <li class="read_list"><a href="#">읽기 목록</a></li>
-                                <li class="setting"><a href="#">설정</a></li>
-                                <li class="logout"><a href="#">로그아웃</a></li>
-                            </ul>
-                        </div>
+                <div class="user_nav_wrap" style="display: none;">
+                    <a href="">
+                        <img src="img/user_icon.png" alt="">
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <div class="user_nav nav_box">
+                        <ul>
+                            <li class="my_page"><a href="#">내 벨로그</a></li>
+                            <li class="temp_post"><a href="#">임시 글</a></li>
+                            <li class="read_list"><a href="#">읽기 목록</a></li>
+                            <li class="setting"><a href="#">설정</a></li>
+                            <li class="logout"><a href="#">로그아웃</a></li>
+                        </ul>
                     </div>
+                </div>
             </div>
         </div>
     </header>
-        
-        <!-- 검색창 -->
+
+    <!-- 검색창 -->
     <main id="main">
         <div class="main_in">
             <div class="search_icons">
@@ -61,7 +63,9 @@
                 </div>
                 <div class="s_border">
                     <a href="#" class="s_border_img"><img src="img/스크린샷 2021-05-16 오전 6.25.13.png" alt=""></a>
-                    <a href="#" class="s_border_title"><h2>여긴 게시글의 제목이 들어옵니다</h2></a>
+                    <a href="#" class="s_border_title">
+                        <h2>여긴 게시글의 제목이 들어옵니다</h2>
+                    </a>
                     <p class="s_txt">여긴 preview_txt가 들어옵니다</p>
                 </div>
                 <div class="s_tag_list">
@@ -69,6 +73,7 @@
                 </div>
                 <div class="sub_info">
                     <span class="s_date">여긴 날짜가 들어옵니다</span>
+                    <span class="s_count">조회수</span>
                 </div>
             </section>
         </div>
@@ -77,4 +82,5 @@
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <script src="js/search.js"></script>
 </body>
+
 </html>

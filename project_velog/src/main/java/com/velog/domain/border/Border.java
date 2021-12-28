@@ -36,6 +36,7 @@ public class Border {
 		return BorderListDto.builder()
 				.url(url)
 				.id(id)
+				.count(count)
 				.main_title(main_title)
 				.username(username)
 				.main_content(main_content)
@@ -56,7 +57,6 @@ public class Border {
 				.profile_img_url(profile_img_url)
 				.preview_img_url(preview_img_url)
 				.preview_txt(preview_txt)
-				.create_date(create_date)
 				.build();
 	}
 	

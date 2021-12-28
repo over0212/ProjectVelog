@@ -1,5 +1,7 @@
 package com.velog.web.service;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,9 @@ public class IndexServiceImpl implements IndexService {
 		for (Border border : indexBorderList) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
+			
 			getIndexList.add(indexBorderDto);
 		}
 
@@ -47,6 +52,9 @@ public class IndexServiceImpl implements IndexService {
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
+			
 			getIndexBorderToday.add(indexBorderDto);
 		}
 		return getIndexBorderToday;
@@ -60,6 +68,9 @@ public class IndexServiceImpl implements IndexService {
 		
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
 			getIndexBorderWeek.add(indexBorderDto);
 		}
@@ -75,6 +86,9 @@ public class IndexServiceImpl implements IndexService {
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
 			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
+			
 			getIndexBorderMonth.add(indexBorderDto);
 		}
 		return getIndexBorderMonth;
@@ -88,6 +102,9 @@ public class IndexServiceImpl implements IndexService {
 		
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
 			getIndexBorderYear.add(indexBorderDto);
 		}

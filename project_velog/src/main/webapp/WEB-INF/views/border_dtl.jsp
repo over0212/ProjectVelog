@@ -62,48 +62,23 @@
                 </div>
             </section>
         </div>
+        
         <!-- 좋아요 버튼 부분 -->
         <div class="like_btn_block">
-        	<button class="like_btns">
-	        	<div class="off_box">
-	        		<i class="fas fa-heart like_off"></i>
-	        	</div>
-	        	<div class="on_box" style="display: none">
-	        		<i class="fas fa-heart like_on"></i>
-	        	</div>
-        	</button>
-        	<span class="like_count">이엘자리</span>
+           <div class="like_btns">
+              <div class="off_box">
+                 <i class="fas fa-heart like_off"></i>
+              </div>
+              <div class="on_box" style="display: none">
+                 <i class="fas fa-heart like_on"></i>
+              </div>
+           </div>
+           <span class="like_count">이엘자리</span>
         </div>
     </main>
+    
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/write.js"></script>
     <script type="text/javascript" src="/js/border_dtl.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

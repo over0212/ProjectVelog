@@ -18,7 +18,7 @@
   			border_mst bm
   			left outer join user_mst um on(um.id = bm.id)
 		order by
-			create_date desc;
+			bm.create_date desc;
   	</select>
   	
   	<select id="getBorderToday" resultType="com.velog.domain.border.Border">
@@ -37,7 +37,7 @@
   		where
   			bm.create_date between date_add(now(), interval -1 day) and now()
 		order by
-			create_date desc;
+			bm.create_date desc;
   	</select>
   	
   	<select id="getBorderWeek" resultType="com.velog.domain.border.Border">

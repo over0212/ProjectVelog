@@ -42,7 +42,6 @@ search.onkeyup = () =>{
 			console.log(search_list.borderList);
 					
 				for(let i = 0; i < search_list.borderList.length; i++){
-					console.log(search_list.borderList);
 					
 					search_body.innerHTML += `
 					<div id="search_list">		
@@ -66,6 +65,8 @@ search.onkeyup = () =>{
 							</div>
 							<div class="sub_info">
 								<span class="s_date">${search_list.borderList[i].create_date}</span>
+								<span class="seperator">·</span>
+	                            <span class="reply_count">조회수 ${search_list.borderList[i].count } </span>
 							</div>
 						</section>
 					</div>`;

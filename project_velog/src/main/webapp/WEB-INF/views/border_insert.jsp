@@ -118,7 +118,6 @@
     </div>
 
     <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
-    <!-- <script src="/js/border_insert.js" ></script> -->
     <script src="/js/write.js" ></script>
 </body>
 </html>

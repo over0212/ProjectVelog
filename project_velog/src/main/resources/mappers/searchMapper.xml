@@ -11,6 +11,7 @@
 	  			bm.main_content,
 	  			bm.main_tags,
 	  			bm.id,
+	  			bm.count,
 	  			um.username,
 	  			um.profile_img_url,
 	  			bm.preview_img_url,
