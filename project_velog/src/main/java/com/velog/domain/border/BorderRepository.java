@@ -42,4 +42,6 @@ public interface BorderRepository {
 	// delete
 	public int deleteBorder(String url);
 	
+	public int updateMyborder(int id);
+	
 }

@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.velog.config.auth.PrincipalDetails;
+import com.velog.domain.user.Mypage;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
 import com.velog.web.service.BorderService;
@@ -52,4 +53,24 @@ public class BorderRestController {
 		
 		return Integer.toString(result);
 	}
+	
+	@PutMapping("/myborder/{id}")
+	public String borderCommentUpdate(@AuthenticationPrincipal PrincipalDetails principalDetails,Mypage mypage) {
+		System.out.println(mypage.getMyborder_comment());
+	return mypage.getMyborder_comment();	
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -133,13 +133,12 @@
                             <div class="comment_write_box">
                                 <button type="button" class="comment_save">저장하기</button>
                             </div>
-                            <textarea class="comment_write" name="comment"
-                                placeholder="당신은 어떤 사람인가요? 당신의 대해서 알려주세요."></textarea>
-                            <p></p>
+                            <textarea class="comment_write" placeholder="당신은 어떤 사람인가요? 당신의 대해서 알려주세요."></textarea>
                         </div>
                     </div>
                 </div>
             </body>
+            <input type="hidden" id="id" value="${principal.user.id }">
             <script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
             <script src="/js/header.js"></script>
             <script src="/js/myborder.js"></script>
