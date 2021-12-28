@@ -15,6 +15,7 @@ public class Mypage {
 	private String social_twitter;
 	private String social_facebook;
 	private String social_home;
+	private String 	myborder_comment;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 

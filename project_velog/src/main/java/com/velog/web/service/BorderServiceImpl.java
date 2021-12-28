@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
+import com.velog.domain.user.Mypage;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
@@ -119,6 +120,7 @@ public class BorderServiceImpl implements BorderService {
 		StringBuilder tagName = new StringBuilder();
 
 		Border border = borderUpdateDto.toEntity();
+		System.out.println(border);
 		String[] tagValues = borderUpdateDto.getMain_tags();
 		if(tagValues != null) {
 			for (String str : tagValues) {
@@ -136,6 +138,14 @@ public class BorderServiceImpl implements BorderService {
 	public int deleteBorder(String url) {
 		int result = 0;
 		result += borderRepository.deleteBorder(url);
+		return result;
+	}
+
+	@Override
+	public int updateMyborder(Mypage mypage) {
+		int result = 0;
+		result = borderRepository.updateMyborder(mypage.getId());
+		System.out.println(result);
 		return result;
 	}
 

@@ -96,4 +96,31 @@
   			url = #{url}
   	</delete>
   	
+  	<update id="updateMyborder">
+  		update
+  			user_info
+  		set
+  			myborder_comment = #{myborder_comment}
+  		where
+  			id = #{id}
+  	</update>
+  	
   </mapper>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

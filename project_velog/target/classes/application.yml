@@ -7,6 +7,14 @@ server:
       enabled: true
     session:
       timeout: 86400s # 60s * 60m * 24h 
+<<<<<<< HEAD
+=======
+#      cookie:
+#        max-age: 86400s
+#        name: VELOG
+#        http-only: true
+#        secure: true
+>>>>>>> main
 
 spring:
   mvc:

@@ -8,6 +8,7 @@ const time_box = document.querySelector('.times_select_box');
 const plus_box = document.querySelector('.plus_nav_box');
 const img_boxes = document.querySelectorAll('.img_box');
 const thumnails = document.querySelectorAll('.img_box img');
+const user_profiles = document.querySelectorAll('.user_profile');
 
 // 기간별 게시글 정리 하기위한 버튼들
 const today_btn = document.querySelector('.today');
@@ -57,7 +58,7 @@ window.addEventListener('click', (e) => {
 	}
 	
 	// plus_btn
-	if (e.target.classList.contains('plus_btn') || e.target.classList.contains('plus_btn_wrap')) {
+	if (e.target.classList.contains('plus_btn') || e.target.classList.contains('plus_btn_wrap') || e.target.classList.contains('fa-ellipsis-v')) {
 		
 		if (plus_box.style.display == 'none') {
 			plus_box.style.display = 'block';
@@ -76,6 +77,10 @@ window.addEventListener('click', (e) => {
 for(let i=0; i<thumnails.length; i++){
 	thumnails[i].onerror = () => {
 		img_boxes[i].style.display = "none";
+	}
+	user_profiles[i].onerror = () => {
+		user_profiles[i].setAttribute("src", "/image/profile/user_icon.png");
+
 	}
 }
 

@@ -8,6 +8,7 @@ const items = document.querySelector('.items');
 const itemObjs = document.querySelectorAll('.item');
 const content_write_box = document.querySelector('.content_write_box');
 const content_comment_box = document.querySelector('.content_comment_box');
+const user_id = document.querySelector('#id');
 
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
@@ -77,6 +78,8 @@ const comment_write_btn = document.querySelector('.comment_write_btn');
 const comment_empty_hidden = document.querySelector('.comment_empty_hidden');
 const comment_write_hidden = document.querySelector('.comment_write_hidden');
 const comment_save = document.querySelector('.comment_save');
+const comment_write = document.querySelector('.comment_write');
+
 
 comment_write_btn.onclick = () => {
 	comment_empty_hidden.style.display = 'none';
@@ -84,12 +87,12 @@ comment_write_btn.onclick = () => {
 }
 
 comment_save.onclick = () => {
-	comment_empty_hidden.style.display = 'block';
-	comment_write_hidden.style.display = 'none';
+	/*comment_empty_hidden.style.display = 'block';
+	comment_write_hidden.style.display = 'none';*/
+	commentForm();
 
 }
 
-const comment_write = document.querySelector('.comment_write');
 comment_write.onkeydown = () => {
 	resize();
 }
@@ -97,4 +100,21 @@ comment_write.onkeydown = () => {
 function resize() {
 	comment_write.style.height = "1px";
 	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
+}
+
+function commentForm() {
+	$.ajax({
+		type: "put",
+		url: "/myborder/" + user_id.value,
+		data: JSON.stringify(comment_write.value),
+		contentType: "application/json; charset=UTF-8",
+		dataType: "text",
+		success: function (data) {
+			alert('s');
+		},
+		error: function () {
+			alert('비동기 처리 오류');
+		}
+
+	})
 }
