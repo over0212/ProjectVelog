@@ -65,7 +65,6 @@ public class Border {
 				.url(url)
 				.new_url(new_url)
 				.id(id)
-				.count(count)
 				.main_title(main_title)
 				.main_content(main_content)
 				.preview_img_url(preview_img_url)

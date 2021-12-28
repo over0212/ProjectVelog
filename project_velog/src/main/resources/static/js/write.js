@@ -28,8 +28,8 @@ const tag_wrap = document.querySelector('.tag_wrap');
 		
 // write_page -------------------------------------------
 
-img_upload[0].style = 'display: flex';
-img_upload[1].style = 'display: none';
+img_upload[0].style.display = 'flex';
+img_upload[1].style.display = 'none';
 tag_msg.style.display = "none";
 
 ip_tags.onkeypress = () => {
