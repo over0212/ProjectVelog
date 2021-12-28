@@ -38,7 +38,7 @@ public class BorderController {
 	
 	// border-update (게시글 수정 페이지)
 	@GetMapping("/update/{username}/{url}")
-	public ModelAndView updateBorderIndex(@PathVariable String url, PrincipalDetails principalDetails) {
+	public ModelAndView updateBorderIndex(@PathVariable String url, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		System.out.println(principalDetails);
 		ModelAndView mav = new ModelAndView("border_update");
 		mav.addObject("border", borderService.getDtlBorderIndex(url, principalDetails)); //해당 게시글 들고옴

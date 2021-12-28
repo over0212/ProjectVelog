@@ -1,13 +1,23 @@
 package com.velog.config;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
+import com.velog.config.auth.PrincipalDetailsService;
 import com.velog.config.oauth2.PrincipalOauth2UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -18,14 +28,23 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private final PrincipalOauth2UserService principalOauth2UserService;
-
+	private final PrincipalDetailsService principalDetailsService;
+	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
+		
+		
+		
+		http.csrf().disable();			
 		http.authorizeRequests() // 사용자의 인증객체
-				.antMatchers("/mypage/**", "/myborder/**").authenticated() // 인증이 필요하다
+				.antMatchers("/mypage/**", "/myborder/**", "/border/insert/**","/border/update/**").authenticated() // 인증이 필요하다
 				.anyRequest() // antMatchers 외에 모든 요청
 				.permitAll() // 요청이 없어도 된다(모든권한 부여)
+//				.and()
+//				.rememberMe()
+//				.key("velog")
+//				.tokenValiditySeconds(86400)
+//				.userDetailsService(principalDetailsService)
 				.and()
 				.logout() // 로그아웃
 				.logoutUrl("/logout") // 
@@ -56,5 +75,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-
 }

@@ -120,6 +120,7 @@ public class BorderServiceImpl implements BorderService {
 		StringBuilder tagName = new StringBuilder();
 
 		Border border = borderUpdateDto.toEntity();
+		System.out.println(border);
 		String[] tagValues = borderUpdateDto.getMain_tags();
 		if(tagValues != null) {
 			for (String str : tagValues) {

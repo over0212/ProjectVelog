@@ -3,6 +3,9 @@ package com.velog.config.oauth2;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -13,14 +16,16 @@ import com.velog.config.auth.PrincipalDetails;
 import com.velog.config.oauth2.provider.Oauth2UserDto;
 import com.velog.domain.user.User;
 import com.velog.domain.user.UserRepository;
+import com.velog.web.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
+public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	
 	private final UserRepository userRepository;
+	private AuthService authService;
 	
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) {
 		System.out.println(userRequest.getClientRegistration()); // 로그인한 사용자 정보 가져오기
