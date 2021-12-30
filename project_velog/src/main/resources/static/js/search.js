@@ -10,18 +10,18 @@ const s_count = document.querySelector('.s_count b');
 search_body.style.display = 'none';
 search_result.style.display = 'none';
 
-search.onfocus = () =>{
-    main_in.style.border = '1px solid #000';
-    fa_search[1].style.color = 'black';
+search.onfocus = () => {
+	main_in.style.border = '1px solid #000';
+	fa_search[1].style.color = 'black';
 }
 
 search.onblur = () => {
-    main_in.style.border = '1px solid #dde0e4';
-    fa_search[1].style.color = '#dde0e4';
+	main_in.style.border = '1px solid #dde0e4';
+	fa_search[1].style.color = '#dde0e4';
 }
 
-search.onkeyup = () =>{
-	if(search.value.length == 0){
+search.onkeyup = () => {
+	if (search.value.length == 0) {
 		search_body.style.display = 'none';
 		search_result.style.display = 'none';
 	}
@@ -30,19 +30,19 @@ search.onkeyup = () =>{
 		url: "/search/" + keyword.value,
 		contentType: "application/json; charset=UTF-8",
 		dataType: "text",
-		success: function(data){
-			
-			let search_list = JSON.parse(data);	
-			
-			if(data != null){
-			search_result.style.display = 'flex';
-			search_body.style.display = 'flex';
-			search_body.innerHTML = "";
-			s_count.innerHTML = search_list.borderList.length + " 개";
-			console.log(search_list.borderList);
-					
-				for(let i = 0; i < search_list.borderList.length; i++){
-					
+		success: function(data) {
+
+			let search_list = JSON.parse(data);
+
+			if (data != null) {
+				search_result.style.display = 'flex';
+				search_body.style.display = 'flex';
+				search_body.innerHTML = "";
+				s_count.innerHTML = search_list.borderList.length + " 개";
+				console.log(search_list.borderList);
+
+				for (let i = 0; i < search_list.borderList.length; i++) {
+
 					search_body.innerHTML += `
 					<div id="search_list">		
 						<section id="s_form">
@@ -66,26 +66,25 @@ search.onkeyup = () =>{
 							<div class="sub_info">
 								<span class="s_date">${search_list.borderList[i].create_date}</span>
 								<span class="seperator">·</span>
-	                            <span class="reply_count">조회수 ${search_list.borderList[i].count } </span>
+	                            <span class="reply_count">조회수 ${search_list.borderList[i].count} </span>
 							</div>
 						</section>
 					</div>`;
-					
+
 					// 해당 태그의 배열을 변수에 대입
 					let list = search_list.borderList[i].main_tags;
+					console.log(search_list.borderList[i].main_tags);
+
 					// 태그의 배열을 for문을 통해 innerHTML에 입력
-					for(let j = 0; j < list.length; j++){
+					for (let obj in list) {
 						const s_tag_lists = document.querySelectorAll('.s_tag_list');
 						let last_list = s_tag_lists[s_tag_lists.length - 1];
-						last_list.innerHTML += `<a href="#">${list[j]}</a>`;
+						last_list.innerHTML += `<a href="#">${list[obj]}</a>`;
 					}
 				} // end of for
-			} // end of if
-		}, // end of success
-		error: function(){
+			}
+		}, error: function() {
 			alert("비동기 처리 오류!");
 		}
 	});
-
 }
-

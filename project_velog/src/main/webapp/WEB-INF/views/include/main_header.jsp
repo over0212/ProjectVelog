@@ -30,7 +30,7 @@
 			<!-- 왼쪽상단 -->
 			<div class="hd_btns">
 				<!-- 검색 버튼 -->
-				<a href="search" class="search_btn"><i class="fas fa-search search_icon"></i></a>
+				<a href="/search" class="search_btn"><i class="fas fa-search search_icon"></i></a>
 				<c:choose>
 					<c:when test="${empty principal.user }">
 						<button class="login_btn header_btn" type="button" onclick="login()">로그인</button>

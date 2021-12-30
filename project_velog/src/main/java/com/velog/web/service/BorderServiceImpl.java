@@ -2,6 +2,8 @@ package com.velog.web.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -78,12 +80,13 @@ public class BorderServiceImpl implements BorderService {
 		// 로그인시 자신의 게시물의 조회수는 +1 되지 않도록 하는 방어적 코드
 		if(principalDetails != null) {
 			if(!principalDetails.getUser().getUsername().equals(border.getUsername())) {
-				plusBorderCount(url);			
+				plusBorderCount(url);
 			}
 		}else{
 			// 로그인이 안되어있을 경우 모든 게시글 조회수 +1
-			plusBorderCount(url);	
+			plusBorderCount(url);
 		}
+		
 		
 		return border;
 	}
@@ -109,6 +112,10 @@ public class BorderServiceImpl implements BorderService {
 				}
 				borderListDto.setMain_tags(tags);
 			}
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+			borderListDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
+			
 			borderListDtos.add(borderListDto);
 		}
 		
