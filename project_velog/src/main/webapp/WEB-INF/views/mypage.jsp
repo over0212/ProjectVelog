@@ -160,7 +160,6 @@
 
 	<jsp:include page="include/sign_out.jsp"></jsp:include>
 	<input type="hidden" id="id" value="${principal.user.id }">
-
 	<script src="https://kit.fontawesome.com/0b11c2b6d9.js"
 		crossorigin="anonymous"></script>
 	<script src="/js/mypage.js"></script>

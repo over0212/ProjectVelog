@@ -21,6 +21,7 @@ public class User {
 	private String comment;
 	private String profile_img_url;
 	private String provider;
+	private String myBorder_introduce;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 	
