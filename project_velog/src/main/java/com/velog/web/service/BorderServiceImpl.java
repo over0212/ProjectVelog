@@ -19,6 +19,7 @@ import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
 import com.velog.web.model.dto.border.IndexBorderDto;
+import com.velog.web.model.dto.border.LikeDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -74,17 +75,17 @@ public class BorderServiceImpl implements BorderService {
 	@Override
 	public Border getDtlBorderIndex(String url, PrincipalDetails principalDetails) {
 		Border border = borderRepository.getDtlBorderIndex(url);
-		
 		// 로그인시 자신의 게시물의 조회수는 +1 되지 않도록 하는 방어적 코드
 		if(principalDetails != null) {
 			if(!principalDetails.getUser().getUsername().equals(border.getUsername())) {
 				plusBorderCount(url);			
 			}
+			border.setLikeFlag(getLikeUser(url, principalDetails.getUser().getId()));
+			System.out.println(getLikeUser(url, principalDetails.getUser().getId()));
 		}else{
 			// 로그인이 안되어있을 경우 모든 게시글 조회수 +1
 			plusBorderCount(url);	
 		}
-		
 		return border;
 	}
 	
@@ -148,5 +149,37 @@ public class BorderServiceImpl implements BorderService {
 		System.out.println(result);
 		return result;
 	}
+	
+	@Override
+	public int insertLike(int id, String url) {
+		int result = 0;
+		result = borderRepository.insertLike(id, url); // 성공이면 1
+		if(result == 1) {
+			result = borderRepository.plusLike(url); // 성공이면 1
+			
+		}
+		return result;			
+	}
 
+	@Override
+	public int deleteLike(int id, String url) {
+		int result = 0; 
+		result = borderRepository.deleteLike(id, url); // 성공이면 1
+		if(result == 1) {
+			result = borderRepository.minusLike(url);
+		}
+		return result;	
+	}
+	
+	@Override
+	public int getLikeUser(String url, int id) {
+		int result = borderRepository.getLikeUser(url, id);		
+		System.out.println("Repository return : " + result);
+		return result;
+	}
+	
+	@Override
+	public int getLikeCount(String url) {
+		return borderRepository.getLikeCount(url);
+	}
 }

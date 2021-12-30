@@ -31,8 +31,10 @@ public class BorderController {
 	// border dtl page(작성된 게시글 확인 페이지)
 	@GetMapping("/{username}/{url}")
 	public ModelAndView DtlBorderIndex(@PathVariable String url, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		System.out.println("실행");
 		ModelAndView mav = new ModelAndView("border_dtl");
 		mav.addObject("border", borderService.getDtlBorderIndex(url, principalDetails));
+		System.out.println(mav);
 		return mav;
 	}
 	

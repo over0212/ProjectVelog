@@ -23,5 +23,4 @@ public class User {
 	private String provider;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
-	
 }
