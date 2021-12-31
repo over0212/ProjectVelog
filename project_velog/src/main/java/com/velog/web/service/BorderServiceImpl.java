@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
-import com.velog.domain.user.Mypage;
+import com.velog.domain.user.User;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
@@ -143,11 +143,10 @@ public class BorderServiceImpl implements BorderService {
 	}
 
 	@Override
-	public int updateMyborder(Mypage mypage) {
-		int result = 0;
-		result = borderRepository.updateMyborder(mypage.getId());
-		System.out.println(result);
-		return result;
+	public int updateMyborder(PrincipalDetails principalDetails, BorderUpdateDto borderUpdateDto) {
+		User userEntity = borderUpdateDto.toMyborderEntity();
+		principalDetails.setUser(userEntity);
+		return 1;
 	}
 	
 	@Override

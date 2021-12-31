@@ -3,6 +3,7 @@ package com.velog.web.controller;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.velog.config.auth.PrincipalDetails;
-import com.velog.domain.user.Mypage;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
 import com.velog.web.service.BorderService;

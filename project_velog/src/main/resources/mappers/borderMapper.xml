@@ -99,11 +99,11 @@
   			url = #{url}
   	</delete>
   	
-  	<update id="updateMyborder">
+  	<update id="updateMyborder" parameterType="com.velog.domain.user.User">
   		update
   			user_info
   		set
-  			myborder_comment = #{myborder_comment}
+  			myBorder_introduce = #{myBorder_introduce}
   		where
   			id = #{id}
   	</update>
