@@ -16,11 +16,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
 import com.velog.domain.border.BorderRepository;
-import com.velog.domain.user.Mypage;
+import com.velog.domain.user.User;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
 import com.velog.web.model.dto.border.IndexBorderDto;
+import com.velog.web.model.dto.border.LikeDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -76,18 +77,17 @@ public class BorderServiceImpl implements BorderService {
 	@Override
 	public Border getDtlBorderIndex(String url, PrincipalDetails principalDetails) {
 		Border border = borderRepository.getDtlBorderIndex(url);
-		
 		// 로그인시 자신의 게시물의 조회수는 +1 되지 않도록 하는 방어적 코드
 		if(principalDetails != null) {
 			if(!principalDetails.getUser().getUsername().equals(border.getUsername())) {
 				plusBorderCount(url);
 			}
+			border.setLikeFlag(getLikeUser(url, principalDetails.getUser().getId()));
+			System.out.println(getLikeUser(url, principalDetails.getUser().getId()));
 		}else{
 			// 로그인이 안되어있을 경우 모든 게시글 조회수 +1
 			plusBorderCount(url);
 		}
-		
-		
 		return border;
 	}
 	
@@ -149,11 +149,42 @@ public class BorderServiceImpl implements BorderService {
 	}
 
 	@Override
-	public int updateMyborder(Mypage mypage) {
+	public int updateMyborder(PrincipalDetails principalDetails, BorderUpdateDto borderUpdateDto) {
+		User userEntity = borderUpdateDto.toMyborderEntity();
+		principalDetails.setUser(userEntity);
+		return 1;
+	}
+	
+	@Override
+	public int insertLike(int id, String url) {
 		int result = 0;
-		result = borderRepository.updateMyborder(mypage.getId());
-		System.out.println(result);
-		return result;
+		result = borderRepository.insertLike(id, url); // 성공이면 1
+		if(result == 1) {
+			result = borderRepository.plusLike(url); // 성공이면 1
+			
+		}
+		return result;			
 	}
 
+	@Override
+	public int deleteLike(int id, String url) {
+		int result = 0; 
+		result = borderRepository.deleteLike(id, url); // 성공이면 1
+		if(result == 1) {
+			result = borderRepository.minusLike(url);
+		}
+		return result;	
+	}
+	
+	@Override
+	public int getLikeUser(String url, int id) {
+		int result = borderRepository.getLikeUser(url, id);		
+		System.out.println("Repository return : " + result);
+		return result;
+	}
+	
+	@Override
+	public int getLikeCount(String url) {
+		return borderRepository.getLikeCount(url);
+	}
 }

@@ -4,8 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.velog.web.model.dto.border.BorderDto;
-import com.velog.web.model.dto.border.BorderUpdateDto;
+import com.velog.domain.user.User;
 
 @Mapper
 public interface BorderRepository {
@@ -42,6 +41,24 @@ public interface BorderRepository {
 	// delete
 	public int deleteBorder(String url);
 	
-	public int updateMyborder(int id);
+	public int updateMyborder(User user);
+	
+	// insert like
+	public int insertLike(int id, String url);
+	
+	// plus like
+	public int plusLike(String url);
+	
+	// delete like
+	public int deleteLike(int id, String url);
+	
+	// minus like
+	public int minusLike(String url);
+	
+	// 내가 누른 좋아요인지 확인!
+	public int getLikeUser(String url, int id);
+	
+	public int getLikeCount(String url);
+	
 	
 }

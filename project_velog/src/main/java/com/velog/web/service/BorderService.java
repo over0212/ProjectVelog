@@ -6,11 +6,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.velog.config.auth.PrincipalDetails;
 import com.velog.domain.border.Border;
-import com.velog.domain.user.Mypage;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
 import com.velog.web.model.dto.border.IndexBorderDto;
+import com.velog.web.model.dto.border.LikeDto;
 
 public interface BorderService {
 	
@@ -29,4 +29,12 @@ public interface BorderService {
 	public int deleteBorder(String url);
 	
 	public int updateMyborder(Mypage mypage);
+	
+	public int insertLike(int id, String url);
+	
+	public int deleteLike(int id, String url);
+	
+	public int getLikeUser(String url, int id);
+	
+	public int getLikeCount(String url);
 }

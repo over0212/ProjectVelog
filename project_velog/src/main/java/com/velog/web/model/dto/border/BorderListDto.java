@@ -12,6 +12,7 @@ public class BorderListDto {
 	private String url;
 	private int id;
 	private int count;
+	private int like_count;
 	private String username;
 	private String comment;
 	private String main_title;

@@ -11,6 +11,7 @@
   			#{url},
   			#{id},
   			#{count},
+  			#{like_count},
   			#{main_title},
   			#{main_tags},
   			#{main_content},
@@ -26,6 +27,7 @@
   			bm.url,
   			bm.id,
   			bm.count,
+  			bm.like_count,
   			bm.main_title,
   			um.username,
   			um.comment,
@@ -59,6 +61,7 @@
   			bm.main_tags,
   			bm.id,
   			bm.count,
+  			bm.like_count,
   			um.username,
   			um.profile_img_url,
   			bm.preview_img_url,
@@ -96,15 +99,67 @@
   			url = #{url}
   	</delete>
   	
-  	<update id="updateMyborder">
+  	<update id="updateMyborder" parameterType="com.velog.domain.user.User">
   		update
   			user_info
   		set
-  			myborder_comment = #{myborder_comment}
+  			myBorder_introduce = #{myBorder_introduce}
   		where
   			id = #{id}
   	</update>
   	
+  	<insert id="insertLike">
+  		insert into
+  			like_mst
+  		values(
+  			#{id},
+  			#{url}
+  		);
+  	</insert>
+  	
+  	<update id="plusLike">
+  		update
+  			border_mst
+  		set
+  			like_count = like_count + 1
+  		where
+  			url = #{url}
+  	</update>
+  	
+  	<delete id="deleteLike">
+  		delete
+  		from
+  			like_mst
+  		where
+  			url = #{url} and id = #{id}
+  	</delete>
+  	
+  	<update id="minusLike">
+  		update
+  			border_mst
+  		set
+  			like_count = like_count - 1
+  		where
+  			url = #{url};
+  	</update>
+  	
+  	<select id="getLikeUser" resultType="Integer">
+  		select
+  			count(lm.id)
+  		from
+  			border_mst bm	
+  			left outer join like_mst lm on(lm.url = bm.url and lm.id = #{id})
+  		where
+  			bm.url = #{url};
+  	</select>
+  	<select id="getLikeCount">
+  		select
+  			like_count
+  		from 
+  			border_mst
+  		where
+  			url = #{url};
+  	</select>
   </mapper>
   
   

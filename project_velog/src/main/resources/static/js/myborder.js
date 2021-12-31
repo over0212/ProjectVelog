@@ -80,17 +80,28 @@ const comment_write_hidden = document.querySelector('.comment_write_hidden');
 const comment_save = document.querySelector('.comment_save');
 const comment_write = document.querySelector('.comment_write');
 
-
 comment_write_btn.onclick = () => {
 	comment_empty_hidden.style.display = 'none';
 	comment_write_hidden.style.display = 'block';
 }
 
 comment_save.onclick = () => {
-	/*comment_empty_hidden.style.display = 'block';
-	comment_write_hidden.style.display = 'none';*/
-	commentForm();
-
+	myBorder_introduce = comment_write.value;
+	alert(myBorder_introduce);
+	$.ajax({
+		type: "put",
+		url: "/myborder/" + user_id.value,
+		data: {
+			"myBorder_introduce": myBorder_introduce
+		},
+		dataType: "text",
+		success: function (data) {
+			alert('s');
+		},
+		error: function () {
+			alert('비동기 처리 오류');
+		}
+	})
 }
 
 comment_write.onkeydown = () => {
@@ -102,19 +113,3 @@ function resize() {
 	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
 }
 
-function commentForm() {
-	$.ajax({
-		type: "put",
-		url: "/myborder/" + user_id.value,
-		data: JSON.stringify(comment_write.value),
-		contentType: "application/json; charset=UTF-8",
-		dataType: "text",
-		success: function (data) {
-			alert('s');
-		},
-		error: function () {
-			alert('비동기 처리 오류');
-		}
-
-	})
-}

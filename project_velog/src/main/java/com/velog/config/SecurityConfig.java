@@ -28,7 +28,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private final PrincipalOauth2UserService principalOauth2UserService;
-	private final PrincipalDetailsService principalDetailsService;
+//	private final PrincipalDetailsService principalDetailsService;
 	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {

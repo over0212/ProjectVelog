@@ -36,12 +36,12 @@
                                     <span class="dtl_date"> ${border.create_date }</span>
                                 </div>
                                 <div class="dtl_btn">
-                                    <c:if test="${(border.username) == (principal.user.username) }">
-                                        <input id="username" type="hidden" value="${principal.user.username}">
-                                        <input id="url" type="hidden" value="${border.url }">
-                                        <button type="button" class="update_btn">수정</button>
-                                        <button type="button" class="delete_btn">삭제</button>
-                                    </c:if>
+                                   <input id="url" type="hidden" value="${border.url }">
+                                   <c:if test="${(border.username) == (principal.user.username) }">
+                                       <input id="username" type="hidden" value="${principal.user.username}">
+                                       <button type="button" class="update_btn">수정</button>
+                                       <button type="button" class="delete_btn">삭제</button>
+                                   </c:if>
                                 </div>
                             </div>
                         </section>
@@ -67,14 +67,30 @@
                     <!-- 좋아요 버튼 부분 -->
                     <div class="like_btn_block">
                         <div class="like_btns">
-                            <div class="off_box">
-                                <i class="fas fa-heart like_off"></i>
-                            </div>
-                            <div class="on_box" style="display: none">
-                                <i class="fas fa-heart like_on"></i>
-                            </div>
+                        	<input type="hidden" id="user_id" value="${principal.user.id }">
+                            <c:choose>
+                            	<c:when test="${(border.likeFlag) == 0}">
+                            		<div class="off_box">
+                                		<i class="fas fa-heart like_off"></i>
+                            		</div>
+                            		<div class="on_box" style="display : none">
+                                		<i class="fas fa-heart like_on"></i>
+                           			</div>
+                            	</c:when>
+                            	<c:when test="${(border.likeFlag) == 1 }">
+                            		<div class="off_box" style="display : none">
+                                		<i class="fas fa-heart like_off"></i>
+                            		</div>
+                            		<div class="on_box">
+                                		<i class="fas fa-heart like_on"></i>
+                           			</div>
+                            	</c:when>
+                    
+                            </c:choose>
+                            
+                            
                         </div>
-                        <span class="like_count">이엘자리</span>
+                        <span class="like_count">${border.like_count }</span>
                     </div>
                 </main>
 
