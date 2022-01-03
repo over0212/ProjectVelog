@@ -51,7 +51,7 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+/*     justify-content: left; */
     position: relative;
     height: auto;
 }
@@ -153,6 +153,7 @@ body{
     overflow-y: scroll;
     padding-left: 3em;
     padding-right: 1em;
+	padding-bottom: 64px;
     font-size: 1.5em;
     border: none;
     outline: none;

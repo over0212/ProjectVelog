@@ -9,6 +9,7 @@ import lombok.Data;
 @Data
 public class IndexBorderDto {
 	
+	private String times;
 	private String url;
 	private int id;
 	private int count;

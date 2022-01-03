@@ -54,7 +54,7 @@
 	                        </a>
 	                        <div class="likes">
 	                            <i class="fas fa-heart"></i>
-	                            <span>0</span>
+	                            <span>${indexList.like_count }</span>
 	                        </div>
 	                    </div>
 	                </div>

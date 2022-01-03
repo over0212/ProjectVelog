@@ -15,6 +15,7 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>my velog</title>
 				<link rel="stylesheet" href="/css/reset.css">
+				<link rel="stylesheet" href="/css/sign_in.css">
 				<link rel="stylesheet" href="/css/header.css">
 				<link rel="stylesheet" href="/css/myborder.css">
 				<script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -36,12 +37,10 @@
 								</button>
 								<c:choose>
 									<c:when test="${empty principal.user }">
-										<button class="login_btn header_btn" type="button"
-											onclick="login()">로그인</button>
+										<button class="login_btn header_btn" type="button">로그인</button>
 									</c:when>
 									<c:otherwise>
-										<button class="go_posting_btn header_btn" type="button">새
-											글 작성</button>
+										<button class="go_posting_btn header_btn" type="button">새 글 작성</button>
 										<div class="user_nav_wrap">
 											<button class="user_btn" type="button">
 												<img src="/image/profile/${(empty principal.user.profile_img_url) ? ('user_icon.png') : (principal.user.id += '/' += principal.user.profile_img_url)}"
@@ -63,6 +62,7 @@
 							</div>
 						</div>
 					</div>
+					<jsp:include page="include/sign_in.jsp"></jsp:include>
 				</header>
 				<!-- border list -->
 				<div class="bl_container">
@@ -95,17 +95,15 @@
 						<div class="bl_wrap">
 							<div class="border_search_box">
 								<div class="border_search">
-									<i class="fas fa-search search_icon"></i> <input type="text" class="border_ip"
-										placeholder="검색어를 입력하세요" autofocus>
+									<i class="fas fa-search search_icon"></i> <input type="text" class="border_ip" placeholder="검색어를 입력하세요" autofocus>
 								</div>
 							</div>
 							<c:forEach var="border_list" items="${borderList }">
 								<div class="border_list">
-									<a href="/border/${border_list.username }/${border_list.url }"
-										class="to_detail"><img class="border_main_img"
-											src="/image/${border_list.preview_img_url }" alt="" width="180px"
-											height="180px"></a> <a
-										href="/border/${border_list.username }/${border_list.url }" class="to_detail">
+									<a href="/border/${border_list.username }/${border_list.url }" class="to_detail">
+										<img class="border_main_img" src="/image/${border_list.preview_img_url }" alt="">
+									</a> 
+									<a href="/border/${border_list.username }/${border_list.url }" class="to_detail">
 										<h2 class="border_title">${border_list.main_title}</h2>
 									</a>
 									<p class="border_pre_content">${border_list.preview_txt }</p>
@@ -150,6 +148,7 @@
 			</body>
 			<input type="hidden" id="id" value="${principal.user.id }">
 			<script src="https://kit.fontawesome.com/0b11c2b6d9.js" crossorigin="anonymous"></script>
+			<script src="/js/sign_in.js"></script>
 			<script src="/js/header.js"></script>
 			<script src="/js/myborder.js"></script>
 

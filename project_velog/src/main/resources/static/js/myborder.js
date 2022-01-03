@@ -9,6 +9,7 @@ const itemObjs = document.querySelectorAll('.item');
 const content_write_box = document.querySelector('.content_write_box');
 const content_comment_box = document.querySelector('.content_comment_box');
 const user_id = document.querySelector('#id');
+const border_main_imgs = document.querySelectorAll('.border_main_img');
 
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
@@ -37,6 +38,12 @@ border_ip.onfocus = () => {
 border_ip.onblur = () => {
 	border_search.style.border = '1px solid rgb(173, 181, 189)';
 	search_icon[1].style.color = 'rgb(173, 181, 189)';
+}
+
+for(let i=0; i<border_main_imgs.length; i++){
+	border_main_imgs[i].onerror = () => {
+		border_main_imgs[i].style.display = 'none';	
+	}
 }
 
 items.addEventListener("click", event => {
@@ -112,4 +119,3 @@ function resize() {
 	comment_write.style.height = "1px";
 	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
 }
-

@@ -28,8 +28,6 @@ public interface BorderService {
 	
 	public int deleteBorder(String url);
 	
-	public int updateMyborder(Mypage mypage);
-	
 	public int insertLike(int id, String url);
 	
 	public int deleteLike(int id, String url);

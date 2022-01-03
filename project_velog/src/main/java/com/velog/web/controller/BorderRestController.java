@@ -37,7 +37,7 @@ public class BorderRestController {
 	@PostMapping("/insert/{id}")
 	public ModelAndView borderInsert(BorderDto borderDto) { // form-data 를 받음
 		ModelAndView mav = new ModelAndView("border_dtl");
-		//int insertFlag =  borderService.insertBorder(borderDto);
+		// int insertFlag =  borderService.insertBorder(borderDto);
 		mav.addObject("insertBorder", borderService.insertBorder(borderDto));
 		return mav;
 	}
@@ -53,12 +53,6 @@ public class BorderRestController {
 	public String deleteBorder(Model model, @PathVariable String url, @PathVariable String username) {
 		int result = borderService.deleteBorder(url);
 		return Integer.toString(result);
-	}
-	
-	@PutMapping("/myborder/{id}")
-	public String borderCommentUpdate(@AuthenticationPrincipal PrincipalDetails principalDetails,Mypage mypage) {
-		System.out.println(mypage.getMyborder_comment());
-		return mypage.getMyborder_comment();	
 	}
 	
 	@PutMapping("/like/{url}")
