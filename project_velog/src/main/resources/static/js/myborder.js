@@ -29,16 +29,6 @@ intro.onclick = () => {
 }
 
 
-border_ip.onfocus = () => {
-	border_search.style.border = '1px solid #000';
-	search_icon[1].style.color = '#000';
-
-}
-border_ip.onblur = () => {
-	border_search.style.border = '1px solid rgb(173, 181, 189)';
-	search_icon[1].style.color = 'rgb(173, 181, 189)';
-}
-
 items.addEventListener("click", event => {
 	for (let i = 0; i < itemObjs.length; i++) {
 		itemObjs[i].style.color = "rgb(73, 80, 87)";

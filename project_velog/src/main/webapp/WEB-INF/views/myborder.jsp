@@ -92,13 +92,6 @@
 						<a class="list">글</a> <a class="intro">소개</a>
 					</div>
 					<div class="content_write_box">
-						<div class="bl_wrap">
-							<div class="border_search_box">
-								<div class="border_search">
-									<i class="fas fa-search search_icon"></i> <input type="text" class="border_ip"
-										placeholder="검색어를 입력하세요" autofocus>
-								</div>
-							</div>
 							<c:forEach var="border_list" items="${borderList }">
 								<div class="border_list">
 									<a href="/border/${border_list.username }/${border_list.url }"

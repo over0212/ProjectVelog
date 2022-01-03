@@ -149,13 +149,6 @@ public class BorderServiceImpl implements BorderService {
 	}
 
 	@Override
-	public int updateMyborder(PrincipalDetails principalDetails, BorderUpdateDto borderUpdateDto) {
-		User userEntity = borderUpdateDto.toMyborderEntity();
-		principalDetails.setUser(userEntity);
-		return 1;
-	}
-	
-	@Override
 	public int insertLike(int id, String url) {
 		int result = 0;
 		result = borderRepository.insertLike(id, url); // 성공이면 1

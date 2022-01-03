@@ -55,12 +55,6 @@ public class BorderRestController {
 		return Integer.toString(result);
 	}
 	
-	@PutMapping("/myborder/{id}")
-	public String borderCommentUpdate(@AuthenticationPrincipal PrincipalDetails principalDetails,Mypage mypage) {
-		System.out.println(mypage.getMyborder_comment());
-		return mypage.getMyborder_comment();	
-	}
-	
 	@PutMapping("/like/{url}")
 	public String insertLike(@PathVariable String url, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int result = 0;
