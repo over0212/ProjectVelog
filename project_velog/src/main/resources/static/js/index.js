@@ -41,7 +41,7 @@ trend.onclick = () => {
 
 //화면 전체를 클릭 했을 때
 window.addEventListener('click', (e) => {
-	
+
 	// time_box
 	if (e.target.classList.contains('times_wrap') || e.target.classList.contains('down-icon')) {
 		

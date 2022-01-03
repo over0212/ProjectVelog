@@ -30,10 +30,9 @@ public class IndexServiceImpl implements IndexService {
 	public List<IndexBorderDto> getIndexList() {
 		List<Border> indexBorderList = borderRepository.getBorderAll();
 		List<IndexBorderDto> getIndexList = new ArrayList<IndexBorderDto>();
-
 		for (Border border : indexBorderList) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
-
+			
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
 			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
@@ -51,7 +50,7 @@ public class IndexServiceImpl implements IndexService {
 
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
-
+			indexBorderDto.setTimes("오늘");
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
 			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
@@ -68,7 +67,7 @@ public class IndexServiceImpl implements IndexService {
 		
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
-			
+			indexBorderDto.setTimes("이번주");
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
 			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
@@ -85,7 +84,7 @@ public class IndexServiceImpl implements IndexService {
 		
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
-			
+			indexBorderDto.setTimes("이번달");
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
 			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			
@@ -102,7 +101,7 @@ public class IndexServiceImpl implements IndexService {
 		
 		for (Border border : getIndexBorderAll) {
 			IndexBorderDto indexBorderDto = border.toIndexDto();
-			
+			indexBorderDto.setTimes("올해");
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
 			indexBorderDto.setCreate_date(dateFormat.format(Timestamp.valueOf(border.getCreate_date())));
 			

@@ -73,8 +73,8 @@ if(off_box != null){
 					alert("로그인이 필요합니다.");
 				} else if(data == 1){
 					alert("좋아요 했습니다.");
-					on_box.style.display = 'flex';
-					off_box.style.display = 'none';
+					location.reload();
+					
 				}
 			},
 			error: function(){
@@ -105,8 +105,7 @@ if(on_box != null){
 			success: function(data){
 				if(data == 1){
 					alert("좋아요가 취소되었습니다.");
-					on_box.style.display = 'none';
-					off_box.style.display = 'flex';
+					location.reload();
 				}
 			},
 			error: function(){

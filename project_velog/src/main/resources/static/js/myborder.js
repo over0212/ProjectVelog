@@ -11,6 +11,8 @@ search_btn.onclick = () => {
 	location.href = '/search';
 }
 
+const border_main_imgs = document.querySelectorAll('.border_main_img');
+
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
 	list.style.borderBottom = '3px solid rgb(32, 201, 151)';
@@ -94,4 +96,3 @@ function resize() {
 	comment_write.style.height = "1px";
 	comment_write.style.height = (12 + comment_write.scrollHeight) + "px";
 }
-

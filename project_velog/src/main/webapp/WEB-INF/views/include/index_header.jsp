@@ -11,23 +11,25 @@
     <div class="index_hd">
         <div class="nav_wrap">
             <a href="#" class="nav_trending">
-                <img src="../img/growth-graph.png" alt=""> 트렌딩
+                <img src="../img/growth-graph.png" alt=""> 
+                트렌딩
             </a>
             <a href="#" class="nav_recent">
-                <i class="far fa-clock"></i> 최신
+                <i class="far fa-clock"></i> 
+                최신
                 <div class="nav_underline"></div>
             </a>
         </div>
         <div class="times_wrap">
-            이번 주
+            <span class="time_txt">이번주</span>
             <i class="fas fa-caret-down down-icon"></i>
         </div>
         <div class="times_select_box nav_box">
             <ul>
-                <li class="today"><a href="/index/today">오늘</a></li>
-                <li class="this_week" ><a href="/index/week">이번주</a></li>
-                <li class="this_month"><a href="/index/month">이번 달</a></li>
-                <li class="this_year"><a href="/index/year">올해</a></li>
+                <li class="today"><a class="times" href="/index/today">오늘</a></li>
+                <li class="this_week" ><a class="times" href="/index/week">이번주</a></li>
+                <li class="this_month"><a class="times" href="/index/month">이번 달</a></li>
+                <li class="this_year"><a class="times" href="/index/year">올해</a></li>
             </ul>
         </div>
     </div>

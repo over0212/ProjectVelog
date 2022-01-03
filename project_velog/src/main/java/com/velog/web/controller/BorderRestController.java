@@ -35,7 +35,7 @@ public class BorderRestController {
 	@PostMapping("/insert/{id}")
 	public ModelAndView borderInsert(BorderDto borderDto) { // form-data 를 받음
 		ModelAndView mav = new ModelAndView("border_dtl");
-		//int insertFlag =  borderService.insertBorder(borderDto);
+		// int insertFlag =  borderService.insertBorder(borderDto);
 		mav.addObject("insertBorder", borderService.insertBorder(borderDto));
 		return mav;
 	}

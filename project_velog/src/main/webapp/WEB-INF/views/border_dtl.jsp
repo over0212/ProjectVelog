@@ -73,19 +73,12 @@
                             		<div class="off_box">
                                 		<i class="fas fa-heart like_off"></i>
                             		</div>
-                            		<div class="on_box" style="display : none">
-                                		<i class="fas fa-heart like_on"></i>
-                           			</div>
                             	</c:when>
-                            	<c:when test="${(border.likeFlag) == 1 }">
-                            		<div class="off_box" style="display : none">
-                                		<i class="fas fa-heart like_off"></i>
-                            		</div>
+                            	<c:otherwise>
                             		<div class="on_box">
                                 		<i class="fas fa-heart like_on"></i>
                            			</div>
-                            	</c:when>
-                    
+                            	</c:otherwise>
                             </c:choose>
                             
                             
