@@ -13,7 +13,6 @@ for (let i = 0; i < login_btn.length; i++) {
 		si_container.className = 'si_container active';
 		si_container.style.transform = 'translateY(0px)';
 	}
-
 }
 
 // 사용자 profile 클릭 -> 사용자메뉴 block 

@@ -2,13 +2,14 @@ const list = document.querySelector('.list');
 const series = document.querySelector('.series');
 const intro = document.querySelector('.intro');
 const border_ip = document.querySelector('.border_ip');
-const border_search = document.querySelector('.border_search');
-const search_icon = document.querySelectorAll('.search_icon');
-const items = document.querySelector('.items');
-const itemObjs = document.querySelectorAll('.item');
 const content_write_box = document.querySelector('.content_write_box');
 const content_comment_box = document.querySelector('.content_comment_box');
 const user_id = document.querySelector('#id');
+const search_btn = document.querySelector('.search_btn');
+
+search_btn.onclick = () => {
+	location.href = '/search';
+}
 
 list.onclick = () => {
 	list.style.color = 'rgb(32, 201, 151)';
@@ -27,26 +28,6 @@ intro.onclick = () => {
 	content_write_box.style.display = 'none';
 	content_comment_box.style.display = 'block';
 }
-
-
-border_ip.onfocus = () => {
-	border_search.style.border = '1px solid #000';
-	search_icon[1].style.color = '#000';
-
-}
-border_ip.onblur = () => {
-	border_search.style.border = '1px solid rgb(173, 181, 189)';
-	search_icon[1].style.color = 'rgb(173, 181, 189)';
-}
-
-items.addEventListener("click", event => {
-	for (let i = 0; i < itemObjs.length; i++) {
-		itemObjs[i].style.color = "rgb(73, 80, 87)";
-	}
-	if (event.target.className == "item") {
-		event.target.style.color = "rgb(32, 201, 151)";
-	}
-})
 
 const socialText = document.querySelectorAll('.socials a span')
 const socialIcon = document.querySelectorAll('.socials a')
@@ -74,6 +55,7 @@ socialIcon[4].onmouseout = () => {
 
 }
 
+// 소개글
 const comment_write_btn = document.querySelector('.comment_write_btn');
 const comment_empty_hidden = document.querySelector('.comment_empty_hidden');
 const comment_write_hidden = document.querySelector('.comment_write_hidden');

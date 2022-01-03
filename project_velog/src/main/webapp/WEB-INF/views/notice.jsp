@@ -53,20 +53,17 @@
                     </p>
                     <!-- 공지 키워드 태그 (키워드 미등록시에 js구현필요)-->
                     <div class="notice_keyword">
-                        <a href="#">도레미</a>
-                        <a href="#">파솔라시</a>
-                        <a href="#">도레이파솔</a>
-                        <a href="#">라시도레미파</a>
-                        <a href="#">솔라시도레미파</a>
-                        <a href="#">솔라시도레미파솔</a>
-                        <a href="#">라시도레미파솔라시</a>
-                        <a href="#">도레미파솔라시도레미</a>
+                        <a href="#">공지사항</a>
+                        <a href="#">중요합니다</a>
+                        <a href="#">velog</a>
+                        <a href="#">notice</a>
+
                     </div>
                     <!-- 공지 날짜 및 댓글수 태그 -->
                     <div class="notice_subinfo">
-                        <div class="create_date">1996년 00월 00일</div>
+                        <div class="create_date">2021년 12월 13일</div>
                         ·
-                        <div class="coutn_reply">99개의 댓글</d>
+                        <div class="coutn_reply">0</d>
                     </div>
                 </div>
         </div>

@@ -15,8 +15,6 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class PageController {
 	
-	private final IndexService indexService;
-	
 	@GetMapping("/token-expired")
 	public String tokenExpired() {
 		return "token_expired";

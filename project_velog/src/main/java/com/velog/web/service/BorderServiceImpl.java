@@ -20,8 +20,6 @@ import com.velog.domain.user.User;
 import com.velog.web.model.dto.border.BorderDto;
 import com.velog.web.model.dto.border.BorderListDto;
 import com.velog.web.model.dto.border.BorderUpdateDto;
-import com.velog.web.model.dto.border.IndexBorderDto;
-import com.velog.web.model.dto.border.LikeDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -148,13 +146,6 @@ public class BorderServiceImpl implements BorderService {
 		return result;
 	}
 
-	@Override
-	public int updateMyborder(PrincipalDetails principalDetails, BorderUpdateDto borderUpdateDto) {
-		User userEntity = borderUpdateDto.toMyborderEntity();
-		principalDetails.setUser(userEntity);
-		return 1;
-	}
-	
 	@Override
 	public int insertLike(int id, String url) {
 		int result = 0;

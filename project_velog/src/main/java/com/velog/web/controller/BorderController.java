@@ -54,7 +54,5 @@ public class BorderController {
 		mav.addObject("borderList", borderService.getBorderList(username));
 		return mav;
 	}
-	
-	
 
 }

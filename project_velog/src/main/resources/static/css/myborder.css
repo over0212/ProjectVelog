@@ -138,29 +138,6 @@
 	height: 100%;
 }
 
-.border_search_box {
-	display: flex;
-	justify-content: flex-end;
-	height: 36px;
-	margin-bottom: 32px;
-}
-
-.border_search {
-	display: flex;
-	align-items: center;
-	border: 1px solid rgb(173, 181, 189);
-	padding: 0 10px;
-	background-color: white;
-	transition: all 300ms ease-in-out;
-}
-
-.border_search>i {
-	font-size: 16px;
-	margin-right: 8px;
-	color: rgb(173, 181, 189);
-	transition: all 300ms ease-in-out;
-}
-
 .border_ip {
 	outline: none;
 	border: none;
@@ -252,54 +229,6 @@
 
 .count_reply {
 	margin-left: 0.2em;
-}
-
-.border_control {
-	position: absolute;
-	top: 45em;
-	left: -20em;
-	width: 15.3em;
-	height: 35em;
-}
-
-.tag_list {
-	height: 33px;
-	font-size: 16px;
-	margin-bottom: 16px;
-	padding-bottom: 8px;
-	color: rgb(73, 80, 87);
-	border-bottom: 1px solid rgb(173, 181, 189);
-	font-weight: bold;
-	box-sizing: border-box;
-}
-
-.items {
-	margin: 16px 0;
-}
-
-.items li {
-	height: 21px;
-	margin-top: 0.5em;
-}
-
-.items li:first-child {
-	margin: 0;
-}
-
-.item {
-	font-size: 1.3em;
-	font-weight: 700;
-	color: rgb(73, 80, 87);
-}
-
-.item:hover {
-	text-decoration: underline;
-}
-
-.items span {
-	color: rgb(134, 142, 150);
-	font-size: 14px;
-	margin-left: 8px;
 }
 
 .content_comment_box{
